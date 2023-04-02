@@ -11166,6 +11166,14 @@ react-native-modal-selector@^2.1.1:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-monorepo-tools@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-monorepo-tools/-/react-native-monorepo-tools-1.2.1.tgz#e96ea910d6e13d9f1df89e96682209ed203929e6"
+  integrity sha512-WW0cEP+/lTTQLKU268PXZISXFgL1wlaftMcxn4Z4QGXMls7WS+BMhwIZcEy0zudTeXaM+ft4yeVqMcUWM8ofXg==
+  dependencies:
+    find-root "^1.1.0"
+    glob "^7.1.7"
+
 react-native-safe-area-context@^4.4.1:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.5.0.tgz#9208313236e8f49e1920ac1e2a2c975f03aed284"
