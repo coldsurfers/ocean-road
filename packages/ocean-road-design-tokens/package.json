@@ -9,5 +9,8 @@
   "license": "MIT",
   "devDependencies": {
     "style-dictionary": "^3.7.2"
+  },
+  "dependencies": {
+    "open-color": "^1.9.1"
   }
 }

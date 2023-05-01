@@ -4,14 +4,36 @@
         "css": {
           "transformGroup": "css",
           "buildPath": "dist/css/",
-          "prefix": "ocean-road",
           "files": [
             {
               "destination": "variables.css",
               "format": "css/variables",
+              "filter": "baseColorFilter",
               "options": {
                 "outputReferences": true
               }
+            },
+            {
+              "destination": "variables-theme.css",
+              "format": "themedCss",
+              "filter": "themedColorFilter",
+              "prefix": "or"
+            }
+          ]
+        },
+        "json": {
+          "transformGroup": "css",
+          "buildPath": "dist/json/",
+          "files": [
+            {
+              "destination": "variables.json",
+              "format": "json/flat",
+              "filter": "baseColorFilter"
+            },
+            {
+              "destination": "variables-theme.json",
+              "format": "themedJson",
+              "filter": "themedColorFilter"
             }
           ]
         }

@@ -1,0 +1,11 @@
+{
+    "color": {
+        "background": {
+            "default": {
+                "value": "{oc.gray.1}",
+                "darkValue": "{oc.gray.9}",
+                "comment": "Default background color"
+            }
+        }
+    }
+}
