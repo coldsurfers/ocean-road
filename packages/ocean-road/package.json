@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "license": "MIT",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -18,7 +18,7 @@
     "release:local": "npx yalc publish"
   },
   "dependencies": {
-    "@coldsurfers/design-tokens": "1.0.1"
+    "@coldsurfers/design-tokens": "1.0.3"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",
