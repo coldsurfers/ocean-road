@@ -20,5 +20,8 @@
     "build": "ts-node build.ts",
     "prerelease:local": "yarn build",
     "release:local": "npx yalc publish"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
