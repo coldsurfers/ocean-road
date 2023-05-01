@@ -3426,6 +3426,13 @@
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.7.tgz#63bb7d067db107cc1e457c303bc25d511febf6cb"
   integrity sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==
 
+"@types/react-dom@^18.0.11":
+  version "18.0.11"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.11.tgz#321351c1459bc9ca3d216aefc8a167beec334e33"
+  integrity sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-native@^0.70.6":
   version "0.70.13"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.70.13.tgz#a38a1378e68dc25fe5911b09c49b8afffe191316"
@@ -3444,6 +3451,15 @@
   version "18.0.32"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.32.tgz#5e88b2af6833251d54ec7fe86d393224499f41d5"
   integrity sha512-gYGXdtPQ9Cj0w2Fwqg5/ak6BcK3Z15YgjSqtyDizWUfx7mQ8drs0NBUzRRsAdoFVTO8kJ8L2TL8Skm7OFPnLUw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^18.0.33":
+  version "18.0.33"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.33.tgz#a1575160cb4376787c2f5fe0312302f824baa61e"
+  integrity sha512-sHxzVxeanvQyQ1lr8NSHaj0kDzcNiGpILEVt69g9S31/7PfMvNCKLKcsHw4lYKjs3cGNJjXSP4mYzX43QlnjNA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -6444,10 +6460,10 @@ eslint-config-airbnb-base@^15.0.0:
     object.entries "^1.1.5"
     semver "^6.3.0"
 
-eslint-config-coldsurfers@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-coldsurfers/-/eslint-config-coldsurfers-1.1.0.tgz#597b1af6791e7776a8c02284a174868ba28e1870"
-  integrity sha512-+7kd7GGTKoSWE07by0LIyrF9FuPOF5HA6PIdVylhSG2tc+KnkJLty53yrVEIZYobVpzIDs6X11Hfe+DU1UdU+w==
+eslint-config-coldsurfers@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-coldsurfers/-/eslint-config-coldsurfers-1.1.1.tgz#974905467c66cd66cedecc414d044333dff676ab"
+  integrity sha512-i2NfmKXsZRaHuzRzKMg7MNAts5X4O59g6KVg4c4of4JuWWrOOR0FkzsM29SOGQAaij1x6V7QO6Zn/Ly9aIU+FA==
 
 eslint-config-prettier@^8.5.0:
   version "8.8.0"
@@ -11584,7 +11600,7 @@ react-test-renderer@18.2.0:
     react-shallow-renderer "^16.15.0"
     scheduler "^0.23.0"
 
-react@18.2.0:
+react@18.2.0, react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
