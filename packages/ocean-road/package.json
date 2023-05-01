@@ -1,13 +1,28 @@
 {
   "name": "@coldsurfers/ocean-road",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
   "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "lint": "yarn eslint 'src/**/*.ts' 'src/**/*.tsx' --cache"
+  },
+  "dependencies": {},
   "devDependencies": {
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-coldsurfers": "1.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "2.8.1",
     "typescript": "^5.0.3"
   },
   "peerDependencies": {
