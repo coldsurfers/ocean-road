@@ -1,10 +1,20 @@
 {
     "color": {
         "background": {
-            "default": {
+            "1": {
+                "value": "{oc.white}",
+                "darkValue": "{oc.black}",
+                "comment": "background color 1"
+            },
+            "2": {
                 "value": "{oc.gray.1}",
                 "darkValue": "{oc.gray.9}",
-                "comment": "Default background color"
+                "comment": "background color 2"
+            },
+            "3": {
+                "value": "{oc.gray.2}",
+                "darkValue": "{oc.gray.8}",
+                "comment": "background color 3"
             }
         }
     }

@@ -7,42 +7,54 @@ import {
   useEffect,
   useState,
 } from 'react'
+import colorDesignTokens from '@coldsurfers/design-tokens/dist/json/color/variables.json'
+import darkColorDesignTokens from '@coldsurfers/design-tokens/dist/json/color/variables-dark.json'
+import lightColorDesignTokens from '@coldsurfers/design-tokens/dist/json/color/variables-light.json'
 
 export type ColorScheme = 'light' | 'dark' | 'userPreference'
 
-type Theme = {
+export type ColorDesignTokens = typeof colorDesignTokens
+export type DarkColorDesignTokens = typeof darkColorDesignTokens
+export type LightColorDesignTokens = typeof lightColorDesignTokens
+
+export interface Theme extends DarkColorDesignTokens, LightColorDesignTokens {
   name: 'lightMode' | 'darkMode'
-  colorGray0: string
-  colorGray100: string
 }
 
-const lightModeTheme: Theme = {
+export const colors: ColorDesignTokens = colorDesignTokens
+
+export const lightModeTheme: Theme = {
   name: 'lightMode',
-  colorGray0: 'white',
-  colorGray100: '#ababab',
+  ...lightColorDesignTokens,
 }
-const darkModeTheme: Theme = {
+export const darkModeTheme: Theme = {
   name: 'darkMode',
-  colorGray0: 'black',
-  colorGray100: '#aaaaaa',
+  ...darkColorDesignTokens,
 }
 
-const ThemeContext: Context<Theme> = createContext<Theme>(lightModeTheme)
+export const generateCssVar = (themeName: Theme['name']) => {
+  const theme = themeName === 'lightMode' ? lightModeTheme : darkModeTheme
+  let styles = ''
+  Object.keys(theme).forEach((key) => {
+    styles += `  --${key}: ${theme[key as keyof Theme]};\n`
+  })
+  return styles
+}
+
+const cssVar = (name: string) => `var(--${name})`
+
+const darkColorKeys = Object.keys(darkColorDesignTokens)
+
+export const themeVariables = darkColorKeys.reduce((prev, curr) => {
+  const next = prev
+  next[curr as keyof DarkColorDesignTokens] = cssVar(curr)
+  return next
+}, {} as Record<keyof DarkColorDesignTokens, string>)
 
 const themeToStyles = (theme: Theme) => {
   let styles = ''
-  const lightColorDesignTokens = {
-    colorGray0: 'white',
-    colorGray100: '#ababab',
-  }
-  const darkColorDesignTokens = {
-    colorGray0: 'black',
-    colorGray100: '#aaaaaa',
-  }
-  Object.keys(theme).forEach((key) => {
-    if (key.startsWith('color')) {
-      styles += `  --ocean-road-${key}: ${theme[key as keyof Theme]};\n`
-    }
+  Object.keys(colors).forEach((key) => {
+    styles += `  --${key}: ${colors[key as keyof typeof colors]};\n`
   })
   if (theme.name === 'darkMode') {
     Object.keys(darkColorDesignTokens).forEach((key) => {
@@ -61,6 +73,8 @@ const themeToStyles = (theme: Theme) => {
 
   return styles
 }
+
+const ThemeContext: Context<Theme> = createContext<Theme>(lightModeTheme)
 
 const getTheme = (colorScheme?: ColorScheme) =>
   colorScheme === 'dark' ||

@@ -6,17 +6,22 @@
           "buildPath": "dist/css/",
           "files": [
             {
-              "destination": "variables.css",
+              "destination": "color/variables.css",
               "format": "css/variables",
-              "filter": "baseColorFilter",
+              "filter": "ocColorFilter",
               "options": {
                 "outputReferences": true
               }
             },
             {
-              "destination": "variables-theme.css",
-              "format": "themedCss",
-              "filter": "themedColorFilter"
+              "destination": "color/variables-dark.css",
+              "format": "darkColorCss",
+              "filter": "darkColorFilter"
+            },
+            {
+              "destination": "color/variables-light.css",
+              "format": "css/variables",
+              "filter": "darkColorFilter"
             }
           ]
         },
@@ -25,40 +30,45 @@
           "buildPath": "dist/json/",
           "files": [
             {
-              "destination": "variables.json",
+              "destination": "color/variables.json",
               "format": "json/flat",
-              "filter": "baseColorFilter"
+              "filter": "ocColorFilter"
             },
             {
-              "destination": "variables-theme.json",
-              "format": "themedJson",
-              "filter": "themedColorFilter"
+              "destination": "color/variables-dark.json",
+              "format": "darkColorJSON",
+              "filter": "darkColorFilter"
+            },
+            {
+              "destination": "color/variables-light.json",
+              "format": "json/flat",
+              "filter": "darkColorFilter"
             }
           ]
         },
-        "ts": {
+        "js": {
           "transformGroup": "js",
           "buildPath": "dist/js/",
           "files": [
             {
-              "destination": "variables.js",
+              "destination": "color/variables.js",
               "format": "javascript/module",
-              "filter": "baseColorFilter"
+              "filter": "ocColorFilter"
             },
             {
-              "destination": "variables.d.ts",
+              "destination": "color/variables.d.ts",
               "format": "typescript/module-declarations",
-              "filter": "baseColorFilter"
+              "filter": "ocColorFilter"
             },
             {
-              "destination": "variables-theme.js",
-              "format": "themedJsModule",
-              "filter": "themedColorFilter"
+              "destination": "color/variables-theme.js",
+              "format": "darkColorJsModule",
+              "filter": "darkColorFilter"
             },
             {
-              "destination": "variables-theme.d.ts",
+              "destination": "color/variables-theme.d.ts",
               "format": "typescript/module-declarations",
-              "filter": "themedColorFilter"
+              "filter": "darkColorFilter"
             }
           ]
         }

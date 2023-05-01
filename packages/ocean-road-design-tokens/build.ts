@@ -14,35 +14,17 @@ if (!fs.existsSync(path.resolve(__dirname, './dist'))) {
 parseOCJSON()
 
 
-function themedColorFormat(dictionary: Dictionary, format: Format) {
+function darkColorFormat(dictionary: Dictionary) {
     return dictionary.allTokens.map((token) => {
-      const { value: lightValue, darkValue } = token;
-      let lightName = ''
-      let darkName = ''
-      switch (format) {
-        case 'css/variables':
-        case 'json/flat':
-            lightName = `${token.name}-light`
-            darkName = `${token.name}-dark`
-            break
-        case 'javascript/module':
-            lightName = `${token.name}Light`
-            darkName = `${token.name}Dark`
-            break
-        default:
-            break
-      }
-      return [
-        { ...token, name: lightName, value: lightValue },
-        { ...token, name: darkName, value: darkValue }
-      ]
-    }).flatMap(v => v);
+      const { darkValue } = token;
+      return { ...token, value: darkValue }
+    })
 }
 
-function themedColorWrapper(format: Format) {
+function darkColorWrapper(format: Format) {
     return (args: FormatterArguments) => {
         const dictionary = { ...args.dictionary };
-        dictionary.allTokens = themedColorFormat(dictionary, format)
+        dictionary.allTokens = darkColorFormat(dictionary)
         const formatted = StyleDictionary.format[format]({
             ...args,
             dictionary,
@@ -52,29 +34,29 @@ function themedColorWrapper(format: Format) {
 }
 
 StyleDictionary.registerFormat({
-    name: 'themedCss',
-    formatter: themedColorWrapper(`css/variables`),
+    name: 'darkColorCss',
+    formatter: darkColorWrapper(`css/variables`),
 });
 
 StyleDictionary.registerFormat({
-    name: 'themedJson',
-    formatter: themedColorWrapper(`json/flat`),
+    name: 'darkColorJSON',
+    formatter: darkColorWrapper(`json/flat`),
 });
 
 StyleDictionary.registerFormat({
-    name: 'themedJsModule',
-    formatter: themedColorWrapper(`javascript/module`),
+    name: 'darkColorJsModule',
+    formatter: darkColorWrapper(`javascript/module`),
 });
 
 StyleDictionary.registerFilter({
-    name: 'baseColorFilter',
+    name: 'ocColorFilter',
     matcher(token) {
         return token.attributes?.category === `oc`;
     },
 });
 
 StyleDictionary.registerFilter({
-    name: 'themedColorFilter',
+    name: 'darkColorFilter',
     matcher(token) {
         return (
             (token.darkValue) &&
