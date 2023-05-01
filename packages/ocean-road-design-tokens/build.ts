@@ -1,9 +1,17 @@
-const {parseOCJSON} = require('./utils/open-color')
-const StyleDictionary = require('style-dictionary')
+import StyleDictionary from 'style-dictionary'
+import { Dictionary } from 'style-dictionary/types/Dictionary';
+import { FormatterArguments } from 'style-dictionary/types/Format';
+import {parseOCJSON} from './utils/open-color'
+import fs from 'fs'
+import path from 'path'
+
+if (!fs.existsSync(path.resolve(__dirname, './dist'))) {
+    fs.mkdirSync('dist')
+}
 
 parseOCJSON()
 
-function themedColorFormat(dictionary) {
+function themedColorFormat(dictionary: Dictionary) {
     return dictionary.allTokens.map((token) => {
       const { value: lightValue, darkValue } = token;
       return [
@@ -13,8 +21,8 @@ function themedColorFormat(dictionary) {
     }).flatMap(v => v);
 }
 
-function themedColorWrapper(format) {
-    return (args) => {
+function themedColorWrapper(format: 'css/variables' | 'json/flat') {
+    return (args: FormatterArguments) => {
         const dictionary = { ...args.dictionary };
         dictionary.allTokens = themedColorFormat(dictionary)
         const formatted = StyleDictionary.format[format]({
@@ -35,7 +43,7 @@ StyleDictionary.registerFilter({
     matcher(token) {
         return (
             (token.darkValue) &&
-            (token.attributes.category === `color` || token.attributes.category === `elevation`)
+            (token.attributes?.category === `color` || token.attributes?.category === `elevation`)
         );
     },
 });
@@ -43,7 +51,7 @@ StyleDictionary.registerFilter({
 StyleDictionary.registerFilter({
     name: 'baseColorFilter',
     matcher(token) {
-        return token.attributes.category === `oc`;
+        return token.attributes?.category === `oc`;
     },
 });
 
