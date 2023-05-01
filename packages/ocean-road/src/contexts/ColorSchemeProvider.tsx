@@ -3,18 +3,64 @@ import {
   createContext,
   PropsWithChildren,
   useCallback,
+  useContext,
   useEffect,
   useState,
 } from 'react'
 
 export type ColorScheme = 'light' | 'dark' | 'userPreference'
 
-type Theme = {}
+type Theme = {
+  name: 'lightMode' | 'darkMode'
+  colorGray0: string
+  colorGray100: string
+}
 
-const lightModeTheme: Theme = {}
-const darkModeTheme: Theme = {}
+const lightModeTheme: Theme = {
+  name: 'lightMode',
+  colorGray0: 'white',
+  colorGray100: '#ababab',
+}
+const darkModeTheme: Theme = {
+  name: 'darkMode',
+  colorGray0: 'black',
+  colorGray100: '#aaaaaa',
+}
 
 const ThemeContext: Context<Theme> = createContext<Theme>(lightModeTheme)
+
+const themeToStyles = (theme: Theme) => {
+  let styles = ''
+  const lightColorDesignTokens = {
+    colorGray0: 'white',
+    colorGray100: '#ababab',
+  }
+  const darkColorDesignTokens = {
+    colorGray0: 'black',
+    colorGray100: '#aaaaaa',
+  }
+  Object.keys(theme).forEach((key) => {
+    if (key.startsWith('color')) {
+      styles += `  --g-${key}: ${theme[key as keyof Theme]};\n`
+    }
+  })
+  if (theme.name === 'darkMode') {
+    Object.keys(darkColorDesignTokens).forEach((key) => {
+      styles += `  --${key}: ${
+        darkColorDesignTokens[key as keyof typeof darkColorDesignTokens]
+      };\n`
+    })
+  }
+  if (theme.name === 'lightMode') {
+    Object.keys(lightColorDesignTokens).forEach((key) => {
+      styles += `  --${key}: ${
+        lightColorDesignTokens[key as keyof typeof lightColorDesignTokens]
+      };\n`
+    })
+  }
+
+  return styles
+}
 
 const getTheme = (colorScheme?: ColorScheme) =>
   colorScheme === 'dark' ||
@@ -28,8 +74,11 @@ const getTheme = (colorScheme?: ColorScheme) =>
 const ColorSchemeProvider = ({
   children,
   colorScheme,
-}: PropsWithChildren<{ colorScheme: ColorScheme }>) => {
-  const [theme, setTheme] = useState(getTheme(colorScheme))
+  id,
+}: PropsWithChildren<{ colorScheme: ColorScheme; id?: string }>) => {
+  const [theme, setTheme] = useState(lightModeTheme)
+  const className = id ? `__oceanRoadTheme${id}` : undefined
+  const selector = className ? `.${className}` : ':root'
 
   const handlePrefChange = useCallback((e: MediaQueryListEvent) => {
     setTheme(getTheme(e.matches ? 'dark' : 'light'))
@@ -49,7 +98,28 @@ const ColorSchemeProvider = ({
     return undefined
   }, [colorScheme])
 
-  return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+  return (
+    <ThemeContext.Provider value={theme}>
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            colorScheme === 'userPreference'
+              ? `@media(prefers-color-scheme: dark) {
+  ${selector} {
+${themeToStyles(darkModeTheme)} }
+}`
+              : `${selector} {
+${themeToStyles(theme)} }`,
+        }}
+      />
+      <div className={className}>{children}</div>
+    </ThemeContext.Provider>
+  )
 }
 
 export default ColorSchemeProvider
+
+export const useColorScheme = () => {
+  const theme = useContext(ThemeContext)
+  return theme || lightModeTheme
+}

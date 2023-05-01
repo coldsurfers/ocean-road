@@ -1,7 +1,7 @@
 // stories/MyButton.stories.tsx
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {ColorSchemeProvider} from '@coldsurfers/ocean-road';
+import {ColorSchemeProvider, useColorScheme} from '@coldsurfers/ocean-road';
 
 import {MyButton} from './Button';
 
@@ -10,9 +10,23 @@ export default {
   component: MyButton,
 } as ComponentMeta<typeof MyButton>;
 
-export const Basic: ComponentStory<typeof MyButton> = args => (
-  <ColorSchemeProvider colorScheme="dark">
-    <MyButton {...args} />
+const HelloButton = () => {
+  const theme = useColorScheme();
+  console.log(theme);
+  return (
+    <div
+      style={{
+        backgroundColor: theme.colorGray0,
+        width: '100px',
+        height: '100px',
+      }}
+    />
+  );
+};
+
+export const Basic: ComponentStory<typeof MyButton> = () => (
+  <ColorSchemeProvider colorScheme="userPreference">
+    <HelloButton />
   </ColorSchemeProvider>
 );
 
