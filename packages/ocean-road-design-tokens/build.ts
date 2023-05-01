@@ -5,28 +5,44 @@ import {parseOCJSON} from './utils/open-color'
 import fs from 'fs'
 import path from 'path'
 
+type Format = 'css/variables' | 'json/flat' | 'javascript/module'
+
 if (!fs.existsSync(path.resolve(__dirname, './dist'))) {
     fs.mkdirSync('dist')
 }
 
 parseOCJSON()
 
-const prefix = 'or'
 
-function themedColorFormat(dictionary: Dictionary) {
+function themedColorFormat(dictionary: Dictionary, format: Format) {
     return dictionary.allTokens.map((token) => {
       const { value: lightValue, darkValue } = token;
+      let lightName = ''
+      let darkName = ''
+      switch (format) {
+        case 'css/variables':
+        case 'json/flat':
+            lightName = `${token.name}-light`
+            darkName = `${token.name}-dark`
+            break
+        case 'javascript/module':
+            lightName = `${token.name}Light`
+            darkName = `${token.name}Dark`
+            break
+        default:
+            break
+      }
       return [
-        { ...token, name: `${prefix}-${token.name}-light`, value: lightValue },
-        { ...token, name: `${prefix}-${token.name}-dark`, value: darkValue }
+        { ...token, name: lightName, value: lightValue },
+        { ...token, name: darkName, value: darkValue }
       ]
     }).flatMap(v => v);
 }
 
-function themedColorWrapper(format: 'css/variables' | 'json/flat') {
+function themedColorWrapper(format: Format) {
     return (args: FormatterArguments) => {
         const dictionary = { ...args.dictionary };
-        dictionary.allTokens = themedColorFormat(dictionary)
+        dictionary.allTokens = themedColorFormat(dictionary, format)
         const formatted = StyleDictionary.format[format]({
             ...args,
             dictionary,
@@ -40,14 +56,14 @@ StyleDictionary.registerFormat({
     formatter: themedColorWrapper(`css/variables`),
 });
 
-StyleDictionary.registerFilter({
-    name: 'themedColorFilter',
-    matcher(token) {
-        return (
-            (token.darkValue) &&
-            (token.attributes?.category === `color` || token.attributes?.category === `elevation`)
-        );
-    },
+StyleDictionary.registerFormat({
+    name: 'themedJson',
+    formatter: themedColorWrapper(`json/flat`),
+});
+
+StyleDictionary.registerFormat({
+    name: 'themedJsModule',
+    formatter: themedColorWrapper(`javascript/module`),
 });
 
 StyleDictionary.registerFilter({
@@ -57,9 +73,14 @@ StyleDictionary.registerFilter({
     },
 });
 
-StyleDictionary.registerFormat({
-    name: 'themedJson',
-    formatter: themedColorWrapper(`json/flat`),
+StyleDictionary.registerFilter({
+    name: 'themedColorFilter',
+    matcher(token) {
+        return (
+            (token.darkValue) &&
+            (token.attributes?.category === `color` || token.attributes?.category === `elevation`)
+        );
+    },
 });
 
 StyleDictionary.extend('config.json').buildAllPlatforms();

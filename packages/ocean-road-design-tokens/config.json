@@ -35,6 +35,32 @@
               "filter": "themedColorFilter"
             }
           ]
+        },
+        "ts": {
+          "transformGroup": "js",
+          "buildPath": "dist/js/",
+          "files": [
+            {
+              "destination": "variables.js",
+              "format": "javascript/module",
+              "filter": "baseColorFilter"
+            },
+            {
+              "destination": "variables.d.ts",
+              "format": "typescript/module-declarations",
+              "filter": "baseColorFilter"
+            },
+            {
+              "destination": "variables-theme.js",
+              "format": "themedJsModule",
+              "filter": "themedColorFilter"
+            },
+            {
+              "destination": "variables-theme.d.ts",
+              "format": "typescript/module-declarations",
+              "filter": "themedColorFilter"
+            }
+          ]
         }
     }
 }

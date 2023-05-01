@@ -16,6 +16,7 @@
     "open-color": "^1.9.1"
   },
   "scripts": {
+    "prebuild": "rm -rf dist",
     "build": "ts-node build.ts"
   }
 }
