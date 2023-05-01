@@ -41,7 +41,7 @@ const themeToStyles = (theme: Theme) => {
   }
   Object.keys(theme).forEach((key) => {
     if (key.startsWith('color')) {
-      styles += `  --g-${key}: ${theme[key as keyof Theme]};\n`
+      styles += `  --ocean-road-${key}: ${theme[key as keyof Theme]};\n`
     }
   })
   if (theme.name === 'darkMode') {
@@ -76,7 +76,7 @@ const ColorSchemeProvider = ({
   colorScheme,
   id,
 }: PropsWithChildren<{ colorScheme: ColorScheme; id?: string }>) => {
-  const [theme, setTheme] = useState(lightModeTheme)
+  const [theme, setTheme] = useState(getTheme(colorScheme))
   const className = id ? `__oceanRoadTheme${id}` : undefined
   const selector = className ? `.${className}` : ':root'
 
