@@ -1,3 +1,3 @@
-const Button = () => null;
+const Button = () => null
 
-export default Button;
+export default Button
