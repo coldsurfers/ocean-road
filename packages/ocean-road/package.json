@@ -2,9 +2,16 @@
   "name": "@coldsurfers/ocean-road",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "source": "src/",
   "types": "src/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
+    "build": "rollup -c ./rollup.config.js",
     "lint": "yarn eslint 'src/**/*.ts' 'src/**/*.tsx' --cache"
   },
   "devDependencies": {
@@ -14,6 +21,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.2",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
@@ -30,6 +38,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.20.7",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "typescript": "^5.0.3"
   },
   "peerDependencies": {
