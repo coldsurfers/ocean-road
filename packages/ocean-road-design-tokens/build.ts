@@ -11,12 +11,14 @@ if (!fs.existsSync(path.resolve(__dirname, './dist'))) {
 
 parseOCJSON()
 
+const prefix = 'or'
+
 function themedColorFormat(dictionary: Dictionary) {
     return dictionary.allTokens.map((token) => {
       const { value: lightValue, darkValue } = token;
       return [
-        { ...token, name: `${token.name}-light`, value: lightValue },
-        { ...token, name: `${token.name}-dark`, value: darkValue }
+        { ...token, name: `${prefix}-${token.name}-light`, value: lightValue },
+        { ...token, name: `${prefix}-${token.name}-dark`, value: darkValue }
       ]
     }).flatMap(v => v);
 }

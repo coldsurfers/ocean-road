@@ -16,8 +16,7 @@
             {
               "destination": "variables-theme.css",
               "format": "themedCss",
-              "filter": "themedColorFilter",
-              "prefix": "or"
+              "filter": "themedColorFilter"
             }
           ]
         },
