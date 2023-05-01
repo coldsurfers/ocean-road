@@ -2,3 +2,5 @@ node_modules
 .eslintcache
 
 packages/ocean-road/dist
+packages/ocean-road-design-tokens/dist
+**/yarn-error.log

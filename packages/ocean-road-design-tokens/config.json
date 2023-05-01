@@ -1,0 +1,19 @@
+{
+    "source": ["tokens/**/*.json"],
+    "platforms": {
+        "css": {
+          "transformGroup": "css",
+          "buildPath": "dist/css/",
+          "prefix": "ocean-road",
+          "files": [
+            {
+              "destination": "variables.css",
+              "format": "css/variables",
+              "options": {
+                "outputReferences": true
+              }
+            }
+          ]
+        }
+    }
+}
