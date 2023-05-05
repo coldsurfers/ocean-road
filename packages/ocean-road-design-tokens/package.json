@@ -33,7 +33,7 @@
       "release": true
     },
     "hooks": {
-      "after:release": "git reset --hard HEAD"
+      "after:release": "git reset --hard HEAD && rm -rf package-lock.json"
     }
   }
 }
