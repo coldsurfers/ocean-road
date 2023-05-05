@@ -19,6 +19,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "ts-node build.ts",
+    "prerelease": "yarn build",
     "prerelease:rc": "yarn build",
     "release": "release-it minor --ci",
     "release:rc": "release-it --ci --preRelease=alpha"
