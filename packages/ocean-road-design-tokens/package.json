@@ -25,10 +25,15 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "git": {
-    "commitMessage": "chore: release @coldsurfers/design-tokens v${version}"
-  },
-  "github": {
-    "release": true
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release @coldsurfers/design-tokens v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "hooks": {
+      "after:release": "git reset --hard HEAD"
+    }
   }
 }
