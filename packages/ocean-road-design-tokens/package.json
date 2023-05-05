@@ -19,10 +19,16 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "ts-node build.ts",
-    "prerelease:local": "yarn build",
-    "release:local": "npx yalc publish"
+    "prerelease:rc": "yarn build",
+    "release:rc": "release-it minor --preRelease=rc"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
+  },
+  "git": {
+    "commitMessage": "chore: release @coldsurfers/design-tokens v${version}"
+  },
+  "github": {
+    "release": true
   }
 }
