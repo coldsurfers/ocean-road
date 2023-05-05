@@ -4,3 +4,5 @@ node_modules
 packages/ocean-road/dist
 packages/ocean-road-design-tokens/dist
 **/yarn-error.log
+
+package-lock.json
