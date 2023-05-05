@@ -22,7 +22,7 @@
     "prerelease": "yarn build",
     "prerelease:rc": "yarn build",
     "release": "release-it minor --ci",
-    "release:rc": "release-it --ci --preRelease=alpha"
+    "release:rc": "release-it --ci --preRelease=rc"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
