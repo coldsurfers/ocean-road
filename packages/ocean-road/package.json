@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road",
-  "version": "1.0.16-rc.0",
+  "version": "1.0.16-rc.1",
   "license": "MIT",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
