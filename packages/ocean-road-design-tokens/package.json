@@ -20,7 +20,7 @@
     "prebuild": "rm -rf dist",
     "build": "ts-node build.ts",
     "prerelease:rc": "yarn build",
-    "release:rc": "release-it minor --preRelease=rc"
+    "release:rc": "release-it minor --preRelease=rc --ci"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
