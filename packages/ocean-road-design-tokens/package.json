@@ -8,6 +8,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "release-it": "^15.10.3",
     "style-dictionary": "^3.7.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
