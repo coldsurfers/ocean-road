@@ -15,6 +15,16 @@
                 "value": "{oc.gray.2}",
                 "darkValue": "{oc.gray.8}",
                 "comment": "background color 3"
+            },
+            "4": {
+                "value": "{oc.gray.3}",
+                "darkValue": "{oc.gray.7}",
+                "comment": "background color 3"
+            },
+            "5": {
+                "value": "{oc.gray.4}",
+                "darkValue": "{oc.gray.6}",
+                "comment": "background color 3"
             }
         }
     }
