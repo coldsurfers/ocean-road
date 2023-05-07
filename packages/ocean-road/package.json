@@ -20,7 +20,7 @@
     "release:rc": "release-it --ci --preRelease=rc"
   },
   "dependencies": {
-    "@coldsurfers/design-tokens": "1.7.0"
+    "@coldsurfers/design-tokens": "1.8.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",
