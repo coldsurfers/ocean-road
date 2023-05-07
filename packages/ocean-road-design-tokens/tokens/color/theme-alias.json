@@ -48,6 +48,18 @@
                 "darkValue": "{oc.gray.4}",
                 "comment": "foreground color 4"
             }
+        },
+        "border": {
+            "1": {
+                "value": "{oc.gray.1}",
+                "darkValue": "{oc.gray.8}",
+                "comment": "border color 1"
+            },
+            "2": {
+                "value": "{oc.gray.2}",
+                "darkValue": "{oc.gray.7}",
+                "comment": "border color 2"
+            }
         }
     }
 }
