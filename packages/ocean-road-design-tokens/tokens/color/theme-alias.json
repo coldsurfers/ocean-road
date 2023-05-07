@@ -26,6 +26,28 @@
                 "darkValue": "{oc.gray.6}",
                 "comment": "background color 3"
             }
+        },
+        "foreground": {
+            "1": {
+                "value": "{oc.gray.9}",
+                "darkValue": "{oc.gray.1}",
+                "comment": "foreground color 1"
+            },
+            "2": {
+                "value": "{oc.gray.8}",
+                "darkValue": "{oc.gray.2}",
+                "comment": "foreground color 2"
+            },
+            "3": {
+                "value": "{oc.gray.7}",
+                "darkValue": "{oc.gray.3}",
+                "comment": "foreground color 3"
+            },
+            "4": {
+                "value": "{oc.gray.6}",
+                "darkValue": "{oc.gray.4}",
+                "comment": "foreground color 4"
+            }
         }
     }
 }
