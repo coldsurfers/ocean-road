@@ -52,12 +52,12 @@
         "border": {
             "1": {
                 "value": "{oc.gray.1}",
-                "darkValue": "{oc.gray.8}",
+                "darkValue": "{oc.gray.7}",
                 "comment": "border color 1"
             },
             "2": {
                 "value": "{oc.gray.2}",
-                "darkValue": "{oc.gray.7}",
+                "darkValue": "{oc.gray.6}",
                 "comment": "border color 2"
             }
         }
