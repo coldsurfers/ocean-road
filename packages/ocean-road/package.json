@@ -10,9 +10,19 @@
     "src",
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/css/*.css",
+      "require": "./dist/css/*.css"
+    }
+  },
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "rollup -c ./rollup.config.js",
+    "build": "rollup -c ./rollup.config.js && cp -R ./src/css ./dist",
     "lint": "yarn eslint 'src/**/*.ts' 'src/**/*.tsx' --cache",
     "prerelease": "yarn build",
     "prerelease:rc": "yarn build",
