@@ -5,7 +5,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "source": "src/",
-  "types": "src/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "src",
     "dist"
@@ -22,7 +22,7 @@
   },
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "rollup -c ./rollup.config.js && cp -R ./src/css ./dist",
+    "build": "rm -rf dist && yarn tsc && rollup -c ./rollup.config.js && cp -R ./src/css ./dist",
     "lint": "yarn eslint 'src/**/*.ts' 'src/**/*.tsx' --cache",
     "prerelease": "yarn build",
     "prerelease:rc": "yarn build",
