@@ -10,7 +10,7 @@ permissions:
   packages: write
 
 jobs:
-  ci:
+  changesets:
     if: github.repository == 'coldsurfers/ocean-road'
 
     runs-on: ubuntu-latest
