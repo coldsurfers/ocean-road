@@ -1,4 +1,6 @@
-import { Global, css } from '@emotion/react'
+import { Global, css } from '@emotion/react';
+import { darkModeTheme, lightModeTheme, themeToStyles } from './contexts/ColorSchemeProvider';
+import { colors, semantics } from './tokens';
 
 export default function GlobalStyle() {
   return (
@@ -8,36 +10,30 @@ export default function GlobalStyle() {
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+        }
+
+        html {
+          ${themeToStyles(lightModeTheme)}
+        }
+        html.dark {
+          ${themeToStyles(darkModeTheme)}
         }
 
         body {
-          background-color: white;
-          color: black;
-        }
-
-        @media (prefers-color-scheme: dark) {
-          body {
-            background-color: rgb(24, 24, 31);
-            color: rgb(238, 238, 238);
-          }
+          background-color: ${semantics.color.background[2]};
+          color: ${semantics.color.foreground[1]};
+          white-space: pre-wrap;
         }
 
         a {
-          color: #2563eb;
+          color: ${colors.oc.blue[5].value};
           text-decoration: none;
         }
 
         * {
           box-sizing: border-box;
         }
-
-        h1 {
-          font-weight: 800;
-        }
       `}
     />
-  )
+  );
 }
