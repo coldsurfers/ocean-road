@@ -26,6 +26,6 @@
   },
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "conventionalCommits.scopes": ["ocean-road", "storybook"],
+  "conventionalCommits.scopes": ["ocean-road", "storybook", "design-tokens"],
   "cSpell.words": []
 }
