@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { babel } = require('@rollup/plugin-babel')
-const { nodeResolve } = require('@rollup/plugin-node-resolve')
-const peerDepsExternal = require('rollup-plugin-peer-deps-external')
-const css = require('rollup-plugin-import-css')
-const json = require('@rollup/plugin-json')
-const pkg = require('./package.json')
+const { babel } = require('@rollup/plugin-babel');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const peerDepsExternal = require('rollup-plugin-peer-deps-external');
+const css = require('rollup-plugin-import-css');
+const json = require('@rollup/plugin-json');
+const pkg = require('./package.json');
 
-const extensions = ['.js', '.jsx', '.ts', '.tsx']
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 const config = {
   input: './src/index.ts',
@@ -33,6 +33,6 @@ const config = {
     css(),
     json(),
   ],
-}
+};
 
-module.exports = config
+module.exports = config;

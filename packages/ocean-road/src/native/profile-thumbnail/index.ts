@@ -1,1 +1,1 @@
-export * from './profile-thumbnail'
+export * from './profile-thumbnail';

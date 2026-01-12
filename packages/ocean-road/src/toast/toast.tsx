@@ -1,37 +1,37 @@
-import { motion, usePresence } from 'framer-motion'
-import { useEffect, useRef } from 'react'
-import { Text } from '../text'
-import { semantics } from '../tokens'
-import type { ToastProps } from './toast.types'
+import { motion, usePresence } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { Text } from '../text';
+import { semantics } from '../tokens';
+import type { ToastProps } from './toast.types';
 
-const AUTO_CLOSE_TIME = 3000
+const AUTO_CLOSE_TIME = 3000;
 
 /**
  * 사용시, framer-motion의 AnimatePresence 컴포넌트를 사용해야 합니다.
  */
 export const Toast = ({ message, zIndex = 99, onClose }: ToastProps) => {
-  const [isPresent, safeToRemove] = usePresence()
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>()
+  const [isPresent, safeToRemove] = usePresence();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
   useEffect(() => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
+      clearTimeout(timeoutRef.current);
     }
     timeoutRef.current = setTimeout(() => {
-      onClose()
-    }, AUTO_CLOSE_TIME)
+      onClose();
+    }, AUTO_CLOSE_TIME);
 
     return () => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
+        clearTimeout(timeoutRef.current);
       }
-    }
-  }, [onClose])
+    };
+  }, [onClose]);
 
   useEffect(() => {
     if (!isPresent) {
-      safeToRemove()
+      safeToRemove();
     }
-  }, [isPresent, safeToRemove])
+  }, [isPresent, safeToRemove]);
 
   return (
     <motion.div
@@ -56,5 +56,5 @@ export const Toast = ({ message, zIndex = 99, onClose }: ToastProps) => {
     >
       <Text as="p">{message}</Text>
     </motion.div>
-  )
-}
+  );
+};

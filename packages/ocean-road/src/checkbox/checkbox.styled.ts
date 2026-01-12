@@ -1,17 +1,17 @@
-import styled from '@emotion/styled'
-import { Check } from 'lucide-react'
-import { semantics } from '../tokens'
+import styled from '@emotion/styled';
+import { Check } from 'lucide-react';
+import { semantics } from '../tokens';
 
 const sizesStringify = (size: 'lg' | 'md' | 'sm') => {
   switch (size) {
     case 'lg':
-      return '32px'
+      return '32px';
     case 'md':
-      return '24px'
+      return '24px';
     case 'sm':
-      return '16px'
+      return '16px';
   }
-}
+};
 
 export const StyledCheckboxLabel = styled.label`
   display: inline-flex;
@@ -19,7 +19,7 @@ export const StyledCheckboxLabel = styled.label`
   cursor: pointer;
 
   position: relative;
-`
+`;
 
 export const StyledCheckboxInput = styled.input<{ $size: 'lg' | 'md' | 'sm' }>`
   appearance: none;
@@ -39,7 +39,7 @@ export const StyledCheckboxInput = styled.input<{ $size: 'lg' | 'md' | 'sm' }>`
   &:checked + svg {
     display: block;
   }
-`
+`;
 
 export const StyledCheckboxIcon = styled(Check)<{ size: 'lg' | 'md' | 'sm' }>`
   position: absolute;
@@ -49,4 +49,4 @@ export const StyledCheckboxIcon = styled(Check)<{ size: 'lg' | 'md' | 'sm' }>`
   width: ${({ size }) => `calc(${sizesStringify(size)} - 4px)`};
   height: ${({ size }) => `calc(${sizesStringify(size)} - 4px)`};
   display: none; /* Hidden by default */
-`
+`;

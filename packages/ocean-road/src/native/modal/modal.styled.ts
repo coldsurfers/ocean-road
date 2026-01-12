@@ -1,8 +1,8 @@
-import styled from '@emotion/native'
+import styled from '@emotion/native';
 
 export const StyledModal = styled.Modal`
   flex: 1;
-`
+`;
 
 export const StyledModalBackground = styled.Pressable`
   position: absolute;
@@ -14,4 +14,4 @@ export const StyledModalBackground = styled.Pressable`
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
   justify-content: center;
-`
+`;

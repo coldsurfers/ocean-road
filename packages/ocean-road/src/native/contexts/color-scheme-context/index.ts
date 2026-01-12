@@ -1,1 +1,1 @@
-export * from './color-scheme-context'
+export * from './color-scheme-context';

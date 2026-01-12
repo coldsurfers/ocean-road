@@ -1,1 +1,1 @@
-export type SpinnerVariant = 'page-overlay'
+export type SpinnerVariant = 'page-overlay';
