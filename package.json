@@ -2,5 +2,30 @@
   "name": "@coldsurfers/ocean-road-root",
   "license": "MIT",
   "packageManager": "pnpm@10.4.1",
-  "private": true
+  "private": true,
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"],
+    "rules": {
+      "header-max-length": [2, "always", 200],
+      "body-max-line-length": [2, "always", 200]
+    }
+  },
+  "scripts": {
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format .",
+    "format:fix": "biome format --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --write ."
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "@react-native/eslint-config": "0.81.4",
+    "@biomejs/biome": "1.9.4",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@evilmartians/lefthook": "^1.12.3",
+    "commitlint": "^17.0.2"
+  }
 }
