@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.5
+
+### Patch Changes
+
+- [#14](https://github.com/coldsurfers/ocean-road/pull/14) [`66038a4`](https://github.com/coldsurfers/ocean-road/commit/66038a4be83803e6e07afd5b000f4fae07c2316c) Thanks [@yungblud](https://github.com/yungblud)! - Fix main bundle file export issue
+
 ## 1.12.4
 
 ### Patch Changes
