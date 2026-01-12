@@ -1,22 +1,6 @@
 {
-  "main": "index.js",
+  "name": "@coldsurfers/ocean-road-root",
   "license": "MIT",
-  "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": [
-      "**/@react-native-async-storage/async-storage",
-      "**/react",
-      "**/react-dom",
-      "**/react-native",
-      "**/react-native/**",
-      "**/react-native-svg",
-      "**/react-native-svg/**",
-      "**/react-native-codegen",
-      "**/react-native-dev-menu",
-      "**/react-native-macos",
-      "**/react-native-windows",
-      "**/open-color"
-    ]
-  },
+  "packageManager": "pnpm@10.4.1",
   "private": true
 }
