@@ -1,5 +1,14 @@
 # @coldsurfers/ocean-road
 
+## 1.12.4
+
+### Patch Changes
+
+- [#12](https://github.com/coldsurfers/ocean-road/pull/12) [`c03a5a1`](https://github.com/coldsurfers/ocean-road/commit/c03a5a1b3ec77ac8e86d1997dd56e27030c1d9ff) Thanks [@yungblud](https://github.com/yungblud)! - CI Test
+
+- Updated dependencies [[`c03a5a1`](https://github.com/coldsurfers/ocean-road/commit/c03a5a1b3ec77ac8e86d1997dd56e27030c1d9ff)]:
+  - @coldsurfers/ocean-road-design-tokens@1.10.6
+
 ## 1.12.3
 
 - Badge isHighlighted prop 추가 [#863](https://github.com/coldsurfers/surfers-root/pull/863)
