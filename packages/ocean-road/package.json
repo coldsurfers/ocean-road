@@ -8,26 +8,12 @@
     "type": "git",
     "url": "git+https://github.com/coldsurfers/ocean-road"
   },
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    },
-    "./native": {
-      "require": "./src/native/index.ts",
-      "import": "./src/native/index.ts"
-    }
-  },
   "license": "MIT",
   "main": "dist/index.js",
   "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "dist", "package.json"],
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "rm -rf dist && tsdown && cp -R ./src/css ./dist",
