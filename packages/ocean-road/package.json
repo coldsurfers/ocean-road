@@ -6,10 +6,7 @@
   "module": "dist/index.js",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "dist"
-  ],
+  "files": ["src", "dist"],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -22,8 +19,13 @@
   },
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "rm -rf dist && pnpm tsc && rollup -c ./rollup.config.js && cp -R ./src/css ./dist",
-    "lint": "pnpm eslint 'src/**/*.ts' 'src/**/*.tsx' --cache"
+    "build": "rm -rf dist && tsdown && cp -R ./src/css ./dist",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format .",
+    "format:fix": "biome format --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --write ."
   },
   "dependencies": {
     "@coldsurfers/design-tokens": "1.10.0"
