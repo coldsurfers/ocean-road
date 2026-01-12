@@ -1,7 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road-root",
-  "main": "index.js",
   "license": "MIT",
   "packageManager": "pnpm@10.4.1",
-  "private": false
+  "private": true
 }

@@ -18,24 +18,10 @@
   },
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "ts-node build.ts",
-    "prerelease": "yarn build",
-    "prerelease:rc": "yarn build",
-    "release": "release-it minor --ci",
-    "release:rc": "release-it --ci --preRelease=rc"
+    "build": "ts-node build.ts"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release @coldsurfers/design-tokens v${version}"
-    },
-    "github": {
-      "release": true
-    },
-    "hooks": {
-      "after:git:release": "git reset --hard HEAD"
-    }
-  }
+  "packageManager": "pnpm@10.4.1"
 }
