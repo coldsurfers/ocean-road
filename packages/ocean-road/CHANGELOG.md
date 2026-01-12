@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.6
+
+### Patch Changes
+
+- [#16](https://github.com/coldsurfers/ocean-road/pull/16) [`a568848`](https://github.com/coldsurfers/ocean-road/commit/a568848cf4605c65236841b652a778069f698994) Thanks [@yungblud](https://github.com/yungblud)! - Remove require, export config
+
 ## 1.12.5
 
 ### Patch Changes
