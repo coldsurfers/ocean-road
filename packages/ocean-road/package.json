@@ -10,8 +10,8 @@
   },
   "exports": {
     ".": {
-      "require": "./src/index.ts",
-      "import": "./src/index.ts"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
     },
     "./native": {
       "require": "./src/native/index.ts",
@@ -19,15 +19,11 @@
     }
   },
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "react-native": "src/native/index.ts",
   "source": "src/",
-  "types": "src/index.ts",
-  "files": [
-    "src",
-    "dist",
-    "package.json"
-  ],
+  "types": "dist/index.d.ts",
+  "files": ["src", "dist", "package.json"],
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "rm -rf dist && tsdown && cp -R ./src/css ./dist",
