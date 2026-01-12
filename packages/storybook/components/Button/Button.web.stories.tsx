@@ -1,9 +1,9 @@
+import { ColorSchemeProvider, useColorScheme } from '@coldsurfers/ocean-road';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 // stories/MyButton.stories.tsx
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {ColorSchemeProvider, useColorScheme} from '@coldsurfers/ocean-road';
 
-import {MyButton} from './Button';
+import { MyButton } from './Button';
 
 export default {
   title: 'components/MyButton',
