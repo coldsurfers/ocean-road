@@ -2,11 +2,11 @@
   "name": "@coldsurfers/ocean-road",
   "version": "1.12.3",
   "bugs": {
-    "url": "https://github.com/coldsurfers/surfers-root/issues"
+    "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coldsurfers/surfers-root"
+    "url": "git+https://github.com/coldsurfers/ocean-road"
   },
   "exports": {
     ".": {
