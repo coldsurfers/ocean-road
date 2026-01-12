@@ -4,11 +4,13 @@
   "tasks": {
     "@coldsurfers/ocean-road-design-tokens#build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "cache": false
     },
     "@coldsurfers/ocean-road#build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "cache": false
     },
     "build": {
       "dependsOn": ["^build"],
@@ -16,7 +18,8 @@
     },
     "build:ui": {
       "dependsOn": ["@coldsurfers/ocean-road-design-tokens#build", "@coldsurfers/ocean-road#build"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "cache": false
     },
     "lint": {
       "outputs": []
@@ -38,7 +41,7 @@
     },
     "check:type": {
       "dependsOn": ["build:ui"],
-      "cache": true
+      "cache": false
     }
   }
 }
