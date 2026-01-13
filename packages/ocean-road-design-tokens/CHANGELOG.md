@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road-design-tokens
 
+## 1.10.7
+
+### Patch Changes
+
+- [#18](https://github.com/coldsurfers/ocean-road/pull/18) [`f8eb3bc`](https://github.com/coldsurfers/ocean-road/commit/f8eb3bc32269bb8950ed14973a6027e784b43c55) Thanks [@yungblud](https://github.com/yungblud)! - Support mjs, cjs for design tokens nextjs bundle
+
 ## 1.10.6
 
 ### Patch Changes
