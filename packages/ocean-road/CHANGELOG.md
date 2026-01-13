@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.7
+
+### Patch Changes
+
+- [`07de9ed`](https://github.com/coldsurfers/ocean-road/commit/07de9edec14ccc88cf8b4b562e1bc1352626175f) Thanks [@yungblud](https://github.com/yungblud)! - Sync peer deps version
+
 ## 1.12.6
 
 ### Patch Changes
