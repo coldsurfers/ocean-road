@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road-design-tokens",
-  "version": "1.10.6",
+  "version": "1.10.7-rc.5",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
@@ -8,13 +8,28 @@
     "type": "git",
     "url": "git+https://github.com/coldsurfers/ocean-road"
   },
-  "main": "dist/css/variables.css",
-  "files": [
-    "src",
-    "dist",
-    "tokens",
-    "package.json"
-  ],
+  "exports": {
+    "./dist/css/*": {
+      "default": "./dist/css/*"
+    },
+    "./dist/js/color/*": {
+      "default": "./dist/js/color/*"
+    },
+    "./dist/js/semantic/theme-variables": {
+      "require": "./dist/js/semantic/theme-variables.js",
+      "import": "./dist/js/semantic/theme-variables.mjs",
+      "types": "./dist/js/semantic/theme-variables.d.ts"
+    },
+    "./dist/js/semantic/variables": {
+      "require": "./dist/js/semantic/variables.js",
+      "import": "./dist/js/semantic/variables.mjs",
+      "types": "./dist/js/semantic/variables.d.ts"
+    },
+    "./dist/json/*": {
+      "default": "./dist/json/*"
+    }
+  },
+  "files": ["src", "dist", "tokens", "package.json"],
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
