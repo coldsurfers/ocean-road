@@ -11,6 +11,7 @@
     }
   },
   "scripts": {
+    "clean": "sh ./clean-modules.sh",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "format": "biome format .",

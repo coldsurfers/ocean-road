@@ -132,12 +132,16 @@ StyleDictionary.extend('config.json').buildAllPlatforms();
 
 function runTsc() {
   const cmds = [
-    'pnpm tsc ./dist/js/semantic/theme-variables.ts --declaration',
-    'pnpm tsc ./dist/js/semantic/variables.ts --declaration',
+    // esm
+    'pnpm tsc ./dist/js/semantic/theme-variables.ts --declaration --module esnext --skipLibCheck && mv ./dist/js/semantic/theme-variables.js ./dist/js/semantic/theme-variables.mjs',
+    'pnpm tsc ./dist/js/semantic/variables.ts --declaration --module esnext --skipLibCheck && mv ./dist/js/semantic/variables.js ./dist/js/semantic/variables.mjs',
+    // cjs
+    'pnpm tsc ./dist/js/semantic/theme-variables.ts --declaration --module commonjs --skipLibCheck',
+    'pnpm tsc ./dist/js/semantic/variables.ts --declaration --module commonjs --skipLibCheck',
+    // remove original ts file
     'rm -rf ./dist/js/semantic/theme-variables.ts',
     'rm -rf ./dist/js/semantic/variables.ts',
   ];
-
   for (const cmd of cmds) {
     try {
       execSync(cmd, { stdio: 'inherit' });
