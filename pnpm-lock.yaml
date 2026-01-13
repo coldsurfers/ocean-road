@@ -54,8 +54,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@coldsurfers/ocean-road-design-tokens':
-        specifier: 1.10.7-rc.5
-        version: 1.10.7-rc.5
+        specifier: 1.10.7
+        version: 1.10.7
       '@emotion/css':
         specifier: 11.10.6
         version: 11.10.6
@@ -1206,8 +1206,8 @@ packages:
     engines: {node: '>=0.1.95'}
     hasBin: true
 
-  '@coldsurfers/ocean-road-design-tokens@1.10.7-rc.5':
-    resolution: {integrity: sha512-Ngk9lt0moB4Y44p0wMgdEdIaQsnw5aL0uarpyMEYnRxBwEo+/a6FTyKc9B0H+xj0aa1pf4f/+fJ9YOrIfnt/jQ==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.7-rc.5/57c4f10562c68decd74054c0c65b3ef0f04a5506}
+  '@coldsurfers/ocean-road-design-tokens@1.10.7':
+    resolution: {integrity: sha512-h3047oMD8YlXlV5Ql+8c6cON33H0OCXU/ZXUAgyXxZzhoiDJgTxg4HdDqIyo2khxj5FBvYzl0uBDyiTZ2uxrGg==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.7/65d747d3fb466dc1d2c58e813439c4528754851f}
 
   '@colors/colors@1.5.0':
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -9891,7 +9891,7 @@ snapshots:
       exec-sh: 0.3.6
       minimist: 1.2.8
 
-  '@coldsurfers/ocean-road-design-tokens@1.10.7-rc.5':
+  '@coldsurfers/ocean-road-design-tokens@1.10.7':
     dependencies:
       open-color: 1.9.1
 
