@@ -10,6 +10,9 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
+    "@coldsurfers/storybook#build-storybook": {
+      "dependsOn": ["^build-storybook"]
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
@@ -39,6 +42,10 @@
     "check:type": {
       "dependsOn": ["build:ui"],
       "cache": true
+    },
+    "build:storybook": {
+      "dependsOn": ["@coldsurfers/storybook#build-storybook"],
+      "cache": false
     }
   }
 }
