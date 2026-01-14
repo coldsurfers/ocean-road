@@ -2,6 +2,11 @@ name: Deploy Storybook
 on:
     workflow_dispatch:
 
+permissions:
+  id-token: write # OIDC
+  contents: read
+  packages: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
