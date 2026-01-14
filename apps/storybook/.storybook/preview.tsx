@@ -1,4 +1,6 @@
+import { ColorSchemeProvider, GlobalStyle } from '@coldsurfers/ocean-road';
 import type { Preview } from '@storybook/nextjs-vite';
+import '@/styles/fonts.css';
 
 const preview: Preview = {
   parameters: {
@@ -17,5 +19,14 @@ const preview: Preview = {
     },
   },
 };
+
+export const decorators = [
+  (Story) => (
+    <ColorSchemeProvider colorScheme="userPreference">
+      <Story />
+      <GlobalStyle />
+    </ColorSchemeProvider>
+  ),
+];
 
 export default preview;
