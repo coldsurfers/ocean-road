@@ -33,3 +33,5 @@ export const Text = forwardRef<HTMLSpanElement, TextProps>(
     );
   }
 );
+
+Text.displayName = 'Text';

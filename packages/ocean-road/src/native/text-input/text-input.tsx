@@ -68,3 +68,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#f4eded',
   },
 });
+
+_TextInput.displayName = 'TextInput';

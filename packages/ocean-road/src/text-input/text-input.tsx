@@ -55,3 +55,5 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
     );
   }
 );
+
+TextInput.displayName = 'TextInput';
