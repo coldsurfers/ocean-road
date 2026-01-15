@@ -26,29 +26,44 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Indigo: Story = {
   args: {
     variant: 'indigo',
     children: 'Button',
   },
 };
 
-export const Secondary: Story = {
+export const Border: Story = {
   args: {
-    label: 'Button',
+    variant: 'border',
+    children: 'Button',
   },
 };
 
-export const Large: Story = {
+export const Pink: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    variant: 'pink',
+    children: 'Button',
   },
 };
 
-export const Small: Story = {
+export const Transparent: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    variant: 'transparent',
+    children: 'Button',
+  },
+};
+
+export const TransparentDarkGray: Story = {
+  args: {
+    variant: 'transparentDarkGray',
+    children: 'Button',
+  },
+};
+
+export const White: Story = {
+  args: {
+    variant: 'white',
+    children: 'Button',
   },
 };
