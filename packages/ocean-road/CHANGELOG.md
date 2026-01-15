@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.8
+
+### Patch Changes
+
+- [#27](https://github.com/coldsurfers/ocean-road/pull/27) [`7fa5a14`](https://github.com/coldsurfers/ocean-road/commit/7fa5a145acbaa6e50415c5061869a2e9dac3e037) Thanks [@yungblud](https://github.com/yungblud)! - Implement displayName
+
 ## 1.12.7
 
 ### Patch Changes
