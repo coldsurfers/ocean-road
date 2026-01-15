@@ -15,7 +15,8 @@
     "@coldsurfers/ocean-road-design-tokens": "1.10.7",
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "lucide-react": "0.469.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.3",
