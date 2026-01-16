@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.10
+
+### Patch Changes
+
+- [#32](https://github.com/coldsurfers/ocean-road/pull/32) [`dc3834c`](https://github.com/coldsurfers/ocean-road/commit/dc3834ce5b2f5278b84121466a8bc54e2d61483d) Thanks [@yungblud](https://github.com/yungblud)! - Modify inner barrel file for base
+
 ## 1.12.9
 
 ### Patch Changes
