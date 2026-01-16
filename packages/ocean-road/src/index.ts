@@ -13,4 +13,4 @@ export * from './toast';
 export * from './tokens';
 export * from './utils';
 export * from './switch';
-export * from './badge';
+export * from './base/badge';
