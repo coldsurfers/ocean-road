@@ -103,3 +103,5 @@ export const GridCardItem = memo(
     );
   }
 );
+
+GridCardItem.displayName = 'GridCardItem.Item';

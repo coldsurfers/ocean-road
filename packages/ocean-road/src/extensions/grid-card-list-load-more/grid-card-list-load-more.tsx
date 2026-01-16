@@ -1,12 +1,12 @@
 import { Spinner } from '@/base';
-import { useEffect, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import { StyledLoadMoreContainer } from './grid-card-list-load-more.styled';
 
 type Props = {
   onLoadMore: () => void;
 };
 
-export const GridCardListLoadMore = ({ onLoadMore }: Props) => {
+export const GridCardListLoadMore = memo(({ onLoadMore }: Props) => {
   const loadMoreRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const intersectionObserver = new IntersectionObserver(
@@ -38,4 +38,6 @@ export const GridCardListLoadMore = ({ onLoadMore }: Props) => {
       <Spinner />
     </StyledLoadMoreContainer>
   );
-};
+});
+
+GridCardListLoadMore.displayName = 'GridCardList.LoadMore';

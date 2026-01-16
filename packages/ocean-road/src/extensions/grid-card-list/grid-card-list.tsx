@@ -57,3 +57,5 @@ export const GridCardList = memo(
     );
   }
 );
+
+GridCardList.displayName = 'GridCardList.List';
