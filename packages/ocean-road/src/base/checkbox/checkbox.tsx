@@ -2,7 +2,7 @@ import { type InputHTMLAttributes, forwardRef, memo } from 'react';
 import { Text } from '../text';
 import { StyledCheckboxIcon, StyledCheckboxInput, StyledCheckboxLabel } from './checkbox.styled';
 
-type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
+type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'formAction'> & {
   size?: 'lg' | 'md' | 'sm';
   labelText?: string;
 };

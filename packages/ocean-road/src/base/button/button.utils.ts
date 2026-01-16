@@ -1,4 +1,4 @@
-import { colors, semantics } from '../tokens';
+import { colors, semantics } from '../../tokens';
 import type { ButtonTheme } from './button.types';
 
 export const getButtonBackgroundColor = (colorTheme: ButtonTheme) => {

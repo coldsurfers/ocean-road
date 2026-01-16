@@ -1,7 +1,7 @@
 import type { icons as Icons } from 'lucide-react-native';
 import { type ElementRef, forwardRef } from 'react';
 import type { TouchableOpacity, TouchableOpacityProps } from 'react-native';
-import type { ButtonProps } from '../../button/button.types';
+import type { ButtonProps } from '../../base/button';
 import {
   StyledButton,
   StyledButtonText,

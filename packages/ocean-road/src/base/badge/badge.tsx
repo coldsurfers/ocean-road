@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import type { icons as Icons } from 'lucide-react';
-import { type PropsWithChildren, forwardRef } from 'react';
+import { type ReactElement, forwardRef } from 'react';
+import { semantics } from '../../tokens';
 import { createStyledIcon } from '../button/button.styled';
 import { Text } from '../text';
-import { semantics } from '../tokens';
 
 const StyledFeedNavigationItem = styled.div<{ $isHighlighted?: boolean }>`
     display: flex;
@@ -20,11 +20,12 @@ const StyledFeedNavigationItemText = styled(Text)`
     color: ${semantics.color.foreground[1]};
 `;
 
-type Props = PropsWithChildren<{
+type Props = {
   leftIcon?: keyof typeof Icons;
   onClick?: () => void;
   isHighlighted?: boolean;
-}>;
+  children?: string | ReactElement;
+};
 
 export const Badge = forwardRef<HTMLDivElement, Props>(
   ({ children, leftIcon, isHighlighted, onClick, ...otherProps }, ref) => {

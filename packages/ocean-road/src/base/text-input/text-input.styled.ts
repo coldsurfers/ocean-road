@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors, semantics } from '../tokens';
+import { colors, semantics } from '../../tokens';
 
 export const StyledTextInputContainer = styled.div<{ $isError: boolean }>`
   padding: 1rem;

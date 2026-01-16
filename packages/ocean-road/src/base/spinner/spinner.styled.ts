@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { LoaderCircle } from 'lucide-react';
-import { semantics } from '../tokens';
+import { semantics } from '../../tokens';
 
 const MotionIcon = motion.create(LoaderCircle);
 
