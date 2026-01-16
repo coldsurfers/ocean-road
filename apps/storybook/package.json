@@ -11,7 +11,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@coldsurfers/ocean-road": "1.12.9",
+    "@coldsurfers/ocean-road": "1.12.10",
     "@coldsurfers/ocean-road-design-tokens": "1.10.7",
     "next": "16.1.1",
     "react": "19.2.3",
