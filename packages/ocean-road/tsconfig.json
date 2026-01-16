@@ -5,6 +5,5 @@
     "noEmit": false,
     "module": "CommonJS"
   },
-  "include": ["."],
   "exclude": ["node_modules"]
 }
