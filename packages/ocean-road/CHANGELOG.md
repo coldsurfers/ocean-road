@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.9
+
+### Patch Changes
+
+- [#30](https://github.com/coldsurfers/ocean-road/pull/30) [`b05fd08`](https://github.com/coldsurfers/ocean-road/commit/b05fd089269ae51070a969beee2d8ec4d7f13497) Thanks [@yungblud](https://github.com/yungblud)! - implement base structure
+
 ## 1.12.8
 
 ### Patch Changes
