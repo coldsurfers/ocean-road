@@ -104,4 +104,4 @@ export const GridCardItem = memo(
   }
 );
 
-GridCardItem.displayName = 'GridCardItem.Item';
+GridCardItem.displayName = 'GridCardList.Item';
