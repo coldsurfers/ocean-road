@@ -51,8 +51,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.11-rc.1
-        version: 1.12.11-rc.1(d7dda959f6de12c936802733d71a0d06)
+        specifier: 1.12.11-rc.2
+        version: 1.12.11-rc.2(d7dda959f6de12c936802733d71a0d06)
       '@coldsurfers/ocean-road-design-tokens':
         specifier: 1.10.7
         version: 1.10.7
@@ -895,8 +895,8 @@ packages:
   '@coldsurfers/ocean-road-design-tokens@1.10.7':
     resolution: {integrity: sha512-h3047oMD8YlXlV5Ql+8c6cON33H0OCXU/ZXUAgyXxZzhoiDJgTxg4HdDqIyo2khxj5FBvYzl0uBDyiTZ2uxrGg==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.7/65d747d3fb466dc1d2c58e813439c4528754851f}
 
-  '@coldsurfers/ocean-road@1.12.11-rc.1':
-    resolution: {integrity: sha512-Vxllx4T81VTjyTrlefTNpGOmO9u7C7hi1GI6rzOw1pH4PtZ8W6NbqD+5ziWuef+h1OWebfMuamExzle0u1RxOw==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.11-rc.1/e66b9375f7aa0c51464fcee69c5a0cab9a32d059}
+  '@coldsurfers/ocean-road@1.12.11-rc.2':
+    resolution: {integrity: sha512-9UUkJwyXPxuNVPeYlLD7Hd8ToDy0xLs5b1xHbYYDiR78s6lvC2n7qSi07NwmhaazBS3jNR+zB45oFULnRLX61w==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.11-rc.2/b5a6c4fd8d64c3b2f50c309d68a756ed1d479fbc}
     peerDependencies:
       '@coldsurfers/ocean-road-design-tokens': ^1.10.7
       '@emotion/css': ^11.10.6
@@ -7845,7 +7845,7 @@ snapshots:
     dependencies:
       open-color: 1.9.1
 
-  '@coldsurfers/ocean-road@1.12.11-rc.1(d7dda959f6de12c936802733d71a0d06)':
+  '@coldsurfers/ocean-road@1.12.11-rc.2(d7dda959f6de12c936802733d71a0d06)':
     dependencies:
       '@coldsurfers/ocean-road-design-tokens': 1.10.7
       '@emotion/css': 11.10.6
