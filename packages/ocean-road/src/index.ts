@@ -1,16 +1,6 @@
-export { Button } from './base/button';
-export * from './base/checkbox';
 export * from './contexts/ColorSchemeProvider';
 export { default as ColorSchemeProvider, useColorScheme } from './contexts/ColorSchemeProvider';
 export { default as GlobalStyle } from './GlobalStyle';
-export * from './base/icon-button';
-export * from './base/modal';
-export * from './base/spinner';
-export * from './base/text';
-export * from './base/text-area';
-export * from './base/text-input';
-export * from './base/toast';
+export * from './base';
 export * from './tokens';
 export * from './utils';
-export * from './base/switch';
-export * from './base/badge';
