@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { icons as Icons } from 'lucide-react';
-import { Text } from '../../text';
+import { Text } from '../text';
 import type { ButtonTheme } from './button.types';
 import { getButtonBackgroundColor, getButtonForegroundColor } from './button.utils';
 

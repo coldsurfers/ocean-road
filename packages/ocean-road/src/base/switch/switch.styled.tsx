@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { colors } from '../tokens';
+import { colors } from '../../tokens';
 
 const width = 40;
 const height = width * 0.55;

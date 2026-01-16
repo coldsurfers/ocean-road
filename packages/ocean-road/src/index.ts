@@ -5,12 +5,12 @@ export { default as ColorSchemeProvider, useColorScheme } from './contexts/Color
 export { default as GlobalStyle } from './GlobalStyle';
 export * from './base/icon-button';
 export * from './base/modal';
-export * from './spinner';
-export * from './text';
-export * from './text-area';
-export * from './text-input';
-export * from './toast';
+export * from './base/spinner';
+export * from './base/text';
+export * from './base/text-area';
+export * from './base/text-input';
+export * from './base/toast';
 export * from './tokens';
 export * from './utils';
-export * from './switch';
+export * from './base/switch';
 export * from './base/badge';

@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { Label } from '../base/label';
+import { Label } from '../label';
 import { StyledTextAreaContainer } from './text-area.styled';
 import type { TextAreaProps } from './text-area.types';
 

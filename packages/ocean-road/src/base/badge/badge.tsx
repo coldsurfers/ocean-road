@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import type { icons as Icons } from 'lucide-react';
 import { type ReactElement, forwardRef } from 'react';
-import { Text } from '../../text';
 import { semantics } from '../../tokens';
 import { createStyledIcon } from '../button/button.styled';
+import { Text } from '../text';
 
 const StyledFeedNavigationItem = styled.div<{ $isHighlighted?: boolean }>`
     display: flex;

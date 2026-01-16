@@ -5,7 +5,7 @@ import {
   useImperativeHandle,
   useRef,
 } from 'react';
-import { Label } from '../base/label';
+import { Label } from '../label';
 import { StyledTextInputContainer, StyledTextInputInput } from './text-input.styled';
 import type { TextInputProps, TextInputRef } from './text-input.types';
 
