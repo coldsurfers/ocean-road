@@ -49,11 +49,23 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.10
-        version: 1.12.10(d7dda959f6de12c936802733d71a0d06)
+        specifier: 1.12.11-rc.0
+        version: 1.12.11-rc.0(d7dda959f6de12c936802733d71a0d06)
       '@coldsurfers/ocean-road-design-tokens':
         specifier: 1.10.7
         version: 1.10.7
+      '@emotion/css':
+        specifier: 11.10.6
+        version: 11.10.6
+      '@emotion/native':
+        specifier: 11.11.0
+        version: 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@10.2.0(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      '@emotion/react':
+        specifier: 11.10.6
+        version: 11.10.6(@types/react@18.3.27)(react@19.2.3)
+      '@emotion/styled':
+        specifier: 11.10.6
+        version: 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
       lucide-react:
         specifier: 0.469.0
         version: 0.469.0(react@19.2.3)
@@ -881,8 +893,8 @@ packages:
   '@coldsurfers/ocean-road-design-tokens@1.10.7':
     resolution: {integrity: sha512-h3047oMD8YlXlV5Ql+8c6cON33H0OCXU/ZXUAgyXxZzhoiDJgTxg4HdDqIyo2khxj5FBvYzl0uBDyiTZ2uxrGg==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.7/65d747d3fb466dc1d2c58e813439c4528754851f}
 
-  '@coldsurfers/ocean-road@1.12.10':
-    resolution: {integrity: sha512-PoyVg673frnYJ6iQkdkjaZNsFcJojo76zT8Z3+W+K8GemXVjuw+OVE7CWwpTWvJ4HrgNfMKFD5mZQjARvmKL/Q==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.10/2d8203187bf78f748219cb06827f6fbed2b4480d}
+  '@coldsurfers/ocean-road@1.12.11-rc.0':
+    resolution: {integrity: sha512-9dp2D8vBuUZZoOEpEoHt+Z2R+t+NYzFemP9WTQNAHI/0f/DTD2C0jnxSymgdfXLEYDZopDe7Kz04rAzqZjm3gA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.11-rc.0/a8d90e27bf91181fa6dc7fd9c7a6f7c7c1f03025}
     peerDependencies:
       '@coldsurfers/ocean-road-design-tokens': ^1.10.7
       '@emotion/css': 11.10.6
@@ -7840,7 +7852,7 @@ snapshots:
     dependencies:
       open-color: 1.9.1
 
-  '@coldsurfers/ocean-road@1.12.10(d7dda959f6de12c936802733d71a0d06)':
+  '@coldsurfers/ocean-road@1.12.11-rc.0(d7dda959f6de12c936802733d71a0d06)':
     dependencies:
       '@coldsurfers/ocean-road-design-tokens': 1.10.7
       '@emotion/css': 11.10.6
@@ -7855,6 +7867,7 @@ snapshots:
       react-native: 0.81.4(@babel/core@7.28.5)(@react-native-community/cli@10.2.0(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3)
       react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.7.1(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@10.2.0(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@10.2.0(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       react-native-svg: 15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@10.2.0(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      ts-pattern: 5.8.0
 
   '@commitlint/cli@17.8.1':
     dependencies:
