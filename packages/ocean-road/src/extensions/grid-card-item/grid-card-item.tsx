@@ -1,3 +1,4 @@
+import type { WithId } from '@/utils/with-id';
 import { withStopPropagation } from '@/utils/with-stop-propagation';
 import { type PropsWithChildren, type ReactNode, memo } from 'react';
 import { match } from 'ts-pattern';
@@ -41,7 +42,7 @@ const FixedSubscribeEventButtonLayout = memo(
   }
 );
 
-export type GridCardListItemProps = {
+export type GridCardListItemProps = WithId<{
   thumbnailUrl: string;
   titleText: string;
   subText: string;
@@ -53,7 +54,7 @@ export type GridCardListItemProps = {
     subscribeEventBtn: ReactNode;
   };
   renderThumbnail?: (url: string) => ReactNode;
-};
+}>;
 
 export const GridCardItem = memo(
   ({
