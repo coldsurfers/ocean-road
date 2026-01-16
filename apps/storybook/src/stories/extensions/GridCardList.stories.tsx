@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { GridCardItem, GridCardList, semantics } from '@coldsurfers/ocean-road';
+import { GridCardList, semantics } from '@coldsurfers/ocean-road';
 import styled from '@emotion/styled';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'extensions/GridCardList',
-  component: GridCardList,
+  component: GridCardList.List,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -19,13 +19,13 @@ const meta = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
   args: {},
-} satisfies Meta<typeof GridCardList>;
+} satisfies Meta<typeof GridCardList.List>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 const StyledThumbnail = styled.img`
-  width: 320px;
+  width: 10vw;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: 50%;
@@ -34,7 +34,7 @@ const StyledThumbnail = styled.img`
 `;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Default: Story = {
+export const List: Story = {
   args: {
     items: [
       {
@@ -83,7 +83,7 @@ export const Default: Story = {
         renderThumbnail: (url) => <StyledThumbnail src={url} />,
       },
     ],
-    renderItem: (item) => <GridCardItem {...item} />,
+    renderItem: (item) => <GridCardList.Item {...item} />,
     onLoadMore: () => console.log('onLoadMore'),
     keyExtractor: (item, index) => `${item.titleText}-${index}`,
   },

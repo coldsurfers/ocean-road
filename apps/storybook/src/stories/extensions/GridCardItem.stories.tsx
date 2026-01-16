@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 import { fn } from 'storybook/test';
 
-import { GridCardItem, semantics } from '@coldsurfers/ocean-road';
+import { GridCardList, semantics } from '@coldsurfers/ocean-road';
 import styled from '@emotion/styled';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'extensions/GridCardItem',
-  component: GridCardItem,
+  component: GridCardList.Item,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -21,13 +21,13 @@ const meta = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
   args: { onClick: fn() },
-} satisfies Meta<typeof GridCardItem>;
+} satisfies Meta<typeof GridCardList.Item>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 const StyledThumbnail = styled.img`
-  width: 320px;
+  width: 10vw;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: 50%;
@@ -36,7 +36,7 @@ const StyledThumbnail = styled.img`
 `;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Default: Story = {
+export const Item: Story = {
   args: {
     bottomText: '목요일 오후 7시 30분, 6월 25일',
     isSubscribed: false,
