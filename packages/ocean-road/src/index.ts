@@ -4,3 +4,4 @@ export { default as GlobalStyle } from './GlobalStyle';
 export * from './base';
 export * from './tokens';
 export * from './utils';
+export * from '@/extensions';
