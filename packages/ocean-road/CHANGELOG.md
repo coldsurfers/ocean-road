@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.11
+
+### Patch Changes
+
+- [#34](https://github.com/coldsurfers/ocean-road/pull/34) [`df43ae6`](https://github.com/coldsurfers/ocean-road/commit/df43ae6ed0d3f5a78305dd06f68f533a0f32f0a6) Thanks [@yungblud](https://github.com/yungblud)! - implement GridCardList
+
 ## 1.12.10
 
 ### Patch Changes
