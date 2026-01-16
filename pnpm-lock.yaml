@@ -129,6 +129,10 @@ importers:
         version: 4.0.17(@types/node@20.12.0)(@vitest/browser-playwright@4.0.17)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)(yaml@2.8.2)
 
   packages/ocean-road:
+    dependencies:
+      ts-pattern:
+        specifier: 5.8.0
+        version: 5.8.0
     devDependencies:
       '@babel/preset-react':
         specifier: ^7.18.6
@@ -6440,6 +6444,9 @@ packages:
         optional: true
       '@swc/wasm':
         optional: true
+
+  ts-pattern@5.8.0:
+    resolution: {integrity: sha512-kIjN2qmWiHnhgr5DAkAafF9fwb0T5OhMVSWrm8XEdTFnX6+wfXwYOFjeF86UZ54vduqiR7BfqScFmXSzSaH8oA==}
 
   tsconfck@3.1.6:
     resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
@@ -14978,6 +14985,8 @@ snapshots:
       typescript: 5.8.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+
+  ts-pattern@5.8.0: {}
 
   tsconfck@3.1.6(typescript@5.8.3):
     optionalDependencies:
