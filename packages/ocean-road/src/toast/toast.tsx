@@ -11,7 +11,7 @@ const AUTO_CLOSE_TIME = 3000;
  */
 export const Toast = ({ message, zIndex = 99, onClose }: ToastProps) => {
   const [isPresent, safeToRemove] = usePresence();
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);

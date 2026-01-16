@@ -1,5 +1,5 @@
-export { Button } from './button';
-export * from './checkbox';
+export { Button } from './base/button';
+export * from './base/checkbox';
 export * from './contexts/ColorSchemeProvider';
 export { default as ColorSchemeProvider, useColorScheme } from './contexts/ColorSchemeProvider';
 export { default as GlobalStyle } from './GlobalStyle';

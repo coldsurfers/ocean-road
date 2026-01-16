@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Check } from 'lucide-react';
-import { semantics } from '../tokens';
+import { semantics } from '../../tokens';
 
 const sizesStringify = (size: 'lg' | 'md' | 'sm') => {
   switch (size) {

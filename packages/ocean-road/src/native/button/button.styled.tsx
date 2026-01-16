@@ -1,8 +1,8 @@
 import color from '@coldsurfers/ocean-road-design-tokens/dist/js/color/variables';
 import styled, { css } from '@emotion/native';
 import { icons as Icons } from 'lucide-react-native';
-import type { ButtonTheme } from '../../button/button.types';
-import { getButtonBackgroundColor, getButtonForegroundColor } from '../../button/button.utils';
+import type { ButtonTheme } from '../../base/button';
+import { getButtonBackgroundColor, getButtonForegroundColor } from '../../base/button/button.utils';
 import { colors } from '../../tokens';
 import { Text } from '../text';
 
