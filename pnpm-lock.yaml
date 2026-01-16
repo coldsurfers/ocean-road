@@ -49,8 +49,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.11-rc.0
-        version: 1.12.11-rc.0(d7dda959f6de12c936802733d71a0d06)
+        specifier: 1.12.11-rc.1
+        version: 1.12.11-rc.1(d7dda959f6de12c936802733d71a0d06)
       '@coldsurfers/ocean-road-design-tokens':
         specifier: 1.10.7
         version: 1.10.7
@@ -893,22 +893,22 @@ packages:
   '@coldsurfers/ocean-road-design-tokens@1.10.7':
     resolution: {integrity: sha512-h3047oMD8YlXlV5Ql+8c6cON33H0OCXU/ZXUAgyXxZzhoiDJgTxg4HdDqIyo2khxj5FBvYzl0uBDyiTZ2uxrGg==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.7/65d747d3fb466dc1d2c58e813439c4528754851f}
 
-  '@coldsurfers/ocean-road@1.12.11-rc.0':
-    resolution: {integrity: sha512-9dp2D8vBuUZZoOEpEoHt+Z2R+t+NYzFemP9WTQNAHI/0f/DTD2C0jnxSymgdfXLEYDZopDe7Kz04rAzqZjm3gA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.11-rc.0/a8d90e27bf91181fa6dc7fd9c7a6f7c7c1f03025}
+  '@coldsurfers/ocean-road@1.12.11-rc.1':
+    resolution: {integrity: sha512-Vxllx4T81VTjyTrlefTNpGOmO9u7C7hi1GI6rzOw1pH4PtZ8W6NbqD+5ziWuef+h1OWebfMuamExzle0u1RxOw==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.11-rc.1/e66b9375f7aa0c51464fcee69c5a0cab9a32d059}
     peerDependencies:
       '@coldsurfers/ocean-road-design-tokens': ^1.10.7
-      '@emotion/css': 11.10.6
-      '@emotion/native': 11.11.0
-      '@emotion/react': 11.10.6
-      '@emotion/styled': 11.10.6
-      framer-motion: 11.11.13
-      lucide-react: 0.469.0
-      lucide-react-native: 0.468.0
+      '@emotion/css': ^11.10.6
+      '@emotion/native': ^11.11.0
+      '@emotion/react': ^11.10.6
+      '@emotion/styled': ^11.10.6
+      framer-motion: ^11.11.13
+      lucide-react: ^0.469.0
+      lucide-react-native: ^0.468.0
       react: '>= 19.1.0'
       react-dom: '>= 19.1.4'
       react-native: '>= 0.81.4'
       react-native-reanimated: '>= 3.17.1'
-      react-native-svg: 15.11.1
+      react-native-svg: ^15.11.1
 
   '@commitlint/cli@17.8.1':
     resolution: {integrity: sha512-ay+WbzQesE0Rv4EQKfNbSMiJJ12KdKTDzIt0tcK4k11FdsWmtwP0Kp1NWMOUswfIWo6Eb7p7Ln721Nx9FLNBjg==}
@@ -7852,7 +7852,7 @@ snapshots:
     dependencies:
       open-color: 1.9.1
 
-  '@coldsurfers/ocean-road@1.12.11-rc.0(d7dda959f6de12c936802733d71a0d06)':
+  '@coldsurfers/ocean-road@1.12.11-rc.1(d7dda959f6de12c936802733d71a0d06)':
     dependencies:
       '@coldsurfers/ocean-road-design-tokens': 1.10.7
       '@emotion/css': 11.10.6
