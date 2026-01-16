@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import type { PropsWithChildren } from 'react';
-import { semantics } from '../tokens';
+import { semantics } from '../../tokens';
 
 export const Modal = ({
   children,

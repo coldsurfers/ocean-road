@@ -1,5 +1,5 @@
 import { type LabelHTMLAttributes, forwardRef } from 'react';
-import { Text } from '../text';
+import { Text } from '../../text';
 import { StyledRequiredLabelMark } from './label.styled';
 
 type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & {

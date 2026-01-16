@@ -1,4 +1,4 @@
-import { type InputHTMLAttributes, type ReactElement, forwardRef, memo } from 'react';
+import { type InputHTMLAttributes, forwardRef, memo } from 'react';
 import { Text } from '../../text';
 import { StyledCheckboxIcon, StyledCheckboxInput, StyledCheckboxLabel } from './checkbox.styled';
 
