@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.12
+
+### Patch Changes
+
+- [#36](https://github.com/coldsurfers/ocean-road/pull/36) [`151cfbb`](https://github.com/coldsurfers/ocean-road/commit/151cfbbdee0a31bd3452ed453329d263f28d3ce5) Thanks [@yungblud](https://github.com/yungblud)! - implement WithId
+
 ## 1.12.11
 
 ### Patch Changes
