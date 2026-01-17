@@ -54,6 +54,7 @@ export type GridCardListItemProps = WithId<{
     subscribeEventBtn: ReactNode;
   };
   renderThumbnail?: (url: string) => ReactNode;
+  href: string;
 }>;
 
 export const GridCardItem = memo(
