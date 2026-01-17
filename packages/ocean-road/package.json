@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road",
-  "version": "1.12.16",
+  "version": "1.12.17-rc.4",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
@@ -9,6 +9,7 @@
     "url": "git+https://github.com/coldsurfers/ocean-road"
   },
   "exports": {
+    "./package.json": "./package.json",
     ".": {
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
@@ -24,18 +25,13 @@
     }
   },
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
   "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "nextjs",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "nextjs", "dist", "package.json"],
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "pnpm build:core && pnpm build:next",
@@ -95,6 +91,11 @@
     "react-native-svg": "^15.11.1",
     "react-native": ">= 0.81.4",
     "next": "^15.5.9"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
