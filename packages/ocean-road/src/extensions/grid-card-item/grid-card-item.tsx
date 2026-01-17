@@ -46,7 +46,6 @@ export type GridCardListItemProps = WithId<{
   thumbnailUrl: string;
   titleText: string;
   subText: string;
-  onClick?: () => void;
   bottomText?: string;
   isSubscribed?: boolean;
   rightBottomSlot?: {
@@ -54,7 +53,6 @@ export type GridCardListItemProps = WithId<{
     subscribeEventBtn: ReactNode;
   };
   renderThumbnail?: (url: string) => ReactNode;
-  href: string;
 }>;
 
 export const GridCardItem = memo(
@@ -65,11 +63,10 @@ export const GridCardItem = memo(
     bottomText,
     rightBottomSlot,
     renderThumbnail,
-    onClick,
     isSubscribed,
   }: GridCardListItemProps) => {
     return (
-      <StyledGridItem onClick={onClick}>
+      <StyledGridItem>
         <StyledGridTop>
           {thumbnailUrl ? (
             renderThumbnail ? (
