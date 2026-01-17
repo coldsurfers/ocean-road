@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.14
+
+### Patch Changes
+
+- [#40](https://github.com/coldsurfers/ocean-road/pull/40) [`0704ea4`](https://github.com/coldsurfers/ocean-road/commit/0704ea4992c6f4b3931197a81bf07d7d13d6b4cc) Thanks [@yungblud](https://github.com/yungblud)! - Support nextjs global link component
+
 ## 1.12.13
 
 ### Patch Changes
