@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road",
-  "version": "1.12.14-rc.10",
+  "version": "1.12.14",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
@@ -29,7 +29,12 @@
   "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": ["src", "next", "dist", "package.json"],
+  "files": [
+    "src",
+    "next",
+    "dist",
+    "package.json"
+  ],
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "rm -rf dist && tsdown && cp -R ./src/css ./dist",
