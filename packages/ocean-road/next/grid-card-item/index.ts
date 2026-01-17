@@ -1,2 +1,1 @@
-export * from './global-link';
 export * from './grid-card-item';
