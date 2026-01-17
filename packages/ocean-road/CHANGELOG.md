@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.15
+
+### Patch Changes
+
+- [#42](https://github.com/coldsurfers/ocean-road/pull/42) [`be4cc46`](https://github.com/coldsurfers/ocean-road/commit/be4cc46aec4785c4164fcccd3f415d397165f19d) Thanks [@yungblud](https://github.com/yungblud)! - implement grid card item with next support
+
 ## 1.12.14
 
 ### Patch Changes
