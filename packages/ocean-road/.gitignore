@@ -1,2 +1,7 @@
 dist
 node_modules
+
+next/*.d.mts*
+next/*.d.ts*
+next/*.js
+next/*.mjs*

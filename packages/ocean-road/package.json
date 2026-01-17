@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road",
-  "version": "1.12.14-rc.0",
+  "version": "1.12.14-rc.10",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
@@ -18,9 +18,9 @@
       "import": "./src/native/index.ts"
     },
     "./next": {
-      "types": "./dist/next.d.ts",
-      "require": "./dist/next.js",
-      "import": "./dist/next.mjs"
+      "types": "./next/index.d.ts",
+      "require": "./next/index.js",
+      "import": "./next/index.mjs"
     }
   },
   "license": "MIT",
@@ -29,10 +29,11 @@
   "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": ["src", "dist", "package.json"],
+  "files": ["src", "next", "dist", "package.json"],
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "rm -rf dist && tsdown && cp -R ./src/css ./dist",
+    "build:next": "tsdown -c tsdown.next.config.ts",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "format": "biome format .",

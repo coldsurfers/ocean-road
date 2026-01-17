@@ -10,18 +10,7 @@ import {
   useCallback,
 } from 'react';
 import { useLinkStore } from './global-link.store';
-
-let redirectMap: Record<string, string> | undefined;
-
-const getHref = (href: string) => {
-  const redirectPath = redirectMap[href];
-  if (redirectPath) return redirectPath;
-  return href;
-};
-
-export const initializeGlobalLinkRedirectMap = (redirectMapParam: Record<string, string>) => {
-  redirectMap = redirectMapParam;
-};
+import { getRedirectHref } from './global-link.utils';
 
 export function GlobalLink({
   children,
@@ -34,7 +23,7 @@ export function GlobalLink({
   const { setIsLoading } = useLinkStore();
   const handleClick = useCallback<MouseEventHandler<HTMLAnchorElement>>(
     (e) => {
-      const to = getHref(href);
+      const to = getRedirectHref(href);
       const from = pathname;
       if (!target && to !== from) {
         setIsLoading(true);

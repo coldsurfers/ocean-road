@@ -2,9 +2,10 @@ import { defineConfig } from 'tsdown';
 
 export default defineConfig([
   {
-    entry: ['src/index.ts'],
+    entry: ['next/index.ts'],
     format: ['esm', 'cjs'],
-    outDir: 'dist',
+    outDir: 'next',
     dts: true,
+    clean: false,
   },
 ]);
