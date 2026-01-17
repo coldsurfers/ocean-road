@@ -1,15 +1,21 @@
 {
   "name": "@coldsurfers/ocean-road",
-  "version": "1.12.17-rc.4",
+  "author": {
+    "name": "Dong-Ho Choi",
+    "email": "imcoldsurf@gmail.com",
+    "url": "https://coldsurf.io"
+  },
+  "version": "1.12.17-rc.5",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coldsurfers/ocean-road"
+    "url": "git+https://github.com/coldsurfers/ocean-road",
+    "directory": "packages/ocean-road"
   },
+  "homepage": "https://storybook.ocean-road.coldsurf.io",
   "exports": {
-    "./package.json": "./package.json",
     ".": {
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
