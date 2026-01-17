@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.13
+
+### Patch Changes
+
+- [#38](https://github.com/coldsurfers/ocean-road/pull/38) [`90e9985`](https://github.com/coldsurfers/ocean-road/commit/90e9985a5bef0c518d1be7d533cb2a3b21cf0676) Thanks [@yungblud](https://github.com/yungblud)! - Add href prop to GridCardListItemProps
+
 ## 1.12.12
 
 ### Patch Changes
