@@ -4,8 +4,7 @@ export default defineConfig([
   {
     entry: ['next/index.ts'],
     format: ['esm', 'cjs'],
-    outDir: 'next',
+    outDir: 'nextjs',
     dts: true,
-    clean: false,
   },
 ]);
