@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road",
-  "version": "1.12.15",
+  "version": "1.12.16-rc.3",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
@@ -17,10 +17,10 @@
       "require": "./src/native/index.ts",
       "import": "./src/native/index.ts"
     },
-    "./next": {
-      "types": "./next/index.d.ts",
-      "require": "./next/index.js",
-      "import": "./next/index.mjs"
+    "./nextjs": {
+      "types": "./nextjs/index.d.ts",
+      "require": "./nextjs/index.js",
+      "import": "./nextjs/index.mjs"
     }
   },
   "license": "MIT",
@@ -29,12 +29,7 @@
   "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "nextjs", "dist", "package.json"],
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "pnpm build:core && pnpm build:next",
