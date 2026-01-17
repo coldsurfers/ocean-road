@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.16
+
+### Patch Changes
+
+- [#44](https://github.com/coldsurfers/ocean-road/pull/44) [`ea78440`](https://github.com/coldsurfers/ocean-road/commit/ea784401cafbfd20782295cd9a0569684060a96e) Thanks [@yungblud](https://github.com/yungblud)! - Support nextjs with GridCardList
+
 ## 1.12.15
 
 ### Patch Changes
