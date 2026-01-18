@@ -45,6 +45,7 @@ export const List: Story = {
         titleText: 'COLDSURF Festival Vol.1',
         subText: 'COLDSURF 스테이지',
         renderThumbnail: (url) => <StyledThumbnail src={url} />,
+        id: 'uuid-1',
       },
       {
         bottomText: '목요일 오후 7시 30분, 6월 25일',
@@ -54,6 +55,7 @@ export const List: Story = {
         titleText: 'COLDSURF Festival Vol.1',
         subText: 'COLDSURF 스테이지',
         renderThumbnail: (url) => <StyledThumbnail src={url} />,
+        id: 'uuid-2',
       },
       {
         bottomText: '목요일 오후 7시 30분, 6월 25일',
@@ -63,6 +65,7 @@ export const List: Story = {
         titleText: 'COLDSURF Festival Vol.2',
         subText: 'COLDSURF 스테이지',
         renderThumbnail: (url) => <StyledThumbnail src={url} />,
+        id: 'uuid-3',
       },
       {
         bottomText: '목요일 오후 7시 30분, 6월 25일',
@@ -72,6 +75,7 @@ export const List: Story = {
         titleText: 'COLDSURF Festival Vol.3',
         subText: 'COLDSURF 스테이지',
         renderThumbnail: (url) => <StyledThumbnail src={url} />,
+        id: 'uuid-4',
       },
       {
         bottomText: '목요일 오후 7시 30분, 6월 25일',
@@ -81,6 +85,7 @@ export const List: Story = {
         titleText: 'COLDSURF Festival Vol.4',
         subText: 'COLDSURF 스테이지',
         renderThumbnail: (url) => <StyledThumbnail src={url} />,
+        id: 'uuid-5',
       },
     ],
     renderItem: (item) => <GridCardList.Item {...item} />,
