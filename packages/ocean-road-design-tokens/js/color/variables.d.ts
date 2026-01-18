@@ -4,4 +4,6 @@
 // but with `node`, TypeScript will look for a .d.ts file with that name at the
 // root of the package.
 
-export * from '../../dist/js/color/variables';
+import tokens from '../../dist/js/color/variables';
+
+export default tokens;

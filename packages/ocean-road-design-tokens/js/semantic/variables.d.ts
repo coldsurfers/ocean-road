@@ -4,4 +4,6 @@
 // but with `node`, TypeScript will look for a .d.ts file with that name at the
 // root of the package.
 
-export * from '../../dist/js/semantic/variables';
+import tokens from '../../dist/js/semantic/variables';
+
+export default tokens;
