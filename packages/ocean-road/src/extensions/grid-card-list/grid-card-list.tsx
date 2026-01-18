@@ -11,7 +11,6 @@ import {
 type Props = {
   items: GridCardListItemProps[];
   renderItem: (item: GridCardListItemProps) => ReactNode;
-  keyExtractor?: (item: GridCardListItemProps, index: number) => string;
   onLoadMore: () => void;
   headerText?: string;
   hasNextPage?: boolean;
@@ -20,16 +19,7 @@ type Props = {
 };
 
 export const GridCardList = memo(
-  ({
-    items,
-    renderItem,
-    onLoadMore,
-    headerText,
-    hasNextPage,
-    isEmpty,
-    emptyComponent,
-    keyExtractor,
-  }: Props) => {
+  ({ items, renderItem, onLoadMore, headerText, hasNextPage, isEmpty, emptyComponent }: Props) => {
     return (
       <StyledListContainer>
         {headerText && (
@@ -41,14 +31,8 @@ export const GridCardList = memo(
           emptyComponent
         ) : (
           <StyledGridContainer>
-            {items.map((item, index) => (
-              <Fragment
-                key={
-                  typeof keyExtractor === 'function' ? keyExtractor(item, index) : index.toString()
-                }
-              >
-                {renderItem(item)}
-              </Fragment>
+            {items.map((item) => (
+              <Fragment key={item.id}>{renderItem(item)}</Fragment>
             ))}
           </StyledGridContainer>
         )}
