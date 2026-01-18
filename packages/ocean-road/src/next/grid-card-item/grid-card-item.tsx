@@ -1,19 +1,17 @@
 'use client';
 
-import { type MouseEventHandler, memo } from 'react';
 import {
   GridCardItem as GridCardItemUI,
   type GridCardListItemProps,
-} from '../../src/extensions/grid-card-item';
+} from '@/extensions/grid-card-item';
+import { memo } from 'react';
 import { GlobalLink } from '../global-link';
 
-export interface GridCardItemNextProps extends GridCardListItemProps {
-  href: string;
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
-}
-
 export const GridCardItem = memo(
-  ({ href, onClick, ...gridCardListItemProps }: GridCardItemNextProps) => {
+  ({ href, onClick, ...gridCardListItemProps }: GridCardListItemProps) => {
+    if (!href) {
+      return <GridCardItemUI onClick={onClick} {...gridCardListItemProps} />;
+    }
     return (
       <GlobalLink href={href} onClick={onClick}>
         <GridCardItemUI {...gridCardListItemProps} />

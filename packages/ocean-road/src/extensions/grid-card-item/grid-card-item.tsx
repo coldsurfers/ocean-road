@@ -1,6 +1,6 @@
 import type { WithId } from '@/utils/with-id';
 import { withStopPropagation } from '@/utils/with-stop-propagation';
-import { type PropsWithChildren, type ReactNode, memo } from 'react';
+import { type MouseEventHandler, type PropsWithChildren, type ReactNode, memo } from 'react';
 import { match } from 'ts-pattern';
 import {
   StyledFixedSubscribeEventButtonLayoutContainer,
@@ -53,6 +53,8 @@ export type GridCardListItemProps = WithId<{
     subscribeEventBtn: ReactNode;
   };
   renderThumbnail?: (url: string) => ReactNode;
+  href?: string;
+  onClick?: MouseEventHandler<HTMLDivElement | HTMLAnchorElement>;
 }>;
 
 export const GridCardItem = memo(
@@ -64,9 +66,10 @@ export const GridCardItem = memo(
     rightBottomSlot,
     renderThumbnail,
     isSubscribed,
+    onClick,
   }: GridCardListItemProps) => {
     return (
-      <StyledGridItem>
+      <StyledGridItem onClick={onClick}>
         <StyledGridTop>
           {thumbnailUrl ? (
             renderThumbnail ? (

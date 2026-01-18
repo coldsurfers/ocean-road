@@ -1,10 +1,9 @@
 'use client';
 
-import { memo } from 'react';
-import { GridCardList } from '../../src/extensions/grid-card-list';
-import type { GridCardItemNextProps } from '../grid-card-item';
+import { GridCardList, type GridCardListItemProps } from '@/extensions';
+import { type ReactNode, memo } from 'react';
 
-type ItemT = GridCardItemNextProps;
+type ItemT = GridCardListItemProps;
 
 type Props = {
   items: ItemT[];
@@ -18,5 +17,5 @@ type Props = {
 };
 
 export const GridCardListNext = memo((props: Props) => {
-  return <GridCardList {...props} />;
+  return <GridCardList.List {...props} />;
 });
