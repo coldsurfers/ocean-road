@@ -12,15 +12,20 @@
     "./dist/css/*": {
       "default": "./dist/css/*"
     },
-    "./dist/js/color/*": {
-      "default": "./dist/js/color/*"
+    "./js/color/variables": {
+      "types": "./dist/js/color/variables.d.ts",
+      "default": "./dist/js/color/variables.js"
     },
-    "./dist/js/semantic/theme-variables": {
+    "./js/color/variables-theme": {
+      "types": "./dist/js/color/variables-theme.d.ts",
+      "default": "./dist/js/color/variables-theme.js"
+    },
+    "./js/semantic/theme-variables": {
       "require": "./dist/js/semantic/theme-variables.js",
       "import": "./dist/js/semantic/theme-variables.mjs",
       "types": "./dist/js/semantic/theme-variables.d.ts"
     },
-    "./dist/js/semantic/variables": {
+    "./js/semantic/variables": {
       "require": "./dist/js/semantic/variables.js",
       "import": "./dist/js/semantic/variables.mjs",
       "types": "./dist/js/semantic/variables.d.ts"
@@ -29,12 +34,7 @@
       "default": "./dist/json/*"
     }
   },
-  "files": [
-    "src",
-    "dist",
-    "tokens",
-    "package.json"
-  ],
+  "files": ["src", "dist", "tokens", "package.json"],
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
