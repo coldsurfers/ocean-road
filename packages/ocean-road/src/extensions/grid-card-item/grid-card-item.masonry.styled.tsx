@@ -3,15 +3,21 @@ import { semantics } from '@/tokens';
 import { media } from '@/utils';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 
-export const StyledGridItem = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+export const StyledGridDate = styled(Text)`
+  margin: unset;
+  margin-top: 0.25rem;
+  font-size: 20px;
+  font-weight: 500;
+  color: ${semantics.color.foreground[3]};
+  margin-bottom: 0.875rem;
 
-export const StyledGridTop = styled.div`
-  position: relative;
+  ${media.large(css`
+    font-size: 17.5px;
+  `)}
+  ${media.small(css`
+    font-size: 14px;
+  `)}
 `;
 
 export const StyledGridImageEmptyContainer = styled.div`
@@ -37,13 +43,27 @@ export const StyledGridImageEmptyText = styled(Text)`
   padding-right: 1rem;
 `;
 
+export const StyledGridItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.875rem;
+
+  ${media.medium(css`
+    margin-bottom: 0.5rem;
+  `)}
+`;
+
+export const StyledGridTop = styled.div`
+  position: relative;
+`;
+
 export const StyledGridTextContainer = styled.div`
   margin-top: 0.5rem;
 `;
 
 export const StyledGridTitle = styled(Text)`
   margin: unset;
-  font-size: 16px;
+  font-size: 22px;
   color: ${semantics.color.foreground[1]};
   font-weight: 600;
 
@@ -51,43 +71,25 @@ export const StyledGridTitle = styled(Text)`
   word-wrap: break-word;
   word-break: break-all;
 
-  ${media.medium(css`
-    font-size: 14px;
+  ${media.large(css`
+    font-size: 1.5rem;
+    font-size: 20px;
   `)}
-`;
-
-export const StyledGridDate = styled(Text)`
-  margin: unset;
-  margin-top: 0.25rem;
-  font-size: 14px;
-  color: ${semantics.color.foreground[3]};
-
-  ${media.medium(css`
-    font-size: 12px;
+  ${media.small(css`
+    font-size: 1.25rem;
+    font-size: 16.5px;
   `)}
 `;
 
 export const StyledVenueText = styled(Text)`
   margin: unset;
   margin-top: 0.25rem;
-  font-size: 14px;
-  color: ${semantics.color.foreground[3]};
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: ${semantics.color.foreground[4]};
+  text-align: right;
 
-  ${media.medium(css`
-    font-size: 12px;
+  ${media.small(css`
+    font-size: 14.5px;
   `)}
-`;
-
-export const StyledFixedSubscribeEventButtonLayoutContainer = styled(motion.div)`
-    position: absolute;
-    background: transparent;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: ${semantics.color.background[4]};
-    border-radius: 50%;
-
-    box-shadow: 0 1px 3px ${semantics.color.border[1]}, 0 1px 2px ${semantics.color.border[2]};
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 `;

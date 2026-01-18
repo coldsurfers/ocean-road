@@ -1,11 +1,12 @@
 'use client';
 
-import { GridCardItem } from './grid-card-item';
-import { GridCardListNext } from './grid-card-list';
+import { GridCardList as DefaultGridCardList } from '@/extensions';
+import { GridCardItem, MasonryGridCardItem } from './grid-card-item';
 
 export const GridCardList = {
-  List: GridCardListNext,
+  ...DefaultGridCardList,
   Item: GridCardItem,
+  MasonryItem: MasonryGridCardItem,
 };
 
 export * from './global-link';

@@ -6,7 +6,8 @@ import {
   StyledListContainer,
   StyledListHeader,
   StyledListHeaderText,
-} from './grid-card-list.styled';
+  StyledNavigationContainer,
+} from './grid-card-list.masonry.styled';
 
 type Props = {
   items: GridCardListItemProps[];
@@ -16,10 +17,20 @@ type Props = {
   hasNextPage?: boolean;
   isEmpty?: boolean;
   emptyComponent?: ReactNode;
+  navigationComponent?: ReactNode;
 };
 
-export const GridCardList = memo(
-  ({ items, renderItem, onLoadMore, headerText, hasNextPage, isEmpty, emptyComponent }: Props) => {
+export const MasonryGridCardList = memo(
+  ({
+    items,
+    renderItem,
+    onLoadMore,
+    headerText,
+    hasNextPage,
+    isEmpty,
+    emptyComponent,
+    navigationComponent,
+  }: Props) => {
     return (
       <StyledListContainer>
         {headerText && (
@@ -27,6 +38,9 @@ export const GridCardList = memo(
             <StyledListHeaderText as="h1">{headerText}</StyledListHeaderText>
           </StyledListHeader>
         )}
+        <StyledNavigationContainer>
+          {navigationComponent && navigationComponent}
+        </StyledNavigationContainer>
         {isEmpty ? (
           emptyComponent
         ) : (
@@ -41,5 +55,3 @@ export const GridCardList = memo(
     );
   }
 );
-
-GridCardList.displayName = 'GridCardList.List';
