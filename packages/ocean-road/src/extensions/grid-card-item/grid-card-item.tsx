@@ -2,10 +2,10 @@ import type { WithId } from '@/utils/with-id';
 import { withStopPropagation } from '@/utils/with-stop-propagation';
 import { type MouseEventHandler, type PropsWithChildren, type ReactNode, memo } from 'react';
 import { match } from 'ts-pattern';
+import { GridCardImage } from '../grid-card-image';
 import {
   StyledFixedSubscribeEventButtonLayoutContainer,
   StyledGridDate,
-  StyledGridImage,
   StyledGridImageEmptyContainer,
   StyledGridImageEmptyText,
   StyledGridItem,
@@ -75,7 +75,7 @@ export const GridCardItem = memo(
             renderThumbnail ? (
               renderThumbnail(thumbnailUrl)
             ) : (
-              <StyledGridImage src={thumbnailUrl} alt={titleText} />
+              <GridCardImage src={thumbnailUrl} alt={titleText} />
             )
           ) : (
             <StyledGridImageEmptyContainer>
