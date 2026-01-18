@@ -23,4 +23,11 @@ export default defineConfig([
     format: ['esm', 'cjs'],
     ...commonConfigs,
   },
+  {
+    entry: {
+      native: 'src/native/index.ts',
+    },
+    format: ['esm', 'cjs'],
+    ...commonConfigs,
+  },
 ]);

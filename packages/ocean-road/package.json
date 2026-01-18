@@ -23,6 +23,10 @@
     "./next": {
       "types": "./dist/next.d.ts",
       "default": "./dist/next.cjs"
+    },
+    "./native": {
+      "types": "./dist/native.d.ts",
+      "default": "./dist/native.cjs"
     }
   },
   "license": "MIT",
@@ -31,12 +35,7 @@
   "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "native", "dist", "package.json"],
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "pnpm build:core",
@@ -86,14 +85,25 @@
     "react": ">= 19.1.0",
     "react-dom": ">= 19.1.4",
     "react-native-reanimated": ">= 3.17.1",
-    "react-native-svg": "^15.11.1",
-    "react-native": ">= 0.81.4"
+    "react-native-svg": "^15.11.1"
   },
   "peerDependenciesMeta": {
     "next": {
       "optional": true
     },
     "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "react-native-reanimated": {
+      "optional": true
+    },
+    "react-native-svg": {
+      "optional": true
+    },
+    "lucide-react-native": {
       "optional": true
     }
   },
