@@ -31,12 +31,7 @@
   "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "dist", "package.json"],
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "pnpm build:core",
@@ -60,9 +55,6 @@
     "@emotion/native": "11.11.0",
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.2",
     "@types/react": "18.3.27",
     "@types/react-dom": "19.0.3",
     "framer-motion": "11.11.13",
@@ -74,9 +66,6 @@
     "react-native": "0.81.4",
     "react-native-reanimated": "4.1.2",
     "react-native-svg": "15.13.0",
-    "rollup": "^3.20.7",
-    "rollup-plugin-import-css": "^3.2.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
     "tsdown": "^0.11.9",
     "next": "15.5.9"
   },
