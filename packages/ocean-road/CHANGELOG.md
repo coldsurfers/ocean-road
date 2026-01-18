@@ -1,5 +1,14 @@
 # @coldsurfers/ocean-road
 
+## 1.12.22
+
+### Patch Changes
+
+- [#57](https://github.com/coldsurfers/ocean-road/pull/57) [`20f3d47`](https://github.com/coldsurfers/ocean-road/commit/20f3d47587ddbf75bf82f145b2681e90ce49776f) Thanks [@yungblud](https://github.com/yungblud)! - Implement design token new import tokens
+
+- Updated dependencies [[`4e63294`](https://github.com/coldsurfers/ocean-road/commit/4e63294809d7d89a56df3b92a924ad8dace5ea26)]:
+  - @coldsurfers/ocean-road-design-tokens@1.10.8
+
 ## 1.12.21
 
 ### Patch Changes

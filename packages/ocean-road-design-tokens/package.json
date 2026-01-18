@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road-design-tokens",
-  "version": "1.10.8-rc.2",
+  "version": "1.10.8",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
@@ -34,7 +34,13 @@
       "default": "./dist/json/*"
     }
   },
-  "files": ["src", "js", "dist", "tokens", "package.json"],
+  "files": [
+    "src",
+    "js",
+    "dist",
+    "tokens",
+    "package.json"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
