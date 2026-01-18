@@ -14,24 +14,6 @@ export const StyledGridTop = styled.div`
   position: relative;
 `;
 
-export const StyledGridImage = styled.img`
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: 50%;
-  border-radius: 12px;
-  background-color: ${semantics.color.background[3]};
-`;
-
-export const StyledGridImageEmpty = styled.div`
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: 50%;
-  border-radius: 12px;
-  background-color: ${semantics.color.background[3]};
-`;
-
 export const StyledGridImageEmptyContainer = styled.div`
   width: 100%;
   aspect-ratio: 1 / 1;
