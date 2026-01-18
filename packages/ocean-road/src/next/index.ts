@@ -1,3 +1,5 @@
+'use client';
+
 import { GridCardItem } from './grid-card-item';
 import { GridCardListNext } from './grid-card-list';
 
