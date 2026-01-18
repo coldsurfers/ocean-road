@@ -1,7 +1,7 @@
-import type { WithId } from '@/utils/with-id';
-import { type MouseEventHandler, type ReactNode, memo } from 'react';
+import { memo } from 'react';
 import { match } from 'ts-pattern';
 import { GridCardImage } from '../grid-card-image';
+import type { GridCardListItemProps } from './grid-card-item';
 import {
   StyledGridDate,
   StyledGridImageEmptyContainer,
@@ -11,37 +11,23 @@ import {
   StyledGridTitle,
   StyledGridTop,
   StyledVenueText,
-} from './grid-card-item.styled';
+} from './grid-card-item.masonry.styled';
 import { FixedSubscribeEventButtonLayout } from './grid-card-item.subscribe-btn-layout';
 
-export type GridCardListItemProps = WithId<{
-  thumbnailUrl: string;
-  titleText: string;
-  subText: string;
-  bottomText?: string;
-  isSubscribed?: boolean;
-  rightBottomSlot?: {
-    type: 'subscribe';
-    subscribeEventBtn: ReactNode;
-  };
-  renderThumbnail?: (url: string) => ReactNode;
-  href?: string;
-  onClick?: MouseEventHandler<HTMLDivElement | HTMLAnchorElement>;
-}>;
-
-export const GridCardItem = memo(
+export const MasonryGridCardItem = memo(
   ({
+    isSubscribed,
     thumbnailUrl,
     titleText,
     subText,
     bottomText,
     rightBottomSlot,
     renderThumbnail,
-    isSubscribed,
-    onClick,
   }: GridCardListItemProps) => {
     return (
-      <StyledGridItem onClick={onClick}>
+      <StyledGridItem>
+        <StyledGridTitle as="p">{titleText}</StyledGridTitle>
+        <StyledGridDate as="p">{subText}</StyledGridDate>
         <StyledGridTop>
           {thumbnailUrl ? (
             renderThumbnail ? (
@@ -67,15 +53,9 @@ export const GridCardItem = memo(
             .otherwise(() => null)}
         </StyledGridTop>
         <StyledGridTextContainer>
-          <StyledGridTitle as="p" numberOfLines={2}>
-            {titleText}
-          </StyledGridTitle>
-          <StyledGridDate as="p">{subText}</StyledGridDate>
           {bottomText && <StyledVenueText as="p">{bottomText}</StyledVenueText>}
         </StyledGridTextContainer>
       </StyledGridItem>
     );
   }
 );
-
-GridCardItem.displayName = 'GridCardList.Item';
