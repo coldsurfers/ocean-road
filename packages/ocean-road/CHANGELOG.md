@@ -1,5 +1,14 @@
 # @coldsurfers/ocean-road
 
+## 1.12.17
+
+### Patch Changes
+
+- [#46](https://github.com/coldsurfers/ocean-road/pull/46) [`2afdc09`](https://github.com/coldsurfers/ocean-road/commit/2afdc09ce58a499eaecff890635a32967ebd4a01) Thanks [@yungblud](https://github.com/yungblud)!
+- update tsdown config for next js support
+- do not include next package in peer deps (next build issue)
+- fully support GridCardList for nextjs
+
 ## 1.12.16
 
 ### Patch Changes
