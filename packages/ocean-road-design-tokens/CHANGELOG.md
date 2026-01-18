@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road-design-tokens
 
+## 1.10.8
+
+### Patch Changes
+
+- [#57](https://github.com/coldsurfers/ocean-road/pull/57) [`4e63294`](https://github.com/coldsurfers/ocean-road/commit/4e63294809d7d89a56df3b92a924ad8dace5ea26) Thanks [@yungblud](https://github.com/yungblud)! - enhance naive dist import js files with d.ts
+
 ## 1.10.7
 
 ### Patch Changes
