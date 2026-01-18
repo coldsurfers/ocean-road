@@ -158,8 +158,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@coldsurfers/ocean-road-design-tokens':
-        specifier: 1.10.8-rc.1
-        version: 1.10.8-rc.1
+        specifier: 1.10.8-rc.2
+        version: 1.10.8-rc.2
       '@emotion/css':
         specifier: 11.10.6
         version: 11.10.6
@@ -880,8 +880,8 @@ packages:
   '@coldsurfers/ocean-road-design-tokens@1.10.7':
     resolution: {integrity: sha512-h3047oMD8YlXlV5Ql+8c6cON33H0OCXU/ZXUAgyXxZzhoiDJgTxg4HdDqIyo2khxj5FBvYzl0uBDyiTZ2uxrGg==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.7/65d747d3fb466dc1d2c58e813439c4528754851f}
 
-  '@coldsurfers/ocean-road-design-tokens@1.10.8-rc.1':
-    resolution: {integrity: sha512-qmB9z4/w7o0qH7NexW3OBV5ti7hhLohL8p5ZYqYvKCkKgPqRQnOldyl0GmIznpN3s0MO383K+SqwWrg/MG2vyA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.8-rc.1/ec4e62974a2740e4297594524809545517d6813f}
+  '@coldsurfers/ocean-road-design-tokens@1.10.8-rc.2':
+    resolution: {integrity: sha512-r9pU0i6Jl/nbY9hxk0fvXUICXmVCL00hLbt4/g+KOoIFFiqA41mH8k1HTohOxhRnOczp42FLMqfpcsezydurSQ==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.8-rc.2/8f335b368174f401626afbfad0f9be90cf38ce1f}
 
   '@coldsurfers/ocean-road@1.12.20':
     resolution: {integrity: sha512-Nzio0WBzU6FYHHlMrFz/aMFdDqR1GGBLoWGg0o2uQcL0JPVCeEjZQlBekKRju8hvpsx71yFRmO3s1lZMnNzvKw==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.20/74b023484a74b59867eb2d0425c6ff47611aef92}
@@ -7861,7 +7861,7 @@ snapshots:
     dependencies:
       open-color: 1.9.1
 
-  '@coldsurfers/ocean-road-design-tokens@1.10.8-rc.1':
+  '@coldsurfers/ocean-road-design-tokens@1.10.8-rc.2':
     dependencies:
       open-color: 1.9.1
 
