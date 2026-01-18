@@ -4,7 +4,8 @@
 
 ### Patch Changes
 
-- [#55](https://github.com/coldsurfers/ocean-road/pull/55) [`9a44a35`](https://github.com/coldsurfers/ocean-road/commit/9a44a35db12c1689ba8074afef0d48a1f25698fe) Thanks [@yungblud](https://github.com/yungblud)! - Support native (react-native)
+- [#55](https://github.com/coldsurfers/ocean-road/pull/55) [`9a44a35`](https://github.com/coldsurfers/ocean-road/commit/9a44a35db12c1689ba8074afef0d48a1f25698fe) Thanks [@yungblud](https://github.com/yungblud)!
+- Support native (react-native)
 
 ## 1.12.20
 
