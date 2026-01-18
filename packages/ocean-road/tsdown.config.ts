@@ -1,4 +1,12 @@
-import { defineConfig } from 'tsdown';
+import { type UserConfig, defineConfig } from 'tsdown';
+
+const commonConfigs: UserConfig = {
+  outDir: 'dist',
+  dts: true,
+  external: ['next', 'next/*', 'react', 'react-dom'],
+  treeshake: true,
+  tsconfig: 'tsconfig.json',
+};
 
 export default defineConfig([
   {
@@ -6,21 +14,13 @@ export default defineConfig([
       index: 'src/index.ts',
     },
     format: ['esm'],
-    outDir: 'dist',
-    dts: true,
-    external: ['next', 'next/*', 'react', 'react-dom'],
-    treeshake: true,
-    tsconfig: 'tsconfig.json',
+    ...commonConfigs,
   },
   {
     entry: {
       next: 'src/next/index.ts',
     },
     format: ['esm', 'cjs'],
-    outDir: 'dist',
-    dts: true,
-    external: ['next', 'next/*', 'react', 'react-dom'],
-    treeshake: true,
-    tsconfig: 'tsconfig.json',
+    ...commonConfigs,
   },
 ]);
