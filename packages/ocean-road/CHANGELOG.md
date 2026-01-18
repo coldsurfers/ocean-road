@@ -1,5 +1,12 @@
 # @coldsurfers/ocean-road
 
+## 1.12.18
+
+### Patch Changes
+
+- [#49](https://github.com/coldsurfers/ocean-road/pull/49) [`b4c471b`](https://github.com/coldsurfers/ocean-road/commit/b4c471b275375fcde7112d427787e7f060b92af8) Thanks [@yungblud](https://github.com/yungblud)! - - remove rollup
+  - fixed git ignore issue that doesn't include next dir for compiler "node" issue
+
 ## 1.12.17
 
 ### Patch Changes
