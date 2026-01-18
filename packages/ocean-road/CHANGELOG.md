@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.19
+
+### Patch Changes
+
+- [#51](https://github.com/coldsurfers/ocean-road/pull/51) [`212703a`](https://github.com/coldsurfers/ocean-road/commit/212703a57768ff66f4c62ba71a557ece06d3659a) Thanks [@yungblud](https://github.com/yungblud)! - Implement RouteLoading
+
 ## 1.12.18
 
 ### Patch Changes
