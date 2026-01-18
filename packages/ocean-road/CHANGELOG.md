@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.23
+
+### Patch Changes
+
+- [#59](https://github.com/coldsurfers/ocean-road/pull/59) [`2f4cc8a`](https://github.com/coldsurfers/ocean-road/commit/2f4cc8ad4db520db21f6b635c04cfdf22f82b0d8) Thanks [@yungblud](https://github.com/yungblud)! - Implement Masonry GridCardList
+
 ## 1.12.22
 
 ### Patch Changes
