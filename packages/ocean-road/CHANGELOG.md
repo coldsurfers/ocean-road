@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.20
+
+### Patch Changes
+
+- [#53](https://github.com/coldsurfers/ocean-road/pull/53) [`398f773`](https://github.com/coldsurfers/ocean-road/commit/398f773c52c4141a0f9b5da673dff7550a4c9d9e) Thanks [@yungblud](https://github.com/yungblud)! - Add 'use client' directive to next barrel file
+
 ## 1.12.19
 
 ### Patch Changes
