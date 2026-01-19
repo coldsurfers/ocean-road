@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.24
+
+### Patch Changes
+
+- [#61](https://github.com/coldsurfers/ocean-road/pull/61) [`d7a03f8`](https://github.com/coldsurfers/ocean-road/commit/d7a03f85d5303aa289fe9ca632c682023f271052) Thanks [@yungblud](https://github.com/yungblud)! - Fixed build issue with external packages
+
 ## 1.12.23
 
 ### Patch Changes
