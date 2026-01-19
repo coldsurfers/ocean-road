@@ -9,8 +9,11 @@ import { GlobalLink } from '../global-link';
 
 export const MasonryGridCardItem = memo(
   ({ href, onClick, ...gridCardListItemProps }: GridCardListItemProps) => {
+    if (!href) {
+      return <MasonryGridCardItemUI onClick={onClick} {...gridCardListItemProps} />;
+    }
     return (
-      <GlobalLink href={href ?? '#'} onClick={onClick}>
+      <GlobalLink href={href} onClick={onClick}>
         <MasonryGridCardItemUI {...gridCardListItemProps} />
       </GlobalLink>
     );
