@@ -10,3 +10,5 @@ export const UnknownError = memo(({ onClickRetry }: { onClickRetry: () => void }
     </StyledErrorContainer>
   );
 });
+
+UnknownError.displayName = 'ErrorUI.UnknownError';

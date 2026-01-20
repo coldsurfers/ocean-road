@@ -10,3 +10,5 @@ export const NetworkError = memo(({ onClickRetry }: { onClickRetry: () => void }
     </StyledErrorContainer>
   );
 });
+
+NetworkError.displayName = 'ErrorUI.NetworkError';
