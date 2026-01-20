@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { StorybookConfig } from '@storybook/nextjs-vite';
+import { mergeConfig } from 'vite';
 
 // biome-ignore lint/style/useNodejsImportProtocol: <explanation>
-import { dirname } from 'path';
+import { dirname, resolve } from 'path';
 
 // biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -16,6 +20,7 @@ import { fileURLToPath } from 'url';
 function getAbsolutePath(value: string): any {
   return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
 }
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
@@ -31,5 +36,19 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
   },
+  viteFinal: async (config, options) =>
+    process.env.NODE_ENV === 'development'
+      ? mergeConfig(config, {
+          resolve: {
+            alias: {
+              // 핵심: 패키지를 src로 직접 매핑
+              '@coldsurfers/ocean-road': resolve(
+                __dirname,
+                '../../../packages/ocean-road/src/index.ts'
+              ),
+            },
+          },
+        })
+      : config,
 };
 export default config;
