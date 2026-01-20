@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.27
+
+### Patch Changes
+
+- [#67](https://github.com/coldsurfers/ocean-road/pull/67) [`8388ded`](https://github.com/coldsurfers/ocean-road/commit/8388dedce85a160eb571f2f669a5fe3283880fd1) Thanks [@yungblud](https://github.com/yungblud)! - Fixed react-native-worklets version for storybook RNWeb support
+
 ## 1.12.26
 
 ### Patch Changes
