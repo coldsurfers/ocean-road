@@ -90,6 +90,5 @@ export const List: Story = {
     ],
     renderItem: (item) => <GridCardList.Item {...item} />,
     onLoadMore: () => console.log('onLoadMore'),
-    keyExtractor: (item, index) => `${item.titleText}-${index}`,
   },
 };
