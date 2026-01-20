@@ -40,7 +40,6 @@
       "outputs": []
     },
     "check:type": {
-      "dependsOn": ["build:ui"],
       "cache": true
     },
     "build:storybook": {
