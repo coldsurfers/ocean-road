@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.26
+
+### Patch Changes
+
+- [#65](https://github.com/coldsurfers/ocean-road/pull/65) [`f629dee`](https://github.com/coldsurfers/ocean-road/commit/f629dee7ea70ba8eab006f5b0a0f60ce507a2755) Thanks [@yungblud](https://github.com/yungblud)! - Added ErrorUI
+
 ## 1.12.25
 
 ### Patch Changes
