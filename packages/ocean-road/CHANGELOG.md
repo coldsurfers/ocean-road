@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.25
+
+### Patch Changes
+
+- [#63](https://github.com/coldsurfers/ocean-road/pull/63) [`11656d5`](https://github.com/coldsurfers/ocean-road/commit/11656d56a24170211444cf94192b143ecdc58dc6) Thanks [@yungblud](https://github.com/yungblud)! - Add displayName to Masonry GridCardList components
+
 ## 1.12.24
 
 ### Patch Changes
