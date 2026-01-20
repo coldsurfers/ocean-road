@@ -55,3 +55,5 @@ export const MasonryGridCardList = memo(
     );
   }
 );
+
+MasonryGridCardList.displayName = 'GridCardList.MasonryList';
