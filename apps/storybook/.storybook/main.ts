@@ -23,8 +23,10 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-vitest'),
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-docs'),
+    '@storybook/addon-react-native-web',
   ],
-  framework: getAbsolutePath('@storybook/nextjs-vite'),
+  // framework: getAbsolutePath('@storybook/nextjs-vite'),
+  framework: '@storybook/react-native-web-vite',
   staticDirs: ['../public'],
   typescript: {
     reactDocgen: 'react-docgen-typescript',
