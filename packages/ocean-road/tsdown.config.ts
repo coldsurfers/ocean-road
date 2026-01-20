@@ -17,6 +17,7 @@ const commonConfigs: UserConfig = {
     '@emotion/styled',
     'react-native',
     'react-native-reanimated',
+    'react-native-worklets',
     'react-native-svg',
     'lucide-react-native',
     '@coldsurfers/ocean-road-design-tokens',
