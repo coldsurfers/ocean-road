@@ -18,4 +18,4 @@ export const GridCardList = {
 
 export type { GridCardListItemProps };
 
-export * from './network-error';
+export { ErrorUI } from './error-ui';
