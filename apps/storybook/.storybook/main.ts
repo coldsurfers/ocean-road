@@ -36,19 +36,22 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
   },
-  viteFinal: async (config, options) =>
-    process.env.NODE_ENV === 'development'
-      ? mergeConfig(config, {
-          resolve: {
-            alias: {
-              // 핵심: 패키지를 src로 직접 매핑
-              '@coldsurfers/ocean-road': resolve(
-                __dirname,
-                '../../../packages/ocean-road/src/index.ts'
-              ),
-            },
+  viteFinal: async (config, { configType }) => {
+    if (configType === 'DEVELOPMENT') {
+      mergeConfig(config, {
+        resolve: {
+          alias: {
+            // 핵심: 패키지를 src로 직접 매핑
+            '@coldsurfers/ocean-road': resolve(
+              __dirname,
+              '../../../packages/ocean-road/src/index.ts'
+            ),
           },
-        })
-      : config,
+        },
+      });
+    }
+
+    return config;
+  },
 };
 export default config;
