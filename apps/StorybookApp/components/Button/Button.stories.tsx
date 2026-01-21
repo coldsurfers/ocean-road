@@ -1,12 +1,11 @@
-// stories/MyButton.stories.tsx
+import { Button } from '@coldsurfers/ocean-road/native';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from 'storybook/test';
-import { MyButton } from './Button';
 
 const meta = {
-  title: 'components/MyButton',
-  component: MyButton,
-} satisfies Meta<typeof MyButton>;
+  title: 'components/Button',
+  component: Button,
+} satisfies Meta<typeof Button>;
 
 export default meta;
 
@@ -14,8 +13,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
   args: {
-    text: 'Hello World',
-    color: 'purple',
+    variant: 'indigo',
+    children: 'Hello, Button',
     onPress: fn(),
   },
 };

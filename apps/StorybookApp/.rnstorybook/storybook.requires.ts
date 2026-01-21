@@ -43,5 +43,4 @@ if (!global.view) {
   updateView(global.view, annotations, normalizedStories);
 }
 
-// biome-ignore lint/suspicious/noRedeclare: <explanation>
 export const view: View = global.view;
