@@ -13,6 +13,7 @@
     "format:fix": "biome format --write .",
     "check": "biome check .",
     "check:fix": "biome check --write .",
+    "check:type": "tsc --noEmit",
     "storybook": "cross-env STORYBOOK_ENABLED='true' react-native start",
     "storybook:ios": "cross-env STORYBOOK_ENABLED='true' react-native run-ios",
     "storybook:android": "cross-env STORYBOOK_ENABLED='true' react-native run-android",
