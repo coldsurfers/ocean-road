@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.28
+
+### Patch Changes
+
+- [#71](https://github.com/coldsurfers/ocean-road/pull/71) [`9ccb1e9`](https://github.com/coldsurfers/ocean-road/commit/9ccb1e99ec938dfc434ca4940156846f94ff97b7) Thanks [@yungblud](https://github.com/yungblud)! - support GlobalStyle static site local theme
+
 ## 1.12.27
 
 ### Patch Changes
