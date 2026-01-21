@@ -1,5 +1,5 @@
 import type { icons } from 'lucide-react';
-import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
+import type { PropsWithChildren, ReactElement } from 'react';
 
 export type ButtonProps = PropsWithChildren<{
   // @TODO: remove theme prop
