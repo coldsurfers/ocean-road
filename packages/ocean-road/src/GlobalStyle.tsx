@@ -46,7 +46,7 @@ export default function GlobalStyle({ themeStorageItem }: Props) {
           dangerouslySetInnerHTML={{
             __html: `
           (function () {
-              var themeStorage = ${themeStorageItem};
+              var themeStorage = '${themeStorageItem}';
 
               function setTheme(newTheme) {
                 window.__theme = newTheme;
