@@ -1,7 +1,6 @@
 'use client';
 
 import { Text } from '@/base';
-import { WEB_APP_CONTAINER_MAX_WIDTH } from '@/constants';
 import { AppLogo, AppStoreButton, SNSIcon } from '@/extensions';
 import { semantics } from '@/tokens';
 import { media } from '@/utils';
@@ -18,9 +17,9 @@ const FooterContainer = styled.footer`
 `;
 
 const FooterInnerContainer = styled.div`
-  max-width: ${WEB_APP_CONTAINER_MAX_WIDTH}px;
-  min-width: ${WEB_APP_CONTAINER_MAX_WIDTH}px;
   margin: 0 auto;
+  max-width: 100%;
+  min-width: 100%;
 
   ${media['xx-large'](css`
     margin-left: 1rem;
@@ -156,7 +155,7 @@ const footerMenuItems = [
     items: [
       {
         title: 'Mission',
-        href: '/about',
+        href: 'https://coldsurf.io/about',
       },
       {
         title: 'Blog',
@@ -178,11 +177,11 @@ const footerMenuItems = [
     items: [
       {
         title: 'Partners',
-        href: '/partners',
+        href: 'https://coldsurf.io/partners',
       },
       {
         title: 'Makers',
-        href: '/makers',
+        href: 'https://coldsurf.io/makers',
       },
     ],
   },
@@ -232,10 +231,10 @@ export function AppFooter({
           &copy; 2026 COLDSURF, Inc.
         </Text>
         <StyledLinksContainer>
-          <GlobalLink href="/privacy-policy">
+          <GlobalLink href="https://coldsurf.io/privacy-policy">
             <FooterText as="p">개인정보 처리방침</FooterText>
           </GlobalLink>
-          <GlobalLink href="/terms-of-service">
+          <GlobalLink href="https://coldsurf.io/terms-of-service">
             <FooterText as="p">이용약관</FooterText>
           </GlobalLink>
         </StyledLinksContainer>

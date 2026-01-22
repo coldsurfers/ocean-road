@@ -32,4 +32,11 @@ export const Default: Story = {
     instagramUrl: SNS_LINKS.INSTAGRAM,
     xUrl: SNS_LINKS.X,
   },
+  render: (args) => {
+    return (
+      <div style={{ width: '1294px' }}>
+        <AppFooter {...args} />
+      </div>
+    );
+  },
 };
