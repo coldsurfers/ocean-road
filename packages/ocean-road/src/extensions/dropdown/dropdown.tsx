@@ -23,7 +23,7 @@ import type { DropdownMenuItemRef } from './dropdown.types';
 
 const POSITION_PADDING = 8;
 
-type DropdownProps = PropsWithChildren<{
+export type DropdownCoreProps = PropsWithChildren<{
   isOpen: boolean;
   onClose: () => void;
   position?: {
@@ -40,7 +40,7 @@ type DropdownProps = PropsWithChildren<{
   zIndex?: number;
 }>;
 
-const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownProps>(
+const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
   (
     {
       children,
