@@ -201,8 +201,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.31-rc.0
-        version: 1.12.31-rc.0(5e194e0c179200925dcdc75295af1456)
+        specifier: 1.12.31-rc.1
+        version: 1.12.31-rc.1(5e194e0c179200925dcdc75295af1456)
       '@coldsurfers/ocean-road-design-tokens':
         specifier: 1.10.8
         version: 1.10.8
@@ -1405,8 +1405,8 @@ packages:
       react-native-svg: ^15.11.1
       react-native-worklets: 0.6.0
 
-  '@coldsurfers/ocean-road@1.12.31-rc.0':
-    resolution: {integrity: sha512-vQhhiQCFbJWRhZnePpNmmGm9oFfxSkuZ8mM5syyJzUb3JLBiuHMVh0u5EvfKZymWRwvK3xIbvQRpmIj9Z+qzsg==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.31-rc.0/7509623849e671690d6dbbf225eea07cef383a15}
+  '@coldsurfers/ocean-road@1.12.31-rc.1':
+    resolution: {integrity: sha512-08n3La7UVIhlStj+7paFQf2sdwdyk4ILWc/8rSNr1eUBBiGLjHKV8iQJnluk9KotjVCVEqM1/kWkwUcuupPXlA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.31-rc.1/97c24283967e88f2e08f95faec265dc26c208e15}
     peerDependencies:
       '@coldsurfers/ocean-road-design-tokens': ^1.10.7
       '@emotion/css': ^11.10.6
@@ -9627,7 +9627,7 @@ snapshots:
       react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       ts-pattern: 5.8.0
 
-  '@coldsurfers/ocean-road@1.12.31-rc.0(5e194e0c179200925dcdc75295af1456)':
+  '@coldsurfers/ocean-road@1.12.31-rc.1(5e194e0c179200925dcdc75295af1456)':
     dependencies:
       '@coldsurfers/ocean-road-design-tokens': 1.10.8
       '@emotion/css': 11.10.6
