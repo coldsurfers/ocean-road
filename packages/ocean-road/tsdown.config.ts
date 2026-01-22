@@ -24,6 +24,9 @@ const commonConfigs: UserConfig = {
   ],
   treeshake: true,
   tsconfig: 'tsconfig.json',
+  loader: {
+    '.webp': 'asset',
+  },
 };
 
 export default defineConfig([
