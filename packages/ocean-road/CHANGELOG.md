@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.33
+
+### Patch Changes
+
+- [`a4f0abc`](https://github.com/coldsurfers/ocean-road/commit/a4f0abc9083ab96e7d5dae79ec6d8ffb7970e86c) Thanks [@yungblud](https://github.com/yungblud)! - Export DropdownCoreProps
+
 ## 1.12.32
 
 ### Patch Changes
