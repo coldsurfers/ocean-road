@@ -13,7 +13,7 @@ pnpm workspace로 이루어져 있어요.
 $ yarn add @coldsurfers/ocean-road @coldsurfers/ocean-road-design-tokens
 ```
 
-### Install peer deps
+### Install peer deps (not optional)
 ```bash
 $ yarn add @emotion/css @emotion/native @emotion/react @emotion/styled lucide-react framer-motion
 ```
