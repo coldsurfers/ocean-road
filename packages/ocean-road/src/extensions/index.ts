@@ -24,3 +24,4 @@ export { AppLogo } from './app-logo';
 
 export { AppStoreButton } from './app-store-button';
 export { BrandIcon } from './brand-icon';
+export { SNSIcon } from './sns-icon';
