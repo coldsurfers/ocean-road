@@ -1,5 +1,12 @@
 # @coldsurfers/ocean-road
 
+## 1.12.29
+
+### Patch Changes
+
+- [#73](https://github.com/coldsurfers/ocean-road/pull/73) [`4edaa9a`](https://github.com/coldsurfers/ocean-road/commit/4edaa9ab817611d7c3234433930735f900e9e2d4) Thanks [@yungblud](https://github.com/yungblud)! - - implement app logo with support webp tsdown
+  - implement SNSIcon, BrandIcon, AppStoreButton, NewTabLink, AppFooter (nextjs)
+
 ## 1.12.28
 
 ### Patch Changes
