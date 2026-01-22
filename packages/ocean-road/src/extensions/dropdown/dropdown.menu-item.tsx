@@ -22,7 +22,6 @@ type Props<DataItemT> = {
   title: ReactNode;
   dropdownData: Array<DataItemT>;
   renderDropdownItem: (item: DataItemT) => ReactNode;
-  enableHoverOpen?: boolean;
   backdrop?: boolean;
   absolute?: boolean;
   isLoading?: boolean;
@@ -39,7 +38,6 @@ export const DropdownMenuItem = forwardRef(function DropdownMenuItemComponent<Da
     title,
     dropdownData,
     renderDropdownItem,
-    enableHoverOpen = false,
     backdrop = false,
     absolute = false,
     isLoading,
@@ -98,14 +96,14 @@ export const DropdownMenuItem = forwardRef(function DropdownMenuItemComponent<Da
     }
   }, [absolute, dropdownData, renderDropdownItem, backdrop, canShowDropdown]);
 
-  const closeDropdownHoverLeave = useCallback((e: MouseEvent<HTMLDivElement>) => {
-    const container = e.currentTarget;
-    const nextTarget = e.relatedTarget as Node | null;
+  const closeDropdownHoverLeave = useCallback((_: MouseEvent<HTMLDivElement>) => {
+    // const container = e.currentTarget;
+    // const nextTarget = e.relatedTarget as Node | null;
 
     // nextTarget 이 Container 내부라면: close 방지
-    if (container.contains(nextTarget)) {
-      return;
-    }
+    // if (container.contains(nextTarget)) {
+    //   return;
+    // }
 
     setIsOpenDropdown(false);
   }, []);
@@ -160,8 +158,8 @@ export const DropdownMenuItem = forwardRef(function DropdownMenuItemComponent<Da
         isCurrent={isCurrent}
         icon={icon}
         onClick={handleClick}
-        onMouseEnter={enableHoverOpen ? handleMouseEnter : undefined}
-        onMouseLeave={enableHoverOpen ? handleMouseLeave : undefined}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         style={{
           position: 'relative',
         }}
