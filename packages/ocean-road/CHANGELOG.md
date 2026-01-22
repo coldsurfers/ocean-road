@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.30
+
+### Patch Changes
+
+- [`b97858f`](https://github.com/coldsurfers/ocean-road/commit/b97858f71a8d740cb2cbdaa3ca1bd22b97d2b315) Thanks [@yungblud](https://github.com/yungblud)! - Update app footer width styles
+
 ## 1.12.29
 
 ### Patch Changes
