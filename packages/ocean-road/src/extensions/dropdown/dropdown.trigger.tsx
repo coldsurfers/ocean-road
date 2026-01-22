@@ -14,10 +14,12 @@ export const DropdownTrigger = ({
   triggerRef,
   children,
   backdrop,
+  zIndex,
 }: PropsWithChildren<{
   renderTriggerNode: ({ openDropdown }: { openDropdown: () => void }) => ReactNode;
   triggerRef: DropdownCoreProps['triggerRef'];
   backdrop: DropdownCoreProps['backdrop'];
+  zIndex: DropdownCoreProps['zIndex'];
 }>) => {
   const dropdownRef = useRef<DropdownMenuItemRef>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
@@ -86,6 +88,7 @@ export const DropdownTrigger = ({
         position={dropdownPosition}
         triggerRef={triggerRef}
         backdrop={backdrop}
+        zIndex={zIndex}
       >
         {children}
       </Dropdown>
