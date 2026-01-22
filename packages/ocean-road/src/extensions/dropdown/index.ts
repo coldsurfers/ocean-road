@@ -1,4 +1,4 @@
-import { Dropdown as DropdownCore } from './dropdown';
+import { Dropdown as DropdownCore, type DropdownCoreProps } from './dropdown';
 import { DropdownMenuItem } from './dropdown.menu-item';
 import { DropdownResultItem } from './dropdown.result-item';
 import { DropdownTrigger } from './dropdown.trigger';
@@ -11,4 +11,4 @@ export const Dropdown = {
   Trigger: DropdownTrigger,
 };
 
-export type { DropdownMenuItemRef };
+export type { DropdownMenuItemRef, DropdownCoreProps };
