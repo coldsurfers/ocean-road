@@ -9,3 +9,15 @@ export const commonHorizontalLayoutCss = (edges: readonly Edge[]) => {
           ${edges.includes('right') && 'padding-right: 0.75rem;'}
       `);
 };
+
+export const commonWebkitScrollHideCss = () => {
+  return css`
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -webkit-scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  `;
+};
