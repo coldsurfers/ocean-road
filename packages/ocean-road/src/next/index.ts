@@ -11,3 +11,5 @@ export const GridCardList = {
 
 export * from './global-link';
 export * from './route-loading';
+export * from './new-tab-link';
+export * from './app-footer';

@@ -24,6 +24,10 @@ const commonConfigs: UserConfig = {
   ],
   treeshake: true,
   tsconfig: 'tsconfig.json',
+  loader: {
+    '.webp': 'dataurl',
+  },
+  copy: [{ from: 'src/css', to: 'dist/css' }],
 };
 
 export default defineConfig([

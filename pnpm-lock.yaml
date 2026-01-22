@@ -201,11 +201,14 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.27-rc.2
-        version: 1.12.27-rc.2(649cdf0ea600c6303404ccec3274ac2d)
+        specifier: 1.12.29-rc.12
+        version: 1.12.29-rc.12(649cdf0ea600c6303404ccec3274ac2d)
       '@coldsurfers/ocean-road-design-tokens':
         specifier: 1.10.8
         version: 1.10.8
+      '@coldsurfers/shared-utils':
+        specifier: 1.1.7
+        version: 1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
       '@emotion/css':
         specifier: 11.10.6
         version: 11.10.6
@@ -1398,6 +1401,30 @@ packages:
       react-native-reanimated: '>= 3.17.1'
       react-native-svg: ^15.11.1
       react-native-worklets: 0.6.0
+
+  '@coldsurfers/ocean-road@1.12.29-rc.12':
+    resolution: {integrity: sha512-/dB1yUs5c1wFow0X5C8OVl5qNUXv6hBYixKelyyXzRInYmzkp05AYWRSiJCBQ+27pUVWSEakVsM/aFm1s0S5Zg==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.29-rc.12/786675ec3bf8fc7d4773adab936e607883333fa7}
+    peerDependencies:
+      '@coldsurfers/ocean-road-design-tokens': ^1.10.7
+      '@emotion/css': ^11.10.6
+      '@emotion/native': ^11.11.0
+      '@emotion/react': ^11.10.6
+      '@emotion/styled': ^11.10.6
+      framer-motion: ^11.11.13
+      lucide-react: ^0.469.0
+      lucide-react-native: ^0.468.0
+      react: 19.2.3
+      react-dom: 19.2.3
+      react-native-reanimated: '>= 3.17.1'
+      react-native-svg: ^15.11.1
+      react-native-worklets: 0.6.0
+
+  '@coldsurfers/shared-utils@1.1.7':
+    resolution: {integrity: sha512-9v8SJLG9mN7FXQWM0SkDu1kPbcXKxTHgLkjw0vYbn6wRKhM1W5Hq9bE5OOMse4E18Rpac1CyrVRErP0139v2IA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/shared-utils/1.1.7/73bf9ed7b31d899802a8ef29e98b33147b4a0a1f}
+    peerDependencies:
+      jwt-decode: ^4.0.0
+      schema-dts: ^1.1.2
+      zod: ^3.23.8
 
   '@commitlint/cli@17.8.1':
     resolution: {integrity: sha512-ay+WbzQesE0Rv4EQKfNbSMiJJ12KdKTDzIt0tcK4k11FdsWmtwP0Kp1NWMOUswfIWo6Eb7p7Ln721Nx9FLNBjg==}
@@ -4408,6 +4435,14 @@ packages:
   dataloader@1.4.0:
     resolution: {integrity: sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==}
 
+  date-fns-tz@3.2.0:
+    resolution: {integrity: sha512-sg8HqoTEulcbbbVXeg84u5UnlsQa8GS5QXMqjjYIhS4abEVVKIUwe0/l/UhrZdKaL/W5eWZNlbTeEIiOXTcsBQ==}
+    peerDependencies:
+      date-fns: ^3.0.0 || ^4.0.0
+
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
+
   dayjs@1.11.19:
     resolution: {integrity: sha512-t5EcLVS6QPBNqM2z8fakk/NKel+Xzshgt8FFKAn+qwlD1pzZWxh0nVCrvFK7ZDb6XucZeF9z8C7CBWTRIVApAw==}
 
@@ -5866,6 +5901,10 @@ packages:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
 
+  jwt-decode@4.0.0:
+    resolution: {integrity: sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==}
+    engines: {node: '>=18'}
+
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
@@ -7151,6 +7190,9 @@ packages:
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
+  schema-dts@1.1.5:
+    resolution: {integrity: sha512-RJr9EaCmsLzBX2NDiO5Z3ux2BVosNZN5jo0gWgsyKvxKIUL5R3swNvoorulAeL9kLB0iTSX7V6aokhla2m7xbg==}
+
   schema-utils@4.3.3:
     resolution: {integrity: sha512-eflK8wEtyOE6+hsaRVPxvUKYCpRgzLqDTb8krvAsRIwOGlHoSgYLgBXoubGgLd2fT41/OUYdb48v4k4WWHQurA==}
     engines: {node: '>= 10.13.0'}
@@ -7273,6 +7315,10 @@ packages:
   slice-ansi@2.1.0:
     resolution: {integrity: sha512-Qu+VC3EwYLldKa1fCxuuvULvSJOKEgk9pi8dZeCVK7TqBfUNTH4sFkk4joj8afVSfAYgJoSOetjx9QWOJ5mYoQ==}
     engines: {node: '>=6'}
+
+  slugify@1.6.6:
+    resolution: {integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==}
+    engines: {node: '>=8.0.0'}
 
   snake-case@3.0.4:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
@@ -9554,23 +9600,6 @@ snapshots:
     dependencies:
       open-color: 1.9.1
 
-  '@coldsurfers/ocean-road@1.12.27-rc.2(649cdf0ea600c6303404ccec3274ac2d)':
-    dependencies:
-      '@coldsurfers/ocean-road-design-tokens': 1.10.8
-      '@emotion/css': 11.10.6
-      '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
-      '@emotion/styled': 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
-      framer-motion: 11.11.13(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      lucide-react: 0.469.0(react@19.2.3)
-      lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-      react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      react-native-svg: 15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      ts-pattern: 5.8.0
-
   '@coldsurfers/ocean-road@1.12.27-rc.2(65a661ed00da2e9a3c600201a877e2a8)':
     dependencies:
       '@coldsurfers/ocean-road-design-tokens': 1.10.8
@@ -9587,6 +9616,32 @@ snapshots:
       react-native-svg: 15.13.0(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       ts-pattern: 5.8.0
+
+  '@coldsurfers/ocean-road@1.12.29-rc.12(649cdf0ea600c6303404ccec3274ac2d)':
+    dependencies:
+      '@coldsurfers/ocean-road-design-tokens': 1.10.8
+      '@emotion/css': 11.10.6
+      '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
+      '@emotion/styled': 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
+      framer-motion: 11.11.13(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      lucide-react: 0.469.0(react@19.2.3)
+      lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
+      react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      react-native-svg: 15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      ts-pattern: 5.8.0
+
+  '@coldsurfers/shared-utils@1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)':
+    dependencies:
+      date-fns: 4.1.0
+      date-fns-tz: 3.2.0(date-fns@4.1.0)
+      jwt-decode: 4.0.0
+      schema-dts: 1.1.5
+      slugify: 1.6.6
+      zod: 4.3.5
 
   '@commitlint/cli@17.8.1':
     dependencies:
@@ -13026,6 +13081,12 @@ snapshots:
 
   dataloader@1.4.0: {}
 
+  date-fns-tz@3.2.0(date-fns@4.1.0):
+    dependencies:
+      date-fns: 4.1.0
+
+  date-fns@4.1.0: {}
+
   dayjs@1.11.19: {}
 
   debug@2.6.9:
@@ -13434,7 +13495,7 @@ snapshots:
       '@next/eslint-plugin-next': 16.1.1
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.2(jiti@2.6.1))
@@ -13461,7 +13522,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
+  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.3
@@ -13476,14 +13537,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
+  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3)
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1))
     transitivePeerDependencies:
       - supports-color
 
@@ -13511,7 +13572,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -14898,6 +14959,8 @@ snapshots:
       array.prototype.flat: 1.3.3
       object.assign: 4.1.7
       object.values: 1.2.1
+
+  jwt-decode@4.0.0: {}
 
   keyv@4.5.4:
     dependencies:
@@ -16596,6 +16659,8 @@ snapshots:
 
   scheduler@0.27.0: {}
 
+  schema-dts@1.1.5: {}
+
   schema-utils@4.3.3:
     dependencies:
       '@types/json-schema': 7.0.15
@@ -16773,6 +16838,8 @@ snapshots:
       ansi-styles: 3.2.1
       astral-regex: 1.0.0
       is-fullwidth-code-point: 2.0.0
+
+  slugify@1.6.6: {}
 
   snake-case@3.0.4:
     dependencies:

@@ -1,1 +1,2 @@
 export const WEB_APP_HEADER_HEIGHT = '100px';
+export const WEB_APP_CONTAINER_MAX_WIDTH = 1440;
