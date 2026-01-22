@@ -19,3 +19,5 @@ export const GridCardList = {
 export type { GridCardListItemProps };
 
 export { ErrorUI } from './error-ui';
+
+export { AppLogo } from './app-logo';
