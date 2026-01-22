@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 import { AppStoreButton } from '@coldsurfers/ocean-road';
+import { NewTabLink } from '@coldsurfers/ocean-road/next';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -34,19 +35,29 @@ type Story = StoryObj<typeof meta>;
 export const AppleAppStore: Story = {
   args: {
     store: 'app-store',
-    url: 'https://apps.apple.com/kr/app/coldsurf-%EA%B3%B5%EC%97%B0-%EC%B6%94%EC%B2%9C-%ED%8B%B0%EC%BC%93-%EC%B6%94%EC%B2%9C-%EC%84%9C%EB%B9%84%EC%8A%A4/id1632802589',
   },
   render: (args) => {
-    return <AppStoreButton {...args} />;
+    return (
+      <NewTabLink
+        href={
+          'https://apps.apple.com/kr/app/coldsurf-%EA%B3%B5%EC%97%B0-%EC%B6%94%EC%B2%9C-%ED%8B%B0%EC%BC%93-%EC%B6%94%EC%B2%9C-%EC%84%9C%EB%B9%84%EC%8A%A4/id1632802589'
+        }
+      >
+        <AppStoreButton {...args} />
+      </NewTabLink>
+    );
   },
 };
 
 export const GooglePlayStore: Story = {
   args: {
     store: 'google-play',
-    url: 'https://play.google.com/store/apps/details?id=com.fstvllife.android',
   },
   render: (args) => {
-    return <AppStoreButton {...args} />;
+    return (
+      <NewTabLink href={'https://play.google.com/store/apps/details?id=com.fstvllife.android'}>
+        <AppStoreButton {...args} />
+      </NewTabLink>
+    );
   },
 };

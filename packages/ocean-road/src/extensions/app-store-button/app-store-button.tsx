@@ -1,7 +1,6 @@
 import { Button, Text } from '@/base';
 import { semantics } from '@/tokens';
 import styled from '@emotion/styled';
-import Link from 'next/link';
 import { memo } from 'react';
 import { match } from 'ts-pattern';
 import { BrandIcon } from '../brand-icon';
@@ -37,40 +36,25 @@ const StyledAppStoreText = styled(Text)`
 
 type Props = {
   store: 'app-store' | 'google-play';
-  url: string;
 };
 
-export const AppStoreButton = memo(({ store, url }: Props) => {
+export const AppStoreButton = memo(({ store }: Props) => {
   return (
     <>
       {match(store)
         .with('app-store', () => {
           return (
-            <Link
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ width: 'fit-content' }}
-            >
-              <StyledAppStoreButton variant="border">
-                <StyledAppStoreLogo brand="apple" />
-                <StyledAppStoreText as="p">iOS</StyledAppStoreText>
-              </StyledAppStoreButton>
-            </Link>
+            <StyledAppStoreButton variant="border">
+              <StyledAppStoreLogo brand="apple" />
+              <StyledAppStoreText as="p">iOS</StyledAppStoreText>
+            </StyledAppStoreButton>
           );
         })
         .with('google-play', () => (
-          <Link
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ width: 'fit-content' }}
-          >
-            <StyledAppStoreButton variant="border">
-              <StyledAppStoreLogo brand="android" />
-              <StyledAppStoreText as="p">Android</StyledAppStoreText>
-            </StyledAppStoreButton>
-          </Link>
+          <StyledAppStoreButton variant="border">
+            <StyledAppStoreLogo brand="android" />
+            <StyledAppStoreText as="p">Android</StyledAppStoreText>
+          </StyledAppStoreButton>
         ))
         .exhaustive()}
     </>
