@@ -6,6 +6,7 @@ import {
   type Ref,
   forwardRef,
   useCallback,
+  useEffect,
   useImperativeHandle,
   useRef,
   useState,
@@ -150,6 +151,27 @@ export const DropdownMenuItem = forwardRef(function DropdownMenuItemComponent<Da
     },
     [closeDropdownHoverLeave, onMouseLeave]
   );
+
+  useEffect(() => {
+    if (!menuItemRef.current) return;
+    const handleOutsideClick = (event: globalThis.MouseEvent) => {
+      const target = event.target as Node;
+
+      if (!target || !target.isConnected) {
+        return;
+      }
+
+      const isOutside = menuItemRef.current && !menuItemRef.current.contains(target);
+
+      if (isOutside) {
+        setIsOpenDropdown(false);
+      }
+    };
+
+    window.addEventListener('mousedown', handleOutsideClick, {});
+
+    return () => window.removeEventListener('mousedown', handleOutsideClick, {});
+  }, []);
 
   return (
     <>
