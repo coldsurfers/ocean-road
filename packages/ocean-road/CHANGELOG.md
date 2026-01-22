@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.32
+
+### Patch Changes
+
+- [#77](https://github.com/coldsurfers/ocean-road/pull/77) [`978baab`](https://github.com/coldsurfers/ocean-road/commit/978baabe9fb982c7efa78dab017955e4a458e1e6) Thanks [@yungblud](https://github.com/yungblud)! - implement Dropdown component
+
 ## 1.12.31
 
 ### Patch Changes
