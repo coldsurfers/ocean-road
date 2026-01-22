@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.31
+
+### Patch Changes
+
+- [`8a8bc4d`](https://github.com/coldsurfers/ocean-road/commit/8a8bc4dfc544fd566760c8a35be11c56a59c44fa) Thanks [@yungblud](https://github.com/yungblud)! - wrap app footer logo with website link
+
 ## 1.12.30
 
 ### Patch Changes
