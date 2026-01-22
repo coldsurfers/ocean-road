@@ -4,7 +4,6 @@ import { AnimatePresence, type MotionStyle, motion } from 'framer-motion';
 import {
   type CSSProperties,
   type PropsWithChildren,
-  type ReactNode,
   type RefObject,
   forwardRef,
   memo,
@@ -38,7 +37,6 @@ type DropdownProps = PropsWithChildren<{
   preventScroll?: boolean;
   animate?: boolean;
   triggerRef?: RefObject<HTMLElement>;
-  triggerNode?: ReactNode;
   zIndex?: number;
 }>;
 
@@ -56,7 +54,6 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownProps>(
       preventScroll = true,
       animate = true,
       triggerRef,
-      triggerNode,
       zIndex,
     },
     ref
@@ -151,59 +148,56 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownProps>(
     }, [innerPosition?.left, innerPosition?.top, maxHeight, style, triggerRef]);
 
     return (
-      <>
-        {triggerNode && triggerNode}
-        <AnimatePresence>
-          {isOpen && (
-            <>
-              {/* Backdrop */}
-              {backdrop && (
-                <motion.div
-                  className="backdrop"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onClose();
-                  }}
-                  initial={animate ? { opacity: 0 } : undefined}
-                  animate={animate ? { opacity: 0.5 } : undefined}
-                  exit={animate ? { opacity: 0 } : undefined}
-                  style={{
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: backdrop ? 'black' : 'transparent',
-                    zIndex,
-                    cursor: 'default',
-                  }}
-                />
-              )}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            {backdrop && (
+              <motion.div
+                className="backdrop"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClose();
+                }}
+                initial={animate ? { opacity: 0 } : undefined}
+                animate={animate ? { opacity: 0.5 } : undefined}
+                exit={animate ? { opacity: 0 } : undefined}
+                style={{
+                  position: 'fixed',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: backdrop ? 'black' : 'transparent',
+                  zIndex,
+                  cursor: 'default',
+                }}
+              />
+            )}
 
-              {/* Dropdown */}
-              <DropdownMotionDiv
-                ref={dropdownRef}
-                className={className}
-                initial={animate ? 'hidden' : undefined}
-                animate={animate ? 'visible' : undefined}
-                exit={animate ? 'exit' : undefined}
-                variants={animate ? dropdownVariants : undefined}
-                style={dropdownStyle}
-                $zIndex={typeof zIndex === 'number' ? zIndex + 1 : undefined}
-              >
-                {/* Contents */}
-                {isLoading ? (
-                  <StyledDropdownSpinnerItem>
-                    <Spinner />
-                  </StyledDropdownSpinnerItem>
-                ) : (
-                  <StyledDropdownList>{children}</StyledDropdownList>
-                )}
-              </DropdownMotionDiv>
-            </>
-          )}
-        </AnimatePresence>
-      </>
+            {/* Dropdown */}
+            <DropdownMotionDiv
+              ref={dropdownRef}
+              className={className}
+              initial={animate ? 'hidden' : undefined}
+              animate={animate ? 'visible' : undefined}
+              exit={animate ? 'exit' : undefined}
+              variants={animate ? dropdownVariants : undefined}
+              style={dropdownStyle}
+              $zIndex={typeof zIndex === 'number' ? zIndex + 1 : undefined}
+            >
+              {/* Contents */}
+              {isLoading ? (
+                <StyledDropdownSpinnerItem>
+                  <Spinner />
+                </StyledDropdownSpinnerItem>
+              ) : (
+                <StyledDropdownList>{children}</StyledDropdownList>
+              )}
+            </DropdownMotionDiv>
+          </>
+        )}
+      </AnimatePresence>
     );
   }
 );
