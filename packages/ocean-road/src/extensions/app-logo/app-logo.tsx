@@ -1,5 +1,3 @@
-'use client';
-
 import styled from '@emotion/styled';
 import { memo } from 'react';
 import { match } from 'ts-pattern';
@@ -8,9 +6,6 @@ import appLogoTransparent from '../../../assets/app-logo-transparent.webp';
 import appLogoWhiteBackground from '../../../assets/app-logo-white-background.webp';
 
 const createDataUrl = (base64Encoded: string) => {
-  if (process.env.NODE_ENV === 'development') {
-    return `url(${base64Encoded})`;
-  }
   return `url(${base64Encoded})`;
 };
 
