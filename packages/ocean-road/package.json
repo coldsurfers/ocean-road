@@ -38,7 +38,7 @@
   "files": ["src", "next", "native", "dist", "package.json"],
   "scripts": {
     "build": "pnpm build:core",
-    "build:core": "tsdown && cp -R ./src/css ./dist",
+    "build:core": "tsdown",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "format": "biome format .",
