@@ -7,6 +7,13 @@ import appLogoChristmas from '../../../assets/app-logo-christmas.webp';
 import appLogoTransparent from '../../../assets/app-logo-transparent.webp';
 import appLogoWhiteBackground from '../../../assets/app-logo-white-background.webp';
 
+const createBase64Url = (base64Encoded: string) => {
+  if (process.env.NODE_ENV === 'development') {
+    return `url(${base64Encoded})`;
+  }
+  return `url(data:image/png;base64,${base64Encoded})`;
+};
+
 type LogoTheme = 'christmas' | 'transparent' | 'white-background';
 
 const StyledAppLogo = styled.div<{
@@ -16,10 +23,10 @@ const StyledAppLogo = styled.div<{
 
   background-image: ${({ $logoTheme }) => {
     return match($logoTheme)
-      .with('christmas', () => `url(${appLogoChristmas})`)
-      .with('transparent', () => `url(${appLogoTransparent})`)
-      .with('white-background', () => `url(${appLogoWhiteBackground})`)
-      .otherwise(() => `url(${appLogoWhiteBackground})`);
+      .with('christmas', () => createBase64Url(appLogoChristmas))
+      .with('transparent', () => createBase64Url(appLogoTransparent))
+      .with('white-background', () => createBase64Url(appLogoWhiteBackground))
+      .otherwise(() => createBase64Url(appLogoWhiteBackground));
   }};
   background-size: cover;
   background-position: 50%;;
