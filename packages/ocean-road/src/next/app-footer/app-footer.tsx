@@ -201,7 +201,9 @@ export function AppFooter({
   return (
     <FooterContainer>
       <FooterTopContainer>
-        <StyledAppLogo type="round" logoTheme="white-background" />
+        <GlobalLink href={'https://coldsurf.io'}>
+          <StyledAppLogo type="round" logoTheme="white-background" />
+        </GlobalLink>
         <div style={{ flex: 1 }} />
         {footerMenuItems.map((item) => {
           return (
