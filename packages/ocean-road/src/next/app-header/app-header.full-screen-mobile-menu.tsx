@@ -21,6 +21,7 @@ type FullScreenMobileMenuProps =
   | ({
       standalone: true;
       isOpen: boolean;
+      zIndex?: number;
     } & CommonProps)
   | ({
       standalone: false;
@@ -109,6 +110,7 @@ export const FullScreenMobileMenu = memo((props: FullScreenMobileMenuProps) => {
             isOpen: props.isOpen,
           })
         }
+        zIndex={props.zIndex}
       >
         <MobileMenuContent {...props} />
       </FullScreenModal>

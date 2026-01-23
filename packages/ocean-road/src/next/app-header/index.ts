@@ -5,5 +5,5 @@ import { FullScreenMobileMenu } from './app-header.full-screen-mobile-menu';
 export const AppHeader = {
   ...AppHeaderDefault,
   FloatingHeader,
-  FullScreenMobileMenu,
+  FullScreenMobileDrawer: FullScreenMobileMenu,
 };
