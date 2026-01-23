@@ -1,16 +1,22 @@
 'use client';
 
 import { AppLogo } from '@/extensions';
-import { useHeaderScrollAnimation } from '@/extensions/app-header/app-header.hooks';
+import {
+  useHeaderScrollAnimation,
+  useIsMobileMenuOpen,
+} from '@/extensions/app-header/app-header.hooks';
 import styled from '@emotion/styled';
-import { type ReactNode, memo } from 'react';
+import { type ReactNode, memo, useCallback } from 'react';
 import {
   StyledFloatingHeader,
   StyledFloatingHeaderAppLogoText,
+  StyledFloatingHeaderCloseDrawerButton,
+  StyledFloatingHeaderCloseDrawerIcon,
   StyledFloatingHeaderColorSchemeToggleContainer,
   StyledFloatingHeaderInner,
   StyledFloatingHeaderLogoWrapper,
   StyledFloatingHeaderMenuContainer,
+  StyledFloatingHeaderOpenDrawerMenu,
 } from './app-header.styled';
 
 const StyledFloatingHeaderAppLogo = styled(AppLogo)`
@@ -25,12 +31,22 @@ export const FloatingHeader = memo(
     serviceName,
     HeaderMenuItemComponent,
     ColorSchemeToggleComponent,
+    onClickOpenMobileDrawer,
   }: {
     serviceName: string;
     HeaderMenuItemComponent: ReactNode;
     ColorSchemeToggleComponent: ReactNode;
+    onClickOpenMobileDrawer?: (params: { isMobileMenuOpen: boolean }) => void;
   }) => {
     const { headerAnimation } = useHeaderScrollAnimation();
+    const { isMobileMenuOpen, openMobileMenu, closeMobileMenu } = useIsMobileMenuOpen();
+
+    const handleClickOpenDrawer = useCallback(() => {
+      onClickOpenMobileDrawer?.({
+        isMobileMenuOpen,
+      });
+    }, [isMobileMenuOpen, onClickOpenMobileDrawer]);
+
     return (
       <StyledFloatingHeader animation={headerAnimation}>
         <StyledFloatingHeaderInner>
@@ -44,6 +60,16 @@ export const FloatingHeader = memo(
           <StyledFloatingHeaderColorSchemeToggleContainer>
             {ColorSchemeToggleComponent}
           </StyledFloatingHeaderColorSchemeToggleContainer>
+          <StyledFloatingHeaderCloseDrawerButton
+            $isOpen={isMobileMenuOpen}
+            onClick={handleClickOpenDrawer}
+          >
+            {isMobileMenuOpen ? (
+              <StyledFloatingHeaderCloseDrawerIcon onClick={closeMobileMenu} />
+            ) : (
+              <StyledFloatingHeaderOpenDrawerMenu onClick={openMobileMenu} />
+            )}
+          </StyledFloatingHeaderCloseDrawerButton>
         </StyledFloatingHeaderInner>
       </StyledFloatingHeader>
     );

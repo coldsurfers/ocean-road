@@ -4,6 +4,7 @@ import { semantics } from '@/tokens';
 import { media } from '@/utils';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { X as CloseIcon, Menu } from 'lucide-react';
 import { GlobalLink } from '../global-link';
 
 export const StyledFloatingHeader = styled(AnimatedHeader)`
@@ -96,5 +97,45 @@ export const StyledFloatingHeaderColorSchemeToggleContainer = styled.div`
 
   ${media.large(css`
     display: none;
+  `)}
+`;
+
+export const StyledFloatingHeaderCloseDrawerButton = styled.button<{ $isOpen: boolean }>`
+  display: none;
+  background: ${(props) => (props.$isOpen ? semantics.color.background[1] : semantics.color.background[3])};
+  ${media['x-large'](css`
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+  `)}
+
+  ${media.small(css`
+    margin-right: 0px;
+  `)}
+`;
+
+export const StyledFloatingHeaderOpenDrawerMenu = styled(Menu)`
+  display: none;
+  ${media.large(css`
+    display: block;
+    color: ${semantics.color.foreground[3]};
+  `)}
+`;
+
+export const StyledFloatingHeaderCloseDrawerIcon = styled(CloseIcon)`
+  display: none;
+  ${media['x-large'](css`
+    display: block;
+    color: ${semantics.color.foreground[3]};
   `)}
 `;
