@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.37
+
+### Patch Changes
+
+- [#85](https://github.com/coldsurfers/ocean-road/pull/85) [`faa06f4`](https://github.com/coldsurfers/ocean-road/commit/faa06f4f8d1b1c290d061e8d7e8272f5a01b67ca) Thanks [@yungblud](https://github.com/yungblud)! - Added FullScreenModal, FullScreenMobileDrawer
+
 ## 1.12.36
 
 ### Patch Changes
