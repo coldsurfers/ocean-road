@@ -61,7 +61,7 @@ const MobileMenuContent = (props: FullScreenMobileMenuProps) => {
     props.onClickClose?.({
       isOpen,
     });
-    if (props.standalone) {
+    if (!props.standalone) {
       if (isOpen) {
         mobileMenuStore.closeMobileMenu();
       } else {
