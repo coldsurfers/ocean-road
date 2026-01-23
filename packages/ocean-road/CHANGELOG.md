@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.36
+
+### Patch Changes
+
+- [`711d034`](https://github.com/coldsurfers/ocean-road/commit/711d03437d05a67e8d32a75b9da2439106ca3c82) Thanks [@yungblud](https://github.com/yungblud)! - Added floating app header
+
 ## 1.12.35
 
 ### Patch Changes
