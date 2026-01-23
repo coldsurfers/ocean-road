@@ -32,3 +32,5 @@ export * from './menu-item';
 export * from './app-header';
 
 export * from './color-scheme-toggle';
+
+export * from './full-screen-modal';

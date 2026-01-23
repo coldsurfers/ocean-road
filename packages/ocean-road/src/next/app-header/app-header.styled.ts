@@ -4,6 +4,7 @@ import { semantics } from '@/tokens';
 import { media } from '@/utils';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import { X as CloseIcon, Menu } from 'lucide-react';
 import { GlobalLink } from '../global-link';
 
@@ -138,4 +139,22 @@ export const StyledFloatingHeaderCloseDrawerIcon = styled(CloseIcon)`
     display: block;
     color: ${semantics.color.foreground[3]};
   `)}
+`;
+
+export const StyledFullScreenMobileMenuBackground = styled(motion.div)<{ $standalone?: boolean }>`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${semantics.color.background[4]};
+  display: flex;
+  flex-direction: column;
+  z-index: 98;
+
+  padding-top: ${({ $standalone }) => ($standalone ? '26px' : '126px')};
+  padding-left: 16px;
+  padding-right: 16px;
+
+  overflow-y: auto;
 `;
