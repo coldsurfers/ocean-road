@@ -82,3 +82,5 @@ export const FloatingHeader = memo(
     );
   }
 );
+
+FloatingHeader.displayName = 'AppHeader.FloatingHeader';
