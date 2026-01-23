@@ -47,7 +47,12 @@ export const FloatingHeader = memo(
       onClickOpenMobileDrawer?.({
         isMobileMenuOpen,
       });
-    }, [isMobileMenuOpen, onClickOpenMobileDrawer]);
+      if (isMobileMenuOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    }, [closeMobileMenu, isMobileMenuOpen, onClickOpenMobileDrawer, openMobileMenu]);
 
     return (
       <StyledFloatingHeader animation={headerAnimation} className={className}>
@@ -67,9 +72,9 @@ export const FloatingHeader = memo(
             onClick={handleClickOpenDrawer}
           >
             {isMobileMenuOpen ? (
-              <StyledFloatingHeaderCloseDrawerIcon onClick={closeMobileMenu} />
+              <StyledFloatingHeaderCloseDrawerIcon />
             ) : (
-              <StyledFloatingHeaderOpenDrawerMenu onClick={openMobileMenu} />
+              <StyledFloatingHeaderOpenDrawerMenu />
             )}
           </StyledFloatingHeaderCloseDrawerButton>
         </StyledFloatingHeaderInner>
