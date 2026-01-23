@@ -35,7 +35,13 @@
   "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": ["src", "next", "native", "dist", "package.json"],
+  "files": [
+    "src",
+    "next",
+    "native",
+    "dist",
+    "package.json"
+  ],
   "scripts": {
     "build": "pnpm build:core",
     "build:core": "tsdown",
