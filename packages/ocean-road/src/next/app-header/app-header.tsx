@@ -1,6 +1,7 @@
 'use client';
 
 import { AppLogo } from '@/extensions';
+import type { AnimatedHeaderProps } from '@/extensions/app-header/app-header';
 import {
   useHeaderScrollAnimation,
   useIsMobileMenuOpen,
@@ -26,6 +27,15 @@ const StyledFloatingHeaderAppLogo = styled(AppLogo)`
   height: 48px;
 `;
 
+type FloatingHeaderProps = {
+  serviceName: string;
+  HeaderMenuItemComponent: ReactNode;
+  ColorSchemeToggleComponent: ReactNode;
+  onClickOpenMobileDrawer?: (params: { isMobileMenuOpen: boolean }) => void;
+  className?: string;
+  zIndex?: AnimatedHeaderProps['zIndex'];
+};
+
 export const FloatingHeader = memo(
   ({
     serviceName,
@@ -33,13 +43,8 @@ export const FloatingHeader = memo(
     ColorSchemeToggleComponent,
     onClickOpenMobileDrawer,
     className,
-  }: {
-    serviceName: string;
-    HeaderMenuItemComponent: ReactNode;
-    ColorSchemeToggleComponent: ReactNode;
-    onClickOpenMobileDrawer?: (params: { isMobileMenuOpen: boolean }) => void;
-    className?: string;
-  }) => {
+    zIndex,
+  }: FloatingHeaderProps) => {
     const { headerAnimation } = useHeaderScrollAnimation();
     const { isMobileMenuOpen, openMobileMenu, closeMobileMenu } = useIsMobileMenuOpen();
 
@@ -55,7 +60,7 @@ export const FloatingHeader = memo(
     }, [closeMobileMenu, isMobileMenuOpen, onClickOpenMobileDrawer, openMobileMenu]);
 
     return (
-      <StyledFloatingHeader animation={headerAnimation} className={className}>
+      <StyledFloatingHeader animation={headerAnimation} className={className} zIndex={zIndex}>
         <StyledFloatingHeaderInner>
           <StyledFloatingHeaderLogoWrapper href="/">
             <StyledFloatingHeaderAppLogo type="round" logoTheme="white-background" />
