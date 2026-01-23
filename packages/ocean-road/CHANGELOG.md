@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.35
+
+### Patch Changes
+
+- [`ac9681d`](https://github.com/coldsurfers/ocean-road/commit/ac9681d4491a1ef5d8b7810cc30393a2aec4d21e) Thanks [@yungblud](https://github.com/yungblud)! - Added animated app header, color scheme toggle
+
 ## 1.12.34
 
 ### Patch Changes
