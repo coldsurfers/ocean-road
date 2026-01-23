@@ -13,7 +13,7 @@ import {
 
 type CommonProps = {
   onClickClose?: (params: { isOpen: boolean }) => void;
-  MenuListComponent: ReactNode;
+  renderMenuList: (params: { isOpen: boolean; close: () => void }) => ReactNode;
   ColorSchemeToggleComponent: ReactNode;
 };
 
@@ -89,7 +89,9 @@ const MobileMenuContent = (props: FullScreenMobileMenuProps) => {
               <StyledFloatingHeaderCloseDrawerIcon />
             </StyledFloatingHeaderCloseDrawerButton>
           )}
-          <ul style={{ listStyleType: 'none', padding: 0 }}>{props.MenuListComponent}</ul>
+          <ul style={{ listStyleType: 'none', padding: 0 }}>
+            {props.renderMenuList({ isOpen, close: handleClickClose })}
+          </ul>
           {props.ColorSchemeToggleComponent}
         </StyledFullScreenMobileMenuBackground>
       )}
