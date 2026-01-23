@@ -1,4 +1,5 @@
-import { Button, Text, useColorScheme } from '@coldsurfers/ocean-road';
+import { Button, Text } from '@/base';
+import { useColorScheme } from '@/contexts/ColorSchemeProvider';
 import styled from '@emotion/styled';
 import { memo, useCallback, useEffect } from 'react';
 
@@ -33,7 +34,10 @@ export const ColorSchemeToggle = memo(({ onToggle }: Props) => {
 
   const handleToggle = useCallback(() => {
     onToggle?.({
-      setTheme,
+      setTheme: (theme) => {
+        window.__setPreferredTheme(theme);
+        setTheme(theme);
+      },
     });
   }, [onToggle, setTheme]);
 
