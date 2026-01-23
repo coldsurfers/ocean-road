@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import type { AnimatedHeaderAnimation } from './app-header.types';
 
 export function useHeaderScrollAnimation() {
-  const [animation, setAnimation] = useState<'show' | 'hide'>('show');
+  const [animation, setAnimation] = useState<AnimatedHeaderAnimation>('show');
 
   useEffect(() => {
     let lastScrollTop = 0;
