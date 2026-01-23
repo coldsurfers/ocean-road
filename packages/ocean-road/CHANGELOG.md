@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.34
+
+### Patch Changes
+
+- [`8d713f2`](https://github.com/coldsurfers/ocean-road/commit/8d713f2c3302f412d0e30389bd959da935c92ba4) Thanks [@yungblud](https://github.com/yungblud)! - Added zIndex prop to DropdownTrigger
+
 ## 1.12.33
 
 ### Patch Changes
