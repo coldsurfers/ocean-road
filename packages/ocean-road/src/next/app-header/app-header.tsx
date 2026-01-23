@@ -32,11 +32,13 @@ export const FloatingHeader = memo(
     HeaderMenuItemComponent,
     ColorSchemeToggleComponent,
     onClickOpenMobileDrawer,
+    className,
   }: {
     serviceName: string;
     HeaderMenuItemComponent: ReactNode;
     ColorSchemeToggleComponent: ReactNode;
     onClickOpenMobileDrawer?: (params: { isMobileMenuOpen: boolean }) => void;
+    className?: string;
   }) => {
     const { headerAnimation } = useHeaderScrollAnimation();
     const { isMobileMenuOpen, openMobileMenu, closeMobileMenu } = useIsMobileMenuOpen();
@@ -48,7 +50,7 @@ export const FloatingHeader = memo(
     }, [isMobileMenuOpen, onClickOpenMobileDrawer]);
 
     return (
-      <StyledFloatingHeader animation={headerAnimation}>
+      <StyledFloatingHeader animation={headerAnimation} className={className}>
         <StyledFloatingHeaderInner>
           <StyledFloatingHeaderLogoWrapper href="/">
             <StyledFloatingHeaderAppLogo type="round" logoTheme="white-background" />
