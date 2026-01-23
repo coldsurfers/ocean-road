@@ -127,7 +127,7 @@ export const StyledFloatingHeaderCloseDrawerButton = styled.button<{ $isOpen: bo
 
 export const StyledFloatingHeaderOpenDrawerMenu = styled(Menu)`
   display: none;
-  ${media.medium(css`
+  ${media.large(css`
     display: block;
     color: ${semantics.color.foreground[3]};
   `)}
