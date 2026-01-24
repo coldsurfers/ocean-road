@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import type { ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 import { useAccordion } from './accordion.hooks';
 
 const StyledLi = styled.li`
@@ -10,17 +10,20 @@ const StyledDropdownWrapper = styled.div`
     margin-top: 0.5rem;
 `;
 
-const Accordions = <ItemT extends { accordionKey: string }>({
-  accordionKey,
-  item,
-  renderTrigger,
-  renderExpanded,
-}: {
+type AccordionRendererProps<ItemT> = PropsWithChildren<{
   accordionKey: string | null;
   item: ItemT;
   renderTrigger: (item: ItemT) => ReactNode;
   renderExpanded: ({ selectedItem }: { selectedItem: ItemT }) => ReactNode;
-}) => {
+}>;
+
+const AccordionRenderer = <ItemT extends { accordionKey: string }>({
+  accordionKey,
+  item,
+  renderTrigger,
+  renderExpanded,
+  children,
+}: AccordionRendererProps<ItemT>) => {
   return (
     <StyledLi>
       {renderTrigger(item)}
@@ -31,27 +34,29 @@ const Accordions = <ItemT extends { accordionKey: string }>({
           })}
         </StyledDropdownWrapper>
       )}
+      {children}
     </StyledLi>
   );
 };
 
-export type AccordionProps<ItemT> = {
+export type AccordionProps<ItemT> = PropsWithChildren<{
   data: ItemT[];
   renderTrigger: (item: ItemT) => ReactNode;
   renderExpanded: ({ selectedItem }: { selectedItem: ItemT }) => ReactNode;
-};
+}>;
 
 export const Accordion = <ItemT extends { accordionKey: string }>({
   data,
   renderTrigger,
   renderExpanded,
+  children,
 }: AccordionProps<ItemT>) => {
   const [accordionKey, setAccordionKey] = useAccordion();
   return (
     <>
       {data.map((item) => {
         return (
-          <Accordions
+          <AccordionRenderer
             key={item.accordionKey}
             accordionKey={accordionKey}
             item={item}
@@ -67,7 +72,9 @@ export const Accordion = <ItemT extends { accordionKey: string }>({
               </div>
             )}
             renderExpanded={({ selectedItem }) => <>{renderExpanded({ selectedItem })}</>}
-          />
+          >
+            {children}
+          </AccordionRenderer>
         );
       })}
     </>
