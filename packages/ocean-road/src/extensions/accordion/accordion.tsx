@@ -35,7 +35,7 @@ const Accordions = <ItemT extends { accordionKey: string }>({
   );
 };
 
-type Props<ItemT> = {
+export type AccordionProps<ItemT> = {
   data: ItemT[];
   renderTrigger: (item: ItemT) => ReactNode;
   renderExpanded: ({ selectedItem }: { selectedItem: ItemT }) => ReactNode;
@@ -45,7 +45,7 @@ export const Accordion = <ItemT extends { accordionKey: string }>({
   data,
   renderTrigger,
   renderExpanded,
-}: Props<ItemT>) => {
+}: AccordionProps<ItemT>) => {
   const [accordionKey, setAccordionKey] = useAccordion();
   return (
     <>
