@@ -11,14 +11,14 @@ import { AlignRight } from 'lucide-react';
 import { type ReactNode, memo } from 'react';
 import { AppHeaderLogo } from './app-header.logo';
 
-const HeaderContainer = styled(AppHeader.AnimatedHeader)<{ $headerHeight?: number }>`
+const HeaderContainer = styled(AppHeader.AnimatedHeader)<{ $headerHeight?: string }>`
   display: flex;
   align-items: center;
   padding: 0 40px;
 
   background-color: ${semantics.color.background[2]};
 
-  height: ${(props) => (props.$headerHeight ? `${props.$headerHeight}px` : '100px')};
+  height: ${(props) => props.$headerHeight ?? '100px'};
 
   ${commonHorizontalLayoutCss(['left', 'right'])}
 `;
@@ -66,7 +66,7 @@ export const FixedHeader = memo(
     mobileLeftAccessory?: ReactNode;
     HeaderMenuItemComponent: ReactNode;
     logoRightAccessory?: ReactNode;
-    headerHeight?: number;
+    headerHeight?: string;
   }) => {
     const { headerAnimation } = AppHeader.useHeaderScrollAnimation();
 
