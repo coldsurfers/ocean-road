@@ -4,11 +4,24 @@ import { IconButton } from '@/base';
 import { AppHeader } from '@/extensions';
 import { semantics } from '@/tokens';
 import { media } from '@/utils';
+import { commonHorizontalLayoutCss } from '@/utils/common-styles';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { AlignRight } from 'lucide-react';
 import { type ReactNode, memo } from 'react';
 import { AppHeaderLogo } from './app-header.logo';
+
+const HeaderContainer = styled(AppHeader.AnimatedHeader)<{ $headerHeight?: number }>`
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+
+  background-color: ${semantics.color.background[2]};
+
+  height: ${(props) => (props.$headerHeight ? `${props.$headerHeight}px` : '100px')};
+
+  ${commonHorizontalLayoutCss(['left', 'right'])}
+`;
 
 const MobileMenuContainer = styled.div`
   display: none;
@@ -46,23 +59,23 @@ export const FixedHeader = memo(
     mobileLeftAccessory,
     HeaderMenuItemComponent,
     logoRightAccessory,
+    headerHeight,
   }: {
     zIndex?: number;
     onClickOpenDrawer?: () => void;
     mobileLeftAccessory?: ReactNode;
     HeaderMenuItemComponent: ReactNode;
     logoRightAccessory?: ReactNode;
+    headerHeight?: number;
   }) => {
     const { headerAnimation } = AppHeader.useHeaderScrollAnimation();
 
     return (
-      <>
-        <AppHeader.AnimatedHeader animation={headerAnimation} zIndex={zIndex}>
-          <AppHeaderLogo logoRightAccessory={logoRightAccessory} />
-          {HeaderMenuItemComponent}
-          <MobileMenuOpener leftAccessory={mobileLeftAccessory} onClick={onClickOpenDrawer} />
-        </AppHeader.AnimatedHeader>
-      </>
+      <HeaderContainer animation={headerAnimation} zIndex={zIndex} $headerHeight={headerHeight}>
+        <AppHeaderLogo logoRightAccessory={logoRightAccessory} />
+        {HeaderMenuItemComponent}
+        <MobileMenuOpener leftAccessory={mobileLeftAccessory} onClick={onClickOpenDrawer} />
+      </HeaderContainer>
     );
   }
 );
