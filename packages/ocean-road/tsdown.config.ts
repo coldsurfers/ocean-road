@@ -7,6 +7,7 @@ const commonConfigs: UserConfig = {
     'next',
     'next/link',
     'next/navigation',
+    'next/font/google',
     'react',
     'react-dom',
     'lucide-react',
