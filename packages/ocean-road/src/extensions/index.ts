@@ -34,3 +34,5 @@ export * from './app-header';
 export * from './color-scheme-toggle';
 
 export * from './full-screen-modal';
+
+export * from './accordion';
