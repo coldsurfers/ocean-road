@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.40
+
+### Patch Changes
+
+- [#91](https://github.com/coldsurfers/ocean-road/pull/91) [`f8631c7`](https://github.com/coldsurfers/ocean-road/commit/f8631c76e2cb71d0849d3cef5ce6f73c24695f27) Thanks [@yungblud](https://github.com/yungblud)! - Added AppHeader.FixedHeader
+
 ## 1.12.39
 
 ### Patch Changes
