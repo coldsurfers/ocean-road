@@ -45,18 +45,20 @@ export const FixedHeader = memo(
     onClickOpenDrawer,
     mobileLeftAccessory,
     HeaderMenuItemComponent,
+    logoRightAccessory,
   }: {
     zIndex?: number;
     onClickOpenDrawer?: () => void;
     mobileLeftAccessory?: ReactNode;
     HeaderMenuItemComponent: ReactNode;
+    logoRightAccessory?: ReactNode;
   }) => {
     const { headerAnimation } = AppHeader.useHeaderScrollAnimation();
 
     return (
       <>
         <AppHeader.AnimatedHeader animation={headerAnimation} zIndex={zIndex}>
-          <AppHeaderLogo />
+          <AppHeaderLogo logoRightAccessory={logoRightAccessory} />
           {HeaderMenuItemComponent}
           <MobileMenuOpener leftAccessory={mobileLeftAccessory} onClick={onClickOpenDrawer} />
         </AppHeader.AnimatedHeader>

@@ -7,7 +7,7 @@ import { media } from '@/utils';
 import { SERVICE_NAME } from '@coldsurfers/shared-utils';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Kaushan_Script } from 'next/font/google';
+import { type ReactNode, memo } from 'react';
 import { GlobalLink } from '../global-link';
 
 const StyledHeaderLogo = styled(AppLogo)`
@@ -32,12 +32,7 @@ const HeaderTitle = styled(Text)`
   `)}
 `;
 
-const kaushanScriptFont = Kaushan_Script({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
-export const AppHeaderLogo = () => {
+export const AppHeaderLogo = memo(({ logoRightAccessory }: { logoRightAccessory?: ReactNode }) => {
   return (
     <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
       <GlobalLink href="/">
@@ -45,12 +40,9 @@ export const AppHeaderLogo = () => {
       </GlobalLink>
       <GlobalLink href="/">
         <HeaderTitle as="h1">
-          {SERVICE_NAME}{' '}
-          <span style={{ fontSize: 12 }} className={kaushanScriptFont.className}>
-            BETA
-          </span>
+          {SERVICE_NAME} {logoRightAccessory}
         </HeaderTitle>
       </GlobalLink>
     </div>
   );
-};
+});
