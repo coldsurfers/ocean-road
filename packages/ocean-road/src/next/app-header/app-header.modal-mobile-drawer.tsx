@@ -4,14 +4,9 @@ import { Accordion, type AccordionProps } from '@/extensions';
 import { semantics } from '@/tokens';
 import { usePreventScrollEffect } from '@/utils/use-prevent-scroll-effect';
 import styled from '@emotion/styled';
-import { AlignRight } from 'lucide-react';
 import type { ReactNode } from 'react';
 
-export const MobileMenuIcon = styled(AlignRight)`
-  color: ${semantics.color.foreground[3]};
-`;
-
-export const ModalContainer = styled.div<{ $isOpen: boolean; $zIndex?: number }>`
+const ModalContainer = styled.div<{ $isOpen: boolean; $zIndex?: number }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +18,7 @@ export const ModalContainer = styled.div<{ $isOpen: boolean; $zIndex?: number }>
   z-index: ${(props) => props.$zIndex ?? 100};
 `;
 
-export const ModalContent = styled.div`
+const ModalContent = styled.div`
   margin: 10px 0;
 
   display: flex;
@@ -31,7 +26,7 @@ export const ModalContent = styled.div`
   gap: 16px;
 `;
 
-export const ModalPaper = styled.div`
+const ModalPaper = styled.div`
   background: ${semantics.color.background[2]};
   border-radius: 8px;
   margin: 12px auto;

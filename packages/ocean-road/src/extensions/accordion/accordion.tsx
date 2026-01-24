@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import type { PropsWithChildren, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { useAccordion } from './accordion.hooks';
 
 const StyledLi = styled.li`
@@ -10,19 +10,18 @@ const StyledDropdownWrapper = styled.div`
     margin-top: 0.5rem;
 `;
 
-type AccordionRendererProps<ItemT> = PropsWithChildren<{
+type AccordionRendererProps<ItemT> = {
   accordionKey: string | null;
   item: ItemT;
   renderTrigger: (item: ItemT) => ReactNode;
   renderExpanded: ({ selectedItem }: { selectedItem: ItemT }) => ReactNode;
-}>;
+};
 
 const AccordionRenderer = <ItemT extends { accordionKey: string }>({
   accordionKey,
   item,
   renderTrigger,
   renderExpanded,
-  children,
 }: AccordionRendererProps<ItemT>) => {
   return (
     <StyledLi>
@@ -34,7 +33,6 @@ const AccordionRenderer = <ItemT extends { accordionKey: string }>({
           })}
         </StyledDropdownWrapper>
       )}
-      {children}
     </StyledLi>
   );
 };
@@ -73,11 +71,10 @@ export const Accordion = <ItemT extends { accordionKey: string }>({
               </div>
             )}
             renderExpanded={({ selectedItem }) => <>{renderExpanded({ selectedItem })}</>}
-          >
-            {customized}
-          </AccordionRenderer>
+          />
         );
       })}
+      {customized}
     </>
   );
 };
