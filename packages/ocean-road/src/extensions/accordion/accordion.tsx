@@ -60,7 +60,7 @@ export const Accordion = <ItemT extends { accordionKey: string }>({
               <div
                 key={item.accordionKey}
                 onClick={() =>
-                  setAccordionKey((prev) => (prev === accordionKey ? null : item.accordionKey))
+                  setAccordionKey((prev) => (prev === item.accordionKey ? null : item.accordionKey))
                 }
               >
                 {renderTrigger(item)}
