@@ -40,8 +40,7 @@ type ModalMobileDrawerProps<ItemT> = {
   bottomAccessory?: ReactNode;
 } & AccordionProps<ItemT>;
 
-// @TODO: refactor this component's name as ModalMobileAccordionDrawer
-export const ModalMobileDrawer = <ItemT extends { accordionKey: string }>({
+export const ModalMobileAccordionDrawer = <ItemT extends { accordionKey: string }>({
   isOpen,
   onClose,
   bottomAccessory,
@@ -66,3 +65,5 @@ export const ModalMobileDrawer = <ItemT extends { accordionKey: string }>({
     </ModalContainer>
   );
 };
+
+ModalMobileAccordionDrawer.displayName = 'AppHeader.ModalMobileAccordionDrawer';

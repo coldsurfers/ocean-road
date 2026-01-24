@@ -106,8 +106,7 @@ const MobileMenuContent = <ItemT extends { accordionKey: string }>(
   );
 };
 
-// @TODO: refactor this component's name as FullScreenMobileMenuAccordionDrawer
-export const FullScreenMobileMenu = <ItemT extends { accordionKey: string }>(
+export const FullScreenMobileAccordionDrawer = <ItemT extends { accordionKey: string }>(
   props: FullScreenMobileMenuProps<ItemT>
 ) => {
   if (props.standalone) {
@@ -129,4 +128,4 @@ export const FullScreenMobileMenu = <ItemT extends { accordionKey: string }>(
   return <MobileMenuContent {...props} />;
 };
 
-FullScreenMobileMenu.displayName = 'AppHeader.FullScreenMobileMenu';
+FullScreenMobileAccordionDrawer.displayName = 'AppHeader.FullScreenMobileAccordionDrawer';
