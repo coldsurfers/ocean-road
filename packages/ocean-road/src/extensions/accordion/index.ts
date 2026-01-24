@@ -1,1 +1,1 @@
-export * from './accordion.hooks';
+export * from './accordion';
