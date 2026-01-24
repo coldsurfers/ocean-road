@@ -1,34 +1,35 @@
 'use client';
 
-import { FullScreenModal } from '@/extensions';
+import { Accordion, type AccordionProps, FullScreenModal } from '@/extensions';
 import { useIsMobileMenuOpen } from '@/extensions/app-header/app-header.hooks';
 import { usePreventScrollEffect } from '@/utils/use-prevent-scroll-effect';
 import { AnimatePresence, type Variants } from 'framer-motion';
-import { type ReactNode, memo, useCallback } from 'react';
+import { type ReactNode, useCallback } from 'react';
 import {
   StyledFloatingHeaderCloseDrawerButton,
   StyledFloatingHeaderCloseDrawerIcon,
   StyledFullScreenMobileMenuBackground,
 } from './app-header.styled';
 
-type CommonProps = {
+type CommonProps<ItemT> = {
   onClickClose?: (params: { isOpen: boolean }) => void;
-  renderMenuList: (params: { isOpen: boolean; close: () => void }) => ReactNode;
   ColorSchemeToggleComponent: ReactNode;
-};
+} & AccordionProps<ItemT>;
 
-type FullScreenMobileMenuProps =
+type FullScreenMobileMenuProps<ItemT> =
   | ({
       standalone: true;
       isOpen: boolean;
       zIndex?: number;
-    } & CommonProps)
+    } & CommonProps<ItemT>)
   | ({
       standalone: false;
-    } & CommonProps);
+    } & CommonProps<ItemT>);
 
 // @TODO: too many anti patterns. need to refactor
-const MobileMenuContent = (props: FullScreenMobileMenuProps) => {
+const MobileMenuContent = <ItemT extends { accordionKey: string }>(
+  props: FullScreenMobileMenuProps<ItemT>
+) => {
   // Animation variants
   const menuVariants: Variants = {
     hidden: {
@@ -91,7 +92,12 @@ const MobileMenuContent = (props: FullScreenMobileMenuProps) => {
             </StyledFloatingHeaderCloseDrawerButton>
           )}
           <ul style={{ listStyleType: 'none', padding: 0 }}>
-            {props.renderMenuList({ isOpen, close: handleClickClose })}
+            <Accordion
+              data={props.data}
+              renderTrigger={props.renderTrigger}
+              renderExpanded={props.renderExpanded}
+              customized={props.customized}
+            />
           </ul>
           {props.ColorSchemeToggleComponent}
         </StyledFullScreenMobileMenuBackground>
@@ -100,7 +106,9 @@ const MobileMenuContent = (props: FullScreenMobileMenuProps) => {
   );
 };
 
-export const FullScreenMobileMenu = memo((props: FullScreenMobileMenuProps) => {
+export const FullScreenMobileAccordionDrawer = <ItemT extends { accordionKey: string }>(
+  props: FullScreenMobileMenuProps<ItemT>
+) => {
   if (props.standalone) {
     return (
       <FullScreenModal
@@ -118,6 +126,6 @@ export const FullScreenMobileMenu = memo((props: FullScreenMobileMenuProps) => {
   }
 
   return <MobileMenuContent {...props} />;
-});
+};
 
-FullScreenMobileMenu.displayName = 'AppHeader.FullScreenMobileMenu';
+FullScreenMobileAccordionDrawer.displayName = 'AppHeader.FullScreenMobileAccordionDrawer';

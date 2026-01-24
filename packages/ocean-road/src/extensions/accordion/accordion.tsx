@@ -10,17 +10,19 @@ const StyledDropdownWrapper = styled.div`
     margin-top: 0.5rem;
 `;
 
-const Accordions = <ItemT extends { accordionKey: string }>({
-  accordionKey,
-  item,
-  renderTrigger,
-  renderExpanded,
-}: {
+type AccordionRendererProps<ItemT> = {
   accordionKey: string | null;
   item: ItemT;
   renderTrigger: (item: ItemT) => ReactNode;
   renderExpanded: ({ selectedItem }: { selectedItem: ItemT }) => ReactNode;
-}) => {
+};
+
+const AccordionRenderer = <ItemT extends { accordionKey: string }>({
+  accordionKey,
+  item,
+  renderTrigger,
+  renderExpanded,
+}: AccordionRendererProps<ItemT>) => {
   return (
     <StyledLi>
       {renderTrigger(item)}
@@ -35,23 +37,25 @@ const Accordions = <ItemT extends { accordionKey: string }>({
   );
 };
 
-type Props<ItemT> = {
+export type AccordionProps<ItemT> = {
   data: ItemT[];
   renderTrigger: (item: ItemT) => ReactNode;
   renderExpanded: ({ selectedItem }: { selectedItem: ItemT }) => ReactNode;
+  customized?: ReactNode;
 };
 
 export const Accordion = <ItemT extends { accordionKey: string }>({
   data,
   renderTrigger,
   renderExpanded,
-}: Props<ItemT>) => {
+  customized,
+}: AccordionProps<ItemT>) => {
   const [accordionKey, setAccordionKey] = useAccordion();
   return (
     <>
       {data.map((item) => {
         return (
-          <Accordions
+          <AccordionRenderer
             key={item.accordionKey}
             accordionKey={accordionKey}
             item={item}
@@ -70,6 +74,7 @@ export const Accordion = <ItemT extends { accordionKey: string }>({
           />
         );
       })}
+      {customized}
     </>
   );
 };

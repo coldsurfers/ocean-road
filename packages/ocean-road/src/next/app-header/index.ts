@@ -1,9 +1,11 @@
 import { AppHeader as AppHeaderDefault } from '@/extensions';
 import { FloatingHeader } from './app-header';
-import { FullScreenMobileMenu } from './app-header.full-screen-mobile-menu';
+import { FullScreenMobileAccordionDrawer } from './app-header.full-screen-mobile-accordion-drawer';
+import { ModalMobileAccordionDrawer } from './app-header.modal-mobile-accordion-drawer';
 
 export const AppHeader = {
   ...AppHeaderDefault,
   FloatingHeader,
-  FullScreenMobileDrawer: FullScreenMobileMenu,
+  FullScreenMobileAccordionDrawer,
+  ModalMobileAccordionDrawer,
 };
