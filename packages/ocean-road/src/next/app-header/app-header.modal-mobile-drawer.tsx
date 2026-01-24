@@ -5,7 +5,7 @@ import { semantics } from '@/tokens';
 import { usePreventScrollEffect } from '@/utils/use-prevent-scroll-effect';
 import styled from '@emotion/styled';
 import { AlignRight } from 'lucide-react';
-import type { PropsWithChildren, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 export const MobileMenuIcon = styled(AlignRight)`
   color: ${semantics.color.foreground[3]};
@@ -39,16 +39,14 @@ export const ModalPaper = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 `;
 
-type ModalMobileDrawerProps<ItemT> = PropsWithChildren<
-  {
-    isOpen: boolean;
-    onClose: () => void;
-    bottomAccessory?: ReactNode;
-  } & AccordionProps<ItemT>
->;
+type ModalMobileDrawerProps<ItemT> = {
+  isOpen: boolean;
+  onClose: () => void;
+  bottomAccessory?: ReactNode;
+} & AccordionProps<ItemT>;
 
+// @TODO: refactor this component's name as ModalMobileAccordionDrawer
 export const ModalMobileDrawer = <ItemT extends { accordionKey: string }>({
-  children,
   isOpen,
   onClose,
   bottomAccessory,
@@ -65,7 +63,6 @@ export const ModalMobileDrawer = <ItemT extends { accordionKey: string }>({
           <ModalContent>
             <ul style={{ listStyleType: 'none', padding: 0, margin: '10px 20px' }}>
               <Accordion {...accordionProps} />
-              {children}
             </ul>
             {bottomAccessory}
           </ModalContent>

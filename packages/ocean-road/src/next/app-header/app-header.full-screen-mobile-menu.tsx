@@ -100,6 +100,7 @@ const MobileMenuContent = (props: FullScreenMobileMenuProps) => {
   );
 };
 
+// @TODO: refactor this component's name as FullScreenMobileMenuAccordionDrawer
 export const FullScreenMobileMenu = memo((props: FullScreenMobileMenuProps) => {
   if (props.standalone) {
     return (

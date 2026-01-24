@@ -39,17 +39,18 @@ const AccordionRenderer = <ItemT extends { accordionKey: string }>({
   );
 };
 
-export type AccordionProps<ItemT> = PropsWithChildren<{
+export type AccordionProps<ItemT> = {
   data: ItemT[];
   renderTrigger: (item: ItemT) => ReactNode;
   renderExpanded: ({ selectedItem }: { selectedItem: ItemT }) => ReactNode;
-}>;
+  customized?: ReactNode;
+};
 
 export const Accordion = <ItemT extends { accordionKey: string }>({
   data,
   renderTrigger,
   renderExpanded,
-  children,
+  customized,
 }: AccordionProps<ItemT>) => {
   const [accordionKey, setAccordionKey] = useAccordion();
   return (
@@ -73,7 +74,7 @@ export const Accordion = <ItemT extends { accordionKey: string }>({
             )}
             renderExpanded={({ selectedItem }) => <>{renderExpanded({ selectedItem })}</>}
           >
-            {children}
+            {customized}
           </AccordionRenderer>
         );
       })}
