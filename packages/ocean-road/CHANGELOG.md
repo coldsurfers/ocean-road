@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.38
+
+### Patch Changes
+
+- [#87](https://github.com/coldsurfers/ocean-road/pull/87) [`c422136`](https://github.com/coldsurfers/ocean-road/commit/c4221363f1d7a91dbe33b8ff677e0e11d127697a) Thanks [@yungblud](https://github.com/yungblud)! - Added Accordion (PoC Level)
+
 ## 1.12.37
 
 ### Patch Changes
