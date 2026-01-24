@@ -5,8 +5,8 @@ import { AppHeader } from '@coldsurfers/ocean-road/next';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'next/AppHeader.FullScreenMobileDrawer',
-  component: AppHeader.FullScreenMobileDrawer,
+  title: 'next/AppHeader.FullScreenMobileAccordionDrawer',
+  component: AppHeader.FullScreenMobileAccordionDrawer,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -19,37 +19,48 @@ const meta = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
   args: {},
-} satisfies Meta<typeof AppHeader.FullScreenMobileDrawer>;
+} satisfies Meta<typeof AppHeader.FullScreenMobileAccordionDrawer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Default: Story = {
-  args: {
-    ColorSchemeToggleComponent: <ColorSchemeToggle />,
-    isOpen: true,
-    renderMenuList: ({ isOpen, close }) => (
-      <>
-        <MenuItem>Hello, MenuItem</MenuItem>
-        <MenuItem>Hello, MenuItem</MenuItem>
-      </>
-    ),
-    standalone: true,
-    zIndex: 99,
-    onClickClose: () => console.log('close'),
-  },
-  render: (args) => {
+export const Default: Omit<Story, 'args'> = {
+  render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { openMobileMenu, closeMobileMenu, isMobileMenuOpen } = AppHeader.useIsMobileMenuOpen();
     return (
       <>
         <Button onClick={openMobileMenu}>Open Drawer</Button>
-        <AppHeader.FullScreenMobileDrawer
-          {...args}
+        <AppHeader.FullScreenMobileAccordionDrawer
           standalone
           isOpen={isMobileMenuOpen}
+          ColorSchemeToggleComponent={<ColorSchemeToggle />}
           onClickClose={closeMobileMenu}
+          data={[
+            {
+              accordionKey: 'Key',
+              title: 'World',
+              subItems: [
+                {
+                  title: 'Hi, There',
+                },
+                {
+                  title: 'Good to see you',
+                },
+              ],
+            },
+          ]}
+          renderTrigger={(item) => <MenuItem>Hello, {item.title}</MenuItem>}
+          renderExpanded={({ selectedItem }) => (
+            <>
+              {selectedItem.subItems.map((item) => (
+                <MenuItem style={{ marginLeft: '1rem' }} key={item.title}>
+                  {item.title}
+                </MenuItem>
+              ))}
+            </>
+          )}
         />
       </>
     );
