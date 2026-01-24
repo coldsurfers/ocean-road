@@ -57,7 +57,12 @@ export const Accordion = <ItemT extends { accordionKey: string }>({
             item={item}
             renderTrigger={(item) => (
               // biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-              <div key={item.accordionKey} onClick={() => setAccordionKey(item.accordionKey)}>
+              <div
+                key={item.accordionKey}
+                onClick={() =>
+                  setAccordionKey((prev) => (prev === accordionKey ? null : item.accordionKey))
+                }
+              >
                 {renderTrigger(item)}
               </div>
             )}
