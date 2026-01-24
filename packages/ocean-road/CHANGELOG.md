@@ -1,5 +1,12 @@
 # @coldsurfers/ocean-road
 
+## 1.12.39
+
+### Patch Changes
+
+- [#89](https://github.com/coldsurfers/ocean-road/pull/89) [`c887d97`](https://github.com/coldsurfers/ocean-road/commit/c887d97b5281ca4849176eb31b8f4436cdca6506) Thanks [@yungblud](https://github.com/yungblud)! - - added ModalDrawer
+  - implemented accordion based patterns on Drawers
+
 ## 1.12.38
 
 ### Patch Changes
