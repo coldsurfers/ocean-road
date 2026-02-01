@@ -1,5 +1,6 @@
 'use client';
 
+import { fullyDecodePathname } from '@coldsurfers/shared-utils';
 import Link, { type LinkProps } from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -24,7 +25,7 @@ export function GlobalLink({
   const handleClick = useCallback<MouseEventHandler<HTMLAnchorElement>>(
     (e) => {
       const to = getRedirectHref(href);
-      const from = pathname;
+      const from = fullyDecodePathname(pathname);
       if (!target && to !== from) {
         setIsLoading(true);
       }

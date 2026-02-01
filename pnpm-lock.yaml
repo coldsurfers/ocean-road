@@ -307,8 +307,8 @@ importers:
   packages/ocean-road:
     dependencies:
       '@coldsurfers/shared-utils':
-        specifier: 1.1.7
-        version: 1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
+        specifier: 1.1.8
+        version: 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
       ts-pattern:
         specifier: 5.8.0
         version: 5.8.0
@@ -1425,6 +1425,13 @@ packages:
 
   '@coldsurfers/shared-utils@1.1.7':
     resolution: {integrity: sha512-9v8SJLG9mN7FXQWM0SkDu1kPbcXKxTHgLkjw0vYbn6wRKhM1W5Hq9bE5OOMse4E18Rpac1CyrVRErP0139v2IA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/shared-utils/1.1.7/73bf9ed7b31d899802a8ef29e98b33147b4a0a1f}
+    peerDependencies:
+      jwt-decode: ^4.0.0
+      schema-dts: ^1.1.2
+      zod: ^3.23.8
+
+  '@coldsurfers/shared-utils@1.1.8':
+    resolution: {integrity: sha512-fhFOI3H6zLUn/srgbXFkO6a0B+9MX8PgrNruTstVgq78LELjp8P6Ft4eabyjkIH19gqRbDDmgGFZoroxYCKR0A==, tarball: https://npm.pkg.github.com/download/@coldsurfers/shared-utils/1.1.8/07be88eea34af11d201f577e831b2e18805e7088}
     peerDependencies:
       jwt-decode: ^4.0.0
       schema-dts: ^1.1.2
@@ -9642,6 +9649,15 @@ snapshots:
       ts-pattern: 5.8.0
 
   '@coldsurfers/shared-utils@1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)':
+    dependencies:
+      date-fns: 4.1.0
+      date-fns-tz: 3.2.0(date-fns@4.1.0)
+      jwt-decode: 4.0.0
+      schema-dts: 1.1.5
+      slugify: 1.6.6
+      zod: 4.3.5
+
+  '@coldsurfers/shared-utils@1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)':
     dependencies:
       date-fns: 4.1.0
       date-fns-tz: 3.2.0(date-fns@4.1.0)
