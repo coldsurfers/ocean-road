@@ -306,6 +306,9 @@ importers:
 
   packages/ocean-road:
     dependencies:
+      '@coldsurfers/shared-utils':
+        specifier: 1.1.8
+        version: 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
       ts-pattern:
         specifier: 5.8.0
         version: 5.8.0
@@ -320,8 +323,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@coldsurfers/ocean-road-design-tokens':
-        specifier: 1.10.8-rc.2
-        version: 1.10.8-rc.2
+        specifier: 1.10.8
+        version: 1.10.8
       '@emotion/css':
         specifier: 11.10.6
         version: 11.10.6
@@ -1385,9 +1388,6 @@ packages:
   '@coldsurfers/ocean-road-design-tokens@1.10.8':
     resolution: {integrity: sha512-mjkNIwuEktuSGcyYQXTRuqTUUzW7fRAeZC1uG5rjRItDcY+dwruZXoryOVi3iNidXY6XSRe6ExnvJ9jkTT6uyQ==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.8/f2a94362d591487868c91fd35d065c33d00ceb00}
 
-  '@coldsurfers/ocean-road-design-tokens@1.10.8-rc.2':
-    resolution: {integrity: sha512-r9pU0i6Jl/nbY9hxk0fvXUICXmVCL00hLbt4/g+KOoIFFiqA41mH8k1HTohOxhRnOczp42FLMqfpcsezydurSQ==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.8-rc.2/8f335b368174f401626afbfad0f9be90cf38ce1f}
-
   '@coldsurfers/ocean-road@1.12.27-rc.2':
     resolution: {integrity: sha512-qt8xvcSMLSLlhjDklv6/5FXbLhH0ZBYEt5clL2eQr3SAsZD2z6v8maY27YvFHhfkSGW7qGk+hAsylX6gCfF/KA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.27-rc.2/9b0a02b5ba7d7664fa17530090938abfb1f9edd6}
     peerDependencies:
@@ -1425,6 +1425,13 @@ packages:
 
   '@coldsurfers/shared-utils@1.1.7':
     resolution: {integrity: sha512-9v8SJLG9mN7FXQWM0SkDu1kPbcXKxTHgLkjw0vYbn6wRKhM1W5Hq9bE5OOMse4E18Rpac1CyrVRErP0139v2IA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/shared-utils/1.1.7/73bf9ed7b31d899802a8ef29e98b33147b4a0a1f}
+    peerDependencies:
+      jwt-decode: ^4.0.0
+      schema-dts: ^1.1.2
+      zod: ^3.23.8
+
+  '@coldsurfers/shared-utils@1.1.8':
+    resolution: {integrity: sha512-fhFOI3H6zLUn/srgbXFkO6a0B+9MX8PgrNruTstVgq78LELjp8P6Ft4eabyjkIH19gqRbDDmgGFZoroxYCKR0A==, tarball: https://npm.pkg.github.com/download/@coldsurfers/shared-utils/1.1.8/07be88eea34af11d201f577e831b2e18805e7088}
     peerDependencies:
       jwt-decode: ^4.0.0
       schema-dts: ^1.1.2
@@ -9606,10 +9613,6 @@ snapshots:
     dependencies:
       open-color: 1.9.1
 
-  '@coldsurfers/ocean-road-design-tokens@1.10.8-rc.2':
-    dependencies:
-      open-color: 1.9.1
-
   '@coldsurfers/ocean-road@1.12.27-rc.2(65a661ed00da2e9a3c600201a877e2a8)':
     dependencies:
       '@coldsurfers/ocean-road-design-tokens': 1.10.8
@@ -9646,6 +9649,15 @@ snapshots:
       ts-pattern: 5.8.0
 
   '@coldsurfers/shared-utils@1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)':
+    dependencies:
+      date-fns: 4.1.0
+      date-fns-tz: 3.2.0(date-fns@4.1.0)
+      jwt-decode: 4.0.0
+      schema-dts: 1.1.5
+      slugify: 1.6.6
+      zod: 4.3.5
+
+  '@coldsurfers/shared-utils@1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)':
     dependencies:
       date-fns: 4.1.0
       date-fns-tz: 3.2.0(date-fns@4.1.0)
