@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.41
+
+### Patch Changes
+
+- [#93](https://github.com/coldsurfers/ocean-road/pull/93) [`3596e78`](https://github.com/coldsurfers/ocean-road/commit/3596e78f98c149ba5f38cdfdf6e025e38090ffdf) Thanks [@yungblud](https://github.com/yungblud)! - Fixed decode uri GlobalLink
+
 ## 1.12.40
 
 ### Patch Changes
