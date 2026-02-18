@@ -23,22 +23,42 @@ import type { DropdownMenuItemRef } from './dropdown.types';
 
 const POSITION_PADDING = 8;
 
-export type DropdownCoreProps = PropsWithChildren<{
-  isOpen: boolean;
-  onClose: () => void;
-  position?: {
-    top: number;
-    left: number;
-  };
-  className?: string;
-  style?: CSSProperties;
-  isLoading?: boolean;
-  backdrop?: boolean;
-  preventScroll?: boolean;
-  animate?: boolean;
-  triggerRef?: RefObject<HTMLElement>;
-  zIndex?: number;
-}>;
+type Position = {
+  top: number;
+  left?: number;
+  right?: number;
+};
+
+export type DropdownCoreProps = PropsWithChildren<
+  | {
+      isOpen: boolean;
+      onClose: () => void;
+      position?: Position;
+      className?: string;
+      style?: CSSProperties;
+      isLoading?: boolean;
+      backdrop?: boolean;
+      preventScroll?: boolean;
+      animate?: boolean;
+      triggerRef?: RefObject<HTMLElement>;
+      zIndex?: number;
+      edge: 'left';
+    }
+  | {
+      isOpen: boolean;
+      onClose: () => void;
+      position?: Position;
+      className?: string;
+      style?: CSSProperties;
+      isLoading?: boolean;
+      backdrop?: boolean;
+      preventScroll?: boolean;
+      animate?: boolean;
+      triggerRef?: RefObject<HTMLElement>;
+      zIndex?: number;
+      edge: 'right';
+    }
+>;
 
 const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
   (
@@ -55,6 +75,7 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
       animate = true,
       triggerRef,
       zIndex,
+      edge,
     },
     ref
   ) => {
@@ -66,7 +87,7 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
     };
 
     const [maxHeight, setMaxHeight] = useState(0);
-    const [innerPosition, setInnerPosition] = useState(position);
+    const [innerPosition, setInnerPosition] = useState<Position | undefined>(position);
 
     const calculatePosition = useCallback(() => {
       if (!triggerRef?.current) return null;
@@ -76,16 +97,23 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
       const left = rect.left + window.scrollX;
       const selfWidth = dropdownRef.current?.getBoundingClientRect().width ?? 0;
 
+      if (edge === 'left') {
+        return {
+          top: rect.bottom + window.scrollY + POSITION_PADDING,
+          left:
+            left < 0
+              ? 0
+              : left > window.innerWidth - selfWidth
+                ? window.innerWidth - selfWidth - 10
+                : left,
+        };
+      }
+
       return {
         top: rect.bottom + window.scrollY + POSITION_PADDING,
-        left:
-          left < 0
-            ? 0
-            : left > window.innerWidth - selfWidth
-              ? window.innerWidth - selfWidth - 10
-              : left,
+        right: rect.right - rect.width,
       };
-    }, [triggerRef]);
+    }, [edge, triggerRef]);
 
     const calculateMaxHeight = useCallback(() => {
       const vh = window.visualViewport?.height ?? window.innerHeight;
@@ -136,16 +164,36 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
     }));
 
     const dropdownStyle = useMemo<MotionStyle>(() => {
+      if (edge === 'left') {
+        const value: MotionStyle = {
+          top: triggerRef?.current ? innerPosition?.top : undefined,
+          left: triggerRef?.current ? innerPosition?.left : undefined,
+          maxHeight: triggerRef?.current ? `${maxHeight}px` : undefined,
+          overflowY: 'scroll',
+          scrollbarWidth: 'none',
+          ...style,
+        };
+        return value;
+      }
+
       const value: MotionStyle = {
         top: triggerRef?.current ? innerPosition?.top : undefined,
-        left: triggerRef?.current ? innerPosition?.left : undefined,
+        right: triggerRef?.current ? innerPosition?.right : undefined,
         maxHeight: triggerRef?.current ? `${maxHeight}px` : undefined,
         overflowY: 'scroll',
         scrollbarWidth: 'none',
         ...style,
       };
       return value;
-    }, [innerPosition?.left, innerPosition?.top, maxHeight, style, triggerRef]);
+    }, [
+      edge,
+      innerPosition?.left,
+      innerPosition?.right,
+      innerPosition?.top,
+      maxHeight,
+      style,
+      triggerRef,
+    ]);
 
     return (
       <AnimatePresence>

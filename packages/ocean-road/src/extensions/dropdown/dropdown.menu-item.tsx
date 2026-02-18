@@ -72,6 +72,7 @@ export const DropdownMenuItem = forwardRef(function DropdownMenuItemComponent<Da
         ({ close, isOpen }) =>
           isOpen && (
             <Dropdown
+              edge="left"
               backdrop={backdrop}
               preventScroll={false}
               isOpen={isOpen}
@@ -206,6 +207,7 @@ export const DropdownMenuItem = forwardRef(function DropdownMenuItemComponent<Da
               }}
             />
             <Dropdown
+              edge="left"
               backdrop={backdrop}
               preventScroll={false}
               isOpen

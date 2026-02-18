@@ -15,18 +15,21 @@ export const DropdownTrigger = ({
   children,
   backdrop,
   zIndex,
+  edge,
 }: PropsWithChildren<{
   renderTriggerNode: ({ openDropdown }: { openDropdown: () => void }) => ReactNode;
   triggerRef: DropdownCoreProps['triggerRef'];
   backdrop: DropdownCoreProps['backdrop'];
   zIndex: DropdownCoreProps['zIndex'];
+  edge: DropdownCoreProps['edge'];
 }>) => {
   const dropdownRef = useRef<DropdownMenuItemRef>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [dropdownPosition, setDropdownPosition] = useState<
     | {
         top: number;
-        left: number;
+        left?: number;
+        right?: number;
       }
     | undefined
   >(undefined);
@@ -36,11 +39,18 @@ export const DropdownTrigger = ({
 
     const rect = triggerRef.current.getBoundingClientRect();
 
+    if (edge === 'left') {
+      return {
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+      };
+    }
+
     return {
       top: rect.bottom + window.scrollY,
-      left: rect.left + window.scrollX,
+      right: rect.right - rect.width,
     };
-  }, [triggerRef]);
+  }, [edge, triggerRef]);
 
   // Handle dropdown open
   const openDropdown = useCallback(() => {
@@ -89,6 +99,7 @@ export const DropdownTrigger = ({
         triggerRef={triggerRef}
         backdrop={backdrop}
         zIndex={zIndex}
+        edge={edge}
       >
         {children}
       </Dropdown>
