@@ -20,6 +20,7 @@ import {
   StyledDropdownSpinnerItem,
 } from './dropdown.styled';
 import type { DropdownMenuItemRef } from './dropdown.types';
+import { calculatePosition } from './dropdown.utils';
 
 const POSITION_PADDING = 8;
 
@@ -76,35 +77,6 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
     const [maxHeight, setMaxHeight] = useState(0);
     const [innerPosition, setInnerPosition] = useState<Position | undefined>(position);
 
-    const calculatePosition = useCallback(() => {
-      if (!triggerRef?.current) return null;
-
-      const rect = triggerRef.current.getBoundingClientRect();
-
-      const left = rect.left + window.scrollX;
-      const selfWidth = dropdownRef.current?.getBoundingClientRect().width ?? 0;
-
-      if (edge === 'left') {
-        return {
-          top: rect.bottom + window.scrollY + POSITION_PADDING,
-          left:
-            left < 0
-              ? 0
-              : left > window.innerWidth - selfWidth
-                ? window.innerWidth - selfWidth - 10
-                : left,
-        };
-      }
-
-      const documentWidth = document.documentElement.getBoundingClientRect().width;
-      const right = documentWidth - rect.right;
-
-      return {
-        top: rect.bottom + window.scrollY + POSITION_PADDING,
-        right,
-      };
-    }, [edge, triggerRef]);
-
     const calculateMaxHeight = useCallback(() => {
       const vh = window.visualViewport?.height ?? window.innerHeight;
       const domTop = dropdownRef.current?.getBoundingClientRect().top ?? 0;
@@ -120,11 +92,16 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
 
       if (!isOpen) {
         setMaxHeight(0);
+        setInnerPosition(undefined);
         return;
       }
 
       const updatePosition = () => {
-        const nextPosition = calculatePosition();
+        const nextPosition = calculatePosition({
+          triggerRef,
+          dropdownRef,
+          edge,
+        });
         if (nextPosition) {
           setInnerPosition(nextPosition);
         }
@@ -141,7 +118,7 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
         window.removeEventListener('resize', updatePosition);
         window.removeEventListener('scroll', updatePosition);
       };
-    }, [calculateMaxHeight, calculatePosition, isOpen, triggerRef]);
+    }, [calculateMaxHeight, edge, isOpen, triggerRef]);
 
     usePreventScrollEffect({
       shouldPrevent: preventScroll && isOpen,

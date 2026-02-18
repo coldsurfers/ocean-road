@@ -25,53 +25,14 @@ export const DropdownTrigger = ({
 }>) => {
   const dropdownRef = useRef<DropdownMenuItemRef>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
-  const [dropdownPosition, setDropdownPosition] = useState<
-    | {
-        top: number;
-        left?: number;
-        right?: number;
-      }
-    | undefined
-  >(undefined);
-
-  // @TODO: Do we really need this? Maybe we can delegate this to just Dropdown's calculatePosition, because it's calculated in useEffect
-  const calculatePosition = useCallback(() => {
-    if (!triggerRef?.current) return null;
-
-    const rect = triggerRef.current.getBoundingClientRect();
-
-    if (edge === 'left') {
-      return {
-        top: rect.bottom + window.scrollY,
-        left: rect.left + window.scrollX,
-      };
-    }
-
-    const documentWidth = document.documentElement.getBoundingClientRect().width;
-    const right = documentWidth - rect.right;
-
-    return {
-      top: rect.bottom + window.scrollY,
-      right,
-    };
-  }, [edge, triggerRef]);
 
   // Handle dropdown open
   const openDropdown = useCallback(() => {
-    if (triggerRef?.current) {
-      const nextPosition = calculatePosition();
-      if (!nextPosition) return;
-      setDropdownPosition(nextPosition);
-      setIsDropdownOpen(true);
-    }
-  }, [calculatePosition, triggerRef]);
+    setIsDropdownOpen(true);
+  }, []);
 
   const closeDropdown = useCallback(() => {
     setIsDropdownOpen(false);
-    setDropdownPosition({
-      top: 0,
-      left: 0,
-    });
   }, []);
 
   useEffect(() => {
@@ -99,7 +60,6 @@ export const DropdownTrigger = ({
         ref={dropdownRef}
         isOpen={isDropdownOpen}
         onClose={closeDropdown}
-        position={dropdownPosition}
         triggerRef={triggerRef}
         backdrop={backdrop}
         zIndex={zIndex}
