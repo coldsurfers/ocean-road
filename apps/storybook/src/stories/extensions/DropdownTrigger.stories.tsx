@@ -41,6 +41,7 @@ export const DropdownWithCustomTrigger: Omit<Story, 'args'> = {
           )}
           backdrop={false}
           zIndex={99}
+          edge="left"
         >
           <Dropdown.ResultItem>Hello Dropdown Trigger</Dropdown.ResultItem>
         </Dropdown.Trigger>
