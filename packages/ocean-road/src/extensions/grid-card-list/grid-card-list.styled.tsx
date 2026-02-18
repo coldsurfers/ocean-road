@@ -1,5 +1,6 @@
 import { Text } from '@/base';
 import { media } from '@/utils';
+import { commonHorizontalLayoutCss } from '@/utils/common-styles';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -19,7 +20,9 @@ export const StyledGridContainer = styled.div`
   `)}
 `;
 
-export const StyledListContainer = styled.div``;
+export const StyledListContainer = styled.div`
+  ${commonHorizontalLayoutCss(['left', 'right'])};
+`;
 
 export const StyledListHeader = styled.div`
   width: 100%;
