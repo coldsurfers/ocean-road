@@ -22,13 +22,6 @@ export const StyledListHeader = styled.div`
   `)}
 `;
 
-export const StyledNavigationContainer = styled.div`
-  margin-bottom: 3rem;
-  ${media.small(css`
-    margin-bottom: 1.875rem;
-  `)}
-`;
-
 export const StyledListHeaderText = styled(Text)`
   text-align: center;
   color: ${semantics.color.foreground[2]};

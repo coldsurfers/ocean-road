@@ -6,8 +6,8 @@ import {
   StyledListContainer,
   StyledListHeader,
   StyledListHeaderText,
-  StyledNavigationContainer,
 } from './grid-card-list.masonry.styled';
+import { StyledNavigationContainer } from './grid-card-list.styled';
 
 type Props = {
   items: GridCardListItemProps[];

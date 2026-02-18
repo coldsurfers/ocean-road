@@ -26,3 +26,10 @@ export const StyledListHeader = styled.div`
 `;
 
 export const StyledListHeaderText = styled(Text)``;
+
+export const StyledNavigationContainer = styled.div`
+  margin-bottom: 3rem;
+  ${media.small(css`
+    margin-bottom: 1.875rem;
+  `)}
+`;
