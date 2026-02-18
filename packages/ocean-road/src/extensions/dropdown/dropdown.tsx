@@ -20,16 +20,20 @@ import {
   StyledDropdownSpinnerItem,
 } from './dropdown.styled';
 import type { DropdownMenuItemRef } from './dropdown.types';
+import { calculatePosition } from './dropdown.utils';
 
 const POSITION_PADDING = 8;
 
-export type DropdownCoreProps = PropsWithChildren<{
+type Position = {
+  top: number;
+  left?: number;
+  right?: number;
+};
+
+type DropdownCoreBaseProps = {
   isOpen: boolean;
   onClose: () => void;
-  position?: {
-    top: number;
-    left: number;
-  };
+  position?: Position;
   className?: string;
   style?: CSSProperties;
   isLoading?: boolean;
@@ -38,7 +42,11 @@ export type DropdownCoreProps = PropsWithChildren<{
   animate?: boolean;
   triggerRef?: RefObject<HTMLElement>;
   zIndex?: number;
-}>;
+};
+
+export type DropdownCoreProps = PropsWithChildren<
+  ({ edge: 'left' } & DropdownCoreBaseProps) | ({ edge: 'right' } & DropdownCoreBaseProps)
+>;
 
 const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
   (
@@ -55,6 +63,7 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
       animate = true,
       triggerRef,
       zIndex,
+      edge,
     },
     ref
   ) => {
@@ -66,26 +75,7 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
     };
 
     const [maxHeight, setMaxHeight] = useState(0);
-    const [innerPosition, setInnerPosition] = useState(position);
-
-    const calculatePosition = useCallback(() => {
-      if (!triggerRef?.current) return null;
-
-      const rect = triggerRef.current.getBoundingClientRect();
-
-      const left = rect.left + window.scrollX;
-      const selfWidth = dropdownRef.current?.getBoundingClientRect().width ?? 0;
-
-      return {
-        top: rect.bottom + window.scrollY + POSITION_PADDING,
-        left:
-          left < 0
-            ? 0
-            : left > window.innerWidth - selfWidth
-              ? window.innerWidth - selfWidth - 10
-              : left,
-      };
-    }, [triggerRef]);
+    const [innerPosition, setInnerPosition] = useState<Position | undefined>(position);
 
     const calculateMaxHeight = useCallback(() => {
       const vh = window.visualViewport?.height ?? window.innerHeight;
@@ -102,11 +92,16 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
 
       if (!isOpen) {
         setMaxHeight(0);
+        setInnerPosition(undefined);
         return;
       }
 
       const updatePosition = () => {
-        const nextPosition = calculatePosition();
+        const nextPosition = calculatePosition({
+          triggerRef,
+          dropdownRef,
+          edge,
+        });
         if (nextPosition) {
           setInnerPosition(nextPosition);
         }
@@ -123,7 +118,7 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
         window.removeEventListener('resize', updatePosition);
         window.removeEventListener('scroll', updatePosition);
       };
-    }, [calculateMaxHeight, calculatePosition, isOpen, triggerRef]);
+    }, [calculateMaxHeight, edge, isOpen, triggerRef]);
 
     usePreventScrollEffect({
       shouldPrevent: preventScroll && isOpen,
@@ -136,16 +131,36 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
     }));
 
     const dropdownStyle = useMemo<MotionStyle>(() => {
+      if (edge === 'left') {
+        const value: MotionStyle = {
+          top: triggerRef?.current ? innerPosition?.top : undefined,
+          left: triggerRef?.current ? innerPosition?.left : undefined,
+          maxHeight: triggerRef?.current ? `${maxHeight}px` : undefined,
+          overflowY: 'scroll',
+          scrollbarWidth: 'none',
+          ...style,
+        };
+        return value;
+      }
+
       const value: MotionStyle = {
         top: triggerRef?.current ? innerPosition?.top : undefined,
-        left: triggerRef?.current ? innerPosition?.left : undefined,
+        right: triggerRef?.current ? innerPosition?.right : undefined,
         maxHeight: triggerRef?.current ? `${maxHeight}px` : undefined,
         overflowY: 'scroll',
         scrollbarWidth: 'none',
         ...style,
       };
       return value;
-    }, [innerPosition?.left, innerPosition?.top, maxHeight, style, triggerRef]);
+    }, [
+      edge,
+      innerPosition?.left,
+      innerPosition?.right,
+      innerPosition?.top,
+      maxHeight,
+      style,
+      triggerRef,
+    ]);
 
     return (
       <AnimatePresence>

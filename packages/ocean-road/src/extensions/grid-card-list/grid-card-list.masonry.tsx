@@ -2,12 +2,11 @@ import { Fragment, type ReactNode, memo } from 'react';
 import type { GridCardListItemProps } from '../grid-card-item';
 import { GridCardListLoadMore } from '../grid-card-list-load-more';
 import {
-  StyledGridContainer,
   StyledListContainer,
   StyledListHeader,
   StyledListHeaderText,
-  StyledNavigationContainer,
 } from './grid-card-list.masonry.styled';
+import { StyledGridContainer, StyledNavigationContainer } from './grid-card-list.styled';
 
 type Props = {
   items: GridCardListItemProps[];

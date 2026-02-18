@@ -15,49 +15,24 @@ export const DropdownTrigger = ({
   children,
   backdrop,
   zIndex,
+  edge,
 }: PropsWithChildren<{
   renderTriggerNode: ({ openDropdown }: { openDropdown: () => void }) => ReactNode;
   triggerRef: DropdownCoreProps['triggerRef'];
   backdrop: DropdownCoreProps['backdrop'];
   zIndex: DropdownCoreProps['zIndex'];
+  edge: DropdownCoreProps['edge'];
 }>) => {
   const dropdownRef = useRef<DropdownMenuItemRef>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
-  const [dropdownPosition, setDropdownPosition] = useState<
-    | {
-        top: number;
-        left: number;
-      }
-    | undefined
-  >(undefined);
-
-  const calculatePosition = useCallback(() => {
-    if (!triggerRef?.current) return null;
-
-    const rect = triggerRef.current.getBoundingClientRect();
-
-    return {
-      top: rect.bottom + window.scrollY,
-      left: rect.left + window.scrollX,
-    };
-  }, [triggerRef]);
 
   // Handle dropdown open
   const openDropdown = useCallback(() => {
-    if (triggerRef?.current) {
-      const nextPosition = calculatePosition();
-      if (!nextPosition) return;
-      setDropdownPosition(nextPosition);
-      setIsDropdownOpen(true);
-    }
-  }, [calculatePosition, triggerRef]);
+    setIsDropdownOpen(true);
+  }, []);
 
   const closeDropdown = useCallback(() => {
     setIsDropdownOpen(false);
-    setDropdownPosition({
-      top: 0,
-      left: 0,
-    });
   }, []);
 
   useEffect(() => {
@@ -85,10 +60,10 @@ export const DropdownTrigger = ({
         ref={dropdownRef}
         isOpen={isDropdownOpen}
         onClose={closeDropdown}
-        position={dropdownPosition}
         triggerRef={triggerRef}
         backdrop={backdrop}
         zIndex={zIndex}
+        edge={edge}
       >
         {children}
       </Dropdown>
