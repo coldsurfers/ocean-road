@@ -29,35 +29,22 @@ type Position = {
   right?: number;
 };
 
+type DropdownCoreBaseProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  position?: Position;
+  className?: string;
+  style?: CSSProperties;
+  isLoading?: boolean;
+  backdrop?: boolean;
+  preventScroll?: boolean;
+  animate?: boolean;
+  triggerRef?: RefObject<HTMLElement>;
+  zIndex?: number;
+};
+
 export type DropdownCoreProps = PropsWithChildren<
-  | {
-      isOpen: boolean;
-      onClose: () => void;
-      position?: Position;
-      className?: string;
-      style?: CSSProperties;
-      isLoading?: boolean;
-      backdrop?: boolean;
-      preventScroll?: boolean;
-      animate?: boolean;
-      triggerRef?: RefObject<HTMLElement>;
-      zIndex?: number;
-      edge: 'left';
-    }
-  | {
-      isOpen: boolean;
-      onClose: () => void;
-      position?: Position;
-      className?: string;
-      style?: CSSProperties;
-      isLoading?: boolean;
-      backdrop?: boolean;
-      preventScroll?: boolean;
-      animate?: boolean;
-      triggerRef?: RefObject<HTMLElement>;
-      zIndex?: number;
-      edge: 'right';
-    }
+  ({ edge: 'left' } & DropdownCoreBaseProps) | ({ edge: 'right' } & DropdownCoreBaseProps)
 >;
 
 const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
