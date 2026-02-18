@@ -109,9 +109,12 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
         };
       }
 
+      const documentWidth = document.documentElement.getBoundingClientRect().width;
+      const right = documentWidth - rect.right;
+
       return {
         top: rect.bottom + window.scrollY + POSITION_PADDING,
-        right: rect.right - rect.width,
+        right,
       };
     }, [edge, triggerRef]);
 

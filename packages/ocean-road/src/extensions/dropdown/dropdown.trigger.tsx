@@ -34,6 +34,7 @@ export const DropdownTrigger = ({
     | undefined
   >(undefined);
 
+  // @TODO: Do we really need this? Maybe we can delegate this to just Dropdown's calculatePosition, because it's calculated in useEffect
   const calculatePosition = useCallback(() => {
     if (!triggerRef?.current) return null;
 
@@ -46,9 +47,12 @@ export const DropdownTrigger = ({
       };
     }
 
+    const documentWidth = document.documentElement.getBoundingClientRect().width;
+    const right = documentWidth - rect.right;
+
     return {
       top: rect.bottom + window.scrollY,
-      right: rect.right - rect.width,
+      right,
     };
   }, [edge, triggerRef]);
 
