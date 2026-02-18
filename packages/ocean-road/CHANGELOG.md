@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.12.42
+
+### Patch Changes
+
+- [#95](https://github.com/coldsurfers/ocean-road/pull/95) [`6ff8735`](https://github.com/coldsurfers/ocean-road/commit/6ff8735ef79b8bd9dd057c9e220fff18e59e180a) Thanks [@yungblud](https://github.com/yungblud)! - Added dropdown component edge prop, Added navigationComponent props to GridCard.List
+
 ## 1.12.41
 
 ### Patch Changes
