@@ -22,7 +22,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@coldsurfers/ocean-road": "1.12.27-rc.2",
+    "@coldsurfers/ocean-road": "1.12.42",
     "@coldsurfers/ocean-road-design-tokens": "1.10.8",
     "@gorhom/bottom-sheet": "^5.1.3",
     "@react-native-async-storage/async-storage": "^2.1.2",

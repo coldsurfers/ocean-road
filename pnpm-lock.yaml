@@ -53,8 +53,8 @@ importers:
   apps/StorybookApp:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.27-rc.2
-        version: 1.12.27-rc.2(65a661ed00da2e9a3c600201a877e2a8)
+        specifier: 1.12.42
+        version: 1.12.42(07f1cc49db9900ce61144a69cb229668)
       '@coldsurfers/ocean-road-design-tokens':
         specifier: 1.10.8
         version: 1.10.8
@@ -201,8 +201,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.39
-        version: 1.12.39(5e194e0c179200925dcdc75295af1456)
+        specifier: 1.12.42
+        version: 1.12.42(7a8f8e18bd94afb1c8709adb547c3182)
       '@coldsurfers/ocean-road-design-tokens':
         specifier: 1.10.8
         version: 1.10.8
@@ -1388,25 +1388,8 @@ packages:
   '@coldsurfers/ocean-road-design-tokens@1.10.8':
     resolution: {integrity: sha512-mjkNIwuEktuSGcyYQXTRuqTUUzW7fRAeZC1uG5rjRItDcY+dwruZXoryOVi3iNidXY6XSRe6ExnvJ9jkTT6uyQ==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.8/f2a94362d591487868c91fd35d065c33d00ceb00}
 
-  '@coldsurfers/ocean-road@1.12.27-rc.2':
-    resolution: {integrity: sha512-qt8xvcSMLSLlhjDklv6/5FXbLhH0ZBYEt5clL2eQr3SAsZD2z6v8maY27YvFHhfkSGW7qGk+hAsylX6gCfF/KA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.27-rc.2/9b0a02b5ba7d7664fa17530090938abfb1f9edd6}
-    peerDependencies:
-      '@coldsurfers/ocean-road-design-tokens': ^1.10.7
-      '@emotion/css': ^11.10.6
-      '@emotion/native': ^11.11.0
-      '@emotion/react': ^11.10.6
-      '@emotion/styled': ^11.10.6
-      framer-motion: ^11.11.13
-      lucide-react: ^0.469.0
-      lucide-react-native: ^0.468.0
-      react: 19.2.3
-      react-dom: 19.2.3
-      react-native-reanimated: '>= 3.17.1'
-      react-native-svg: ^15.11.1
-      react-native-worklets: 0.6.0
-
-  '@coldsurfers/ocean-road@1.12.39':
-    resolution: {integrity: sha512-YC//XUz8IpVQyKS12L/7ofO9bB7pHuQWrkI7S6e7kHzH64dDEClNnVDlB4G6Ipex8SRdE4MfYULbMDaxZE95tw==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.39/1e155fa9e1a09ebcc32e1b008c2251e421441860}
+  '@coldsurfers/ocean-road@1.12.42':
+    resolution: {integrity: sha512-JRqnpZZppwJBJUTu1cK6VhPjgmuyCqlEALJyb95ePcGy9SqMM66r63GhgCpZfshF0cmBB/52EfQfrIehdJ+Uhw==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.42/92df1004fc5454feac798586199dbfae56f78790}
     peerDependencies:
       '@coldsurfers/ocean-road-design-tokens': ^1.10.7
       '@emotion/css': ^11.10.6
@@ -5257,20 +5240,23 @@ packages:
 
   glob@10.5.0:
     resolution: {integrity: sha512-DfXN8DfhJ7NH3Oe7cFmu3NCu1wKbkReJ8TorzSAFbSKrlNaQSKfIzqYqVY8zlbs2NLBbWpRiU52GX2PbaBVNkg==}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   glob@11.1.0:
     resolution: {integrity: sha512-vuNwKSaKiqm7g0THUBu2x7ckSs3XJLXE+2ssL7/MfTGPLLcrJQ/4Uq1CjPTtO5cCIiRxqvN6Twy1qOwhL0Xjcw==}
     engines: {node: 20 || >=22}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   glob@9.3.5:
     resolution: {integrity: sha512-e1LleDykUz2Iu+MTYdkSsuWX8lvAjAcs0Xef0lNIu0S2wOAzuTxCJtcd9S3cijlwYF18EsU3rzb8jPVobxDh9Q==}
     engines: {node: '>=16 || 14 >=14.17'}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   global-dirs@0.1.1:
     resolution: {integrity: sha512-NknMLn7F2J7aflwFOlGdNIuCDpN3VGoSoB+aap3KABFWbHVn1TCgFC+np23J8W2BiZbjfEw3BFBycSMv1AFblg==}
@@ -9613,9 +9599,10 @@ snapshots:
     dependencies:
       open-color: 1.9.1
 
-  '@coldsurfers/ocean-road@1.12.27-rc.2(65a661ed00da2e9a3c600201a877e2a8)':
+  '@coldsurfers/ocean-road@1.12.42(07f1cc49db9900ce61144a69cb229668)':
     dependencies:
       '@coldsurfers/ocean-road-design-tokens': 1.10.8
+      '@coldsurfers/shared-utils': 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
       '@emotion/css': 11.10.6
       '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
@@ -9623,16 +9610,22 @@ snapshots:
       framer-motion: 11.11.13(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       lucide-react: 0.469.0(react@19.2.3)
       lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      overlay-kit: 1.8.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
       react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.6.0(@babel/core@7.28.5)(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       react-native-svg: 15.13.0(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       ts-pattern: 5.8.0
+    transitivePeerDependencies:
+      - jwt-decode
+      - schema-dts
+      - zod
 
-  '@coldsurfers/ocean-road@1.12.39(5e194e0c179200925dcdc75295af1456)':
+  '@coldsurfers/ocean-road@1.12.42(7a8f8e18bd94afb1c8709adb547c3182)':
     dependencies:
       '@coldsurfers/ocean-road-design-tokens': 1.10.8
+      '@coldsurfers/shared-utils': 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
       '@emotion/css': 11.10.6
       '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
@@ -9647,6 +9640,10 @@ snapshots:
       react-native-svg: 15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       ts-pattern: 5.8.0
+    transitivePeerDependencies:
+      - jwt-decode
+      - schema-dts
+      - zod
 
   '@coldsurfers/shared-utils@1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)':
     dependencies:
