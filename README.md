@@ -18,6 +18,107 @@ $ yarn add @coldsurfers/ocean-road @coldsurfers/ocean-road-design-tokens
 $ yarn add @emotion/css @emotion/native @emotion/react @emotion/styled lucide-react framer-motion
 ```
 
+## React Native
+
+### 설치
+
+```bash
+# 패키지 설치
+pnpm add @coldsurfers/ocean-road @coldsurfers/ocean-road-design-tokens
+
+# peer deps 설치
+pnpm add @emotion/css @emotion/native @emotion/react @emotion/styled lucide-react-native
+```
+
+> `react-native-reanimated`, `react-native-svg`는 optional peer dep입니다. 애니메이션·SVG 컴포넌트를 사용할 경우에만 설치하세요.
+
+---
+
+### ColorSchemeProvider 설정
+
+앱 루트(`_layout.tsx` 또는 `App.tsx`)에서 `ColorSchemeProvider`로 전체 트리를 감쌉니다.
+import 경로는 반드시 `@coldsurfers/ocean-road/native`를 사용하세요.
+
+```tsx
+import { ColorSchemeProvider } from '@coldsurfers/ocean-road/native';
+
+export default function RootLayout() {
+  return (
+    <ColorSchemeProvider initialColorScheme="light">
+      {/* 앱 내용 */}
+    </ColorSchemeProvider>
+  );
+}
+```
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `initialColorScheme` | `'light' \| 'dark' \| 'userPreference'` | `'light'` | 초기 색상 테마 |
+
+---
+
+### useColorScheme()으로 시맨틱 컬러 사용
+
+`useColorScheme()`은 `{ colorScheme, semantics, setColorScheme }`을 반환합니다.
+`semantics.color`를 통해 현재 테마에 맞는 실제 색상값에 접근합니다.
+
+```tsx
+import { useColorScheme } from '@coldsurfers/ocean-road/native';
+import { View, Text, StyleSheet } from 'react-native';
+
+export function MyCard() {
+  const { semantics, setColorScheme } = useColorScheme();
+
+  return (
+    <View style={{ backgroundColor: semantics.color.background['1'] }}>
+      <Text style={{ color: semantics.color.foreground['1'] }}>
+        Hello Ocean Road
+      </Text>
+    </View>
+  );
+}
+```
+
+---
+
+### 시맨틱 컬러 토큰 레퍼런스
+
+`semantics.color.*` 토큰의 실제 색상값입니다.
+
+#### `semantics.color.background`
+
+| 토큰 | light | dark |
+|------|-------|------|
+| `background['1']` | `#ffffff` | `#000000` |
+| `background['2']` | `#f1f3f5` | `#212529` |
+| `background['3']` | `#e9ecef` | `#343a40` |
+| `background['4']` | `#dee2e6` | `#495057` |
+| `background['5']` | `#ced4da` | `#868e96` |
+
+#### `semantics.color.foreground`
+
+| 토큰 | light | dark |
+|------|-------|------|
+| `foreground['1']` | `#212529` | `#f1f3f5` |
+| `foreground['2']` | `#343a40` | `#e9ecef` |
+| `foreground['3']` | `#495057` | `#dee2e6` |
+| `foreground['4']` | `#868e96` | `#ced4da` |
+
+#### `semantics.color.border`
+
+| 토큰 | light | dark |
+|------|-------|------|
+| `border['1']` | `#f1f3f5` | `#495057` |
+| `border['2']` | `#e9ecef` | `#868e96` |
+
+#### `semantics.color.dimmed`
+
+| 토큰 | light | dark |
+|------|-------|------|
+| `dimmed['1']` | `#f1f3f5` | `#495057` |
+
+---
+
 ## Folder Structure
 ocean-road 모노레포의 폴더 구조에 대해 간략히 설명드릴게요.
 
