@@ -128,4 +128,17 @@ packages/               # 공유 패키지들
 ├── ocean-road-design-tokens/         # 디자인 토큰을 자동화하고 있어요.
 apps/               # apps
 ├── storybook/         # 스토리북을 운영하고 있어요.
+├── docs/              # Rspress 기반 문서 사이트
+```
+
+## Docs
+
+Rspress 기반 문서 사이트입니다 (`apps/docs`).
+
+```bash
+# 개발 서버 실행 (localhost:5173)
+pnpm turbo dev --filter=@coldsurfers/docs
+
+# 정적 빌드 (apps/docs/build/)
+pnpm turbo build --filter=@coldsurfers/docs
 ```
