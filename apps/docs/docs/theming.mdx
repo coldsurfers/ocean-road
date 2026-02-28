@@ -1,0 +1,211 @@
+# 테마 (Theming)
+
+Ocean Road는 `ColorSchemeProvider`와 `useColorScheme()` 훅으로 라이트/다크 테마를 관리합니다.
+테마 토큰은 CSS 변수(`--*`)로 `:root`에 주입되며, 모든 컴포넌트가 이 변수를 참조합니다.
+
+---
+
+## ColorSchemeProvider
+
+앱 최상단에서 전체 트리를 감쌉니다. **반드시 한 번 이상 감싸야** Ocean Road 컴포넌트가 올바르게 렌더링됩니다.
+
+```tsx
+import { ColorSchemeProvider } from '@coldsurfers/ocean-road'
+
+export default function App({ children }: { children: React.ReactNode }) {
+  return (
+    <ColorSchemeProvider colorScheme="light">
+      {children}
+    </ColorSchemeProvider>
+  )
+}
+```
+
+### Props
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `colorScheme` | `'light' \| 'dark' \| 'userPreference'` | ✅ | 적용할 색상 테마 |
+| `id` | `string` | — | 지정 시 `:root` 대신 스코프 클래스에 CSS 변수를 주입합니다. 한 페이지에 여러 테마가 공존할 때 사용합니다. |
+| `children` | `React.ReactNode` | ✅ | — |
+
+### colorScheme 값
+
+| 값 | 동작 |
+|----|------|
+| `'light'` | 라이트 테마 고정 |
+| `'dark'` | 다크 테마 고정 |
+| `'userPreference'` | 시스템 설정(`prefers-color-scheme`)을 따르며, 변경 시 자동 반응 |
+
+---
+
+## GlobalStyle
+
+전역 CSS(reset, body 배경색, 다크모드 클래스 처리)를 주입하는 컴포넌트입니다.
+`ColorSchemeProvider` 내부에 함께 배치합니다.
+
+```tsx
+import { ColorSchemeProvider, GlobalStyle } from '@coldsurfers/ocean-road'
+
+export default function App({ children }: { children: React.ReactNode }) {
+  return (
+    <ColorSchemeProvider colorScheme="light">
+      {children}
+      <GlobalStyle />
+    </ColorSchemeProvider>
+  )
+}
+```
+
+### Props
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `themeStorageItem` | `string` | — | localStorage 키. 지정 시 FOUC 방지 인라인 스크립트를 자동 주입합니다. |
+
+`themeStorageItem`을 지정하면 페이지 첫 로드 시 localStorage에서 테마를 읽어 `html.dark` 클래스를 즉시 적용합니다. 이를 통해 **테마 깜빡임(FOUC)**을 방지합니다.
+
+```tsx
+<GlobalStyle themeStorageItem="@my-app/theme" />
+```
+
+---
+
+## Next.js App Router 패턴
+
+Next.js App Router에서는 SSR과 CSR의 테마 hydration을 맞추는 것이 중요합니다.
+쿠키로 테마를 저장하면 서버에서 올바른 초기값을 내려줄 수 있습니다.
+
+### 1. ThemeRegistry 클라이언트 컴포넌트 생성
+
+```tsx title="libs/registries/ocean-road-theme-registry.tsx"
+'use client';
+
+import { type ColorScheme, ColorSchemeProvider, GlobalStyle } from '@coldsurfers/ocean-road';
+import { type PropsWithChildren, useMemo } from 'react';
+
+export const OceanRoadThemeRegistry = ({
+  children,
+  cookieColorScheme,
+}: PropsWithChildren<{ cookieColorScheme?: ColorScheme }>) => {
+  const defaultColorScheme = useMemo<ColorScheme>(() => {
+    // SSR: 쿠키값 우선
+    if (typeof window === 'undefined') {
+      return cookieColorScheme ?? 'light';
+    }
+    // CSR: localStorage → 시스템 설정 순으로 fallback
+    const stored = localStorage.getItem('@my-app/theme') as ColorScheme | null;
+    if (stored) return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }, [cookieColorScheme]);
+
+  return (
+    <ColorSchemeProvider colorScheme={defaultColorScheme}>
+      {children}
+      <GlobalStyle themeStorageItem="@my-app/theme" />
+    </ColorSchemeProvider>
+  );
+};
+```
+
+### 2. Root Layout에서 쿠키 읽기
+
+```tsx title="app/layout.tsx"
+import { cookies } from 'next/headers';
+import { OceanRoadThemeRegistry } from '@/libs/registries/ocean-road-theme-registry';
+import type { ColorScheme } from '@coldsurfers/ocean-road';
+
+const COOKIE_THEME = 'color-scheme';
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const cookieStore = await cookies();
+  const cookieTheme = cookieStore.get(COOKIE_THEME)?.value as ColorScheme | undefined;
+
+  return (
+    <html lang="ko">
+      <body>
+        <OceanRoadThemeRegistry cookieColorScheme={cookieTheme}>
+          {children}
+        </OceanRoadThemeRegistry>
+      </body>
+    </html>
+  );
+}
+```
+
+---
+
+## useColorScheme()
+
+`ColorSchemeProvider` 내부에서 현재 테마 정보와 변경 함수를 가져옵니다.
+
+```tsx
+import { useColorScheme } from '@coldsurfers/ocean-road'
+
+function MyComponent() {
+  const { theme, setTheme } = useColorScheme()
+
+  return (
+    <div>
+      <p>현재 테마: {theme.name}</p>
+      <button type="button" onClick={() => setTheme('dark')}>다크모드</button>
+      <button type="button" onClick={() => setTheme('light')}>라이트모드</button>
+    </div>
+  )
+}
+```
+
+### 반환값
+
+| 키 | 타입 | 설명 |
+|----|------|------|
+| `theme` | `Theme` | 현재 테마 객체. `theme.name`은 `'lightMode' \| 'darkMode'` |
+| `setTheme` | `(colorScheme: ColorScheme) => void` | 테마를 동적으로 변경합니다 |
+
+---
+
+## ColorSchemeToggle
+
+`extensions`에서 제공하는 토글 버튼 컴포넌트입니다.
+`GlobalStyle`에 `themeStorageItem`을 지정한 경우, `onToggle` 안에서 `window.__setPreferredTheme`을 호출해 localStorage와 `html.dark` 클래스를 동기화합니다.
+
+```tsx
+import { ColorSchemeToggle } from '@coldsurfers/ocean-road'
+
+function Header() {
+  return (
+    <header>
+      <ColorSchemeToggle
+        onToggle={({ setTheme }) => {
+          const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+          window.__setPreferredTheme?.(next);
+          setTheme(next);
+        }}
+      />
+    </header>
+  )
+}
+```
+
+### Props
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `onToggle` | `(params: { setTheme: (theme: ColorScheme) => void }) => void` | — | 토글 클릭 시 호출되는 콜백 |
+
+---
+
+## 여러 테마 공존 (`id` prop)
+
+`id`를 지정하면 CSS 변수가 `:root` 대신 스코프 클래스(`.\_\_oceanRoadTheme{id}`)에 적용됩니다.
+한 페이지에 라이트/다크 두 영역이 동시에 존재해야 할 때 활용합니다.
+
+```tsx
+<ColorSchemeProvider colorScheme="light" id="preview-light">
+  <Card />
+</ColorSchemeProvider>
+
+<ColorSchemeProvider colorScheme="dark" id="preview-dark">
+  <Card />
+</ColorSchemeProvider>
+```

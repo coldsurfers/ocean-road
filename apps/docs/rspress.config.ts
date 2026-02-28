@@ -18,7 +18,10 @@ export default defineConfig({
       '/': [
         {
           text: '시작하기',
-          items: [{ text: '설치', link: '/installation' }],
+          items: [
+            { text: '설치', link: '/installation' },
+            { text: '테마', link: '/theming' },
+          ],
         },
       ],
     },
