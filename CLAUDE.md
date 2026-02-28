@@ -97,6 +97,43 @@ pnpm biome check .        # 검사
 pnpm biome check --write . # 자동 수정
 ```
 
+## 새 워크스페이스 패키지 추가 규칙
+
+새로운 `packages/*` 또는 `apps/*` 패키지를 추가할 때는 반드시 아래 두 가지를 설정해야 합니다.
+
+### 1. Lint (`check`)
+
+`package.json`의 `scripts`에 Biome check 명령어를 추가합니다:
+
+```json
+"check": "biome check .",
+"check:fix": "biome check --write ."
+```
+
+### 2. Type check (`check:type`)
+
+`package.json`의 `scripts`에 TypeScript 타입 체크 명령어를 추가합니다:
+
+```json
+"check:type": "tsc --noEmit"
+```
+
+`tsconfig.json`에는 반드시 `"skipLibCheck": true`를 포함하세요 (node_modules 타입 오류 방지):
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
+```
+
+> **이 규칙은 예외 없이 적용됩니다.** 새 패키지를 추가하는 PR에 `check` 또는 `check:type` 스크립트가 없으면 머지하지 마세요.
+
 ## 보안 지침 (공개 레포지토리)
 
 이 프로젝트는 **GitHub 퍼블릭 레포지토리**에 공개되어 있습니다. 아래 규칙을 반드시 준수하세요.

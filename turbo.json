@@ -45,6 +45,14 @@
     "build:storybook": {
       "dependsOn": ["@coldsurfers/storybook#build-storybook"],
       "cache": false
+    },
+    "@coldsurfers/docs#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["build/**"]
+    },
+    "@coldsurfers/docs#dev": {
+      "cache": false,
+      "persistent": true
     }
   }
 }

@@ -3,6 +3,7 @@ node_modules
 
 packages/ocean-road/dist
 packages/ocean-road-design-tokens/dist
+apps/docs/build
 **/yarn-error.log
 
 package-lock.json
