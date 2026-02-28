@@ -16,6 +16,29 @@ import { Text } from '@coldsurfers/ocean-road'
 </Text>
 ```
 
+## styled 래퍼 패턴
+
+`Text`는 Emotion의 `styled()`로 감싸 재사용 가능한 타이포그래피 컴포넌트를 정의하는 방식을 권장합니다. 디자인 토큰(`semantics`)을 함께 사용하면 테마 색상을 안전하게 참조할 수 있습니다.
+
+```tsx
+import styled from '@emotion/styled'
+import { Text, semantics } from '@coldsurfers/ocean-road'
+
+const EventTitle = styled(Text)`
+  color: ${semantics.color.foreground[2]};
+  font-size: 16px;
+  font-weight: 400;
+  margin: unset;
+`
+
+// 사용
+<EventTitle as="h2">이벤트 제목</EventTitle>
+```
+
+:::tip
+`semantics.color.foreground[2]`는 CSS 변수(`var(--color-foreground-2)`)를 반환합니다. `ColorSchemeProvider`가 주입한 CSS 변수를 참조하므로 라이트/다크 모드가 자동으로 반영됩니다.
+:::
+
 ## Props
 
 `ComponentPropsWithRef<'span'>`을 모두 상속합니다.
