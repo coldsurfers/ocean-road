@@ -1,0 +1,42 @@
+# Button
+
+기본 버튼 컴포넌트입니다. 6가지 variant를 제공하며 아이콘과 함께 사용할 수 있습니다.
+
+## 사용법
+
+```tsx
+import { Button } from '@coldsurfers/ocean-road'
+
+<Button variant="indigo" onClick={() => {}}>
+  확인
+</Button>
+```
+
+## Props
+
+`ButtonHTMLAttributes<HTMLButtonElement>`를 모두 상속합니다.
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `variant` | `'indigo' \| 'pink' \| 'white' \| 'border' \| 'transparent' \| 'transparentDarkGray'` | `'indigo'` | 버튼 색상 테마 |
+| `size` | `'lg' \| 'md' \| 'sm'` | `'md'` | 버튼 크기 |
+| `textWeight` | `'light' \| 'medium' \| 'bold'` | `'medium'` | 텍스트 굵기 |
+| `leftIcon` | `keyof Icons \| ReactElement` | — | 텍스트 왼쪽 아이콘 (lucide-react 이름 또는 ReactElement) |
+| `rightIcon` | `keyof Icons \| ReactElement` | — | 텍스트 오른쪽 아이콘 |
+| `children` | `ReactNode` | — | 버튼 내용 |
+
+## 예시
+
+```tsx
+// 아이콘 포함
+<Button variant="indigo" leftIcon="Search" size="lg">
+  검색
+</Button>
+
+// 비활성화
+<Button variant="border" disabled>
+  비활성화
+</Button>
+```
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/base-button--indigo)

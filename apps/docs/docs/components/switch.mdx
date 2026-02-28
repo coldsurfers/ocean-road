@@ -1,0 +1,32 @@
+# Switch
+
+토글 스위치 컴포넌트입니다. `role="switch"` 접근성 속성이 적용되어 있습니다.
+
+## 사용법
+
+```tsx
+import { Switch } from '@coldsurfers/ocean-road'
+
+function Settings() {
+  const [enabled, setEnabled] = useState(false)
+
+  return (
+    <Switch
+      checked={enabled}
+      onChange={setEnabled}
+    />
+  )
+}
+```
+
+## Props
+
+`ButtonHTMLAttributes<HTMLButtonElement>` (`onChange` 제외)를 모두 상속합니다.
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `checked` | `boolean` | ✅ | 스위치 켜짐/꺼짐 상태 |
+| `onChange` | `(checked: boolean) => void` | ✅ | 상태 변경 시 호출되는 콜백. 새로운 상태 값을 인자로 받습니다. |
+| `disabled` | `boolean` | — | `true`이면 클릭이 비활성화됩니다. |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/base-switch--default)

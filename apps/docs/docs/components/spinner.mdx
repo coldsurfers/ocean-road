@@ -1,0 +1,24 @@
+# Spinner
+
+로딩 상태를 표시하는 스피너 컴포넌트입니다.
+
+## 사용법
+
+```tsx
+import { Spinner } from '@coldsurfers/ocean-road'
+
+// 인라인 스피너
+<Spinner />
+
+// 페이지 전체를 덮는 오버레이 스피너
+<Spinner variant="page-overlay" />
+```
+
+## Props
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `variant` | `'page-overlay'` | — | `'page-overlay'` 지정 시 화면 전체를 덮는 로딩 레이어로 표시됩니다. 미지정 시 인라인 스피너로 렌더링됩니다. |
+| `className` | `string` | — | 커스텀 CSS 클래스 |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/base-spinner--default)

@@ -1,0 +1,35 @@
+# Modal
+
+dimmed 오버레이와 함께 표시되는 모달 컴포넌트입니다. framer-motion 애니메이션이 적용됩니다.
+
+## 사용법
+
+```tsx
+import { Modal } from '@coldsurfers/ocean-road'
+
+function MyPage() {
+  const [visible, setVisible] = useState(false)
+
+  return (
+    <>
+      <button type="button" onClick={() => setVisible(true)}>열기</button>
+      <Modal visible={visible} onClose={() => setVisible(false)}>
+        <div style={{ background: 'white', padding: 24, borderRadius: 8 }}>
+          모달 내용
+        </div>
+      </Modal>
+    </>
+  )
+}
+```
+
+## Props
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `visible` | `boolean` | ✅ | 모달 표시 여부 |
+| `onClose` | `() => void` | ✅ | 오버레이 클릭 시 호출되는 콜백 |
+| `zIndex` | `number` | — | z-index 값. 오버레이가 지정값, 컨텐츠가 `zIndex + 1`로 설정됩니다. |
+| `children` | `ReactNode` | — | 모달 내부 컨텐츠 |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/base-modal--default)
