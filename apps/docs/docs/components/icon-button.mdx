@@ -1,0 +1,24 @@
+# IconButton
+
+아이콘 전용 버튼 컴포넌트입니다. 텍스트 없이 아이콘만 표시하는 버튼에 사용합니다.
+
+## 사용법
+
+```tsx
+import { IconButton } from '@coldsurfers/ocean-road'
+import { Search } from 'lucide-react'
+
+<IconButton onClick={() => {}}>
+  <Search size={20} />
+</IconButton>
+```
+
+## Props
+
+`ButtonHTMLAttributes<HTMLButtonElement>`를 모두 상속합니다.
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `children` | `ReactNode` | ✅ | 표시할 아이콘 엘리먼트 |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/base-iconbutton--default)

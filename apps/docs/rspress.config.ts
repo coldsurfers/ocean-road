@@ -13,7 +13,10 @@ export default defineConfig({
         content: 'https://github.com/coldsurfers/ocean-road',
       },
     ],
-    nav: [{ text: '가이드', link: '/installation' }],
+    nav: [
+      { text: '가이드', link: '/installation' },
+      { text: '컴포넌트', link: '/components/button' },
+    ],
     sidebar: {
       '/': [
         {
@@ -21,6 +24,22 @@ export default defineConfig({
           items: [
             { text: '설치', link: '/installation' },
             { text: '테마', link: '/theming' },
+          ],
+        },
+        {
+          text: '컴포넌트 (Web)',
+          items: [
+            { text: 'Badge', link: '/components/badge' },
+            { text: 'Button', link: '/components/button' },
+            { text: 'Checkbox', link: '/components/checkbox' },
+            { text: 'IconButton', link: '/components/icon-button' },
+            { text: 'Modal', link: '/components/modal' },
+            { text: 'Spinner', link: '/components/spinner' },
+            { text: 'Switch', link: '/components/switch' },
+            { text: 'Text', link: '/components/text' },
+            { text: 'TextArea', link: '/components/text-area' },
+            { text: 'TextInput', link: '/components/text-input' },
+            { text: 'Toast', link: '/components/toast' },
           ],
         },
       ],
