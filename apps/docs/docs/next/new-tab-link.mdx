@@ -1,0 +1,26 @@
+# NewTabLink
+
+새 탭에서 열리는 링크 컴포넌트입니다. `target="_blank"`와 `rel="noopener noreferrer"`를 자동으로 적용합니다.
+
+:::info
+`@coldsurfers/ocean-road/next`에서 import합니다.
+:::
+
+## 사용법
+
+```tsx
+import { NewTabLink } from '@coldsurfers/ocean-road/next'
+
+<NewTabLink href="https://example.com">
+  외부 링크
+</NewTabLink>
+```
+
+## Props
+
+Next.js `LinkProps`에서 `target`, `rel`을 제외한 나머지를 모두 상속합니다.
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `href` | `string \| Url` | ✅ | 이동할 URL |
+| `children` | `ReactNode` | — | 링크 내용 |

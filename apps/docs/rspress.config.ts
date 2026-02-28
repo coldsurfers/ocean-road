@@ -44,6 +44,17 @@ export default defineConfig({
           ],
         },
         {
+          text: '컴포넌트 (Next.js)',
+          items: [
+            { text: 'AppHeader', link: '/next/app-header' },
+            { text: 'AppFooter', link: '/next/app-footer' },
+            { text: 'GlobalLink', link: '/next/global-link' },
+            { text: 'NewTabLink', link: '/next/new-tab-link' },
+            { text: 'RouteLoading', link: '/next/route-loading' },
+            { text: 'GridCardList', link: '/next/grid-card-list' },
+          ],
+        },
+        {
           text: 'Extensions (Web)',
           items: [
             { text: 'Accordion', link: '/components/accordion' },

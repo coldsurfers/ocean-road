@@ -1,0 +1,29 @@
+# AppFooter
+
+Next.js 앱 전용 푸터 컴포넌트입니다. App Store / Google Play 링크, SNS 링크, 내비게이션 메뉴를 포함합니다.
+
+:::info
+`@coldsurfers/ocean-road/next`에서 import합니다.
+:::
+
+## 사용법
+
+```tsx
+import { AppFooter } from '@coldsurfers/ocean-road/next'
+
+<AppFooter
+  appStoreUrl="https://apps.apple.com/..."
+  playStoreUrl="https://play.google.com/store/..."
+  instagramUrl="https://instagram.com/..."
+  xUrl="https://x.com/..."
+/>
+```
+
+## Props
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `appStoreUrl` | `string` | ✅ | iOS App Store 링크 URL |
+| `playStoreUrl` | `string` | ✅ | Google Play Store 링크 URL |
+| `instagramUrl` | `string` | ✅ | Instagram 프로필 URL |
+| `xUrl` | `string` | ✅ | X(Twitter) 프로필 URL |

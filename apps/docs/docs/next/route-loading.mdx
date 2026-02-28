@@ -1,0 +1,71 @@
+# RouteLoading
+
+`GlobalLink` 클릭 시 발생하는 페이지 전환 로딩을 처리하는 컴포넌트입니다. 로딩 중 `Spinner`를 전체 화면 오버레이로 표시합니다.
+
+:::info
+`@coldsurfers/ocean-road/next`에서 import합니다.
+:::
+
+:::tip
+`RouteLoading`은 루트 레이아웃보다 **각 `page.tsx`** 에서 개별적으로 사용하는 것을 권장합니다. 페이지마다 로딩 해제 시점(deps)이 다르기 때문입니다.
+:::
+
+## 사용법
+
+```tsx
+// app/concerts/page.tsx
+'use client'
+
+import { RouteLoading } from '@coldsurfers/ocean-road/next'
+
+export default function ConcertsPage() {
+  return (
+    <RouteLoading>
+      <ConcertList />
+    </RouteLoading>
+  )
+}
+```
+
+### deps — 로딩 상태 초기화 시점 제어
+
+기본적으로 `RouteLoading`은 마운트 시 로딩 상태를 자동으로 초기화합니다. 데이터 fetching이 끝난 후 로딩을 해제하려면 `deps`를 사용합니다.
+
+```tsx
+// app/concerts/page.tsx
+'use client'
+
+import { RouteLoading } from '@coldsurfers/ocean-road/next'
+
+export default function ConcertsPage() {
+  const { data, isLoading } = useConcerts()
+
+  return (
+    <RouteLoading deps={[isLoading]}>
+      {data && <ConcertList items={data} />}
+    </RouteLoading>
+  )
+}
+```
+
+## Props
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `children` | `ReactNode` | — | 페이지 콘텐츠 |
+| `deps` | `DependencyList` | `[]` | 로딩 상태를 초기화할 의존성 배열. 값이 변경될 때 `isLoading`을 `false`로 설정합니다. |
+
+## 미들웨어 리다이렉트와 함께 사용 시 주의
+
+Next.js 미들웨어로 경로를 리다이렉트하는 경우, `GlobalLink`가 `href`와 실제 렌더 경로가 다름을 인식하지 못해 불필요한 스피너가 표시될 수 있습니다. 이 경우 `initializeGlobalLinkRedirectMap`으로 매핑을 등록해야 합니다. 자세한 내용은 [GlobalLink — 미들웨어 리다이렉트 처리](/next/global-link#미들웨어-리다이렉트-처리--initializegloballinkedirectmap)를 참고하세요.
+
+## GlobalLink와의 연동 흐름
+
+```
+사용자가 GlobalLink 클릭
+    → isLoading = true  (GlobalLink 내부)
+    → Spinner 오버레이 표시 (RouteLoading)
+    → 새 페이지 마운트
+    → isLoading = false (RouteLoading useLayoutEffect)
+    → Spinner 사라짐
+```
