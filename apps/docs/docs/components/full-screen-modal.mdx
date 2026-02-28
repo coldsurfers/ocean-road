@@ -1,0 +1,34 @@
+# FullScreenModal
+
+화면 전체를 덮는 모달 컴포넌트입니다. 열려 있는 동안 배경 스크롤이 차단됩니다.
+
+## 사용법
+
+```tsx
+import { FullScreenModal } from '@coldsurfers/ocean-road'
+import { useState } from 'react'
+
+function MyPage() {
+  const [visible, setVisible] = useState(false)
+
+  return (
+    <>
+      <button onClick={() => setVisible(true)}>모달 열기</button>
+      <FullScreenModal visible={visible} onClose={() => setVisible(false)}>
+        <p>전체 화면 콘텐츠</p>
+      </FullScreenModal>
+    </>
+  )
+}
+```
+
+## Props
+
+| prop | 타입 | 필수 | 기본값 | 설명 |
+|------|------|------|--------|------|
+| `visible` | `boolean` | ✅ | — | 모달 표시 여부 |
+| `onClose` | `() => void` | ✅ | — | 닫기 버튼 클릭 시 호출되는 콜백 |
+| `children` | `ReactNode` | — | — | 모달 내부 콘텐츠 |
+| `zIndex` | `number` | — | — | z-index 값 |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/extensions-fullscreenmodal--default)

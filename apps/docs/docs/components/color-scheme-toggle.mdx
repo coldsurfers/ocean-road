@@ -1,0 +1,33 @@
+# ColorSchemeToggle
+
+라이트/다크 모드를 전환하는 토글 버튼 컴포넌트입니다. 시스템 설정 변화를 자동으로 감지합니다.
+
+:::tip
+`ColorSchemeProvider`로 앱을 감싼 경우에만 정상 동작합니다. 자세한 설정 방법은 [테마 가이드](/theming)를 참고하세요.
+:::
+
+## 사용법
+
+```tsx
+import { ColorSchemeToggle } from '@coldsurfers/ocean-road'
+
+// 기본 — setTheme은 내부적으로 window.__setPreferredTheme을 호출합니다.
+<ColorSchemeToggle />
+
+// onToggle — setTheme은 이미 테마를 전환합니다. 추가 동작만 넣으세요.
+<ColorSchemeToggle
+  onToggle={({ setTheme }) => {
+    setTheme()
+    // 예: 분석 이벤트 전송
+    analytics.track('theme_toggled')
+  }}
+/>
+```
+
+## Props
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `onToggle` | `(params: { setTheme: () => void }) => void` | — | 토글 시 호출되는 콜백. `setTheme`을 직접 호출해야 테마가 변경됩니다. |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/extensions-colorschemescemetoggle--default)

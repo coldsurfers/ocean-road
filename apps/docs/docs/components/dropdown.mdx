@@ -1,0 +1,61 @@
+# Dropdown
+
+위치 자동 계산, 애니메이션, 백드롭을 지원하는 드롭다운/팝오버 컴포넌트입니다.
+
+## 사용법
+
+```tsx
+import { Dropdown } from '@coldsurfers/ocean-road'
+import { useRef, useState } from 'react'
+
+function MyMenu() {
+  const [open, setOpen] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+
+  return (
+    <>
+      <button ref={triggerRef} onClick={() => setOpen(true)}>
+        메뉴 열기
+      </button>
+      <Dropdown.Core
+        edge="left"
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        triggerRef={triggerRef}
+        backdrop
+      >
+        <Dropdown.MenuItem>항목 1</Dropdown.MenuItem>
+        <Dropdown.MenuItem>항목 2</Dropdown.MenuItem>
+      </Dropdown.Core>
+    </>
+  )
+}
+```
+
+## Dropdown.Core Props
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `edge` | `'left' \| 'right'` | — | 드롭다운이 트리거를 기준으로 열리는 방향 |
+| `isOpen` | `boolean` | — | 드롭다운 표시 여부 |
+| `onClose` | `() => void` | — | 닫기 콜백 |
+| `position` | `{ top: number; left?: number; right?: number }` | — | 수동 위치 지정 |
+| `className` | `string` | — | 추가 CSS 클래스 |
+| `style` | `CSSProperties` | — | 인라인 스타일 |
+| `isLoading` | `boolean` | — | `true`이면 로딩 스피너를 표시합니다. |
+| `backdrop` | `boolean` | — | `true`이면 반투명 백드롭 오버레이를 표시합니다. |
+| `preventScroll` | `boolean` | — | `true`이면 드롭다운이 열렸을 때 배경 스크롤을 차단합니다. |
+| `animate` | `boolean` | — | `true`이면 열기/닫기 애니메이션을 적용합니다. |
+| `triggerRef` | `RefObject<HTMLElement>` | — | 위치 자동 계산에 사용할 트리거 요소 ref |
+| `zIndex` | `number` | — | z-index 값 |
+
+## 서브 컴포넌트
+
+| 컴포넌트 | 설명 |
+|----------|------|
+| `Dropdown.Core` | 드롭다운 컨테이너 |
+| `Dropdown.MenuItem` | 메뉴 항목 래퍼 |
+| `Dropdown.ResultItem` | 결과 항목 표시 |
+| `Dropdown.Trigger` | 트리거 요소 |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/extensions-dropdown--default)

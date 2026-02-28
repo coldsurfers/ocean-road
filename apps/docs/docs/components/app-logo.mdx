@@ -1,0 +1,27 @@
+# AppLogo
+
+앱 로고 이미지를 테마와 형태 옵션에 따라 표시하는 컴포넌트입니다.
+
+## 사용법
+
+```tsx
+import { AppLogo } from '@coldsurfers/ocean-road'
+
+// 기본 (원형, 투명 배경)
+<AppLogo logoTheme="transparent" />
+
+// 흰 배경 + 정사각형
+<AppLogo logoTheme="white-background" type="square" />
+
+// 크리스마스 테마
+<AppLogo logoTheme="christmas" type="round" />
+```
+
+## Props
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `logoTheme` | `'christmas' \| 'transparent' \| 'white-background'` | — | 로고 이미지 테마 |
+| `type` | `'round' \| 'square'` | — | `'round'`이면 원형(50%), `'square'`이면 모서리가 둥근 정사각형(12px) |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/extensions-applogo--default)
