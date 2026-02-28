@@ -1,0 +1,41 @@
+# GridCardList (Next.js)
+
+Next.js 전용 `GridCardList`입니다. `Item`과 `MasonryItem`이 `GlobalLink`를 내장하여 `href` prop만으로 페이지 전환 로딩 연동이 자동으로 처리됩니다.
+
+:::info
+`@coldsurfers/ocean-road/next`에서 import합니다. 기본 API는 [GridCardList (Extensions)](/components/grid-card-list)와 동일하며, `Item`과 `MasonryItem`의 동작만 다릅니다.
+:::
+
+## 사용법
+
+```tsx
+import { GridCardList } from '@coldsurfers/ocean-road/next'
+
+<GridCardList.List
+  items={items}
+  renderItem={(item) => (
+    <GridCardList.Item
+      key={item.id}
+      href={`/concerts/${item.id}`}  // href 지정 시 GlobalLink로 자동 래핑
+      {...item}
+    />
+  )}
+  onLoadMore={fetchNextPage}
+  hasNextPage={hasNextPage}
+/>
+```
+
+## Extension 버전과의 차이
+
+| | `@coldsurfers/ocean-road` (extension) | `@coldsurfers/ocean-road/next` |
+|--|--------------------------------------|-------------------------------|
+| `Item` | `href` prop 없음 | `href` prop으로 `GlobalLink` 자동 적용 |
+| `MasonryItem` | `href` prop 없음 | `href` prop으로 `GlobalLink` 자동 적용 |
+| 라우팅 | 직접 구현 | `GlobalLink`를 통해 `RouteLoading`과 자동 연동 |
+
+## GridCardList.Item / MasonryItem 추가 Props
+
+| prop | 타입 | 설명 |
+|------|------|------|
+| `href` | `string` | 지정하면 `GlobalLink`로 래핑하여 클릭 시 해당 경로로 이동합니다. 미지정 시 `onClick`만 동작합니다. |
+| `onClick` | `() => void` | 클릭 핸들러 |

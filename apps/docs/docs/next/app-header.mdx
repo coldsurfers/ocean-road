@@ -1,0 +1,146 @@
+# AppHeader
+
+Next.js 앱 전용 헤더 복합 컴포넌트입니다. 고정 헤더, 플로팅 헤더, 모바일 드로어 4가지 서브 컴포넌트를 제공합니다.
+
+:::info
+`@coldsurfers/ocean-road/next`에서 import합니다.
+:::
+
+## 서브 컴포넌트
+
+| 컴포넌트 | 설명 |
+|----------|------|
+| `AppHeader.FixedHeader` | 스크롤 애니메이션이 적용된 고정 헤더 |
+| `AppHeader.FloatingHeader` | 스크롤 시 나타나는 플로팅 헤더 |
+| `AppHeader.FullScreenMobileAccordionDrawer` | 전체 화면 모바일 메뉴 드로어 |
+| `AppHeader.ModalMobileAccordionDrawer` | 모달 형태의 모바일 메뉴 드로어 |
+
+---
+
+## AppHeader.FixedHeader
+
+화면 상단에 고정되는 헤더입니다. 스크롤에 따른 애니메이션이 내장되어 있습니다.
+
+```tsx
+import { AppHeader } from '@coldsurfers/ocean-road/next'
+
+<AppHeader.FixedHeader
+  HeaderMenuItemComponent={<nav>...</nav>}
+  onClickOpenDrawer={() => setDrawerOpen(true)}
+/>
+```
+
+### Props
+
+| prop | 타입 | 필수 | 기본값 | 설명 |
+|------|------|------|--------|------|
+| `HeaderMenuItemComponent` | `ReactNode` | ✅ | — | 헤더 중앙/우측에 렌더할 메뉴 컴포넌트 |
+| `onClickOpenDrawer` | `() => void` | — | — | 모바일 햄버거 버튼 클릭 시 호출되는 콜백 |
+| `mobileLeftAccessory` | `ReactNode` | — | — | 모바일 뷰에서 햄버거 버튼 왼쪽에 표시할 요소 |
+| `logoRightAccessory` | `ReactNode` | — | — | 로고 오른쪽에 표시할 요소 |
+| `headerHeight` | `string` | — | `'100px'` | 헤더 높이 (CSS 값) |
+| `zIndex` | `number` | — | — | z-index 값 |
+
+---
+
+## AppHeader.FloatingHeader
+
+스크롤 시 나타나는 플로팅 헤더입니다. 서비스명과 로고를 함께 표시합니다.
+
+```tsx
+import { AppHeader, ColorSchemeToggle } from '@coldsurfers/ocean-road/next'
+
+<AppHeader.FloatingHeader
+  serviceName="My App"
+  HeaderMenuItemComponent={<nav>...</nav>}
+  ColorSchemeToggleComponent={<ColorSchemeToggle />}
+/>
+```
+
+### Props
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `serviceName` | `string` | ✅ | 로고 옆에 표시할 서비스 이름 |
+| `HeaderMenuItemComponent` | `ReactNode` | ✅ | 헤더 메뉴 컴포넌트 |
+| `ColorSchemeToggleComponent` | `ReactNode` | ✅ | 테마 토글 컴포넌트 |
+| `onClickOpenMobileDrawer` | `(params: { isMobileMenuOpen: boolean }) => void` | — | 모바일 드로어 버튼 클릭 콜백 |
+| `className` | `string` | — | 추가 CSS 클래스 |
+| `zIndex` | `number` | — | z-index 값 |
+
+---
+
+## AppHeader.FullScreenMobileAccordionDrawer
+
+전체 화면으로 펼쳐지는 모바일 메뉴 드로어입니다. `Accordion`을 내장하며, `FloatingHeader`의 내부 상태와 연동하거나 독립 실행(standalone) 모드로 사용할 수 있습니다.
+
+```tsx
+import { AppHeader } from '@coldsurfers/ocean-road/next'
+
+// FloatingHeader와 연동 (standalone: false)
+<AppHeader.FullScreenMobileAccordionDrawer
+  standalone={false}
+  data={menuItems}
+  renderTrigger={(item) => <span>{item.label}</span>}
+  renderExpanded={({ selectedItem }) => <SubMenu item={selectedItem} />}
+  ColorSchemeToggleComponent={<ColorSchemeToggle />}
+/>
+
+// 독립 제어 (standalone: true)
+<AppHeader.FullScreenMobileAccordionDrawer
+  standalone={true}
+  isOpen={drawerOpen}
+  onClickClose={() => setDrawerOpen(false)}
+  data={menuItems}
+  renderTrigger={(item) => <span>{item.label}</span>}
+  renderExpanded={({ selectedItem }) => <SubMenu item={selectedItem} />}
+  ColorSchemeToggleComponent={<ColorSchemeToggle />}
+/>
+```
+
+### Props
+
+`ItemT`는 반드시 `{ accordionKey: string }`을 포함해야 합니다.
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `standalone` | `boolean` | ✅ | `true`이면 `isOpen`으로 직접 제어, `false`이면 `FloatingHeader` 내부 상태와 연동 |
+| `isOpen` | `boolean` | standalone=true일 때 ✅ | 드로어 열림 여부 |
+| `onClickClose` | `(params: { isOpen: boolean }) => void` | — | 닫기 버튼 클릭 콜백 |
+| `zIndex` | `number` | — | z-index 값 (standalone=true일 때만 적용) |
+| `ColorSchemeToggleComponent` | `ReactNode` | ✅ | 드로어 하단에 렌더할 테마 토글 |
+| `data` | `ItemT[]` | ✅ | 아코디언 항목 배열 |
+| `renderTrigger` | `(item: ItemT) => ReactNode` | ✅ | 각 항목 트리거 렌더 함수 |
+| `renderExpanded` | `({ selectedItem }) => ReactNode` | ✅ | 펼쳐진 콘텐츠 렌더 함수 |
+| `customized` | `ReactNode` | — | 추가 커스텀 콘텐츠 |
+
+---
+
+## AppHeader.ModalMobileAccordionDrawer
+
+모달 형태의 모바일 메뉴 드로어입니다. 배경을 클릭하면 닫히며 하단 액세서리 슬롯을 지원합니다.
+
+```tsx
+import { AppHeader } from '@coldsurfers/ocean-road/next'
+
+<AppHeader.ModalMobileAccordionDrawer
+  isOpen={drawerOpen}
+  onClose={() => setDrawerOpen(false)}
+  data={menuItems}
+  renderTrigger={(item) => <span>{item.label}</span>}
+  renderExpanded={({ selectedItem }) => <SubMenu item={selectedItem} />}
+  bottomAccessory={<ColorSchemeToggle />}
+/>
+```
+
+### Props
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `isOpen` | `boolean` | ✅ | 드로어 열림 여부 |
+| `onClose` | `() => void` | ✅ | 닫기 콜백 (배경 클릭 포함) |
+| `bottomAccessory` | `ReactNode` | — | 목록 하단에 표시할 요소 |
+| `data` | `ItemT[]` | ✅ | 아코디언 항목 배열 |
+| `renderTrigger` | `(item: ItemT) => ReactNode` | ✅ | 각 항목 트리거 렌더 함수 |
+| `renderExpanded` | `({ selectedItem }) => ReactNode` | ✅ | 펼쳐진 콘텐츠 렌더 함수 |
+| `customized` | `ReactNode` | — | 추가 커스텀 콘텐츠 |

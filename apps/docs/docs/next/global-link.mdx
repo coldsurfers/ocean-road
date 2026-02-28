@@ -1,0 +1,35 @@
+# GlobalLink
+
+Next.js `Link`를 확장한 라우팅 링크 컴포넌트입니다. 클릭 시 `RouteLoading`의 로딩 상태를 자동으로 활성화합니다.
+
+:::info
+`@coldsurfers/ocean-road/next`에서 import합니다.
+:::
+
+:::tip
+`GlobalLink`와 `RouteLoading`은 쌍으로 사용합니다. `RouteLoading`이 렌더 트리에 존재해야 로딩 상태가 표시됩니다.
+:::
+
+## 사용법
+
+```tsx
+import { GlobalLink } from '@coldsurfers/ocean-road/next'
+
+<GlobalLink href="/concerts">공연 목록</GlobalLink>
+
+// 외부 링크 — target 지정 시 로딩 상태를 활성화하지 않습니다
+<GlobalLink href="https://example.com" target="_blank">
+  외부 링크
+</GlobalLink>
+```
+
+## Props
+
+Next.js `LinkProps`와 `AnchorHTMLAttributes<HTMLAnchorElement>`를 모두 상속합니다.
+
+| prop | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `href` | `string \| Url` | ✅ | 이동할 경로 |
+| `children` | `ReactNode` | — | 링크 내용 |
+| `target` | `string` | — | `_blank` 등 링크 타겟. 지정 시 로딩 상태를 활성화하지 않습니다. |
+| `onClick` | `MouseEventHandler` | — | 클릭 핸들러 (내부 핸들러와 함께 실행됩니다) |
