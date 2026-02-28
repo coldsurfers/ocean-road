@@ -20,7 +20,7 @@ const GROUPS = {
 
 function swatch(hex, label) {
   const border = label === 'light' ? '1px solid #dee2e6' : '1px solid #495057';
-  return `<span title="${hex}" style="display:inline-block;width:1.25rem;height:1.25rem;background:${hex};border:${border};border-radius:3px;vertical-align:middle;margin-right:4px"></span>${hex}`;
+  return `<span title="${hex}" style={{display:'inline-block',width:'1.25rem',height:'1.25rem',background:'${hex}',border:'${border}',borderRadius:'3px',verticalAlign:'middle',marginRight:'4px'}}></span>${hex}`;
 }
 
 function buildSection(groupName, prefix) {
