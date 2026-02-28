@@ -1,0 +1,36 @@
+# MenuItem
+
+네비게이션 메뉴 항목 컴포넌트입니다. 로딩 상태, 활성 상태, 아이콘을 지원합니다.
+
+## 사용법
+
+```tsx
+import { MenuItem } from '@coldsurfers/ocean-road'
+import { Music } from 'lucide-react'
+
+// 기본
+<MenuItem onClick={() => navigate('/music')}>음악</MenuItem>
+
+// 활성 상태
+<MenuItem isCurrent onClick={() => navigate('/music')}>음악</MenuItem>
+
+// 아이콘 포함
+<MenuItem icon={<Music size={16} />} onClick={() => navigate('/music')}>
+  음악
+</MenuItem>
+
+// 로딩 상태
+<MenuItem isLoading />
+```
+
+## Props
+
+`HTMLAttributes<HTMLDivElement>` 및 Framer Motion의 `MotionProps`를 모두 상속합니다.
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `isLoading` | `boolean` | — | `true`이면 스켈레톤 로딩 상태를 표시합니다. |
+| `isCurrent` | `boolean` | — | `true`이면 현재 활성 항목으로 강조 스타일을 적용합니다. |
+| `icon` | `ReactNode` | — | 텍스트 왼쪽에 표시할 아이콘 |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/extensions-menuitem--default)

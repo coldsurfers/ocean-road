@@ -1,0 +1,24 @@
+# SNSIcon
+
+Instagram, X(Twitter), Facebook, YouTube 소셜 미디어 아이콘을 SVG로 렌더링하는 컴포넌트입니다.
+
+## 사용법
+
+```tsx
+import { SNSIcon } from '@coldsurfers/ocean-road'
+
+<SNSIcon social="instagram" width={24} height={24} />
+<SNSIcon social="x" width={24} height={24} />
+<SNSIcon social="facebook" width={24} height={24} />
+<SNSIcon social="youtube" width={24} height={24} />
+```
+
+## Props
+
+`SVGProps<SVGSVGElement>`를 모두 상속합니다.
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `social` | `'instagram' \| 'x' \| 'facebook' \| 'youtube'` | — | 렌더링할 소셜 미디어 플랫폼 |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/extensions-snsicon--default)

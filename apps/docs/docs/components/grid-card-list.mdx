@@ -1,0 +1,57 @@
+# GridCardList
+
+그리드 레이아웃으로 카드 목록을 표시하는 복합 컴포넌트입니다. 페이지네이션, 빈 상태, 메이슨리 레이아웃을 지원합니다.
+
+## 사용법
+
+```tsx
+import { GridCardList } from '@coldsurfers/ocean-road'
+
+<GridCardList.List
+  items={items}
+  renderItem={(item) => <GridCardList.Item key={item.id} {...item} />}
+  onLoadMore={fetchNextPage}
+  hasNextPage={hasNextPage}
+  headerText="최신 항목"
+  isEmpty={items.length === 0}
+  emptyComponent={<GridCardList.Empty />}
+/>
+```
+
+### 메이슨리 레이아웃
+
+```tsx
+<GridCardList.MasonryList
+  items={items}
+  renderItem={(item) => <GridCardList.MasonryItem key={item.id} {...item} />}
+  onLoadMore={fetchNextPage}
+  hasNextPage={hasNextPage}
+/>
+```
+
+## GridCardList.List Props
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `items` | `GridCardListItemProps[]` | — | 카드 항목 배열 |
+| `renderItem` | `(item: GridCardListItemProps) => ReactNode` | — | 항목 렌더 함수 |
+| `onLoadMore` | `() => void` | — | 더 보기 버튼 클릭 시 호출되는 콜백 |
+| `headerText` | `string` | — | 목록 상단에 표시할 헤더 텍스트 |
+| `hasNextPage` | `boolean` | — | `true`이면 더 보기 버튼을 표시합니다. |
+| `isEmpty` | `boolean` | — | `true`이면 빈 상태 컴포넌트를 표시합니다. |
+| `emptyComponent` | `ReactNode` | — | 빈 상태에서 표시할 커스텀 컴포넌트 |
+| `navigationComponent` | `ReactNode` | — | 헤더 영역 우측에 표시할 네비게이션 컴포넌트 |
+
+## 서브 컴포넌트
+
+| 컴포넌트 | 설명 |
+|----------|------|
+| `GridCardList.List` | 기본 그리드 컨테이너 |
+| `GridCardList.MasonryList` | 메이슨리 레이아웃 컨테이너 |
+| `GridCardList.Item` | 그리드 카드 항목 |
+| `GridCardList.MasonryItem` | 메이슨리 카드 항목 |
+| `GridCardList.LoadMore` | 더 보기 버튼 |
+| `GridCardList.Empty` | 빈 상태 표시 |
+| `GridCardList.ImageEmpty` | 이미지 없는 빈 상태 표시 |
+
+[Storybook에서 보기 →](https://storybook.ocean-road.coldsurf.io/?path=/story/extensions-gridcardlist--default)
