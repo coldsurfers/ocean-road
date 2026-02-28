@@ -13,16 +13,12 @@ export default defineConfig({
         content: 'https://github.com/coldsurfers/ocean-road',
       },
     ],
-    nav: [
-      { text: '가이드', link: '/installation' },
-    ],
+    nav: [{ text: '가이드', link: '/installation' }],
     sidebar: {
       '/': [
         {
           text: '시작하기',
-          items: [
-            { text: '설치', link: '/installation' },
-          ],
+          items: [{ text: '설치', link: '/installation' }],
         },
       ],
     },
