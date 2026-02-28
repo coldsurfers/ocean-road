@@ -25,6 +25,7 @@ export default defineConfig({
             { text: '설치', link: '/installation' },
             { text: '테마', link: '/theming' },
             { text: '반응형', link: '/responsive' },
+            { text: '디자인 토큰', link: '/design-tokens' },
           ],
         },
         {
