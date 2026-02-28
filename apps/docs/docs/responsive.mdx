@@ -69,6 +69,20 @@ const CollectionItemTitle = styled(Text)`
 <CollectionItemTitle as="h3">{title}</CollectionItemTitle>
 ```
 
+## breakpoints 직접 사용
+
+`breakpoints` 객체를 직접 import하면 숫자 값을 참조할 수 있습니다. Emotion 외의 맥락(예: JS 조건 분기, `window.matchMedia`, 커스텀 훅)에서 브레이크포인트를 재사용할 때 유용합니다.
+
+```tsx
+import { breakpoints } from '@coldsurfers/ocean-road'
+
+// breakpoints.medium === 768
+const isMobile = window.innerWidth <= breakpoints.medium
+
+// 커스텀 미디어 쿼리 문자열 생성
+const mq = `@media (max-width: ${breakpoints['x-large']}px)`
+```
+
 ## 동작 방식
 
 `media.medium(styles)`는 다음 미디어 쿼리를 생성합니다:
