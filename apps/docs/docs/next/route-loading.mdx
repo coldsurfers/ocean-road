@@ -7,33 +7,35 @@
 :::
 
 :::tip
-`RouteLoading`은 앱 레이아웃(layout.tsx)에 배치하고, 각 페이지 컴포넌트를 `children`으로 감쌉니다.
+`RouteLoading`은 루트 레이아웃보다 **각 `page.tsx`** 에서 개별적으로 사용하는 것을 권장합니다. 페이지마다 로딩 해제 시점(deps)이 다르기 때문입니다.
 :::
 
 ## 사용법
 
 ```tsx
-// app/layout.tsx
+// app/concerts/page.tsx
+'use client'
+
 import { RouteLoading } from '@coldsurfers/ocean-road/next'
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function ConcertsPage() {
   return (
-    <html>
-      <body>
-        <RouteLoading>{children}</RouteLoading>
-      </body>
-    </html>
+    <RouteLoading>
+      <ConcertList />
+    </RouteLoading>
   )
 }
 ```
 
 ### deps — 로딩 상태 초기화 시점 제어
 
-기본적으로 `RouteLoading`은 마운트 시 로딩 상태를 자동으로 초기화합니다. 특정 데이터 fetching이 끝난 후 로딩을 해제하려면 `deps`를 사용합니다.
+기본적으로 `RouteLoading`은 마운트 시 로딩 상태를 자동으로 초기화합니다. 데이터 fetching이 끝난 후 로딩을 해제하려면 `deps`를 사용합니다.
 
 ```tsx
 // app/concerts/page.tsx
 'use client'
+
+import { RouteLoading } from '@coldsurfers/ocean-road/next'
 
 export default function ConcertsPage() {
   const { data, isLoading } = useConcerts()
