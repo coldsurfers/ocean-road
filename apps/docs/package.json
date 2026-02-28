@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "rspress dev",
     "build": "rspress build",
-    "preview": "rspress preview"
+    "preview": "rspress preview",
+    "check": "biome check .",
+    "check:type": "tsc --noEmit"
   },
   "dependencies": {
     "rspress": "^1.47.1"
