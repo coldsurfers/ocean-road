@@ -24,6 +24,7 @@ export default defineConfig({
           items: [
             { text: '설치', link: '/installation' },
             { text: '테마', link: '/theming' },
+            { text: '반응형', link: '/responsive' },
           ],
         },
         {
