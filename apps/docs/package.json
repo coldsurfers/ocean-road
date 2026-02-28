@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/generate-tokens.mjs",
-    "predev": "node scripts/generate-tokens.mjs",
+    "generate-tokens": "node scripts/generate-tokens.mjs",
+    "prebuild": "pnpm run generate-tokens",
+    "predev": "pnpm run generate-tokens",
     "dev": "rspress dev",
     "build": "rspress build",
     "preview": "rspress preview",
