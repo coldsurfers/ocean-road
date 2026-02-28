@@ -9,3 +9,4 @@ apps/docs/build
 package-lock.json
 
 .turbo/
+apps/docs/docs/tokens/colors.mdx
