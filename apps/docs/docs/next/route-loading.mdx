@@ -55,6 +55,10 @@ export default function ConcertsPage() {
 | `children` | `ReactNode` | — | 페이지 콘텐츠 |
 | `deps` | `DependencyList` | `[]` | 로딩 상태를 초기화할 의존성 배열. 값이 변경될 때 `isLoading`을 `false`로 설정합니다. |
 
+## 미들웨어 리다이렉트와 함께 사용 시 주의
+
+Next.js 미들웨어로 경로를 리다이렉트하는 경우, `GlobalLink`가 `href`와 실제 렌더 경로가 다름을 인식하지 못해 불필요한 스피너가 표시될 수 있습니다. 이 경우 `initializeGlobalLinkRedirectMap`으로 매핑을 등록해야 합니다. 자세한 내용은 [GlobalLink — 미들웨어 리다이렉트 처리](/next/global-link#미들웨어-리다이렉트-처리--initializegloballinkedirectmap)를 참고하세요.
+
 ## GlobalLink와의 연동 흐름
 
 ```

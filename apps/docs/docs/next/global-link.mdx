@@ -23,6 +23,25 @@ import { GlobalLink } from '@coldsurfers/ocean-road/next'
 </GlobalLink>
 ```
 
+## 미들웨어 리다이렉트 처리 — `initializeGlobalLinkRedirectMap`
+
+Next.js 미들웨어에서 경로를 리다이렉트하는 경우, `GlobalLink`는 `href`와 실제 렌더되는 경로가 다르다는 것을 알지 못합니다. 예를 들어 미들웨어가 `/` → `/live-events`로 리다이렉트할 때, 사용자가 `/live-events`에 있는 상태에서 `href="/"` 링크를 클릭하면 페이지 이동은 없지만 `RouteLoading` 스피너가 표시됩니다.
+
+이를 해결하려면 `initializeGlobalLinkRedirectMap`으로 리다이렉트 매핑을 등록합니다. `'use client'` 클라이언트 컴포넌트 내에서 호출해야 합니다.
+
+```tsx
+'use client'
+
+import { initializeGlobalLinkRedirectMap } from '@coldsurfers/ocean-road/next'
+
+// 앱 진입점(예: 최상위 Provider 컴포넌트)에서 한 번 호출
+initializeGlobalLinkRedirectMap({
+  '/': '/live-events',
+})
+```
+
+등록 후 `GlobalLink`는 `href="/"`를 `/live-events`로 해석하여, 현재 경로와 동일하면 로딩 상태를 활성화하지 않습니다.
+
 ## Props
 
 Next.js `LinkProps`와 `AnchorHTMLAttributes<HTMLAnchorElement>`를 모두 상속합니다.
