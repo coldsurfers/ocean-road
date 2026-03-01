@@ -1,16 +1,23 @@
 name: Deploy Docs
+
 on:
-    workflow_dispatch:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
-  id-token: write # OIDC
   contents: read
+  pages: write
+  id-token: write
   packages: read
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,23 +27,24 @@ jobs:
         with:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Build Docs
         run: pnpm turbo run build --filter=@coldsurfers/docs
 
-      - name: Configure AWS credentials (OIDC)
-        uses: aws-actions/configure-aws-credentials@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-          aws-region: ap-northeast-2
+          path: ./apps/docs/build
 
-      - name: Upload docs build to S3
-        working-directory: ./apps/docs
-        run: |
-          aws s3 sync build s3://${{ secrets.DOCS_S3_BUCKET }} \
-            --delete
-
-      - name: Invalidate CloudFront cache
-        run: |
-            aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.DOCS_CLOUDFRONT_ID }} \
-            --paths "/*"
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
