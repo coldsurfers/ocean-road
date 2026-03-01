@@ -13,7 +13,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: '[문서 사이트에서 보기 →](https://docs.ocean-road.coldsurf.io/components/button)',
+        component:
+          '[문서 사이트에서 보기 →](https://docs.ocean-road.coldsurf.io/components/button)',
       },
     },
   },
