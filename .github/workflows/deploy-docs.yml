@@ -1,0 +1,42 @@
+name: Deploy Docs
+on:
+    workflow_dispatch:
+
+permissions:
+  id-token: write # OIDC
+  contents: read
+  packages: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: coldsurfers/workflows/.github/actions/setup@main
+        with:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Docs
+        run: pnpm turbo run build --filter=@coldsurfers/docs
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ap-northeast-2
+
+      - name: Upload docs build to S3
+        working-directory: ./apps/docs
+        run: |
+          aws s3 sync build s3://${{ secrets.DOCS_S3_BUCKET }} \
+            --delete
+
+      - name: Invalidate CloudFront cache
+        run: |
+            aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.DOCS_CLOUDFRONT_ID }} \
+            --paths "/*"
