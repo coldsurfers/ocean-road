@@ -53,6 +53,10 @@
     "@coldsurfers/docs#dev": {
       "cache": false,
       "persistent": true
+    },
+    "@coldsurfers/storybook#storybook": {
+      "cache": false,
+      "persistent": true
     }
   }
 }
