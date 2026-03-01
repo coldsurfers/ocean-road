@@ -47,7 +47,7 @@
       "cache": false
     },
     "@coldsurfers/docs#build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["@coldsurfers/ocean-road-design-tokens#build", "^build"],
       "outputs": ["build/**"]
     },
     "@coldsurfers/docs#dev": {
