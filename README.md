@@ -10,12 +10,12 @@ pnpm workspace로 이루어져 있어요.
 
 ### Install ocean-road
 ```bash
-pnpm add @coldsurfers/ocean-road @coldsurfers/ocean-road-design-tokens
+pnpm add @coldsurfers/ocean-road
 ```
 
 ### Install peer deps (required)
 ```bash
-pnpm add @emotion/css @emotion/react @emotion/styled framer-motion lucide-react
+pnpm add @emotion/css @emotion/react @emotion/styled
 ```
 
 ## Folder Structure
