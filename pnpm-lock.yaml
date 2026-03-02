@@ -211,8 +211,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.43-rc.1
-        version: 1.12.43-rc.1(cb27aa31ad1c56b541fd8e13f71b80c3)
+        specifier: 1.12.43-rc.6
+        version: 1.12.43-rc.6(44c30a002f575c752439c3715348abe8)
       '@coldsurfers/shared-utils':
         specifier: 1.1.7
         version: 1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
@@ -1416,10 +1416,13 @@ packages:
       react-native-svg: ^15.11.1
       react-native-worklets: 0.6.0
 
-  '@coldsurfers/ocean-road@1.12.43-rc.1':
-    resolution: {integrity: sha512-z8b9g7PYsTHIIh1/ildCZUVHpfbW2H5iSATHLRpiNpFSXzuIt1jXWb+CKtx88KUd7D/jVYJOCgzZ3fn6i5JvWw==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.43-rc.1/4572ebe724f8f9d981156c277abdd67180c1f32d}
+  '@coldsurfers/ocean-road@1.12.43-rc.6':
+    resolution: {integrity: sha512-GZ5y5mM6dc1FD8DjSKg6puz3B0h3ky6tmrjV/NyZSblz0Bdut+8X/y901/gXqn9g62TUjLELhZvaiDe+ueo3wA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.43-rc.6/8115e460deec549ba5ddd8955f994496be896d71}
     peerDependencies:
+      '@emotion/css': ^11.10.6
       '@emotion/native': ^11.11.0
+      '@emotion/react': ^11.10.6
+      '@emotion/styled': ^11.10.6
       lucide-react-native: ^0.468.0
       react: 19.2.3
       react-dom: 19.2.3
@@ -10904,10 +10907,13 @@ snapshots:
       - schema-dts
       - zod
 
-  '@coldsurfers/ocean-road@1.12.43-rc.1(cb27aa31ad1c56b541fd8e13f71b80c3)':
+  '@coldsurfers/ocean-road@1.12.43-rc.6(44c30a002f575c752439c3715348abe8)':
     dependencies:
       '@coldsurfers/shared-utils': 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
+      '@emotion/css': 11.10.6
       '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
+      '@emotion/styled': 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
       lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)

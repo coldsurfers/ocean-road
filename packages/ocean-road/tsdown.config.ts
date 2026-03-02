@@ -8,13 +8,31 @@ const peerDepsArray = Object.keys(peerDependencies);
 const commonConfigs: UserConfig = {
   minify: true,
   outDir: 'dist',
+  target: 'esnext',
   platform: 'browser',
   dts: true,
-  external: [...peerDepsArray, 'next', 'next/link', 'next/navigation', 'react-native'],
+  external: [
+    ...peerDepsArray,
+    'next',
+    'next/link',
+    'next/navigation',
+    'react-native',
+    'react/jsx-runtime',
+    'react/jsx-dev-runtime',
+  ],
   noExternal: [/.*/], // 모든 패키지 번들에 포함
   sourcemap: true,
   treeshake: true,
   tsconfig: 'tsconfig.json',
+  inputOptions: (options) => ({
+    ...options,
+    resolve: {
+      ...options.resolve,
+      // CJS 대신 ESM 빌드를 선택하여 require('react') 호출 방지
+      mainFields: ['module', 'browser', 'main'],
+      conditionNames: ['browser', 'module', 'import', 'default'],
+    },
+  }),
   loader: {
     '.webp': 'dataurl',
   },
