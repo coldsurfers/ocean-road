@@ -211,11 +211,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.42
-        version: 1.12.42(7a8f8e18bd94afb1c8709adb547c3182)
-      '@coldsurfers/ocean-road-design-tokens':
-        specifier: 1.10.8
-        version: 1.10.8
+        specifier: 1.12.43-rc.0
+        version: 1.12.43-rc.0(cb27aa31ad1c56b541fd8e13f71b80c3)
       '@coldsurfers/shared-utils':
         specifier: 1.1.7
         version: 1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
@@ -1413,6 +1410,17 @@ packages:
       lucide-react: ^0.469.0
       lucide-react-native: ^0.468.0
       overlay-kit: ^1.8.6
+      react: 19.2.3
+      react-dom: 19.2.3
+      react-native-reanimated: '>= 3.17.1'
+      react-native-svg: ^15.11.1
+      react-native-worklets: 0.6.0
+
+  '@coldsurfers/ocean-road@1.12.43-rc.0':
+    resolution: {integrity: sha512-l+G5Y/Hdvf3jkig05KV/7Cm/q+4z+uk2L7Eint1taj/VvS3xeET+rXmqP3su3QAWt5N4EYtUnM3q9ioKAtjnVw==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.43-rc.0/1545669ee5c051deeaa72381d35e4ec95dffbb1d}
+    peerDependencies:
+      '@emotion/native': ^11.11.0
+      lucide-react-native: ^0.468.0
       react: 19.2.3
       react-dom: 19.2.3
       react-native-reanimated: '>= 3.17.1'
@@ -10896,18 +10904,11 @@ snapshots:
       - schema-dts
       - zod
 
-  '@coldsurfers/ocean-road@1.12.42(7a8f8e18bd94afb1c8709adb547c3182)':
+  '@coldsurfers/ocean-road@1.12.43-rc.0(cb27aa31ad1c56b541fd8e13f71b80c3)':
     dependencies:
-      '@coldsurfers/ocean-road-design-tokens': 1.10.8
       '@coldsurfers/shared-utils': 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
-      '@emotion/css': 11.10.6
       '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
-      '@emotion/styled': 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
-      framer-motion: 11.11.13(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      lucide-react: 0.469.0(react@19.2.3)
       lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      overlay-kit: 1.8.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
       react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
@@ -11079,7 +11080,7 @@ snapshots:
 
   '@emotion/babel-plugin@11.13.5':
     dependencies:
-      '@babel/helper-module-imports': 7.27.1
+      '@babel/helper-module-imports': 7.28.6
       '@babel/runtime': 7.28.4
       '@emotion/hash': 0.9.2
       '@emotion/memoize': 0.9.0
