@@ -1,5 +1,5 @@
 import { type UserConfig, defineConfig } from 'tsdown';
-import pkg from './package.json';
+import pkg from './package.json' with { type: 'json' };
 
 const { peerDependencies } = pkg;
 
@@ -8,6 +8,7 @@ const peerDepsArray = Object.keys(peerDependencies);
 const commonConfigs: UserConfig = {
   minify: true,
   outDir: 'dist',
+  platform: 'browser',
   dts: true,
   external: [...peerDepsArray, 'next', 'next/link', 'next/navigation', 'react-native'],
   noExternal: [/.*/], // 모든 패키지 번들에 포함
