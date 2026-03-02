@@ -53,8 +53,8 @@ importers:
   apps/StorybookApp:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.42
-        version: 1.12.42(07f1cc49db9900ce61144a69cb229668)
+        specifier: 1.13.0
+        version: 1.13.0(0eee4642219b4e6190a6afbd9923f92e)
       '@coldsurfers/ocean-road-design-tokens':
         specifier: 1.10.8
         version: 1.10.8
@@ -211,8 +211,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurfers/ocean-road':
-        specifier: 1.12.43-rc.6
-        version: 1.12.43-rc.6(44c30a002f575c752439c3715348abe8)
+        specifier: 1.13.0
+        version: 1.13.0(44c30a002f575c752439c3715348abe8)
       '@coldsurfers/shared-utils':
         specifier: 1.1.7
         version: 1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
@@ -1398,26 +1398,8 @@ packages:
   '@coldsurfers/ocean-road-design-tokens@1.10.8':
     resolution: {integrity: sha512-mjkNIwuEktuSGcyYQXTRuqTUUzW7fRAeZC1uG5rjRItDcY+dwruZXoryOVi3iNidXY6XSRe6ExnvJ9jkTT6uyQ==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.8/f2a94362d591487868c91fd35d065c33d00ceb00}
 
-  '@coldsurfers/ocean-road@1.12.42':
-    resolution: {integrity: sha512-JRqnpZZppwJBJUTu1cK6VhPjgmuyCqlEALJyb95ePcGy9SqMM66r63GhgCpZfshF0cmBB/52EfQfrIehdJ+Uhw==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.42/92df1004fc5454feac798586199dbfae56f78790}
-    peerDependencies:
-      '@coldsurfers/ocean-road-design-tokens': ^1.10.7
-      '@emotion/css': ^11.10.6
-      '@emotion/native': ^11.11.0
-      '@emotion/react': ^11.10.6
-      '@emotion/styled': ^11.10.6
-      framer-motion: ^11.11.13
-      lucide-react: ^0.469.0
-      lucide-react-native: ^0.468.0
-      overlay-kit: ^1.8.6
-      react: 19.2.3
-      react-dom: 19.2.3
-      react-native-reanimated: '>= 3.17.1'
-      react-native-svg: ^15.11.1
-      react-native-worklets: 0.6.0
-
-  '@coldsurfers/ocean-road@1.12.43-rc.6':
-    resolution: {integrity: sha512-GZ5y5mM6dc1FD8DjSKg6puz3B0h3ky6tmrjV/NyZSblz0Bdut+8X/y901/gXqn9g62TUjLELhZvaiDe+ueo3wA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.12.43-rc.6/8115e460deec549ba5ddd8955f994496be896d71}
+  '@coldsurfers/ocean-road@1.13.0':
+    resolution: {integrity: sha512-sAg+TuEc+iMotXjkM5JnvVNYQ3p5Bl/zB6zpWtive1b9z1FnwMqvgrGqG/3KN62OWUNcLw8D7tL3N586LJbPWg==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.13.0/c54dd4061427e962b93cd3b8ee08a5d75a9737b1}
     peerDependencies:
       '@emotion/css': ^11.10.6
       '@emotion/native': ^11.11.0
@@ -10884,18 +10866,14 @@ snapshots:
     dependencies:
       open-color: 1.9.1
 
-  '@coldsurfers/ocean-road@1.12.42(07f1cc49db9900ce61144a69cb229668)':
+  '@coldsurfers/ocean-road@1.13.0(0eee4642219b4e6190a6afbd9923f92e)':
     dependencies:
-      '@coldsurfers/ocean-road-design-tokens': 1.10.8
       '@coldsurfers/shared-utils': 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
       '@emotion/css': 11.10.6
       '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
       '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
       '@emotion/styled': 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
-      framer-motion: 11.11.13(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      lucide-react: 0.469.0(react@19.2.3)
       lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      overlay-kit: 1.8.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
       react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.6.0(@babel/core@7.28.5)(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
@@ -10907,7 +10885,7 @@ snapshots:
       - schema-dts
       - zod
 
-  '@coldsurfers/ocean-road@1.12.43-rc.6(44c30a002f575c752439c3715348abe8)':
+  '@coldsurfers/ocean-road@1.13.0(44c30a002f575c752439c3715348abe8)':
     dependencies:
       '@coldsurfers/shared-utils': 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
       '@emotion/css': 11.10.6
