@@ -35,13 +35,7 @@
   "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "native",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "native", "dist", "package.json"],
   "scripts": {
     "build": "pnpm build:core",
     "build:core": "tsdown",
@@ -83,15 +77,8 @@
     "tsdown": "^0.11.9"
   },
   "peerDependencies": {
-    "@coldsurfers/ocean-road-design-tokens": "^1.10.7",
-    "@emotion/css": "^11.10.6",
     "@emotion/native": "^11.11.0",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "framer-motion": "^11.11.13",
-    "lucide-react": "^0.469.0",
     "lucide-react-native": "^0.468.0",
-    "overlay-kit": "^1.8.6",
     "react": ">= 19.1.0",
     "react-dom": ">= 19.1.4",
     "react-native-reanimated": ">= 3.17.1",

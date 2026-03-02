@@ -1,27 +1,17 @@
 import { type UserConfig, defineConfig } from 'tsdown';
+import pkg from './package.json';
+
+const { peerDependencies } = pkg;
+
+const peerDepsArray = Object.keys(peerDependencies);
 
 const commonConfigs: UserConfig = {
+  minify: true,
   outDir: 'dist',
   dts: true,
-  external: [
-    'next',
-    'next/link',
-    'next/navigation',
-    'react',
-    'react-dom',
-    'lucide-react',
-    'framer-motion',
-    '@emotion/css',
-    '@emotion/native',
-    '@emotion/react',
-    '@emotion/styled',
-    'react-native',
-    'react-native-reanimated',
-    'react-native-worklets',
-    'react-native-svg',
-    'lucide-react-native',
-    '@coldsurfers/ocean-road-design-tokens',
-  ],
+  external: [...peerDepsArray, 'next', 'next/link', 'next/navigation', 'react-native'],
+  noExternal: [/.*/], // 모든 패키지 번들에 포함
+  sourcemap: true,
   treeshake: true,
   tsconfig: 'tsconfig.json',
   loader: {
