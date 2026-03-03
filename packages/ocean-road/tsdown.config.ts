@@ -36,7 +36,17 @@ const commonConfigs: UserConfig = {
   loader: {
     '.webp': 'dataurl',
   },
-  copy: [{ from: 'src/css', to: 'dist/css' }],
+};
+
+const nativeConfigs: UserConfig = {
+  outDir: 'dist',
+  dts: true,
+  external: [...peerDepsArray, 'react', 'react-dom', 'react-native'],
+  treeshake: true,
+  tsconfig: 'tsconfig.json',
+  loader: {
+    '.webp': 'dataurl',
+  },
 };
 
 export default defineConfig([
@@ -46,6 +56,7 @@ export default defineConfig([
     },
     format: ['esm'],
     ...commonConfigs,
+    copy: [{ from: 'src/css', to: 'dist/css' }],
   },
   {
     entry: {
@@ -59,6 +70,6 @@ export default defineConfig([
       native: 'src/native/index.ts',
     },
     format: ['esm', 'cjs'],
-    ...commonConfigs,
+    ...nativeConfigs,
   },
 ]);
