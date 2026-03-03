@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.13.1
+
+### Patch Changes
+
+- [#132](https://github.com/coldsurfers/ocean-road/pull/132) [`03f4d09`](https://github.com/coldsurfers/ocean-road/commit/03f4d09547f54fef723d17cfd8ffaa1b986b2a4c) Thanks [@yungblud](https://github.com/yungblud)! - fix: native build metro compatibility for react native bundler
+
 ## 1.13.0
 
 ### Minor Changes
