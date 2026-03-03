@@ -5,21 +5,19 @@ const { peerDependencies } = pkg;
 
 const peerDepsArray = Object.keys(peerDependencies);
 
-const commonConfigs: UserConfig = {
+const webCommonExternal: string[] = [
+  ...peerDepsArray,
+  'react/jsx-runtime',
+  'react/jsx-dev-runtime',
+];
+
+const webCommonConfigs: UserConfig = {
   minify: true,
   outDir: 'dist',
   target: 'esnext',
   platform: 'browser',
   dts: true,
-  external: [
-    ...peerDepsArray,
-    'next',
-    'next/link',
-    'next/navigation',
-    'react-native',
-    'react/jsx-runtime',
-    'react/jsx-dev-runtime',
-  ],
+  external: webCommonExternal,
   noExternal: [/.*/], // 모든 패키지 번들에 포함
   sourcemap: true,
   treeshake: true,
@@ -36,7 +34,22 @@ const commonConfigs: UserConfig = {
   loader: {
     '.webp': 'dataurl',
   },
-  copy: [{ from: 'src/css', to: 'dist/css' }],
+};
+
+const nativeConfigs: UserConfig = {
+  minify: true,
+  outDir: 'dist',
+  // metro uses cjs.
+  target: 'CommonJS',
+  sourcemap: true,
+  // it consumed by metro. So metro doesn't support treeshaking.
+  treeshake: false,
+  dts: true,
+  external: [...peerDepsArray, 'react-native'],
+  tsconfig: 'tsconfig.json',
+  loader: {
+    '.webp': 'dataurl',
+  },
 };
 
 export default defineConfig([
@@ -45,20 +58,22 @@ export default defineConfig([
       index: 'src/index.ts',
     },
     format: ['esm'],
-    ...commonConfigs,
+    ...webCommonConfigs,
+    copy: [{ from: 'src/css', to: 'dist/css' }],
   },
   {
     entry: {
       next: 'src/next/index.ts',
     },
     format: ['esm', 'cjs'],
-    ...commonConfigs,
+    ...webCommonConfigs,
+    external: [...webCommonExternal, 'next', 'next/link', 'next/navigation'],
   },
   {
     entry: {
       native: 'src/native/index.ts',
     },
     format: ['esm', 'cjs'],
-    ...commonConfigs,
+    ...nativeConfigs,
   },
 ]);
