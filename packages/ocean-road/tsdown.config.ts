@@ -39,10 +39,15 @@ const commonConfigs: UserConfig = {
 };
 
 const nativeConfigs: UserConfig = {
+  minify: true,
   outDir: 'dist',
+  // metro uses cjs.
+  target: 'CommonJS',
+  sourcemap: true,
+  // it consumed by metro. So metro doesn't support treeshaking.
+  treeshake: false,
   dts: true,
   external: [...peerDepsArray, 'react', 'react-dom', 'react-native'],
-  treeshake: true,
   tsconfig: 'tsconfig.json',
   loader: {
     '.webp': 'dataurl',
