@@ -32,16 +32,9 @@
   "license": "MIT",
   "type": "module",
   "module": "dist/index.js",
-  "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "native",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "native", "dist", "package.json"],
   "scripts": {
     "build": "pnpm build:core",
     "build:core": "tsdown",
@@ -121,6 +114,7 @@
     }
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
