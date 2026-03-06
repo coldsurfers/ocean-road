@@ -6,7 +6,15 @@ type Props = {
   themeStorageItem?: string;
 };
 
+const SAFE_STORAGE_KEY_PATTERN = /^[A-Za-z0-9._:@/-]+$/;
+const DEFAULT_THEME_STORAGE_KEY = 'ocean-road-theme';
+
 export default function GlobalStyle({ themeStorageItem }: Props) {
+  const safeThemeStorageItem =
+    themeStorageItem && SAFE_STORAGE_KEY_PATTERN.test(themeStorageItem)
+      ? themeStorageItem
+      : DEFAULT_THEME_STORAGE_KEY;
+
   return (
     <>
       <Global
@@ -46,7 +54,7 @@ export default function GlobalStyle({ themeStorageItem }: Props) {
           dangerouslySetInnerHTML={{
             __html: `
           (function () {
-              var themeStorage = '${themeStorageItem}';
+              var themeStorage = ${JSON.stringify(safeThemeStorageItem)};
 
               function setTheme(newTheme) {
                 window.__theme = newTheme;

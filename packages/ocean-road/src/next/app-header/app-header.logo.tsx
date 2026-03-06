@@ -32,7 +32,7 @@ const HeaderTitle = styled(Text)`
 `;
 
 export const AppHeaderLogo = memo(
-  ({ logoRightAccessory, title }: { logoRightAccessory?: ReactNode; title: string }) => {
+  ({ logoRightAccessory, title }: { logoRightAccessory?: ReactNode; title?: string }) => {
     return (
       <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
         <GlobalLink href="/">
@@ -40,7 +40,8 @@ export const AppHeaderLogo = memo(
         </GlobalLink>
         <GlobalLink href="/">
           <HeaderTitle as="h1">
-            {title} {logoRightAccessory}
+            {title ? `${title} ` : ''}
+            {logoRightAccessory}
           </HeaderTitle>
         </GlobalLink>
       </div>

@@ -86,13 +86,20 @@ const getTheme = (colorScheme?: ColorScheme) =>
     ? darkModeTheme
     : lightModeTheme;
 
+const sanitizeThemeScopeId = (id?: string) => {
+  if (!id) return undefined;
+  const safeId = id.replace(/[^A-Za-z0-9_-]/g, '');
+  return safeId || undefined;
+};
+
 const ColorSchemeProvider = ({
   children,
   colorScheme,
   id,
 }: PropsWithChildren<{ colorScheme: ColorScheme; id?: string }>) => {
   const [theme, setTheme] = useState(getTheme(colorScheme));
-  const className = id ? `__oceanRoadTheme${id}` : undefined;
+  const safeId = sanitizeThemeScopeId(id);
+  const className = safeId ? `__oceanRoadTheme${safeId}` : undefined;
   const selector = className ? `.${className}` : ':root';
 
   const handlePrefChange = useCallback((e: MediaQueryListEvent) => {
