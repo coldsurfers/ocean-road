@@ -1,5 +1,5 @@
 {
-  "name": "@coldsurfers/ocean-road",
+  "name": "@coldsurf/ocean-road",
   "author": {
     "name": "Dong-Ho Choi",
     "email": "imcoldsurf@gmail.com",
@@ -47,7 +47,7 @@
     "check:type": "tsc --noEmit"
   },
   "dependencies": {
-    "@coldsurfers/shared-utils": "1.1.8",
+    "@coldsurf/shared-utils": "1.1.15",
     "ts-pattern": "5.8.0"
   },
   "devDependencies": {
