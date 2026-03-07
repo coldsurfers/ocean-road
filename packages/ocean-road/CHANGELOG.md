@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.13.2
+
+### Patch Changes
+
+- [#135](https://github.com/coldsurfers/ocean-road/pull/135) [`73b3aa9`](https://github.com/coldsurfers/ocean-road/commit/73b3aa9bf8a122f32963162597d47817b50ddaaf) Thanks [@yungblud](https://github.com/yungblud)! - feat(ocean-road): prepare public deploy
+
 ## 1.13.1
 
 ### Patch Changes
