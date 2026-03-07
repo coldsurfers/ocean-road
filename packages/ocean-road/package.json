@@ -1,5 +1,5 @@
 {
-  "name": "@coldsurfers/ocean-road",
+  "name": "@coldsurf/ocean-road",
   "author": {
     "name": "Dong-Ho Choi",
     "email": "imcoldsurf@gmail.com",
@@ -32,16 +32,9 @@
   "license": "MIT",
   "type": "module",
   "module": "dist/index.js",
-  "react-native": "src/native/index.ts",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "native",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "native", "dist", "package.json"],
   "scripts": {
     "build": "pnpm build:core",
     "build:core": "tsdown",
@@ -54,7 +47,7 @@
     "check:type": "tsc --noEmit"
   },
   "dependencies": {
-    "@coldsurfers/shared-utils": "1.1.8",
+    "@coldsurf/shared-utils": "1.1.15",
     "ts-pattern": "5.8.0"
   },
   "devDependencies": {
@@ -121,6 +114,7 @@
     }
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
