@@ -34,13 +34,7 @@
   "module": "dist/index.js",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "native",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "native", "dist", "package.json"],
   "scripts": {
     "build": "pnpm build:core",
     "build:core": "tsdown",
@@ -53,7 +47,7 @@
     "check:type": "tsc --noEmit"
   },
   "dependencies": {
-    "@coldsurf/shared-utils": "1.1.15",
+    "@coldsurf/shared-utils": "1.1.16",
     "ts-pattern": "5.8.0"
   },
   "devDependencies": {
@@ -113,9 +107,6 @@
       "optional": true
     },
     "lucide-react-native": {
-      "optional": true
-    },
-    "overlay-kit": {
       "optional": true
     }
   },
