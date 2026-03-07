@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.13.5
+
+### Patch Changes
+
+- [#140](https://github.com/coldsurfers/ocean-road/pull/140) [`b9d25ff`](https://github.com/coldsurfers/ocean-road/commit/b9d25ffadd9fa91d023e361567e27e0ca57d680a) Thanks [@yungblud](https://github.com/yungblud)! - feat(ocean-road): update shared utils
+
 ## 1.13.4
 
 ### Patch Changes
