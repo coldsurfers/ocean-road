@@ -14,7 +14,7 @@
     "url": "git+https://github.com/coldsurfers/ocean-road",
     "directory": "packages/ocean-road"
   },
-  "homepage": "https://storybook.ocean-road.coldsurf.io",
+  "homepage": "https://docs.ocean-road.coldsurf.io",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -34,13 +34,7 @@
   "module": "dist/index.js",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "native",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "native", "dist", "package.json"],
   "scripts": {
     "build": "pnpm build:core",
     "build:core": "tsdown",
