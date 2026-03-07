@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.13.4
+
+### Patch Changes
+
+- [`885fe48`](https://github.com/coldsurfers/ocean-road/commit/885fe48c075293efcfcd9fdfd959ddc2eb89619b) Thanks [@yungblud](https://github.com/yungblud)! - chore(ocean-road): version bump for public deploy
+
 ## 1.13.3
 
 ### Patch Changes
