@@ -1,5 +1,5 @@
 ---
-'@coldsurfers/ocean-road': patch
+'@coldsurf/ocean-road': patch
 ---
 
 feat(ocean-road): prepare public deploy
