@@ -1,44 +1,36 @@
-# Hello, 👋 Welcome to Ocean Road
-[![npm version](https://img.shields.io/npm/v/%40coldsurf%2Focean-road.svg)](https://www.npmjs.com/package/@coldsurf/ocean-road)
+# Ocean Road Monorepo
 
-안녕하세요, COLDSURF의 디자인 시스템 Ocean Road에 오신 것을 환영합니다.
-아래는 프로젝트에 대한 간단한 설명을 담았습니다.
+COLDSURF 디자인 시스템 저장소입니다. 이 리포는 UI 라이브러리, 디자인 토큰, 문서/스토리북 앱을 함께 관리합니다.
 
-pnpm workspace로 이루어져 있어요.
-디자인 시스템을 구성하는 각각의 packages로 워크스페이스가 구성되어 있어요.
+## Packages
 
-## Install
+- `@coldsurf/ocean-road`: React/React Native 기반 UI 컴포넌트 라이브러리
+- `@coldsurfers/ocean-road-design-tokens`: 디자인 토큰 패키지
 
-### Install ocean-road
-```bash
-pnpm add @coldsurf/ocean-road
-```
+패키지 사용법은 아래 문서를 확인해주세요.
 
-### Install peer deps (required)
-```bash
-pnpm add @emotion/css @emotion/react @emotion/styled
-```
+- `@coldsurf/ocean-road`: [`packages/ocean-road/README.md`](./packages/ocean-road/README.md)
 
-## Folder Structure
-ocean-road 모노레포의 폴더 구조에 대해 간략히 설명드릴게요.
+## Apps
 
-```sh
-packages/               # 공유 패키지들
-├── ocean-road/         # UI 컴포넌트 라이브러리이자 일종의 디자인시스템 역할도 수행하고 있어요.
-├── ocean-road-design-tokens/         # 디자인 토큰을 자동화하고 있어요.
-apps/               # apps
-├── storybook/         # 스토리북을 운영하고 있어요.
-├── docs/              # Rspress 기반 문서 사이트
-```
+- `apps/docs`: Rspress 기반 문서 사이트
+- `apps/storybook`: 스토리북
 
-## Docs
-
-Rspress 기반 문서 사이트입니다 (`apps/docs`).
+## Development
 
 ```bash
-# 개발 서버 실행 (localhost:5173)
+# 의존성 설치
+pnpm install
+
+# docs 개발 서버
 pnpm turbo dev --filter=@coldsurfers/docs
 
-# 정적 빌드 (apps/docs/build/)
-pnpm turbo build --filter=@coldsurfers/docs
+# storybook 개발 서버
+pnpm turbo dev --filter=@coldsurfers/storybook
+```
+
+## Build
+
+```bash
+pnpm turbo build
 ```
