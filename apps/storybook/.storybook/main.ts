@@ -42,18 +42,15 @@ const config: StorybookConfig = {
         resolve: {
           alias: {
             // 핵심: 패키지를 src로 직접 매핑
-            '@coldsurfers/ocean-road/next': resolve(
+            '@coldsurf/ocean-road/next': resolve(
               __dirname,
               '../../../packages/ocean-road/src/next/index.ts'
             ),
-            '@coldsurfers/ocean-road/native': resolve(
+            '@coldsurf/ocean-road/native': resolve(
               __dirname,
               '../../../packages/ocean-road/src/native/index.ts'
             ),
-            '@coldsurfers/ocean-road': resolve(
-              __dirname,
-              '../../../packages/ocean-road/src/index.ts'
-            ),
+            '@coldsurf/ocean-road': resolve(__dirname, '../../../packages/ocean-road/src/index.ts'),
           },
         },
       });

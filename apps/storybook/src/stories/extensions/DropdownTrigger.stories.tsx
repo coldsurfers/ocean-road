@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Button, Dropdown } from '@coldsurfers/ocean-road';
+import { Button, Dropdown } from '@coldsurf/ocean-road';
 import { useRef } from 'react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

@@ -11,8 +11,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@coldsurfers/ocean-road": "1.13.0",
-    "@coldsurfers/shared-utils": "1.1.7",
+    "@coldsurf/ocean-road": "1.13.5",
+    "@coldsurf/shared-utils": "1.1.16",
     "@emotion/css": "11.10.6",
     "@emotion/native": "11.11.0",
     "@emotion/react": "11.10.6",

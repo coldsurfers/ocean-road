@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 import { fn } from 'storybook/test';
 
-import { IconButton, semantics } from '@coldsurfers/ocean-road';
+import { IconButton, semantics } from '@coldsurf/ocean-road';
 import { MenuIcon } from 'lucide-react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

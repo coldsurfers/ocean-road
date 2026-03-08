@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { MenuItem } from '@coldsurfers/ocean-road';
+import { MenuItem } from '@coldsurf/ocean-road';
 import { ShieldCloseIcon } from 'lucide-react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

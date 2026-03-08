@@ -3,7 +3,7 @@
 Next.js 앱 전용 헤더 복합 컴포넌트입니다. 고정 헤더, 플로팅 헤더, 모바일 드로어 4가지 서브 컴포넌트를 제공합니다.
 
 :::info
-`@coldsurfers/ocean-road/next`에서 import합니다.
+`@coldsurf/ocean-road/next`에서 import합니다.
 :::
 
 ## 서브 컴포넌트
@@ -22,7 +22,7 @@ Next.js 앱 전용 헤더 복합 컴포넌트입니다. 고정 헤더, 플로팅
 초기부터 표시되며, 아래로 스크롤 시 위로 사라지고 위로 스크롤 시 다시 나타나는 헤더입니다. 상단과 좌우 여백 없이 화면 전체 너비를 채우는 전폭(full-width) 스타일입니다.
 
 ```tsx
-import { AppHeader } from '@coldsurfers/ocean-road/next'
+import { AppHeader } from '@coldsurf/ocean-road/next'
 
 <AppHeader.FixedHeader
   HeaderMenuItemComponent={<nav>...</nav>}
@@ -48,7 +48,7 @@ import { AppHeader } from '@coldsurfers/ocean-road/next'
 초기부터 표시되며, 아래로 스크롤 시 위로 사라지고 위로 스크롤 시 다시 나타나는 헤더입니다. 상단과 좌우에 여백이 있어 화면 위에 떠 있는 형태로 표시됩니다. 서비스명과 로고를 함께 표시합니다.
 
 ```tsx
-import { AppHeader, ColorSchemeToggle } from '@coldsurfers/ocean-road/next'
+import { AppHeader, ColorSchemeToggle } from '@coldsurf/ocean-road/next'
 
 <AppHeader.FloatingHeader
   serviceName="My App"
@@ -75,7 +75,7 @@ import { AppHeader, ColorSchemeToggle } from '@coldsurfers/ocean-road/next'
 전체 화면으로 펼쳐지는 모바일 메뉴 드로어입니다. `Accordion`을 내장하며, `FloatingHeader`의 내부 상태와 연동하거나 독립 실행(standalone) 모드로 사용할 수 있습니다.
 
 ```tsx
-import { AppHeader } from '@coldsurfers/ocean-road/next'
+import { AppHeader } from '@coldsurf/ocean-road/next'
 
 // FloatingHeader와 연동 (standalone: false)
 <AppHeader.FullScreenMobileAccordionDrawer
@@ -121,7 +121,7 @@ import { AppHeader } from '@coldsurfers/ocean-road/next'
 모달 형태의 모바일 메뉴 드로어입니다. 배경을 클릭하면 닫히며 하단 액세서리 슬롯을 지원합니다.
 
 ```tsx
-import { AppHeader } from '@coldsurfers/ocean-road/next'
+import { AppHeader } from '@coldsurf/ocean-road/next'
 
 <AppHeader.ModalMobileAccordionDrawer
   isOpen={drawerOpen}

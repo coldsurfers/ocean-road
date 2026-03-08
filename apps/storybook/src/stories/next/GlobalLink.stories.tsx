@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { GlobalLink } from '@coldsurfers/ocean-road/next';
+import { GlobalLink } from '@coldsurf/ocean-road/next';
 import { fn } from 'storybook/test';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

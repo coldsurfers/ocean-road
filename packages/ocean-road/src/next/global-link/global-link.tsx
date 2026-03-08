@@ -1,6 +1,6 @@
 'use client';
 
-import { fullyDecodePathname } from '@coldsurfers/shared-utils';
+import { fullyDecodePathname } from '@coldsurf/shared-utils';
 import Link, { type LinkProps } from 'next/link';
 import { usePathname } from 'next/navigation';
 import {

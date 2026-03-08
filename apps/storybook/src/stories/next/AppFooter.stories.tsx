@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { AppFooter } from '@coldsurfers/ocean-road/next';
-import { APP_STORE_URL, PLAYSTORE_URL, SNS_LINKS } from '@coldsurfers/shared-utils';
+import { AppFooter } from '@coldsurf/ocean-road/next';
+import { APP_STORE_URL, PLAYSTORE_URL, SNS_LINKS } from '@coldsurf/shared-utils';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

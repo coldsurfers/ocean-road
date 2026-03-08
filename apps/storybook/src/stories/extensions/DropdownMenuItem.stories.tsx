@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Dropdown, Text } from '@coldsurfers/ocean-road';
+import { Dropdown, Text } from '@coldsurf/ocean-road';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

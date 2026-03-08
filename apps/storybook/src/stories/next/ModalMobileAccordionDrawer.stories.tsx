@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Button, MenuItem } from '@coldsurfers/ocean-road';
-import { AppHeader } from '@coldsurfers/ocean-road/next';
+import { Button, MenuItem } from '@coldsurf/ocean-road';
+import { AppHeader } from '@coldsurf/ocean-road/next';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
