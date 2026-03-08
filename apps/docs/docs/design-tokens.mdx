@@ -51,9 +51,9 @@ Semantic (color.foreground.1 등 의미 기반 CSS 변수)
 `semantics` 객체의 값은 CSS 변수 문자열(`"var(--color-foreground-1)"`)을 반환합니다. Emotion 스타일과 함께 사용하면 `ColorSchemeProvider`가 주입한 실제 값으로 자동 해석됩니다.
 
 ```tsx
-import { semantics } from '@coldsurfers/ocean-road'
+import { semantics } from '@coldsurf/ocean-road'
 import styled from '@emotion/styled'
-import { Text } from '@coldsurfers/ocean-road'
+import { Text } from '@coldsurf/ocean-road'
 
 const Title = styled(Text)`
   color: ${semantics.color.foreground[1]};
@@ -82,7 +82,7 @@ const Title = styled(Text)`
 Semantic 토큰의 기반이 되는 [Open Color](https://yeun.github.io/open-color/) 팔레트입니다. `colors` 객체로 접근할 수 있으나, 일반적으로는 Semantic 토큰 사용을 권장합니다.
 
 ```tsx
-import { colors } from '@coldsurfers/ocean-road'
+import { colors } from '@coldsurf/ocean-road'
 
 // colors.gray[9], colors.gray[0], colors.white, colors.black 등
 ```

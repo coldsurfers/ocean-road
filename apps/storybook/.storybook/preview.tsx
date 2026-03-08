@@ -1,4 +1,4 @@
-import { ColorSchemeProvider, GlobalStyle } from '@coldsurfers/ocean-road';
+import { ColorSchemeProvider, GlobalStyle } from '@coldsurf/ocean-road';
 import type { Preview } from '@storybook/nextjs-vite';
 import '@/styles/fonts.css';
 

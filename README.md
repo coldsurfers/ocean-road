@@ -10,7 +10,7 @@ pnpm workspace로 이루어져 있어요.
 
 ### Install ocean-road
 ```bash
-pnpm add @coldsurfers/ocean-road
+pnpm add @coldsurf/ocean-road
 ```
 
 ### Install peer deps (required)

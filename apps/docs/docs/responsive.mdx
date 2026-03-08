@@ -1,6 +1,6 @@
 # 반응형 스타일링
 
-`@coldsurfers/ocean-road`는 Emotion 기반의 `media` 유틸리티를 제공합니다. `styled()` 컴포넌트 내에서 미디어 쿼리를 간결하게 작성할 수 있습니다.
+`@coldsurf/ocean-road`는 Emotion 기반의 `media` 유틸리티를 제공합니다. `styled()` 컴포넌트 내에서 미디어 쿼리를 간결하게 작성할 수 있습니다.
 
 ## 브레이크포인트
 
@@ -19,7 +19,7 @@
 ```tsx
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
-import { media } from '@coldsurfers/ocean-road'
+import { media } from '@coldsurf/ocean-road'
 
 const Card = styled.div`
   padding: 2rem;
@@ -45,7 +45,7 @@ const Card = styled.div`
 ```tsx
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
-import { Text, media } from '@coldsurfers/ocean-road'
+import { Text, media } from '@coldsurf/ocean-road'
 
 const CollectionItemTitle = styled(Text)`
   font-size: 1.25rem;
@@ -74,7 +74,7 @@ const CollectionItemTitle = styled(Text)`
 `breakpoints` 객체를 직접 import하면 숫자 값을 참조할 수 있습니다. Emotion 외의 맥락(예: JS 조건 분기, `window.matchMedia`, 커스텀 훅)에서 브레이크포인트를 재사용할 때 유용합니다.
 
 ```tsx
-import { breakpoints } from '@coldsurfers/ocean-road'
+import { breakpoints } from '@coldsurf/ocean-road'
 
 // breakpoints.medium === 768
 const isMobile = window.innerWidth <= breakpoints.medium

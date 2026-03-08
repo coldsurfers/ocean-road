@@ -1,31 +1,16 @@
 # 설치 (Getting Started)
 
-## 사전 준비: GitHub Packages 레지스트리 설정
-
-`@coldsurfers/ocean-road`는 npm이 아닌 **GitHub Packages**에 배포되어 있습니다.
-설치 전에 프로젝트 루트에 `.npmrc` 파일을 만들어 레지스트리를 지정하세요.
-
-```bash title=".npmrc"
-@coldsurfers:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-```
-
-`GITHUB_TOKEN`은 `read:packages` 권한이 있는 GitHub Personal Access Token입니다.
-환경변수로 설정하거나 `.env` 파일에서 로드하세요. **토큰 값을 직접 커밋하지 마세요.**
-
----
-
 ## 패키지 설치
 
 ```bash
 # pnpm
-pnpm add @coldsurfers/ocean-road
+pnpm add @coldsurf/ocean-road
 
 # npm
-npm install @coldsurfers/ocean-road
+npm install @coldsurf/ocean-road
 
 # yarn
-yarn add @coldsurfers/ocean-road
+yarn add @coldsurf/ocean-road
 ```
 
 ---
@@ -50,8 +35,8 @@ pnpm add @emotion/css @emotion/react @emotion/styled
 
 | 진입점 | import 경로 | 용도 |
 |--------|------------|------|
-| 기본 (웹) | `@coldsurfers/ocean-road` | React 웹 컴포넌트 |
-| Next.js | `@coldsurfers/ocean-road/next` | Next.js 전용 컴포넌트 |
+| 기본 (웹) | `@coldsurf/ocean-road` | React 웹 컴포넌트 |
+| Next.js | `@coldsurf/ocean-road/next` | Next.js 전용 컴포넌트 |
 
 ---
 
@@ -62,7 +47,7 @@ pnpm add @emotion/css @emotion/react @emotion/styled
 앱 최상단에서 `ColorSchemeProvider`로 트리를 감쌉니다.
 
 ```tsx
-import { ColorSchemeProvider } from '@coldsurfers/ocean-road'
+import { ColorSchemeProvider } from '@coldsurf/ocean-road'
 
 export default function App({ children }: { children: React.ReactNode }) {
   return (
@@ -80,7 +65,7 @@ export default function App({ children }: { children: React.ReactNode }) {
 ### 2. 컴포넌트 사용
 
 ```tsx
-import { Button, Text } from '@coldsurfers/ocean-road'
+import { Button, Text } from '@coldsurf/ocean-road'
 
 export default function MyPage() {
   return (
@@ -99,5 +84,5 @@ export default function MyPage() {
 `./next` 진입점의 컴포넌트는 반드시 해당 경로로 import해야 합니다.
 
 ```tsx
-import { AppHeader, RouteLoading } from '@coldsurfers/ocean-road/next'
+import { AppHeader, RouteLoading } from '@coldsurf/ocean-road/next'
 ```

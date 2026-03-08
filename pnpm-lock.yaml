@@ -52,9 +52,9 @@ importers:
 
   apps/StorybookApp:
     dependencies:
-      '@coldsurfers/ocean-road':
-        specifier: 1.13.0
-        version: 1.13.0(0eee4642219b4e6190a6afbd9923f92e)
+      '@coldsurf/ocean-road':
+        specifier: 1.13.5
+        version: 1.13.5(9440dbbf63e3fa142f9c727e00380cc6)
       '@coldsurfers/ocean-road-design-tokens':
         specifier: 1.10.8
         version: 1.10.8
@@ -210,12 +210,12 @@ importers:
 
   apps/storybook:
     dependencies:
-      '@coldsurfers/ocean-road':
-        specifier: 1.13.0
-        version: 1.13.0(44c30a002f575c752439c3715348abe8)
-      '@coldsurfers/shared-utils':
-        specifier: 1.1.7
-        version: 1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
+      '@coldsurf/ocean-road':
+        specifier: 1.13.5
+        version: 1.13.5(4367e0fe343dd17fcf149c76967df7df)
+      '@coldsurf/shared-utils':
+        specifier: 1.1.16
+        version: 1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
       '@emotion/css':
         specifier: 11.10.6
         version: 11.10.6
@@ -1395,6 +1395,37 @@ packages:
     peerDependencies:
       storybook: ^0.0.0-0 || ^9.0.0 || ^9.1.0-0 || ^9.2.0-0 || ^10.0.0-0 || ^10.1.0-0 || ^10.2.0-0 || ^10.3.0-0
 
+  '@coldsurf/ocean-road@1.13.5':
+    resolution: {integrity: sha512-DQLBZRLOnqMrN/VfTOf9b8e/JVq6ogrInv0/6IwnzVQRd/c6/CoVMVPFX5aeRrexrn0+O7rhbNN6JjMInSEO5A==}
+    peerDependencies:
+      '@emotion/css': ^11.10.6
+      '@emotion/native': ^11.11.0
+      '@emotion/react': ^11.10.6
+      '@emotion/styled': ^11.10.6
+      lucide-react-native: ^0.468.0
+      next: '*'
+      react: 19.2.3
+      react-dom: 19.2.3
+      react-native: '*'
+      react-native-reanimated: '>= 3.17.1'
+      react-native-svg: ^15.11.1
+      react-native-worklets: 0.6.0
+    peerDependenciesMeta:
+      lucide-react-native:
+        optional: true
+      next:
+        optional: true
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+      react-native-reanimated:
+        optional: true
+      react-native-svg:
+        optional: true
+      react-native-worklets:
+        optional: true
+
   '@coldsurf/shared-utils@1.1.16':
     resolution: {integrity: sha512-NLwBoZ2FKRN20q63VE2Vc2V1kyWB7dTCWgY8uotM7S1fDyXaaxKL5vcjmzwvvjwaMmSQ8Ox1wy8fBRekXSFKfg==}
     peerDependencies:
@@ -1409,34 +1440,6 @@ packages:
 
   '@coldsurfers/ocean-road-design-tokens@1.10.8':
     resolution: {integrity: sha512-mjkNIwuEktuSGcyYQXTRuqTUUzW7fRAeZC1uG5rjRItDcY+dwruZXoryOVi3iNidXY6XSRe6ExnvJ9jkTT6uyQ==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road-design-tokens/1.10.8/f2a94362d591487868c91fd35d065c33d00ceb00}
-
-  '@coldsurfers/ocean-road@1.13.0':
-    resolution: {integrity: sha512-sAg+TuEc+iMotXjkM5JnvVNYQ3p5Bl/zB6zpWtive1b9z1FnwMqvgrGqG/3KN62OWUNcLw8D7tL3N586LJbPWg==, tarball: https://npm.pkg.github.com/download/@coldsurfers/ocean-road/1.13.0/c54dd4061427e962b93cd3b8ee08a5d75a9737b1}
-    peerDependencies:
-      '@emotion/css': ^11.10.6
-      '@emotion/native': ^11.11.0
-      '@emotion/react': ^11.10.6
-      '@emotion/styled': ^11.10.6
-      lucide-react-native: ^0.468.0
-      react: 19.2.3
-      react-dom: 19.2.3
-      react-native-reanimated: '>= 3.17.1'
-      react-native-svg: ^15.11.1
-      react-native-worklets: 0.6.0
-
-  '@coldsurfers/shared-utils@1.1.7':
-    resolution: {integrity: sha512-9v8SJLG9mN7FXQWM0SkDu1kPbcXKxTHgLkjw0vYbn6wRKhM1W5Hq9bE5OOMse4E18Rpac1CyrVRErP0139v2IA==, tarball: https://npm.pkg.github.com/download/@coldsurfers/shared-utils/1.1.7/73bf9ed7b31d899802a8ef29e98b33147b4a0a1f}
-    peerDependencies:
-      jwt-decode: ^4.0.0
-      schema-dts: ^1.1.2
-      zod: ^3.23.8
-
-  '@coldsurfers/shared-utils@1.1.8':
-    resolution: {integrity: sha512-fhFOI3H6zLUn/srgbXFkO6a0B+9MX8PgrNruTstVgq78LELjp8P6Ft4eabyjkIH19gqRbDDmgGFZoroxYCKR0A==, tarball: https://npm.pkg.github.com/download/@coldsurfers/shared-utils/1.1.8/07be88eea34af11d201f577e831b2e18805e7088}
-    peerDependencies:
-      jwt-decode: ^4.0.0
-      schema-dts: ^1.1.2
-      zod: ^3.23.8
 
   '@commitlint/cli@17.8.1':
     resolution: {integrity: sha512-ay+WbzQesE0Rv4EQKfNbSMiJJ12KdKTDzIt0tcK4k11FdsWmtwP0Kp1NWMOUswfIWo6Eb7p7Ln721Nx9FLNBjg==}
@@ -10874,6 +10877,49 @@ snapshots:
       - '@chromatic-com/cypress'
       - '@chromatic-com/playwright'
 
+  '@coldsurf/ocean-road@1.13.5(4367e0fe343dd17fcf149c76967df7df)':
+    dependencies:
+      '@coldsurf/shared-utils': 1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
+      '@emotion/css': 11.10.6
+      '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
+      '@emotion/styled': 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
+      react: 19.2.3
+      ts-pattern: 5.8.0
+    optionalDependencies:
+      lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      next: 16.1.1(@babel/core@7.28.5)(babel-plugin-macros@3.1.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(sass@1.97.3)
+      react-dom: 19.2.3(react@19.2.3)
+      react-native: 0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3)
+      react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      react-native-svg: 15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+    transitivePeerDependencies:
+      - jwt-decode
+      - schema-dts
+      - zod
+
+  '@coldsurf/ocean-road@1.13.5(9440dbbf63e3fa142f9c727e00380cc6)':
+    dependencies:
+      '@coldsurf/shared-utils': 1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
+      '@emotion/css': 11.10.6
+      '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
+      '@emotion/styled': 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
+      react: 19.2.3
+      ts-pattern: 5.8.0
+    optionalDependencies:
+      lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      react-dom: 19.2.3(react@19.2.3)
+      react-native: 0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3)
+      react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.6.0(@babel/core@7.28.5)(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      react-native-svg: 15.13.0(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+      react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+    transitivePeerDependencies:
+      - jwt-decode
+      - schema-dts
+      - zod
+
   '@coldsurf/shared-utils@1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)':
     dependencies:
       date-fns: 4.1.0
@@ -10887,62 +10933,6 @@ snapshots:
   '@coldsurfers/ocean-road-design-tokens@1.10.8':
     dependencies:
       open-color: 1.9.1
-
-  '@coldsurfers/ocean-road@1.13.0(0eee4642219b4e6190a6afbd9923f92e)':
-    dependencies:
-      '@coldsurfers/shared-utils': 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
-      '@emotion/css': 11.10.6
-      '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
-      '@emotion/styled': 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
-      lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-      react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.6.0(@babel/core@7.28.5)(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      react-native-svg: 15.13.0(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      ts-pattern: 5.8.0
-    transitivePeerDependencies:
-      - jwt-decode
-      - schema-dts
-      - zod
-
-  '@coldsurfers/ocean-road@1.13.0(44c30a002f575c752439c3715348abe8)':
-    dependencies:
-      '@coldsurfers/shared-utils': 1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)
-      '@emotion/css': 11.10.6
-      '@emotion/native': 11.11.0(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      '@emotion/react': 11.10.6(@types/react@18.3.27)(react@19.2.3)
-      '@emotion/styled': 11.10.6(@emotion/react@11.10.6(@types/react@18.3.27)(react@19.2.3))(@types/react@18.3.27)(react@19.2.3)
-      lucide-react-native: 0.468.0(react-native-svg@15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-      react-native-reanimated: 4.1.2(@babel/core@7.28.5)(react-native-worklets@0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      react-native-svg: 15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      react-native-worklets: 0.6.0(@babel/core@7.28.5)(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
-      ts-pattern: 5.8.0
-    transitivePeerDependencies:
-      - jwt-decode
-      - schema-dts
-      - zod
-
-  '@coldsurfers/shared-utils@1.1.7(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)':
-    dependencies:
-      date-fns: 4.1.0
-      date-fns-tz: 3.2.0(date-fns@4.1.0)
-      jwt-decode: 4.0.0
-      schema-dts: 1.1.5
-      slugify: 1.6.6
-      zod: 4.3.5
-
-  '@coldsurfers/shared-utils@1.1.8(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@4.3.5)':
-    dependencies:
-      date-fns: 4.1.0
-      date-fns-tz: 3.2.0(date-fns@4.1.0)
-      jwt-decode: 4.0.0
-      schema-dts: 1.1.5
-      slugify: 1.6.6
-      zod: 4.3.5
 
   '@commitlint/cli@17.8.1':
     dependencies:
@@ -17032,7 +17022,8 @@ snapshots:
       object.assign: 4.1.7
       object.values: 1.2.1
 
-  jwt-decode@4.0.0: {}
+  jwt-decode@4.0.0:
+    optional: true
 
   keyv@4.5.4:
     dependencies:
@@ -17220,6 +17211,7 @@ snapshots:
       react: 19.2.3
       react-native: 0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3)
       react-native-svg: 15.13.0(react-native@0.79.2(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3)
+    optional: true
 
   lucide-react-native@0.468.0(react-native-svg@15.13.0(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3))(react-native@0.81.4(@babel/core@7.28.5)(@react-native-community/cli@18.0.0(typescript@5.8.3))(@react-native/metro-config@0.79.2(@babel/core@7.28.5))(@types/react@18.3.27)(react@19.2.3))(react@19.2.3):
     dependencies:
@@ -19471,7 +19463,8 @@ snapshots:
 
   scheduler@0.27.0: {}
 
-  schema-dts@1.1.5: {}
+  schema-dts@1.1.5:
+    optional: true
 
   schema-utils@4.3.3:
     dependencies:

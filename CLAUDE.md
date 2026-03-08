@@ -6,7 +6,7 @@ COLDSURF의 디자인 시스템 모노레포입니다.
 
 ```
 packages/
-├── ocean-road/              # @coldsurfers/ocean-road — UI 컴포넌트 라이브러리
+├── ocean-road/              # @coldsurf/ocean-road — UI 컴포넌트 라이브러리
 └── ocean-road-design-tokens/ # @coldsurfers/ocean-road-design-tokens — 디자인 토큰
 apps/
 ├── storybook/               # @coldsurfers/storybook — Next.js + Storybook (웹)
@@ -22,7 +22,7 @@ apps/
 | Biome | 1.9.4 | Linter + Formatter (ESLint/Prettier 대체) |
 | Lefthook | - | Git hooks |
 | Changesets | - | 버전 관리 및 배포 |
-| tsdown | - | `@coldsurfers/ocean-road` 빌드 |
+| tsdown | - | `@coldsurf/ocean-road` 빌드 |
 | Style Dictionary | - | 디자인 토큰 빌드 |
 
 ## 커밋 규칙
@@ -44,7 +44,7 @@ cd packages/ocean-road && pnpm build
 cd packages/ocean-road-design-tokens && pnpm build
 ```
 
-## `@coldsurfers/ocean-road` 진입점 (Entry Points)
+## `@coldsurf/ocean-road` 진입점 (Entry Points)
 
 | 진입점 | 용도 |
 |--------|------|

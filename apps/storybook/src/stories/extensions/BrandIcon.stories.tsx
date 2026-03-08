@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { BrandIcon } from '@coldsurfers/ocean-road';
+import { BrandIcon } from '@coldsurf/ocean-road';
 import styled from '@emotion/styled';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

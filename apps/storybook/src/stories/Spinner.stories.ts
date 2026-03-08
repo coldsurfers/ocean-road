@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Spinner } from '@coldsurfers/ocean-road';
+import { Spinner } from '@coldsurf/ocean-road';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

@@ -9,7 +9,7 @@ module.exports = {
       {
         root: ['.'],
         alias: {
-          '@coldsurfers/ocean-road/native': '../../packages/ocean-road/src/native/index.ts',
+          '@coldsurf/ocean-road/native': '../../packages/ocean-road/src/native/index.ts',
           'react-native': '../../node_modules/react-native',
         },
       },

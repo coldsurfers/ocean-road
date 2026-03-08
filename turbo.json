@@ -6,7 +6,7 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
-    "@coldsurfers/ocean-road#build": {
+    "@coldsurf/ocean-road#build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
@@ -18,7 +18,7 @@
       "outputs": ["dist/**"]
     },
     "build:ui": {
-      "dependsOn": ["@coldsurfers/ocean-road-design-tokens#build", "@coldsurfers/ocean-road#build"],
+      "dependsOn": ["@coldsurfers/ocean-road-design-tokens#build", "@coldsurf/ocean-road#build"],
       "outputs": ["dist/**"]
     },
     "lint": {
