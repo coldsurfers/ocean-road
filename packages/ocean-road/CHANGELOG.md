@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.13.6
+
+### Patch Changes
+
+- [#142](https://github.com/coldsurfers/ocean-road/pull/142) [`6dc527b`](https://github.com/coldsurfers/ocean-road/commit/6dc527b57de2d300e9b8f4a15ea2cf500437f4d7) Thanks [@yungblud](https://github.com/yungblud)! - fix(ocean-road): fixed shared utils import scope
+
 ## 1.13.5
 
 ### Patch Changes
