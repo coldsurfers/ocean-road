@@ -44,6 +44,8 @@
   "scripts": {
     "build": "pnpm build:core",
     "build:core": "tsdown",
+    "size": "node scripts/size-report.mjs",
+    "bench": "node scripts/benchmark.mjs",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "format": "biome format .",
