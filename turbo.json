@@ -42,6 +42,10 @@
     "check:type": {
       "cache": true
     },
+    "@coldsurf/ocean-road#check:type": {
+      "dependsOn": ["@coldsurfers/ocean-road-design-tokens#build"],
+      "cache": true
+    },
     "build:storybook": {
       "dependsOn": ["@coldsurfers/storybook#build-storybook"],
       "cache": false
