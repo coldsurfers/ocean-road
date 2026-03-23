@@ -111,6 +111,28 @@ StyleDictionary.registerFormat({
   },
 });
 
+function toKebabCase(str: string) {
+  return str.replace(/([A-Z])/g, (m) => `-${m.toLowerCase()}`);
+}
+
+StyleDictionary.registerFormat({
+  name: 'typographyJsModule',
+  formatter: (args) => {
+    const { dictionary } = args;
+    const tokens = JSON.stringify(
+      dictionary.tokens,
+      (_, value) => {
+        if (value?.value) {
+          return `var(--${value.path.map(toKebabCase).join('-')})`;
+        }
+        return value;
+      },
+      2
+    );
+    return `const variables = ${tokens} as const;\n\nexport default variables`;
+  },
+});
+
 StyleDictionary.registerFilter({
   name: 'ocColorFilter',
   matcher(token) {
@@ -128,6 +150,13 @@ StyleDictionary.registerFilter({
   },
 });
 
+StyleDictionary.registerFilter({
+  name: 'typographyFilter',
+  matcher(token) {
+    return token.attributes?.category === 'typography';
+  },
+});
+
 StyleDictionary.extend('config.json').buildAllPlatforms();
 
 function runTsc() {
@@ -141,6 +170,12 @@ function runTsc() {
     // remove original ts file
     'rm -rf ./dist/js/semantic/theme-variables.ts',
     'rm -rf ./dist/js/semantic/variables.ts',
+    // typography — esm
+    'pnpm tsc ./dist/js/typography/variables.ts --declaration --module esnext --skipLibCheck && mv ./dist/js/typography/variables.js ./dist/js/typography/variables.mjs',
+    // typography — cjs
+    'pnpm tsc ./dist/js/typography/variables.ts --declaration --module commonjs --skipLibCheck',
+    // remove original ts file
+    'rm -rf ./dist/js/typography/variables.ts',
   ];
   for (const cmd of cmds) {
     try {

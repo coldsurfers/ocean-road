@@ -79,6 +79,36 @@
           "destination": "semantic/theme-variables.ts",
           "format": "semanticColorThemeVariables",
           "filter": "darkColorFilter"
+        },
+        {
+          "destination": "typography/variables.ts",
+          "format": "typographyJsModule",
+          "filter": "typographyFilter"
+        }
+      ]
+    },
+    "typography-css": {
+      "transformGroup": "css",
+      "buildPath": "dist/css/",
+      "files": [
+        {
+          "destination": "typography/variables.css",
+          "format": "css/variables",
+          "filter": "typographyFilter",
+          "options": {
+            "outputReferences": false
+          }
+        }
+      ]
+    },
+    "typography-json": {
+      "transformGroup": "css",
+      "buildPath": "dist/json/",
+      "files": [
+        {
+          "destination": "typography/variables.json",
+          "format": "json/flat",
+          "filter": "typographyFilter"
         }
       ]
     }
