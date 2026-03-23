@@ -5,7 +5,7 @@
     "email": "imcoldsurf@gmail.com",
     "url": "https://coldsurf.io"
   },
-  "version": "1.13.6",
+  "version": "1.13.7-alpha.0",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
@@ -34,13 +34,7 @@
   "module": "dist/index.js",
   "source": "src/",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "native",
-    "dist",
-    "package.json"
-  ],
+  "files": ["src", "next", "native", "dist", "package.json"],
   "scripts": {
     "build": "pnpm build:core",
     "build:core": "tsdown",
