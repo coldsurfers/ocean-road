@@ -30,6 +30,11 @@
       "import": "./dist/js/semantic/variables.mjs",
       "types": "./dist/js/semantic/variables.d.ts"
     },
+    "./js/typography/variables": {
+      "require": "./dist/js/typography/variables.js",
+      "import": "./dist/js/typography/variables.mjs",
+      "types": "./dist/js/typography/variables.d.ts"
+    },
     "./dist/json/*": {
       "default": "./dist/json/*"
     }
