@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road-design-tokens
 
+## 1.10.9
+
+### Patch Changes
+
+- [#144](https://github.com/coldsurfers/ocean-road/pull/144) [`603a534`](https://github.com/coldsurfers/ocean-road/commit/603a53406d1358e50cb8f71caee7dbfc1f3a9b35) Thanks [@yungblud](https://github.com/yungblud)! - inject typography design tokens CSS variables via themeToStyles
+
 ## 1.10.8
 
 ### Patch Changes
