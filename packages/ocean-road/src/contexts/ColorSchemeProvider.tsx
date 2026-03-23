@@ -1,5 +1,6 @@
 import darkColorDesignTokens from '@coldsurfers/ocean-road-design-tokens/dist/json/color/variables-dark.json';
 import lightColorDesignTokens from '@coldsurfers/ocean-road-design-tokens/dist/json/color/variables-light.json';
+import typographyDesignTokens from '@coldsurfers/ocean-road-design-tokens/dist/json/typography/variables.json';
 import {
   type Context,
   type PropsWithChildren,
@@ -63,6 +64,9 @@ export const themeToStyles = (theme: Theme) => {
       styles += `  --${key}: ${lightColorDesignTokens[key as keyof typeof lightColorDesignTokens]};\n`;
     });
   }
+  Object.keys(typographyDesignTokens).forEach((key) => {
+    styles += `  --${key}: ${typographyDesignTokens[key as keyof typeof typographyDesignTokens]};\n`;
+  });
 
   return styles;
 };

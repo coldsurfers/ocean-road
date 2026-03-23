@@ -1,6 +1,6 @@
 {
   "name": "@coldsurfers/ocean-road-design-tokens",
-  "version": "1.10.8",
+  "version": "1.10.9-alpha.1",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
@@ -29,6 +29,11 @@
       "require": "./dist/js/semantic/variables.js",
       "import": "./dist/js/semantic/variables.mjs",
       "types": "./dist/js/semantic/variables.d.ts"
+    },
+    "./js/typography/variables": {
+      "require": "./dist/js/typography/variables.js",
+      "import": "./dist/js/typography/variables.mjs",
+      "types": "./dist/js/typography/variables.d.ts"
     },
     "./dist/json/*": {
       "default": "./dist/json/*"
