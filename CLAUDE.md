@@ -69,10 +69,60 @@ cd packages/ocean-road-design-tokens && pnpm build
 
 ## 디자인 토큰 (`packages/ocean-road-design-tokens/`)
 
-Style Dictionary로 생성. 출력:
-- `dist/css/` — CSS 변수
-- `dist/js/` — JS/TS 모듈
-- `dist/json/` — JSON (light/dark 색상)
+Style Dictionary로 생성. **Primitive → Semantic** 2-레이어 구조.
+
+### 토큰 소스 (`tokens/`)
+
+```
+tokens/
+├── color/
+│   ├── oc.json          — Primitive 색상 (Open Color 팔레트)
+│   └── theme-alias.json — Semantic 색상 (light/dark alias)
+└── typography/
+    ├── font.json        — Primitive 타이포그래피 (fontSize, fontWeight, lineHeight)
+    └── theme-alias.json — Semantic 타이포그래피 (variant: heading1~3, body1~2, caption, label)
+```
+
+### 빌드 출력 (`dist/`)
+
+| 경로 | 내용 |
+|------|------|
+| `dist/css/color/variables.css` | Primitive 색상 CSS 변수 (`:root`) |
+| `dist/css/color/variables-light.css` | Semantic 라이트 모드 색상 CSS 변수 |
+| `dist/css/color/variables-dark.css` | Semantic 다크 모드 색상 CSS 변수 |
+| `dist/css/typography/variables.css` | Primitive + Variant 타이포그래피 CSS 변수 (`:root`) |
+| `dist/js/semantic/variables.js` | Semantic JS 모듈 (`semantics` 객체 — 색상 + 타이포그래피 variant) |
+| `dist/js/semantic/theme-variables.js` | Semantic 라이트/다크 값 객체 |
+| `dist/js/typography/variables.js` | Primitive 타이포그래피 JS 모듈 |
+| `dist/json/color/` | JSON 형태의 색상 토큰 값 |
+
+### Semantic 타이포그래피 Variant
+
+`semantics.typography.*`로 접근. 각 variant는 `{ fontSize, fontWeight, lineHeight }` CSS 변수 참조를 반환.
+
+| Variant | fontSize | fontWeight | lineHeight |
+|---------|----------|------------|------------|
+| `heading1` | 1.5rem (24px) | 700 bold | 1.2 tight |
+| `heading2` | 1.25rem (20px) | 600 semibold | 1.2 tight |
+| `heading3` | 1.125rem (18px) | 600 semibold | 1.5 normal |
+| `body1` | 1rem (16px) | 400 regular | 1.5 normal |
+| `body2` | 0.875rem (14px) | 400 regular | 1.5 normal |
+| `caption` | 0.75rem (12px) | 400 regular | 1.75 relaxed |
+| `label` | 0.875rem (14px) | 500 medium | 1.5 normal |
+
+### JS 사용 예
+
+```tsx
+import { semantics } from '@coldsurf/ocean-road'
+
+// 색상
+semantics.color.foreground[1]   // "var(--color-foreground-1)"
+semantics.color.background[2]   // "var(--color-background-2)"
+
+// 타이포그래피 variant
+semantics.typography.heading1.fontSize    // "var(--typography-variant-heading1-font-size)"
+semantics.typography.body1.fontWeight     // "var(--typography-variant-body1-font-weight)"
+```
 
 ## 버전 관리 / 배포
 
