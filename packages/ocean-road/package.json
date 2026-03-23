@@ -36,6 +36,7 @@
   "types": "dist/index.d.ts",
   "files": ["src", "next", "native", "dist", "package.json"],
   "scripts": {
+    "prebuild": "turbo run --filter=@coldsurfers/ocean-road-design-tokens build",
     "build": "pnpm build:core",
     "build:core": "tsdown",
     "size": "node scripts/size-report.mjs",
