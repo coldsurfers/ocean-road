@@ -115,20 +115,36 @@ function toKebabCase(str: string) {
   return str.replace(/([A-Z])/g, (m) => `-${m.toLowerCase()}`);
 }
 
+function cssVarReplacer(_: string, value: unknown) {
+  if (value && typeof value === 'object' && 'value' in value && 'path' in value) {
+    const token = value as { path: string[]; value: unknown };
+    return `var(--${token.path.map(toKebabCase).join('-')})`;
+  }
+  return value;
+}
+
+// typography primitive (fontSize, fontWeight, lineHeight) only — variant excluded
 StyleDictionary.registerFormat({
   name: 'typographyJsModule',
   formatter: (args) => {
     const { dictionary } = args;
-    const tokens = JSON.stringify(
-      dictionary.tokens,
-      (_, value) => {
-        if (value?.value) {
-          return `var(--${value.path.map(toKebabCase).join('-')})`;
-        }
-        return value;
-      },
-      2
+    const typographyTokens = dictionary.tokens.typography as Record<string, unknown>;
+    const primitives = Object.fromEntries(Object.entries(typographyTokens).filter(([k]) => k !== 'variant'));
+    const tokens = JSON.stringify(primitives, cssVarReplacer, 2);
+    return `const variables = ${tokens} as const;\n\nexport default variables`;
+  },
+});
+
+// semantic: color (CSS var refs) + typography variants
+StyleDictionary.registerFormat({
+  name: 'semanticVariables',
+  formatter: (args) => {
+    const { dictionary } = args;
+    const color = JSON.parse(JSON.stringify(dictionary.tokens.color, cssVarReplacer, 2));
+    const typography = JSON.parse(
+      JSON.stringify((dictionary.tokens.typography as Record<string, unknown>).variant, cssVarReplacer, 2)
     );
+    const tokens = JSON.stringify({ color, typography }, null, 2);
     return `const variables = ${tokens} as const;\n\nexport default variables`;
   },
 });
