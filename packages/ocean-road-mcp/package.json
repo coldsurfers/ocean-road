@@ -26,6 +26,8 @@
     "generate-data": "node scripts/generate-data.mjs",
     "prebuild": "pnpm run generate-data",
     "build": "tsdown",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
     "check": "biome check .",
     "check:fix": "biome check --write .",
     "precheck:type": "pnpm run generate-data",
