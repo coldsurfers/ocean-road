@@ -1,0 +1,20 @@
+# AppStoreButton
+
+App Store 또는 Google Play 스토어 링크 버튼 컴포넌트입니다.
+
+## 사용법
+
+```tsx
+import { AppStoreButton } from '@coldsurf/ocean-road'
+
+<AppStoreButton store="app-store" />
+<AppStoreButton store="google-play" />
+```
+
+## Props
+
+| prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `store` | `'app-store' \| 'google-play'` | — | 표시할 스토어 플랫폼 |
+
+## 인터랙티브 데모
