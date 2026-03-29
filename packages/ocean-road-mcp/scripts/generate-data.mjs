@@ -1,86 +1,22 @@
-import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs'
-import { resolve, dirname, basename } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { basename, dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { extractDescription, extractTitle, mdxToMarkdown } from '../../../scripts/mdx-utils.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const DOCS_ROOT = resolve(__dirname, '../../../apps/docs/docs')
-const COMPONENTS_DIR = resolve(DOCS_ROOT, 'components')
-const NEXT_DIR = resolve(DOCS_ROOT, 'next')
-const OUT_DIR = resolve(__dirname, '../src/generated')
-
-/** MDX → clean markdown (코드블록 외부 import/JSX/directives 제거) */
-function mdxToMarkdown(content) {
-  const lines = content.split('\n')
-  const result = []
-  let inCodeBlock = false
-
-  for (const line of lines) {
-    if (line.startsWith('```')) {
-      inCodeBlock = !inCodeBlock
-      result.push(line)
-      continue
-    }
-    if (inCodeBlock) {
-      result.push(line)
-      continue
-    }
-    if (line.startsWith('import ')) continue
-    if (/<[A-Z][A-Za-z]+[^>]*\/>/.test(line)) continue
-    if (/^:::/.test(line)) {
-      result.push('')
-      continue
-    }
-    result.push(line)
-  }
-
-  return result.join('\n').replace(/\n{3,}/g, '\n\n').trim()
-}
-
-function extractTitle(content) {
-  const match = content.match(/^# (.+)$/m)
-  return match ? match[1].trim() : ''
-}
-
-function extractDescription(content) {
-  const lines = content.split('\n')
-  let foundH1 = false
-  let inCodeBlock = false
-  for (const line of lines) {
-    if (line.startsWith('```')) {
-      inCodeBlock = !inCodeBlock
-      continue
-    }
-    if (inCodeBlock) continue
-    if (line.startsWith('# ')) {
-      foundH1 = true
-      continue
-    }
-    if (!foundH1) continue
-    const trimmed = line.trim()
-    if (
-      trimmed &&
-      !trimmed.startsWith('#') &&
-      !trimmed.startsWith('import ') &&
-      !trimmed.startsWith(':::') &&
-      !trimmed.startsWith('<') &&
-      !trimmed.startsWith('|') &&
-      !trimmed.startsWith('`') &&
-      !trimmed.startsWith('```') &&
-      !trimmed.startsWith('//')
-    ) {
-      return trimmed.length > 120 ? `${trimmed.slice(0, 117)}...` : trimmed
-    }
-  }
-  return ''
-}
+const DOCS_ROOT = resolve(__dirname, '../../../apps/docs/docs');
+const COMPONENTS_DIR = resolve(DOCS_ROOT, 'components');
+const NEXT_DIR = resolve(DOCS_ROOT, 'next');
+const TOKENS_BASE = resolve(__dirname, '../../../packages/ocean-road-design-tokens/dist');
+const OUT_DIR = resolve(__dirname, '../src/generated');
 
 function readComponents(sourceDir, platform, entry) {
   return readdirSync(sourceDir)
     .filter((f) => f.endsWith('.mdx'))
     .map((file) => {
-      const slug = basename(file, '.mdx')
-      const raw = readFileSync(resolve(sourceDir, file), 'utf-8')
+      const slug = basename(file, '.mdx');
+      const raw = readFileSync(resolve(sourceDir, file), 'utf-8');
       return {
         slug,
         title: extractTitle(raw),
@@ -88,18 +24,61 @@ function readComponents(sourceDir, platform, entry) {
         platform,
         entry,
         content: mdxToMarkdown(raw),
-      }
-    })
+      };
+    });
 }
+
+function buildTokens() {
+  const light = JSON.parse(
+    readFileSync(resolve(TOKENS_BASE, 'json/color/variables-light.json'), 'utf-8')
+  );
+  const dark = JSON.parse(
+    readFileSync(resolve(TOKENS_BASE, 'json/color/variables-dark.json'), 'utf-8')
+  );
+
+  // color: { background, foreground, border, dimmed } 키 기반으로 동적 생성
+  const COLOR_GROUPS = ['background', 'foreground', 'border', 'dimmed'];
+  const color = Object.fromEntries(
+    COLOR_GROUPS.map((group) => {
+      const entries = Object.keys(light)
+        .filter((k) => k.startsWith(`color-${group}-`))
+        .map((k) => {
+          const index = k.replace(`color-${group}-`, '');
+          return {
+            index,
+            js: `semantics.color.${group}[${index}]`,
+            css: `var(--${k})`,
+            light: light[k],
+            dark: dark[k] ?? null,
+          };
+        });
+      return [group, entries];
+    })
+  );
+
+  // typography: semantic variables.mjs에서 읽기
+  const semanticRaw = readFileSync(resolve(TOKENS_BASE, 'js/semantic/variables.mjs'), 'utf-8');
+  // mjs 파일을 동적으로 파싱 — JSON 부분만 추출
+  const semanticMatch = semanticRaw.match(/var variables = ({[\s\S]+?});\s*export/);
+  const semanticData = semanticMatch ? JSON.parse(semanticMatch[1].replace(/'/g, '"')) : {};
+  const typography = semanticData.typography ?? {};
+
+  return { color, typography };
+}
+
+// --- 실행 ---
 
 const components = [
   ...readComponents(COMPONENTS_DIR, 'web', '@coldsurf/ocean-road'),
   ...readComponents(NEXT_DIR, 'next', '@coldsurf/ocean-road/next'),
-]
+];
 
-mkdirSync(OUT_DIR, { recursive: true })
+const tokens = buildTokens();
 
-const ts = `// @ts-nocheck
+mkdirSync(OUT_DIR, { recursive: true });
+
+// components data
+const componentTs = `// @ts-nocheck
 // DO NOT EDIT — auto-generated by scripts/generate-data.mjs
 
 export interface ComponentEntry {
@@ -112,7 +91,17 @@ export interface ComponentEntry {
 }
 
 export const components: ComponentEntry[] = ${JSON.stringify(components, null, 2)}
-`
+`;
+writeFileSync(resolve(OUT_DIR, 'data.ts'), componentTs, 'utf-8');
+console.log(`✅ Generated src/generated/data.ts (${components.length} components)`);
 
-writeFileSync(resolve(OUT_DIR, 'data.ts'), ts, 'utf-8')
-console.log(`✅ Generated src/generated/data.ts (${components.length} components)`)
+// tokens data
+const tokensTs = `// @ts-nocheck
+// DO NOT EDIT — auto-generated by scripts/generate-data.mjs
+
+export const colorTokens = ${JSON.stringify(tokens.color, null, 2)} as const
+
+export const typographyTokens = ${JSON.stringify(tokens.typography, null, 2)} as const
+`;
+writeFileSync(resolve(OUT_DIR, 'tokens.ts'), tokensTs, 'utf-8');
+console.log('✅ Generated src/generated/tokens.ts');

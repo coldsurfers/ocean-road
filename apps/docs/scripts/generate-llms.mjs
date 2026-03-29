@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { basename, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { extractDescription, extractTitle, mdxToMarkdown } from '../../../scripts/mdx-utils.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -11,90 +12,6 @@ const PUBLIC_DIR = resolve(DOCS_ROOT, 'public');
 const OUT_COMPONENTS_DIR = resolve(PUBLIC_DIR, 'components');
 const OUT_NEXT_DIR = resolve(PUBLIC_DIR, 'next');
 const DOCS_BASE_URL = 'https://docs.ocean-road.coldsurf.io';
-
-/**
- * MDX → clean markdown
- * - import 구문 제거 (코드블록 외부만)
- * - JSX 컴포넌트 (StorybookEmbed 등) 제거
- * - Rspress 전용 directives (:::tip, :::info 등) → 내용만 유지
- */
-function mdxToMarkdown(content) {
-  const lines = content.split('\n');
-  const result = [];
-  let inCodeBlock = false;
-
-  for (const line of lines) {
-    if (line.startsWith('```')) {
-      inCodeBlock = !inCodeBlock;
-      result.push(line);
-      continue;
-    }
-
-    if (inCodeBlock) {
-      result.push(line);
-      continue;
-    }
-
-    if (line.startsWith('import ')) continue;
-    if (/<[A-Z][A-Za-z]+[^>]*\/>/.test(line)) continue;
-    if (/^:::/.test(line)) {
-      result.push('');
-      continue;
-    }
-
-    result.push(line);
-  }
-
-  return result
-    .join('\n')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-}
-
-/**
- * MDX에서 description 추출 (h1 다음 첫 번째 비어있지 않은 텍스트 단락)
- */
-function extractDescription(content) {
-  const lines = content.split('\n');
-  let foundH1 = false;
-  let inCodeBlock = false;
-  for (const line of lines) {
-    if (line.startsWith('```')) {
-      inCodeBlock = !inCodeBlock;
-      continue;
-    }
-    if (inCodeBlock) continue;
-
-    if (line.startsWith('# ')) {
-      foundH1 = true;
-      continue;
-    }
-    if (!foundH1) continue;
-    const trimmed = line.trim();
-    if (
-      trimmed &&
-      !trimmed.startsWith('#') &&
-      !trimmed.startsWith('import ') &&
-      !trimmed.startsWith(':::') &&
-      !trimmed.startsWith('<') &&
-      !trimmed.startsWith('|') &&
-      !trimmed.startsWith('`') &&
-      !trimmed.startsWith('```') &&
-      !trimmed.startsWith('//')
-    ) {
-      return trimmed.length > 120 ? `${trimmed.slice(0, 117)}...` : trimmed;
-    }
-  }
-  return '';
-}
-
-/**
- * h1 제목 추출
- */
-function extractTitle(content) {
-  const match = content.match(/^# (.+)$/m);
-  return match ? match[1].trim() : '';
-}
 
 function processDir(sourceDir, outDir, urlPath) {
   mkdirSync(outDir, { recursive: true });
