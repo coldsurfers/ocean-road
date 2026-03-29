@@ -1,0 +1,46 @@
+{
+  "name": "@coldsurf/ocean-road-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Ocean Road design system",
+  "author": {
+    "name": "Dong-Ho Choi",
+    "email": "imcoldsurf@gmail.com",
+    "url": "https://coldsurf.io"
+  },
+  "bugs": {
+    "url": "https://github.com/coldsurfers/ocean-road/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coldsurfers/ocean-road",
+    "directory": "packages/ocean-road-mcp"
+  },
+  "homepage": "https://docs.ocean-road.coldsurf.io",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "ocean-road-mcp": "./dist/server.js"
+  },
+  "files": ["dist", "package.json"],
+  "scripts": {
+    "generate-data": "node scripts/generate-data.mjs",
+    "prebuild": "pnpm run generate-data",
+    "build": "tsdown",
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
+    "check:type": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.28.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "tsdown": "^0.11.9",
+    "typescript": "5.8.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
