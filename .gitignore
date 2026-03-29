@@ -3,6 +3,8 @@ node_modules
 
 packages/ocean-road/dist
 packages/ocean-road-design-tokens/dist
+packages/ocean-road-mcp/dist
+packages/ocean-road-mcp/src/generated
 apps/docs/build
 **/yarn-error.log
 

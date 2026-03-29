@@ -1,0 +1,43 @@
+# Ocean Road Design System
+
+> COLDSURF 디자인 시스템 컴포넌트 라이브러리.
+> 패키지: `@coldsurf/ocean-road` (web), `@coldsurf/ocean-road/native` (React Native), `@coldsurf/ocean-road/next` (Next.js)
+> 설치: https://docs.ocean-road.coldsurf.io/installation
+
+## Components (Web · `@coldsurf/ocean-road`)
+
+- [Accordion](https://docs.ocean-road.coldsurf.io/components/accordion.md): 제네릭 아코디언 컴포넌트입니다. 한 번에 하나의 섹션만 펼쳐지는 단일 확장 방식으로 동작합니다.
+- [AppLogo](https://docs.ocean-road.coldsurf.io/components/app-logo.md): 앱 로고 이미지를 테마와 형태 옵션에 따라 표시하는 컴포넌트입니다.
+- [AppStoreButton](https://docs.ocean-road.coldsurf.io/components/app-store-button.md): App Store 또는 Google Play 스토어 링크 버튼 컴포넌트입니다.
+- [Badge](https://docs.ocean-road.coldsurf.io/components/badge.md): 태그/필터 형태의 배지 컴포넌트입니다. 클릭 가능한 항목 선택 UI에 주로 사용합니다.
+- [BrandIcon](https://docs.ocean-road.coldsurf.io/components/brand-icon.md): Apple, Google, Android 브랜드 로고를 SVG로 렌더링하는 컴포넌트입니다.
+- [Button](https://docs.ocean-road.coldsurf.io/components/button.md): 기본 버튼 컴포넌트입니다. 6가지 variant를 제공하며 아이콘과 함께 사용할 수 있습니다.
+- [Checkbox](https://docs.ocean-road.coldsurf.io/components/checkbox.md): 체크박스 인풋 컴포넌트입니다. 선택적으로 라벨 텍스트를 함께 표시할 수 있습니다.
+- [ColorSchemeToggle](https://docs.ocean-road.coldsurf.io/components/color-scheme-toggle.md): 라이트/다크 모드를 전환하는 토글 버튼 컴포넌트입니다. 시스템 설정 변화를 자동으로 감지합니다.
+- [Dropdown](https://docs.ocean-road.coldsurf.io/components/dropdown.md): 위치 자동 계산, 애니메이션, 백드롭을 지원하는 드롭다운/팝오버 컴포넌트입니다.
+- [ErrorUI](https://docs.ocean-road.coldsurf.io/components/error-ui.md): 네트워크 에러, 알 수 없는 에러 등 에러 상태를 표시하는 복합 컴포넌트입니다. 재시도 버튼이 포함되어 있습니다.
+- [FullScreenModal](https://docs.ocean-road.coldsurf.io/components/full-screen-modal.md): 화면 전체를 덮는 모달 컴포넌트입니다. 열려 있는 동안 배경 스크롤이 차단됩니다.
+- [GridCardList](https://docs.ocean-road.coldsurf.io/components/grid-card-list.md): 그리드 레이아웃으로 카드 목록을 표시하는 복합 컴포넌트입니다. 페이지네이션, 빈 상태, 메이슨리 레이아웃을 지원합니다.
+- [IconButton](https://docs.ocean-road.coldsurf.io/components/icon-button.md): 아이콘 전용 버튼 컴포넌트입니다. 텍스트 없이 아이콘만 표시하는 버튼에 사용합니다.
+- [MenuItem](https://docs.ocean-road.coldsurf.io/components/menu-item.md): 네비게이션 메뉴 항목 컴포넌트입니다. 로딩 상태, 활성 상태, 아이콘을 지원합니다.
+- [Modal](https://docs.ocean-road.coldsurf.io/components/modal.md): dimmed 오버레이와 함께 표시되는 모달 컴포넌트입니다. framer-motion 애니메이션이 적용됩니다.
+- [SNSIcon](https://docs.ocean-road.coldsurf.io/components/sns-icon.md): Instagram, X(Twitter), Facebook, YouTube 소셜 미디어 아이콘을 SVG로 렌더링하는 컴포넌트입니다.
+- [Spinner](https://docs.ocean-road.coldsurf.io/components/spinner.md): 로딩 상태를 표시하는 스피너 컴포넌트입니다.
+- [Switch](https://docs.ocean-road.coldsurf.io/components/switch.md): 토글 스위치 컴포넌트입니다. `role="switch"` 접근성 속성이 적용되어 있습니다.
+- [TextArea](https://docs.ocean-road.coldsurf.io/components/text-area.md): 여러 줄 텍스트 입력 컴포넌트입니다. 선택적으로 라벨과 에러 상태를 표시할 수 있습니다.
+- [TextInput](https://docs.ocean-road.coldsurf.io/components/text-input.md): 한 줄 텍스트 입력 컴포넌트입니다. 라벨, 에러 상태, 좌우 슬롯을 지원합니다.
+- [Text](https://docs.ocean-road.coldsurf.io/components/text.md): 텍스트 렌더링 컴포넌트입니다. 기본 엘리먼트는 `<span>`이며 `as` prop으로 변경할 수 있습니다.
+- [Toast](https://docs.ocean-road.coldsurf.io/components/toast.md): 화면 하단에 잠시 표시되는 알림 컴포넌트입니다. 3초 후 자동으로 닫힙니다.
+
+## Components (Next.js · `@coldsurf/ocean-road/next`)
+
+- [AppFooter](https://docs.ocean-road.coldsurf.io/next/app-footer.md): Next.js 앱 전용 푸터 컴포넌트입니다. App Store / Google Play 링크, SNS 링크, 내비게이션 메뉴를 포함합니다.
+- [AppHeader](https://docs.ocean-road.coldsurf.io/next/app-header.md): Next.js 앱 전용 헤더 복합 컴포넌트입니다. 고정 헤더, 플로팅 헤더, 모바일 드로어 4가지 서브 컴포넌트를 제공합니다.
+- [GlobalLink](https://docs.ocean-road.coldsurf.io/next/global-link.md): Next.js `Link`를 확장한 라우팅 링크 컴포넌트입니다. 클릭 시 `RouteLoading`의 로딩 상태를 자동으로 활성화합니다.
+- [GridCardList (Next.js)](https://docs.ocean-road.coldsurf.io/next/grid-card-list.md): Next.js 전용 `GridCardList`입니다. `Item`과 `MasonryItem`이 `GlobalLink`를 내장하여 `href` prop만으로 페이지 전환 로딩 연동이 자동으로 처리됩니다.
+- [NewTabLink](https://docs.ocean-road.coldsurf.io/next/new-tab-link.md): 새 탭에서 열리는 링크 컴포넌트입니다. `target="_blank"`와 `rel="noopener noreferrer"`를 자동으로 적용합니다.
+- [RouteLoading](https://docs.ocean-road.coldsurf.io/next/route-loading.md): 기본적으로 `RouteLoading`은 마운트 시 로딩 상태를 자동으로 초기화합니다. 데이터 fetching이 끝난 후 로딩을 해제하려면 `deps`를 사용합니다.
+
+## Design Tokens
+
+- [Design Tokens](https://docs.ocean-road.coldsurf.io/design-tokens.md): 색상(Primitive/Semantic), 타이포그래피 토큰 레퍼런스. Style Dictionary 기반 2-레이어 구조.

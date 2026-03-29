@@ -1,0 +1,179 @@
+# 디자인 토큰
+
+`@coldsurfers/ocean-road-design-tokens`에서 생성되는 토큰 레퍼런스입니다. Style Dictionary로 빌드되며, **Primitive → Semantic** 2-레이어 구조로 설계되어 있습니다.
+
+```
+Primitive (oc.gray.9, typography.fontSize.md 등 raw 값)
+    ↓
+Semantic (color.foreground.1, typography.heading1 등 의미 기반 CSS 변수)
+```
+
+---
+
+## 색상 토큰
+
+### Semantic 색상 토큰
+
+`ColorSchemeProvider`가 라이트/다크 모드에 따라 아래 CSS 변수를 자동으로 주입합니다.
+
+#### Background
+
+| CSS 변수 | JS | 라이트 | 다크 | 용도 |
+|----------|----|--------|------|------|
+| `--color-background-1` | `semantics.color.background[1]` | `#ffffff` | `#000000` | 페이지 최상위 배경 |
+| `--color-background-2` | `semantics.color.background[2]` | `#f1f3f5` | `#212529` | 카드, 패널 배경 |
+| `--color-background-3` | `semantics.color.background[3]` | `#e9ecef` | `#343a40` | 중간 단계 배경 |
+| `--color-background-4` | `semantics.color.background[4]` | `#dee2e6` | `#495057` | 구분선 배경 |
+| `--color-background-5` | `semantics.color.background[5]` | `#ced4da` | `#868e96` | 비활성 배경 |
+
+#### Foreground
+
+| CSS 변수 | JS | 라이트 | 다크 | 용도 |
+|----------|----|--------|------|------|
+| `--color-foreground-1` | `semantics.color.foreground[1]` | `#212529` | `#f1f3f5` | 주요 텍스트 |
+| `--color-foreground-2` | `semantics.color.foreground[2]` | `#343a40` | `#e9ecef` | 보조 텍스트 |
+| `--color-foreground-3` | `semantics.color.foreground[3]` | `#495057` | `#dee2e6` | 3차 텍스트, 플레이스홀더 |
+| `--color-foreground-4` | `semantics.color.foreground[4]` | `#868e96` | `#ced4da` | 비활성 텍스트 |
+
+#### Border
+
+| CSS 변수 | JS | 라이트 | 다크 | 용도 |
+|----------|----|--------|------|------|
+| `--color-border-1` | `semantics.color.border[1]` | `#f1f3f5` | `#495057` | 기본 구분선 |
+| `--color-border-2` | `semantics.color.border[2]` | `#e9ecef` | `#868e96` | 강조 구분선 |
+
+#### Dimmed
+
+| CSS 변수 | JS | 라이트 | 다크 | 용도 |
+|----------|----|--------|------|------|
+| `--color-dimmed-1` | `semantics.color.dimmed[1]` | `#f1f3f5` | `#495057` | 비활성 오버레이 |
+
+### Primitive 색상 토큰
+
+Semantic 토큰의 기반이 되는 [Open Color](https://yeun.github.io/open-color/) 팔레트입니다. 일반적으로는 Semantic 토큰 사용을 권장합니다.
+
+```tsx
+import { colors } from '@coldsurf/ocean-road'
+
+// colors.gray[9], colors.gray[0], colors.white, colors.black 등
+```
+
+| 팔레트 | 단계 |
+|--------|------|
+| `gray` | 0 – 9 |
+| `white` / `black` | — |
+| 기타 (red, blue, green …) | 0 – 9 |
+
+---
+
+## 타이포그래피 토큰
+
+### Semantic 타이포그래피 토큰 (Variant)
+
+텍스트 역할에 맞는 조합 토큰입니다. `semantics.typography.*`로 접근합니다.
+
+| Variant | fontSize | fontWeight | lineHeight | 용도 |
+|---------|----------|------------|------------|------|
+| `heading1` | `1.5rem` (24px) | `700` bold | `1.2` tight | 최상위 제목 |
+| `heading2` | `1.25rem` (20px) | `600` semibold | `1.2` tight | 섹션 제목 |
+| `heading3` | `1.125rem` (18px) | `600` semibold | `1.5` normal | 서브 제목 |
+| `body1` | `1rem` (16px) | `400` regular | `1.5` normal | 본문 |
+| `body2` | `0.875rem` (14px) | `400` regular | `1.5` normal | 보조 본문 |
+| `caption` | `0.75rem` (12px) | `400` regular | `1.75` relaxed | 캡션, 주석 |
+| `label` | `0.875rem` (14px) | `500` medium | `1.5` normal | 라벨, 버튼 텍스트 |
+
+### Primitive 타이포그래피 토큰
+
+#### Font Size
+
+| CSS 변수 | 값 | px |
+|----------|----|----|
+| `--typography-font-size-xs` | `0.75rem` | 12px |
+| `--typography-font-size-sm` | `0.875rem` | 14px |
+| `--typography-font-size-md` | `1rem` | 16px |
+| `--typography-font-size-lg` | `1.125rem` | 18px |
+| `--typography-font-size-xl` | `1.25rem` | 20px |
+| `--typography-font-size-2xl` | `1.5rem` | 24px |
+| `--typography-font-size-3xl` | `1.875rem` | 30px |
+| `--typography-font-size-4xl` | `2.25rem` | 36px |
+
+#### Font Weight
+
+| CSS 변수 | 값 |
+|----------|----|
+| `--typography-font-weight-regular` | `400` |
+| `--typography-font-weight-medium` | `500` |
+| `--typography-font-weight-semibold` | `600` |
+| `--typography-font-weight-bold` | `700` |
+
+#### Line Height
+
+| CSS 변수 | 값 |
+|----------|----|
+| `--typography-line-height-tight` | `1.2` |
+| `--typography-line-height-normal` | `1.5` |
+| `--typography-line-height-relaxed` | `1.75` |
+
+---
+
+## JS에서 사용하기
+
+`semantics` 객체의 값은 CSS 변수 문자열을 반환합니다. `ColorSchemeProvider`가 주입한 실제 값으로 자동 해석됩니다.
+
+```tsx
+import { semantics } from '@coldsurf/ocean-road'
+import styled from '@emotion/styled'
+import { Text } from '@coldsurf/ocean-road'
+
+// 색상 토큰
+const Title = styled(Text)`
+  color: ${semantics.color.foreground[1]};
+  background-color: ${semantics.color.background[2]};
+  border-bottom: 1px solid ${semantics.color.border[1]};
+`
+
+// 타이포그래피 토큰
+const Heading = styled.h1`
+  font-size: ${semantics.typography.heading1.fontSize};
+  font-weight: ${semantics.typography.heading1.fontWeight};
+  line-height: ${semantics.typography.heading1.lineHeight};
+`
+
+const Body = styled.p`
+  font-size: ${semantics.typography.body1.fontSize};
+  font-weight: ${semantics.typography.body1.fontWeight};
+  line-height: ${semantics.typography.body1.lineHeight};
+`
+```
+
+---
+
+## CSS 변수로 직접 사용하기
+
+`ColorSchemeProvider` 없이 CSS에서 직접 참조할 수도 있습니다.
+
+```css
+.my-element {
+  color: var(--color-foreground-1);
+  background-color: var(--color-background-2);
+
+  font-size: var(--typography-variant-body1-font-size);
+  font-weight: var(--typography-variant-body1-font-weight);
+  line-height: var(--typography-variant-body1-line-height);
+}
+```
+
+---
+
+## 토큰 빌드 출력 경로
+
+| 경로 | 내용 |
+|------|------|
+| `dist/css/color/variables.css` | Primitive 색상 CSS 변수 (`:root`) |
+| `dist/css/color/variables-light.css` | Semantic 라이트 모드 색상 CSS 변수 |
+| `dist/css/color/variables-dark.css` | Semantic 다크 모드 색상 CSS 변수 |
+| `dist/css/typography/variables.css` | Primitive + Variant 타이포그래피 CSS 변수 (`:root`) |
+| `dist/js/semantic/variables.js` | Semantic JS 모듈 (`semantics` 객체 — 색상 + 타이포그래피) |
+| `dist/js/semantic/theme-variables.js` | Semantic 라이트/다크 값 객체 |
+| `dist/js/typography/variables.js` | Primitive 타이포그래피 JS 모듈 |
+| `dist/json/color/` | JSON 형태의 색상 토큰 값 |

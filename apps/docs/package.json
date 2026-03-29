@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "generate-tokens": "node scripts/generate-tokens.mjs",
-    "prebuild": "pnpm run generate-tokens",
-    "predev": "pnpm run generate-tokens",
+    "generate-llms": "node scripts/generate-llms.mjs",
+    "prebuild": "pnpm run generate-tokens && pnpm run generate-llms",
+    "predev": "pnpm run generate-tokens && pnpm run generate-llms",
     "dev": "rspress dev",
     "build": "rspress build",
     "preview": "rspress preview",
