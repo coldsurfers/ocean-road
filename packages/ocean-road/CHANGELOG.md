@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.14.1
+
+### Patch Changes
+
+- [`0b347dc`](https://github.com/coldsurfers/ocean-road/commit/0b347dc5327612667fc7e5d452b111b2a6e65d3e) Thanks [@yungblud](https://github.com/yungblud)! - TextInput ref를 HTMLInputElement로 직접 노출하여 React Hook Form register 호환성 수정
+
 ## 1.14.0
 
 ### Minor Changes
