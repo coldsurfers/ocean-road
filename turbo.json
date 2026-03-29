@@ -46,6 +46,10 @@
       "dependsOn": ["@coldsurfers/ocean-road-design-tokens#build"],
       "cache": true
     },
+    "@coldsurf/ocean-road-mcp#build": {
+      "dependsOn": ["@coldsurfers/ocean-road-design-tokens#build"],
+      "outputs": ["dist/**"]
+    },
     "@coldsurf/ocean-road-mcp#check:type": {
       "dependsOn": ["@coldsurfers/ocean-road-design-tokens#build"],
       "cache": true
