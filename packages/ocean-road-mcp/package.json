@@ -1,6 +1,6 @@
 {
   "name": "@coldsurf/ocean-road-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MCP server for Ocean Road design system",
   "author": {
     "name": "Dong-Ho Choi",
@@ -21,7 +21,10 @@
   "bin": {
     "ocean-road-mcp": "./dist/server.js"
   },
-  "files": ["dist", "package.json"],
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "scripts": {
     "generate-data": "node scripts/generate-data.mjs",
     "prebuild": "pnpm run generate-data",
