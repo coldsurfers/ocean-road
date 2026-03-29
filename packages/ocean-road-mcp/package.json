@@ -28,6 +28,7 @@
     "build": "tsdown",
     "check": "biome check .",
     "check:fix": "biome check --write .",
+    "precheck:type": "pnpm run generate-data",
     "check:type": "tsc --noEmit"
   },
   "dependencies": {
