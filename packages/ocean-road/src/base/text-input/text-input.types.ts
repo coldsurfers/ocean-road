@@ -9,7 +9,4 @@ export type TextInputProps = InputHTMLAttributes<HTMLInputElement> & {
   right?: ReactNode;
 };
 
-export interface TextInputRef {
-  focus: () => void;
-  blur: () => void;
-}
+export type TextInputRef = HTMLInputElement;

@@ -16,18 +16,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
   ) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
-    useImperativeHandle(
-      forwardedRef,
-      () => ({
-        focus: () => {
-          inputRef.current?.focus();
-        },
-        blur: () => {
-          inputRef.current?.blur();
-        },
-      }),
-      []
-    );
+    // biome-ignore lint/style/noNonNullAssertion: inputRef is always set by the time this runs
+    useImperativeHandle(forwardedRef, () => inputRef.current!, []);
 
     const onClick = useCallback<MouseEventHandler<HTMLDivElement>>((e) => {
       e.preventDefault();
