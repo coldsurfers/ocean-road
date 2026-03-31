@@ -77,10 +77,14 @@ import { colors } from '@coldsurf/ocean-road'
 | `heading1` | `1.5rem` (24px) | `700` bold | `1.2` tight | 최상위 제목 |
 | `heading2` | `1.25rem` (20px) | `600` semibold | `1.2` tight | 섹션 제목 |
 | `heading3` | `1.125rem` (18px) | `600` semibold | `1.5` normal | 서브 제목 |
+| `heading4` | `1.375rem` (22px) | `700` bold | `1.2` tight | 중간 제목 |
 | `body1` | `1rem` (16px) | `400` regular | `1.5` normal | 본문 |
 | `body2` | `0.875rem` (14px) | `400` regular | `1.5` normal | 보조 본문 |
+| `body3` | `0.8125rem` (13px) | `400` regular | `1.5` normal | 작은 본문 |
+| `body4` | `0.9375rem` (15px) | `400` regular | `1.5` normal | 중간 본문 |
 | `caption` | `0.75rem` (12px) | `400` regular | `1.75` relaxed | 캡션, 주석 |
 | `label` | `0.875rem` (14px) | `500` medium | `1.5` normal | 라벨, 버튼 텍스트 |
+| `overline` | `0.6875rem` (11px) | `600` semibold | `1.75` relaxed | 오버라인, 배지 텍스트 |
 
 ### Primitive 타이포그래피 토큰
 
@@ -88,11 +92,15 @@ import { colors } from '@coldsurf/ocean-road'
 
 | CSS 변수 | 값 | px |
 |----------|----|----|
+| `--typography-font-size-2xs` | `0.6875rem` | 11px |
 | `--typography-font-size-xs` | `0.75rem` | 12px |
+| `--typography-font-size-xs2` | `0.8125rem` | 13px |
 | `--typography-font-size-sm` | `0.875rem` | 14px |
+| `--typography-font-size-sm2` | `0.9375rem` | 15px |
 | `--typography-font-size-md` | `1rem` | 16px |
 | `--typography-font-size-lg` | `1.125rem` | 18px |
 | `--typography-font-size-xl` | `1.25rem` | 20px |
+| `--typography-font-size-xl2` | `1.375rem` | 22px |
 | `--typography-font-size-2xl` | `1.5rem` | 24px |
 | `--typography-font-size-3xl` | `1.875rem` | 30px |
 | `--typography-font-size-4xl` | `2.25rem` | 36px |
