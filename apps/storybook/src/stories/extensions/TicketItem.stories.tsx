@@ -27,11 +27,9 @@ type Story = StoryObj<typeof meta>;
 
 const StyledThumbnail = styled.img`
   width: 512px;
-  height: 512px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: 50%;
-  border-radius: 12px;
   background-color: ${semantics.color.background[3]};
 
   ${media.medium(css`
@@ -47,7 +45,7 @@ export const Default: Story = {
     venueName: 'COLDSURF 스테이지',
     date: new Date('2026-06-25'),
     thumbnailUrl:
-      'https://images.unsplash.com/photo-1515333437113-6464312e1885?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     renderThumbnail: (url) => <StyledThumbnail src={url} />,
     badgeText: '무료티켓',
   },
