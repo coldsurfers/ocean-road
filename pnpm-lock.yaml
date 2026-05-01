@@ -214,8 +214,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurf/ocean-road':
-        specifier: 1.15.1
-        version: 1.15.1(b236c823cb9c970b40a68bf989601010)
+        specifier: 1.16.1-alpha.2
+        version: 1.16.1-alpha.2(b236c823cb9c970b40a68bf989601010)
       '@coldsurf/shared-utils':
         specifier: 1.1.16
         version: 1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@3.25.76)
@@ -1445,8 +1445,8 @@ packages:
       react-native-worklets:
         optional: true
 
-  '@coldsurf/ocean-road@1.15.1':
-    resolution: {integrity: sha512-WZcTdAuvn8IXZxHDD529rRm3VZ2g40Q0fge8xBcQb8TAVJD0qXLVUxRQHSjh/4HZq4cSVcOukzPdwKCEnI7+Hw==}
+  '@coldsurf/ocean-road@1.16.1-alpha.2':
+    resolution: {integrity: sha512-Lqqayb19uwy2EoKPGbdCsiMVy6W2TRcOAWeHk1Xq8vapkKHnw3mMRzR7GRuRaxxsQVIMwRyvPQDuKqKtsxozYQ==}
     peerDependencies:
       '@emotion/css': ^11.10.6
       '@emotion/native': ^11.11.0
@@ -2008,6 +2008,7 @@ packages:
 
   '@evilmartians/lefthook@1.13.6':
     resolution: {integrity: sha512-79vplrUBWL4Fkt59YkEBdSpqBVhNrY8t5+jEp+wX5QbsmbQLcSULqwS7FmbNRyECa2LWMrUWpe6ENIfNwB4jiw==}
+    cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -11104,7 +11105,7 @@ snapshots:
       - schema-dts
       - zod
 
-  '@coldsurf/ocean-road@1.15.1(b236c823cb9c970b40a68bf989601010)':
+  '@coldsurf/ocean-road@1.16.1-alpha.2(b236c823cb9c970b40a68bf989601010)':
     dependencies:
       '@coldsurf/shared-utils': 1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@3.25.76)
       '@emotion/css': 11.10.6
@@ -15637,7 +15638,7 @@ snapshots:
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react-hooks: 7.0.1(eslint@9.39.2(jiti@2.6.1))
@@ -15674,7 +15675,7 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
     transitivePeerDependencies:
       - supports-color
 
@@ -15702,7 +15703,7 @@ snapshots:
       lodash: 4.17.21
       string-natural-compare: 3.0.1
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9

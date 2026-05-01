@@ -1,0 +1,55 @@
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+
+import { TicketItem, media, semantics } from '@coldsurf/ocean-road';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+
+// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+const meta = {
+  title: 'extensions/TicketItem',
+  component: TicketItem,
+  parameters: {
+    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+    layout: 'centered',
+  },
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  tags: ['autodocs'],
+  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  argTypes: {
+    // backgroundColor: { control: 'color' },
+  },
+  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
+  args: {},
+} satisfies Meta<typeof TicketItem>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+const StyledThumbnail = styled.img`
+  width: 512px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50%;
+  background-color: ${semantics.color.background[3]};
+
+  ${media.medium(css`
+    width: 248px;
+    height: 248px;
+  `)}
+`;
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Default: Story = {
+  args: {
+    title: 'COLDSURF Festival Vol.1',
+    venueName: 'COLDSURF 스테이지',
+    date: new Date('2026-06-25'),
+    thumbnailUrl:
+      'https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    renderThumbnail: (url) => <StyledThumbnail src={url} />,
+    badgeText: '무료티켓',
+  },
+  render: (args) => {
+    return <TicketItem {...args} />;
+  },
+};

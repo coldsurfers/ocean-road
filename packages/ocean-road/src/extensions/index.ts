@@ -36,3 +36,5 @@ export * from './color-scheme-toggle';
 export * from './full-screen-modal';
 
 export * from './accordion';
+
+export * from './ticket-item';
