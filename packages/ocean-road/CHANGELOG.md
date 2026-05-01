@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.16.1
+
+### Patch Changes
+
+- [#159](https://github.com/coldsurfers/ocean-road/pull/159) [`79eee29`](https://github.com/coldsurfers/ocean-road/commit/79eee29fefa9bd91ab5e2b1f2f0a15ac7803fe1c) Thanks [@yungblud](https://github.com/yungblud)! - Add TicketItem component (extension)
+
 ## 1.16.0
 
 ### Minor Changes
