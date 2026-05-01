@@ -1,4 +1,3 @@
-import color from '@coldsurfers/ocean-road-design-tokens/js/color/variables';
 import { forwardRef, memo, useCallback, useState } from 'react';
 import { TextInput as RNTextInput, StyleSheet } from 'react-native';
 import { colors } from '../../tokens';
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     paddingRight: 16,
     paddingTop: 16,
     paddingBottom: 16,
-    backgroundColor: color.oc.white.value,
+    backgroundColor: colors.oc.white.value,
     fontFamily: 'Pretendard',
     includeFontPadding: false,
   },
