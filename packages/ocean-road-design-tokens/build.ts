@@ -204,8 +204,6 @@ function runTsc() {
     'mkdir -p ../ocean-road/tokens',
     // copy to ocean-road
     'cp -r ./dist/* ../ocean-road/tokens',
-    // biome check
-    'pnpm biome format --write ../ocean-road/tokens',
   ];
   for (const cmd of cmds) {
     try {
