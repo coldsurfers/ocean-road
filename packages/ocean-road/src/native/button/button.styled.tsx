@@ -1,4 +1,3 @@
-import color from '@coldsurfers/ocean-road-design-tokens/js/color/variables';
 import styled, { css } from '@emotion/native';
 import { icons as Icons } from 'lucide-react-native';
 import type { ButtonTheme } from '../../base/button';
@@ -14,7 +13,7 @@ export const StyledButton = styled.TouchableOpacity<{
   align-items: center;
   justify-content: center;
   background-color: ${({ colorTheme, disabled }) =>
-    disabled ? color.oc.gray[4].value : getButtonBackgroundColor(colorTheme)};
+    disabled ? colors.oc.gray[4].value : getButtonBackgroundColor(colorTheme)};
   padding: ${(props) => {
     switch (props.size) {
       case 'lg':

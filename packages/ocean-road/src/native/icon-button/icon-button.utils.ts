@@ -1,6 +1,6 @@
-import color from '@coldsurfers/ocean-road-design-tokens/js/color/variables';
 import { css } from '@emotion/native';
 import type { ButtonTheme } from '../../base/button';
+import { colors } from '../../tokens';
 import type { IconButtonSize } from './icon-button.types';
 
 export const sizes = {
@@ -80,20 +80,20 @@ const transparentStyles = css`
 `;
 
 const transparentDarkGrayStyles = css`
-  background-color: ${color.oc.black.value};
+  background-color: ${colors.oc.black.value};
   opacity: 0.5;
 `;
 
 const whiteStyles = css`
-  background-color: ${color.oc.white.value};
+  background-color: ${colors.oc.white.value};
 `;
 
 const pinkStyles = css`
-  background-color: ${color.oc.pink[9].value};
+  background-color: ${colors.oc.pink[9].value};
 `;
 
 const indigoStyles = css`
-  background-color: ${color.oc.indigo[9].value};
+  background-color: ${colors.oc.indigo[9].value};
 `;
 
 export const getIconButtonBackgroundStyles = (theme: ButtonTheme) => {

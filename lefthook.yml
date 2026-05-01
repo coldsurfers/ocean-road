@@ -3,6 +3,7 @@ pre-commit:
   jobs:
     - run: pnpm biome check --write {staged_files}
       glob: "*.{js,ts,jsx,tsx}"
+    - run: pnpm turbo run check:type
 commit-msg:
   parallel: true
   commands:

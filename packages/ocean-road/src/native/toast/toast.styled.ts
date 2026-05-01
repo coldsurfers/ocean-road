@@ -1,5 +1,5 @@
-import color from '@coldsurfers/ocean-road-design-tokens/js/color/variables';
 import styled from '@emotion/native';
+import { colors } from '../../tokens';
 import { Text } from '../text';
 import type { ToastType } from './toast.types';
 
@@ -22,19 +22,19 @@ export const StyledToastPressable = styled.Pressable<{ type: ToastType }>`
   background-color: ${({ type }) => {
     switch (type) {
       case 'info':
-        return color.oc.black.value;
+        return colors.oc.black.value;
       case 'warning':
-        return color.oc.yellow[9].value;
+        return colors.oc.yellow[9].value;
       case 'error':
-        return color.oc.pink[9].value;
+        return colors.oc.pink[9].value;
       default:
-        return color.oc.black.value;
+        return colors.oc.black.value;
     }
   }};
 `;
 
 export const StyledToastText = styled(Text)`
   font-weight: 700;
-  color: ${color.oc.white.value};
+  color: ${colors.oc.white.value};
   font-size: 14px;
 `;

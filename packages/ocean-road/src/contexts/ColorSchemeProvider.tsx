@@ -1,6 +1,3 @@
-import darkColorDesignTokens from '@coldsurfers/ocean-road-design-tokens/dist/json/color/variables-dark.json';
-import lightColorDesignTokens from '@coldsurfers/ocean-road-design-tokens/dist/json/color/variables-light.json';
-import typographyDesignTokens from '@coldsurfers/ocean-road-design-tokens/dist/json/typography/variables.json';
 import {
   type Context,
   type PropsWithChildren,
@@ -10,6 +7,9 @@ import {
   useEffect,
   useState,
 } from 'react';
+import darkColorDesignTokens from '../../tokens/json/color/variables-dark.json';
+import lightColorDesignTokens from '../../tokens/json/color/variables-light.json';
+import typographyDesignTokens from '../../tokens/json/typography/variables.json';
 import { type DarkColorDesignTokens, type LightColorDesignTokens, colors } from '../tokens';
 
 export type ColorScheme = 'light' | 'dark' | 'userPreference';

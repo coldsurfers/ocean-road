@@ -214,8 +214,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurf/ocean-road':
-        specifier: 1.13.5
-        version: 1.13.5(b236c823cb9c970b40a68bf989601010)
+        specifier: 1.15.1
+        version: 1.15.1(b236c823cb9c970b40a68bf989601010)
       '@coldsurf/shared-utils':
         specifier: 1.1.16
         version: 1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@3.25.76)
@@ -332,9 +332,6 @@ importers:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
-      '@coldsurfers/ocean-road-design-tokens':
-        specifier: workspace:*
-        version: link:../ocean-road-design-tokens
       '@emotion/css':
         specifier: 11.10.6
         version: 11.10.6
@@ -1419,6 +1416,37 @@ packages:
 
   '@coldsurf/ocean-road@1.13.5':
     resolution: {integrity: sha512-DQLBZRLOnqMrN/VfTOf9b8e/JVq6ogrInv0/6IwnzVQRd/c6/CoVMVPFX5aeRrexrn0+O7rhbNN6JjMInSEO5A==}
+    peerDependencies:
+      '@emotion/css': ^11.10.6
+      '@emotion/native': ^11.11.0
+      '@emotion/react': ^11.10.6
+      '@emotion/styled': ^11.10.6
+      lucide-react-native: ^0.468.0
+      next: '*'
+      react: 19.2.3
+      react-dom: 19.2.3
+      react-native: '*'
+      react-native-reanimated: '>= 3.17.1'
+      react-native-svg: ^15.11.1
+      react-native-worklets: 0.6.0
+    peerDependenciesMeta:
+      lucide-react-native:
+        optional: true
+      next:
+        optional: true
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+      react-native-reanimated:
+        optional: true
+      react-native-svg:
+        optional: true
+      react-native-worklets:
+        optional: true
+
+  '@coldsurf/ocean-road@1.15.1':
+    resolution: {integrity: sha512-WZcTdAuvn8IXZxHDD529rRm3VZ2g40Q0fge8xBcQb8TAVJD0qXLVUxRQHSjh/4HZq4cSVcOukzPdwKCEnI7+Hw==}
     peerDependencies:
       '@emotion/css': ^11.10.6
       '@emotion/native': ^11.11.0
@@ -11076,7 +11104,7 @@ snapshots:
       - schema-dts
       - zod
 
-  '@coldsurf/ocean-road@1.13.5(b236c823cb9c970b40a68bf989601010)':
+  '@coldsurf/ocean-road@1.15.1(b236c823cb9c970b40a68bf989601010)':
     dependencies:
       '@coldsurf/shared-utils': 1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@3.25.76)
       '@emotion/css': 11.10.6
