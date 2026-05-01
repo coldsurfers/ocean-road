@@ -7,7 +7,15 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["node_modules/**", "dist/**", "build/**", "output/**", "generated/**", ".rnstorybook/**"]
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      "output/**",
+      "generated/**",
+      ".rnstorybook/**",
+      "tokens/**"
+    ]
   },
   "formatter": {
     "enabled": true,
