@@ -189,15 +189,10 @@ function runTsc() {
     // cjs
     'pnpm tsc ./dist/js/semantic/theme-variables.ts --declaration --module commonjs --skipLibCheck',
     'pnpm tsc ./dist/js/semantic/variables.ts --declaration --module commonjs --skipLibCheck',
-    // remove original ts file
-    'rm -rf ./dist/js/semantic/theme-variables.ts',
-    'rm -rf ./dist/js/semantic/variables.ts',
     // typography — esm
     'pnpm tsc ./dist/js/typography/variables.ts --declaration --module esnext --skipLibCheck && mv ./dist/js/typography/variables.js ./dist/js/typography/variables.mjs',
     // typography — cjs
     'pnpm tsc ./dist/js/typography/variables.ts --declaration --module commonjs --skipLibCheck',
-    // remove original ts file
-    'rm -rf ./dist/js/typography/variables.ts',
     // remove ocean-road tokens dir
     'rm -rf ../ocean-road/tokens',
     // create ocean-road tokens dir
