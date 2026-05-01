@@ -129,7 +129,9 @@ StyleDictionary.registerFormat({
   formatter: (args) => {
     const { dictionary } = args;
     const typographyTokens = dictionary.tokens.typography as Record<string, unknown>;
-    const primitives = Object.fromEntries(Object.entries(typographyTokens).filter(([k]) => k !== 'variant'));
+    const primitives = Object.fromEntries(
+      Object.entries(typographyTokens).filter(([k]) => k !== 'variant')
+    );
     const tokens = JSON.stringify(primitives, cssVarReplacer, 2);
     return `const variables = ${tokens} as const;\n\nexport default variables`;
   },
@@ -142,7 +144,11 @@ StyleDictionary.registerFormat({
     const { dictionary } = args;
     const color = JSON.parse(JSON.stringify(dictionary.tokens.color, cssVarReplacer, 2));
     const typography = JSON.parse(
-      JSON.stringify((dictionary.tokens.typography as Record<string, unknown>).variant, cssVarReplacer, 2)
+      JSON.stringify(
+        (dictionary.tokens.typography as Record<string, unknown>).variant,
+        cssVarReplacer,
+        2
+      )
     );
     const tokens = JSON.stringify({ color, typography }, null, 2);
     return `const variables = ${tokens} as const;\n\nexport default variables`;
@@ -192,6 +198,14 @@ function runTsc() {
     'pnpm tsc ./dist/js/typography/variables.ts --declaration --module commonjs --skipLibCheck',
     // remove original ts file
     'rm -rf ./dist/js/typography/variables.ts',
+    // remove ocean-road tokens dir
+    'rm -rf ../ocean-road/tokens',
+    // create ocean-road tokens dir
+    'mkdir -p ../ocean-road/tokens',
+    // copy to ocean-road
+    'cp -r ./dist/* ../ocean-road/tokens',
+    // biome check
+    'pnpm biome format --write ../ocean-road/tokens',
   ];
   for (const cmd of cmds) {
     try {

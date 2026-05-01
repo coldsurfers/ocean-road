@@ -1,7 +1,7 @@
-import colorDesignTokens from '@coldsurfers/ocean-road-design-tokens/js/color/variables';
-import themeVariablesDesignTokens from '@coldsurfers/ocean-road-design-tokens/js/semantic/theme-variables';
-import semanticDesignTokens from '@coldsurfers/ocean-road-design-tokens/js/semantic/variables';
-import typographyDesignTokens from '@coldsurfers/ocean-road-design-tokens/js/typography/variables';
+import colorDesignTokens from '../../tokens/js/color/variables';
+import themeVariablesDesignTokens from '../../tokens/js/semantic/theme-variables';
+import semanticDesignTokens from '../../tokens/js/semantic/variables';
+import typographyDesignTokens from '../../tokens/js/typography/variables';
 import type { ColorDesignTokens } from './tokens.types';
 
 export const colors: ColorDesignTokens = colorDesignTokens;
