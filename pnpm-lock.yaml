@@ -214,8 +214,8 @@ importers:
   apps/storybook:
     dependencies:
       '@coldsurf/ocean-road':
-        specifier: 1.16.1-alpha.1
-        version: 1.16.1-alpha.1(b236c823cb9c970b40a68bf989601010)
+        specifier: 1.16.1-alpha.2
+        version: 1.16.1-alpha.2(b236c823cb9c970b40a68bf989601010)
       '@coldsurf/shared-utils':
         specifier: 1.1.16
         version: 1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@3.25.76)
@@ -1445,8 +1445,8 @@ packages:
       react-native-worklets:
         optional: true
 
-  '@coldsurf/ocean-road@1.16.1-alpha.1':
-    resolution: {integrity: sha512-pYqn8wuKPxdm9Q98Gt8kX6t5gUheCP/+iR2Y2q6/RIH4lBMcPPHWrU7HofFKtjb1Jy9ziooGGWXWBvU5fDWpPg==}
+  '@coldsurf/ocean-road@1.16.1-alpha.2':
+    resolution: {integrity: sha512-Lqqayb19uwy2EoKPGbdCsiMVy6W2TRcOAWeHk1Xq8vapkKHnw3mMRzR7GRuRaxxsQVIMwRyvPQDuKqKtsxozYQ==}
     peerDependencies:
       '@emotion/css': ^11.10.6
       '@emotion/native': ^11.11.0
@@ -11105,7 +11105,7 @@ snapshots:
       - schema-dts
       - zod
 
-  '@coldsurf/ocean-road@1.16.1-alpha.1(b236c823cb9c970b40a68bf989601010)':
+  '@coldsurf/ocean-road@1.16.1-alpha.2(b236c823cb9c970b40a68bf989601010)':
     dependencies:
       '@coldsurf/shared-utils': 1.1.16(jwt-decode@4.0.0)(schema-dts@1.1.5)(zod@3.25.76)
       '@emotion/css': 11.10.6

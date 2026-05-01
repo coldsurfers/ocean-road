@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { TicketItem } from '@coldsurf/ocean-road';
+import { TicketItem, semantics } from '@coldsurf/ocean-road';
+import styled from '@emotion/styled';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -23,14 +24,25 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const StyledThumbnail = styled.img`
+  width: 512px;
+  height: 512px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50%;
+  border-radius: 12px;
+  background-color: ${semantics.color.background[3]};
+`;
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
     title: 'COLDSURF Festival Vol.1',
     venueName: 'COLDSURF 스테이지',
     date: '2026-06-25',
-    posterThumbnailUrl:
+    thumbnailUrl:
       'https://images.unsplash.com/photo-1515333437113-6464312e1885?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    renderThumbnail: (url) => <StyledThumbnail src={url} />,
     badgeText: '무료티켓',
   },
   render: (args) => {
