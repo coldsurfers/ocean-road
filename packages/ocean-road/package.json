@@ -5,7 +5,7 @@
     "email": "imcoldsurf@gmail.com",
     "url": "https://coldsurf.io"
   },
-  "version": "1.16.0",
+  "version": "1.16.1-alpha.1",
   "bugs": {
     "url": "https://github.com/coldsurfers/ocean-road/issues"
   },
@@ -33,14 +33,7 @@
   "type": "module",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "src",
-    "next",
-    "native",
-    "dist",
-    "package.json",
-    "tokens"
-  ],
+  "files": ["src", "next", "native", "dist", "package.json", "tokens"],
   "scripts": {
     "prebuild": "turbo run --filter=@coldsurfers/ocean-road-design-tokens build",
     "build": "pnpm build:core",
