@@ -204,6 +204,9 @@ importers:
         specifier: ^1.47.1
         version: 1.47.1(tslib@2.8.1)(webpack@5.104.1)
     devDependencies:
+      rspress-plugin-sitemap:
+        specifier: ^1.2.1
+        version: 1.2.1
       typescript:
         specifier: ^5
         version: 5.8.3
@@ -2005,7 +2008,6 @@ packages:
 
   '@evilmartians/lefthook@1.13.6':
     resolution: {integrity: sha512-79vplrUBWL4Fkt59YkEBdSpqBVhNrY8t5+jEp+wX5QbsmbQLcSULqwS7FmbNRyECa2LWMrUWpe6ENIfNwB4jiw==}
-    cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -8360,6 +8362,9 @@ packages:
 
   rspack-plugin-virtual-module@0.1.13:
     resolution: {integrity: sha512-VC0HiVHH6dtGfTgfpbDgVTt6LlYv+uAg9CWGWAR5lBx9FbKPEZeGz7iRUUP8vMymx+PGI8ps0u4a25dne0rtuQ==}
+
+  rspress-plugin-sitemap@1.2.1:
+    resolution: {integrity: sha512-JMf2/SKerX3oiFuNaRAnPJxOtBl5hOF0qupK63Fh9CaTb6Mn440iximV+1V0fd/XeOhHlN0oLJPFUDrrkgkcwg==}
 
   rspress@1.47.1:
     resolution: {integrity: sha512-EBGde3d6lSwNXimsM0PORRa+23WlDEg3cPLa6q+XA0n6v5nVRg4AkinPI38An/DliZfqijwxt3oeEajxQrkVTQ==}
@@ -15632,7 +15637,7 @@ snapshots:
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react-hooks: 7.0.1(eslint@9.39.2(jiti@2.6.1))
@@ -15669,7 +15674,7 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
     transitivePeerDependencies:
       - supports-color
 
@@ -15697,7 +15702,7 @@ snapshots:
       lodash: 4.17.21
       string-natural-compare: 3.0.1
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1)):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -19687,6 +19692,8 @@ snapshots:
   rspack-plugin-virtual-module@0.1.13:
     dependencies:
       fs-extra: 11.3.3
+
+  rspress-plugin-sitemap@1.2.1: {}
 
   rspress@1.47.1(tslib@2.8.1)(webpack@5.104.1):
     dependencies:

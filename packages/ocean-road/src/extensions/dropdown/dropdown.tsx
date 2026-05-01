@@ -82,29 +82,31 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
       const domTop = dropdownRef.current?.getBoundingClientRect().top ?? 0;
 
       const positionTop = domTop + POSITION_PADDING * 2;
-      const nextMax = vh - positionTop;
+      const nextMax = Math.max(vh - positionTop, 0);
 
       return nextMax;
     }, []);
 
     useEffect(() => {
-      if (!triggerRef?.current) return;
-
       if (!isOpen) {
         setMaxHeight(0);
-        setInnerPosition(undefined);
+        setInnerPosition(position);
         return;
       }
 
       const updatePosition = () => {
-        const nextPosition = calculatePosition({
-          triggerRef,
-          dropdownRef,
-          edge,
-        });
+        const nextPosition = triggerRef?.current
+          ? calculatePosition({
+              triggerRef,
+              dropdownRef,
+              edge,
+            })
+          : position;
+
         if (nextPosition) {
           setInnerPosition(nextPosition);
         }
+
         const nextMax = calculateMaxHeight();
         setMaxHeight(nextMax);
       };
@@ -118,7 +120,7 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
         window.removeEventListener('resize', updatePosition);
         window.removeEventListener('scroll', updatePosition);
       };
-    }, [calculateMaxHeight, edge, isOpen, triggerRef]);
+    }, [calculateMaxHeight, edge, isOpen, position, triggerRef]);
 
     usePreventScrollEffect({
       shouldPrevent: preventScroll && isOpen,
@@ -131,12 +133,15 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
     }));
 
     const dropdownStyle = useMemo<MotionStyle>(() => {
+      const resolvedTop = triggerRef?.current ? innerPosition?.top : position?.top;
+
       if (edge === 'left') {
         const value: MotionStyle = {
-          top: triggerRef?.current ? innerPosition?.top : undefined,
-          left: triggerRef?.current ? innerPosition?.left : undefined,
-          maxHeight: triggerRef?.current ? `${maxHeight}px` : undefined,
-          overflowY: 'scroll',
+          top: resolvedTop,
+          left: triggerRef?.current ? innerPosition?.left : position?.left,
+          maxHeight: maxHeight ? `${maxHeight}px` : undefined,
+          overflowY: 'auto',
+          overscrollBehaviorY: 'contain',
           scrollbarWidth: 'none',
           ...style,
         };
@@ -144,10 +149,11 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
       }
 
       const value: MotionStyle = {
-        top: triggerRef?.current ? innerPosition?.top : undefined,
-        right: triggerRef?.current ? innerPosition?.right : undefined,
-        maxHeight: triggerRef?.current ? `${maxHeight}px` : undefined,
-        overflowY: 'scroll',
+        top: resolvedTop,
+        right: triggerRef?.current ? innerPosition?.right : position?.right,
+        maxHeight: maxHeight ? `${maxHeight}px` : undefined,
+        overflowY: 'auto',
+        overscrollBehaviorY: 'contain',
         scrollbarWidth: 'none',
         ...style,
       };
@@ -158,6 +164,9 @@ const DropdownComponent = forwardRef<DropdownMenuItemRef, DropdownCoreProps>(
       innerPosition?.right,
       innerPosition?.top,
       maxHeight,
+      position?.left,
+      position?.right,
+      position?.top,
       style,
       triggerRef,
     ]);

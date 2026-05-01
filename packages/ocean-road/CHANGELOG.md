@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.15.1
+
+### Patch Changes
+
+- [#155](https://github.com/coldsurfers/ocean-road/pull/155) [`b3bd2d0`](https://github.com/coldsurfers/ocean-road/commit/b3bd2d0c1c02e63bc6c7f0261b129a796c997ae6) Thanks [@yungblud](https://github.com/yungblud)! - Fix dropdown menu overflow so long item lists scroll within the dropdown instead of causing page-level scrolling when no `triggerRef` is provided.
+
 ## 1.15.0
 
 ### Minor Changes

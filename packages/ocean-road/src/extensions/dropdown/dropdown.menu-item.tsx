@@ -30,6 +30,7 @@ type Props<DataItemT> = {
   onMouseEnter?: (e: MouseEvent<HTMLDivElement>, params: { openDropdown: () => void }) => void;
   onMouseLeave?: (e: MouseEvent<HTMLDivElement>, params: { closeDropdown: () => void }) => void;
   onClick?: (e: MouseEvent<HTMLDivElement>, params: { openDropdown: () => void }) => void;
+  zIndex?: number;
 };
 
 export const DropdownMenuItem = forwardRef(function DropdownMenuItemComponent<DataItemT>(
@@ -46,6 +47,7 @@ export const DropdownMenuItem = forwardRef(function DropdownMenuItemComponent<Da
     onMouseEnter,
     onMouseLeave,
     onClick,
+    zIndex,
   }: Props<DataItemT>,
   ref: Ref<DropdownMenuItemRef>
 ) {
@@ -215,6 +217,7 @@ export const DropdownMenuItem = forwardRef(function DropdownMenuItemComponent<Da
               animate={backdrop}
               isLoading={isLoading}
               onClose={close}
+              zIndex={zIndex}
             >
               {dropdownData.map((item, index) => (
                 <div

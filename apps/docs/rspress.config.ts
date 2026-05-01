@@ -1,4 +1,5 @@
 import { defineConfig } from 'rspress/config';
+import sitemap from 'rspress-plugin-sitemap';
 
 export default defineConfig({
   root: 'docs',
@@ -6,6 +7,11 @@ export default defineConfig({
   title: 'Ocean Road',
   description: 'COLDSURF 디자인 시스템 컴포넌트 라이브러리',
   outDir: 'build',
+  plugins: [
+    sitemap({
+      domain: 'https://docs.ocean-road.coldsurf.io',
+    }),
+  ],
   themeConfig: {
     socialLinks: [
       {
