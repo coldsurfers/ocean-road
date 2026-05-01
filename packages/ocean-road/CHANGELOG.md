@@ -1,5 +1,11 @@
 # @coldsurfers/ocean-road
 
+## 1.16.0
+
+### Minor Changes
+
+- [#157](https://github.com/coldsurfers/ocean-road/pull/157) [`ec6c47a`](https://github.com/coldsurfers/ocean-road/commit/ec6c47a351b0667ee9c953f89329385a2978015b) Thanks [@yungblud](https://github.com/yungblud)! - Fixed colors type mismatch issue
+
 ## 1.15.1
 
 ### Patch Changes
