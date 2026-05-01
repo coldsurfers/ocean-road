@@ -6,13 +6,14 @@ import media from '@/utils/media';
 import { dateUtils } from '@coldsurf/shared-utils';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import type { ReactNode } from 'react';
 
 const Container = styled.div`
     position: relative;
     width: fit-content;
 `;
 
-const ConcertThumbnail = styled.img`
+const DefaultConcertThumbnail = styled.img`
     width: 248px;
     height: 248px;
     border-radius: 12px;
@@ -109,18 +110,26 @@ export function TicketItem({
   title,
   venueName,
   date,
-  posterThumbnailUrl,
+  thumbnailUrl,
+  renderThumbnail,
   badgeText,
 }: {
   title: string;
   venueName: string;
   date: string | Date;
-  posterThumbnailUrl: string;
+  thumbnailUrl: string;
+  renderThumbnail?: (url: string) => ReactNode;
   badgeText?: string;
 }) {
   return (
     <Container>
-      <ConcertThumbnail src={posterThumbnailUrl} />
+      {thumbnailUrl ? (
+        renderThumbnail ? (
+          renderThumbnail(thumbnailUrl)
+        ) : (
+          <DefaultConcertThumbnail src={thumbnailUrl} />
+        )
+      ) : null}
       <ConcertThumbnailHalfCircle />
       <ConcertThumbnailHalfCircle $inverted />
       <ConcertInfoPositionAbsolute>
