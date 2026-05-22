@@ -1,5 +1,4 @@
 ---
-'@coldsurfers/ocean-road-design-tokens': patch
 '@coldsurf/ocean-road': patch
 ---
 
