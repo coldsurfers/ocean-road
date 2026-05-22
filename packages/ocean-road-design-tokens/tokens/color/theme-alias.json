@@ -3,7 +3,7 @@
     "background": {
       "1": {
         "value": "{oc.white}",
-        "darkValue": "{oc.black}",
+        "darkValue": "#0e0e10",
         "comment": "background color 1"
       },
       "2": {
